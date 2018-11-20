@@ -1,8 +1,8 @@
 <?php
     function crearConexio(){
-        $servidor   = "192.168.223.182";
+        $servidor   = "localhost";
         $nombreBD   = "univeylandia";
-        $usuario    = "jfebrer";
+        $usuario    = "admin_web";
         $contrasena = "Alumne123";
         $conexio = new mysqli($servidor,$usuario,$contrasena,$nombreBD);
         if($conexio->connect_error){
