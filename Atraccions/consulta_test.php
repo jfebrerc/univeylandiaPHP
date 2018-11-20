@@ -158,6 +158,11 @@ if (!isset($_SESSION['id_rol'])) :?>
     echo '      <th scope="col">Nom</th>';
     echo '      <th scope="col">Tipus</th>';
     echo '      <th scope="col">Data inauguracio</th>';
+    echo '      <th scope="col">Altura minima</th>';
+    echo '      <th scope="col">Altura maxima</th>';
+    echo '      <th scope="col">Accessibilitat</th>';
+    echo '      <th scope="col">Acces express</th>';
+    echo '      <th scope="col">Data creacio registre</th>';
     echo '    </tr>';
     echo '  </thead>';
     if ($result) {
@@ -168,6 +173,11 @@ if (!isset($_SESSION['id_rol'])) :?>
           echo '      <td>'.$row["nom_atraccio"].'</td>';
           echo '      <td>'.$row["tipus_atraccio"].'</td>';
           echo '      <td>'.$row["data_inauguracio"].'</td>';
+          echo '      <td>'.$row["altura_min"].'</td>';
+          echo '      <td>'.$row["altura_max"].'</td>';
+          echo '      <td>'.$row["accessibilitat"].'</td>';
+          echo '      <td>'.$row["acces_express"].'</td>';
+          echo '      <td>'.$row["data_creacio_registre"].'</td>';
           echo '    </tr>';
           echo '  </tbody>';
             //echo "id: " . $row["id_atraccio"]. " - Nom: " . $row["nom_atraccio"]. " " . $row["tipus_atraccio"]. "<br>";
