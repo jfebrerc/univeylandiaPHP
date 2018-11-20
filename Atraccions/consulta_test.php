@@ -166,9 +166,9 @@ if (!isset($_SESSION['id_rol'])) :?>
           echo '  <tbody>';
           echo '    <tr>';
           echo '      <th scope="row">'.$row["id_atraccio"].'</th>';
-          echo '      <td>$row["nom_atraccio"]</td>';
-          echo '      <td>$row["tipus_atraccio"]</td>';
-          echo '      <td>@$row["data_inauguracio"]</td>';
+          echo '      <td>'.$row["nom_atraccio"].'</td>';
+          echo '      <td>'.$row["tipus_atraccio"].'</td>';
+          echo '      <td>'.$row["data_inauguracio"].'</td>';
           echo '    </tr>';
           echo '  </tbody>';
           echo '</table>';
