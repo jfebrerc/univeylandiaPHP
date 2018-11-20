@@ -163,6 +163,8 @@ if (!isset($_SESSION['id_rol'])) :?>
     echo '      <th scope="col">Accessibilitat</th>';
     echo '      <th scope="col">Acces express</th>';
     echo '      <th scope="col">Data creacio registre</th>';
+    echo '      <th scope="col"></th>';
+    echo '      <th scope="col"></th>';
     echo '    </tr>';
     echo '  </thead>';
     if ($result) {
@@ -178,6 +180,8 @@ if (!isset($_SESSION['id_rol'])) :?>
           echo '      <td>'.$row["accessibilitat"].'</td>';
           echo '      <td>'.$row["acces_express"].'</td>';
           echo '      <td>'.$row["data_creacio_registre"].'</td>';
+          echo '      <td><a href=#> Modificar </a></td>';
+          echo '      <td><a href=#> Eliminar </a></td>';
           echo '    </tr>';
           echo '  </tbody>';
             //echo "id: " . $row["id_atraccio"]. " - Nom: " . $row["nom_atraccio"]. " " . $row["tipus_atraccio"]. "<br>";
