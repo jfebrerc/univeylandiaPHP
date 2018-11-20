@@ -151,18 +151,17 @@ if (!isset($_SESSION['id_rol'])) :?>
 
     $sql = "SELECT * FROM ATRACCIO";
     $result = $conexio->query($sql);
-
+    echo '<table class="table">';
+    echo '  <thead>';
+    echo '    <tr>';
+    echo '      <th scope="col">ID</th>';
+    echo '      <th scope="col">Nom</th>';
+    echo '      <th scope="col">Tipus</th>';
+    echo '      <th scope="col">Data inauguracio</th>';
+    echo '    </tr>';
+    echo '  </thead>';
     if ($result) {
         while($row = $result->fetch_assoc()) {
-          echo '<table class="table">';
-          echo '  <thead>';
-          echo '    <tr>';
-          echo '      <th scope="col">ID</th>';
-          echo '      <th scope="col">Nom</th>';
-          echo '      <th scope="col">Tipus</th>';
-          echo '      <th scope="col">Data inauguracio</th>';
-          echo '    </tr>';
-          echo '  </thead>';
           echo '  <tbody>';
           echo '    <tr>';
           echo '      <th scope="row">'.$row["id_atraccio"].'</th>';
@@ -171,13 +170,12 @@ if (!isset($_SESSION['id_rol'])) :?>
           echo '      <td>'.$row["data_inauguracio"].'</td>';
           echo '    </tr>';
           echo '  </tbody>';
-          echo '</table>';
             //echo "id: " . $row["id_atraccio"]. " - Nom: " . $row["nom_atraccio"]. " " . $row["tipus_atraccio"]. "<br>";
         }
     } else {
         echo "0 results";
     }
-
+    echo '</table>';
     $conexio->close();
 ?>
 
