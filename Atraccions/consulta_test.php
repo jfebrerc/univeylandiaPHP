@@ -259,7 +259,28 @@ if (!isset($_SESSION['id_rol'])) :?>
               </div>
             </div>
           </div>';
+          if(isset($_POST['modificar']))
+          {
+            $nom2 = $_POST['nom_atracciomod'];
+            $tipus2 = $_POST['tipus_atracciomod'];
+            $alturamin2 = $_POST['altura_minimamod'];
+            $alturamax2 = $_POST['altura_maximamod'];
+            $accessibilitat2 = $_POST['accessibilitatmod'];
+            $accesse2 = $_POST['acces_expressmod'];
 
+            if ($conexio->connect_error)
+            {
+                die('Error de conexión: ' . $conexion->connect_error);
+            }
+
+            $sql_update = "UPDATE ATRACCIO SET nom_atraccio='$nom2', tipus_atraccio='$tipus2', altura_min='$alturamin2', altura_max='$alturamax2', accessibilitat='$accessibilitat2', acces_express='$accesse2' WHERE id_atraccio='$id_atraccio'";
+            $result = $conexio->query($sql_update);
+            if ($result) {
+              echo "guay";
+            }else {
+              echo "patata";
+            }
+          }
             //echo "id: " . $row["id_atraccio"]. " - Nom: " . $row["nom_atraccio"]. " " . $row["tipus_atraccio"]. "<br>";
         }
     } else {
@@ -267,27 +288,6 @@ if (!isset($_SESSION['id_rol'])) :?>
     }
     echo '</table>';
     $conexio->close();
-?>
-
-<?php
-
-if(isset($_POST['modificar']))
-{
-  $nom2 = $_POST['nom_atracciomod'];
-  $tipus2 = $_POST['tipus_atracciomod'];
-  $alturamin2 = $_POST['altura_minimamod'];
-  $alturamax2 = $_POST['altura_maximamod'];
-  $accessibilitat2 = $_POST['accessibilitatmod'];
-  $accesse2 = $_POST['acces_expressmod'];
-
-  if ($conexio->connect_error)
-  {
-      die('Error de conexión: ' . $conexion->connect_error);
-  }
-
-  $sql_update = "UPDATE ATRACCIO SET nom_atraccio='$nom2', tipus_atraccio='$tipus2', altura_min='$alturamin2', altura_max='$alturamax2', accessibilitat='$accessibilitat2', acces_express='$accesse2' WHERE id_atraccio='$id_atraccio'";
-
-}
 ?>
 
 
