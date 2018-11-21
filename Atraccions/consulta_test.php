@@ -206,7 +206,7 @@ if (!isset($_SESSION['id_rol'])) :?>
                 </div>
               </div>
             </div>
-          </div>'
+          </div>';
 
             //echo "id: " . $row["id_atraccio"]. " - Nom: " . $row["nom_atraccio"]. " " . $row["tipus_atraccio"]. "<br>";
         }
