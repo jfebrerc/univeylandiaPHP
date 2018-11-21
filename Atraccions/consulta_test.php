@@ -167,7 +167,7 @@ if (!isset($_SESSION['id_rol'])) :?>
     echo '      <th scope="col"></th>';
     echo '    </tr>';
     echo '  </thead>';
-    if ($result) {
+    if (mysqli_num_rows($result) {
         while($row = $result->fetch_assoc()) {
           $id_atraccio = $row["id_atraccio"];
           echo '  <tbody>';
