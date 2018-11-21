@@ -178,7 +178,7 @@ if (!isset($_SESSION['id_rol'])) :?>
           $altura_max = $row["altura_max"];
           $accessibilitat = $row["accessibilitat"];
           $acces_express = $row["acces_express"];
-          $data_creacio_registr = $row["data_creacio_registre"];
+          $data_creacio_registre = $row["data_creacio_registre"];
           echo '  <tbody>';
           echo '    <tr>';
           echo '      <th scope="row">'.$row["id_atraccio"].'</th>';
@@ -250,6 +250,13 @@ if (!isset($_SESSION['id_rol'])) :?>
                         <div class="offset-sm-2 col-sm-10">
                           <input type="submit" class="btn btn-primary" name="modificar" value="Modificar">';
                           if (isset($_POST['modificar'])) {
+                            $nom_atraccio = $_POST['nom_atracciomod'];
+                            $tipus_atraccio = $_POST['tipus_atracciomod'];
+                            $altura_min = $_POST['altura_minimamod'];
+                            $altura_max = $_POST['altura_maximamod'];
+                            $accessibilitat = $_POST['accessibilitatmod'];
+                            $acces_express = $_POST['acces_expressmod'];
+
                             $sql_update = "UPDATE ATRACCIO SET nom_atraccio='sdf', tipus_atraccio='$tipus_atraccio', altura_min='$altura_min', altura_max='$altura_max', accessibilitat='$accessibilitat', acces_express='$acces_express' WHERE id_atraccio=$id_atraccio";
                               if (mysqli_query($conexio, $sql_update)) {
                                   echo "Record updated successfully";
