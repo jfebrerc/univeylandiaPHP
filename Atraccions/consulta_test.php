@@ -247,7 +247,7 @@ if (!isset($_SESSION['id_rol'])) :?>
                       </div>
                       <div class="form-group row">
                         <div class="offset-sm-2 col-sm-10">
-                          <button type="submit" class="btn btn-primary" name="modificar" onclick="modificar()">Modificar</button>
+                          <button type="submit" class="btn btn-primary" name="modificar" onclick="modificar_atraccio()">Modificar</button>
                         </div>
                       </div>
                     </form>
@@ -259,7 +259,7 @@ if (!isset($_SESSION['id_rol'])) :?>
               </div>
             </div>
           </div>';
-          function modificar(){
+          function modificar_atraccio(){
             if (isset($_POST['modificar'])) {
               $nom2 = $_POST['nom_atracciomod'];
               $tipus2 = $_POST['tipus_atracciomod'];
