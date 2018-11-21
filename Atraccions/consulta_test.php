@@ -211,7 +211,7 @@ if (!isset($_SESSION['id_rol'])) :?>
                 <div class="modal-body">
                   <p>'.$id_atraccio.'</p>
                   <div class="container">
-                    <form method="post">
+                    <form method="get">
                     <div class="form-group row">
                     <label for="example-search-input" class="col-2 col-form-label">ID</label>
                     <div class="col-10">
