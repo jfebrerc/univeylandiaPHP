@@ -142,6 +142,8 @@ if (!isset($_SESSION['id_rol'])) :?>
 <?php endif ?>
 
 <?php
+    header('Cache-Control: no-cache');
+    header('Pragma: no-cache');
     include ("conexio.php");
     include ("classes/classeAtraccio.php");
     $conexio = crearConexio();
@@ -254,7 +256,7 @@ if (!isset($_SESSION['id_rol'])) :?>
                       </div>
                       <div class="form-group row">
                         <div class="offset-sm-2 col-sm-10">
-                          <input type="submit" class="btn btn-primary" name="modificar" value="POSITIVET" onclick="location.reload();">';
+                          <input type="submit" class="btn btn-primary" name="modificar" value="Modificar"">';
                               //$modificar = modificar_atraccio($id_atraccio, $nom_atraccio, $tipus_atraccio, $altura_min, $altura_max, $accessibilitat, $acces_express);
 
               echo'          </div>
