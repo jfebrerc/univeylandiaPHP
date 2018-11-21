@@ -144,25 +144,13 @@ if (!isset($_SESSION['id_rol'])) :?>
 <?php
     include ("conexio.php");
     include ("classes/classeAtraccio.php");
-    $offset = 0;
-    $page_result = 5;
-
-    if($_GET['pageno'])
-    {
-     $page_value = $_GET['pageno'];
-     if($page_value > 1)
-     {
-      $offset = ($page_value - 1) * $page_result;
-     }
-    }
-
     $conexio = crearConexio();
     if ($conexio->connect_error)
     {
         die('Error de conexión: ' . $conexion->connect_error);
     }
 
-    $sql = "SELECT * FROM ATRACCIO limit $offset, $page_result";
+    $sql = "SELECT * FROM ATRACCIO";
     $result = $conexio->query($sql);
     echo '<table class="table">';
     echo '  <thead>';
@@ -181,7 +169,7 @@ if (!isset($_SESSION['id_rol'])) :?>
     echo '    </tr>';
     echo '  </thead>';
     if ($result) {
-        while($row = mysql_fetch_array($result)) {
+        while($row = $result->fetch_assoc()) {
           $id_atraccio = $row["id_atraccio"];
           $nom_atraccio = $row["nom_atraccio"];
           $tipus_atraccio = $row["tipus_atraccio"];
@@ -279,22 +267,6 @@ if (!isset($_SESSION['id_rol'])) :?>
             </div>
           </div>';
         }
-        $pagecount = 50; // Total number of rows
-        $num = $pagecount / $page_result ;
-
-        if($_GET['pageno'] > 1)
-        {
-         echo "<a href = 'samepage.php?pageno = ".($_GET['pageno'] - 1)." '> Prev </a>";
-        }
-        for($i = 1 ; $i <= $num ; $i++)
-        {
-         //echo "<a href = "samepage.php?pageno = ". $i ." >". $i ."</a>";
-        }
-        if($num! = 1)
-        {
-          echo "<a href = 'samepage.php?pageno = ".($_GET['pageno'] + 1)." '> Next </a>";
-        }
-
         if (isset($_POST['modificar'])) {
           $id_atraccio = $_POST['id_atraciomod'];
           $nom_atraccio = $_POST['nom_atracciomod'];
