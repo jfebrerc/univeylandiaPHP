@@ -259,7 +259,21 @@ if (!isset($_SESSION['id_rol'])) :?>
               </div>
             </div>
           </div>';
-            //echo "id: " . $row["id_atraccio"]. " - Nom: " . $row["nom_atraccio"]. " " . $row["tipus_atraccio"]. "<br>";
+          if (isset($_POST['modificar']) {
+            $nom2 = $_POST['nom_atracciomod'];
+            $tipus2 = $_POST['tipus_atracciomod'];
+            $alturamin2 = $_POST['altura_minimamod'];
+            $alturamax2 = $_POST['altura_maximamod'];
+            $accessibilitat2 = $_POST['accessibilitatmod'];
+            $accese2 = $_POST['acces_expressmod'];
+            $sql_update = "UPDATE ATRACCIO SET nom_atraccio='PUTOUPDATE' WHERE id_atraccio=1";
+            if ($conexio->query($sql_update) === TRUE) {
+                echo "Record updated successfully";
+            } else {
+                echo "Error updating record: " . $conexio->error;
+            }
+          }
+
         }
     } else {
         echo "0 results";
