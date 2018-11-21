@@ -212,37 +212,37 @@ if (!isset($_SESSION['id_rol'])) :?>
                     <div class="form-group row">
                       <label for="example-text-input" class="col-2 col-form-label">Nom</label>
                       <div class="col-10">
-                        <input class="form-control" type="text" value="'.$row["nom_atraccio"].'" id="example-text-input" name="nom_atraccio">
+                        <input class="form-control" type="text" value="'.$nom_atraccio.'" id="example-text-input" name="nom_atracciomod">
                       </div>
                       </div>
                       <div class="form-group row">
                       <label for="example-search-input" class="col-2 col-form-label">Tipus</label>
                       <div class="col-10">
-                        <input class="form-control" type="text" value="'.$row["tipus_atraccio"].'" id="example-text-input" name="tipus_atraccio">
+                        <input class="form-control" type="text" value="'.$row["tipus_atraccio"].'" id="example-text-input" name="tipus_atracciomod">
                       </div>
                       </div>
                       <div class="form-group row">
                       <label for="example-email-input" class="col-2 col-form-label">Altura min</label>
                       <div class="col-10">
-                        <input class="form-control" type="text" value="'.$row["altura_min"].'" id="example-text-input" name="altura_minima">
+                        <input class="form-control" type="text" value="'.$row["altura_min"].'" id="example-text-input" name="altura_minimamod">
                       </div>
                       </div>
                       <div class="form-group row">
                       <label for="example-url-input" class="col-2 col-form-label">Altura max</label>
                       <div class="col-10">
-                        <input class="form-control" type="text" value="'.$row["altura_max"].'" id="example-text-input" name="altura_maxima">
+                        <input class="form-control" type="text" value="'.$row["altura_max"].'" id="example-text-input" name="altura_maximamod">
                       </div>
                       </div>
                       <div class="form-group row">
                       <label for="example-tel-input" class="col-2 col-form-label">Accesibilitat</label>
                       <div class="col-10">
-                        <input class="form-control" type="text" value="'.$row["accessibilitat"].'" id="example-text-input" name="accessibilitat">
+                        <input class="form-control" type="text" value="'.$row["accessibilitat"].'" id="example-text-input" name="accessibilitatmod">
                       </div>
                       </div>
                       <div class="form-group row">
                       <label for="example-password-input" class="col-2 col-form-label">Acces expres</label>
                       <div class="col-10">
-                        <input class="form-control" type="text" value="'.$row["acces_express"].'" id="example-text-input" name="acces_express">
+                        <input class="form-control" type="text" value="'.$row["acces_express"].'" id="example-text-input" name="acces_expressmod">
                       </div>
                       </div>
                       <div class="form-group row">
