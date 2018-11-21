@@ -270,7 +270,7 @@ if (!isset($_SESSION['id_rol'])) :?>
             if ($conexio->query($sql_update) === TRUE) {
                 //echo "Record updated successfully";
             } else {
-                echo "Error updating record: " . $conexio->error;
+              //  echo "Error updating record: " . $conexio->error;
             }
           }
 
