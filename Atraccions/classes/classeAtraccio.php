@@ -72,6 +72,5 @@ class Atraccio{
         echo "Error updating record: " . $conexio->error;
     }
   }
-  $conexio->close();
 }
 ?>
