@@ -169,6 +169,7 @@ if (!isset($_SESSION['id_rol'])) :?>
     echo '  </thead>';
     if ($result) {
         while($row = $result->fetch_assoc()) {
+          $id_atraccio = $row["id_atraccio"];
           echo '  <tbody>';
           echo '    <tr>';
           echo '      <th scope="row">'.$row["id_atraccio"].'</th>';
@@ -180,7 +181,7 @@ if (!isset($_SESSION['id_rol'])) :?>
           echo '      <td>'.$row["accessibilitat"].'</td>';
           echo '      <td>'.$row["acces_express"].'</td>';
           echo '      <td>'.$row["data_creacio_registre"].'</td>';
-          echo '      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+          echo '      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter'.$id_atraccio.'">
                           Launch demo modal
                       </button></td>';
           echo '      <td><a href=#> Eliminar </a></td>';
@@ -188,7 +189,7 @@ if (!isset($_SESSION['id_rol'])) :?>
           echo '  </tbody>';
 
           echo '<!-- Modal -->
-          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal fade" id="exampleModalCenter'.$id_atraccio.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -198,7 +199,7 @@ if (!isset($_SESSION['id_rol'])) :?>
                   </button>
                 </div>
                 <div class="modal-body">
-                  <p>'.$row["id_atraccio"].'</p>
+                  <p>'.$id_atraccio.'</p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
