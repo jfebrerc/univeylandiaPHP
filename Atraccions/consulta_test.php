@@ -278,14 +278,22 @@ if (!isset($_SESSION['id_rol'])) :?>
 
           $sql_update = "UPDATE ATRACCIO SET nom_atraccio='$nom_atraccio', tipus_atraccio='$tipus_atraccio', altura_min='$altura_min', altura_max='$altura_max', accessibilitat='$accessibilitat', acces_express='$acces_express' WHERE id_atraccio=$id_atraccio";
             if (mysqli_query($conexio, $sql_update)) {
-                echo "Record updated successfully";
+                //echo "Record updated successfully";
+                // the message
+                $msg = "First line of text\nSecond line of text";
+
+                // use wordwrap() if lines are longer than 70 characters
+                $msg = wordwrap($msg,70);
+
+                // send email
+                mail("josefebrer@iesmontsia.org","My subject",$msg);
                 echo "<script>window.location.href='consulta_test.php';</script>";
             } else {
                 echo "Error updating record: " . mysqli_error($conexio);
             }
             }
     } else {
-        echo "0 results";
+        //echo "0 results";
     }
     echo '</table>';
     $conexio->close();
