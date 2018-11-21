@@ -170,6 +170,14 @@ if (!isset($_SESSION['id_rol'])) :?>
     if ($result) {
         while($row = $result->fetch_assoc()) {
           $id_atraccio = $row["id_atraccio"];
+          $nom_atraccio = $row["nom_atraccio"];
+          $tipus_atraccio = $row["tipus_atraccio"];
+          $data_inauguracio = $row["data_inauguracio"];
+          $altura_min = $row["altura_min"];
+          $altura_max = $row["altura_max"];
+          $accessibilitat = $row["accessibilitat"];
+          $acces_express = $row["acces_express"];
+          $data_creacio_registr = $row["data_creacio_registre"];
           echo '  <tbody>';
           echo '    <tr>';
           echo '      <th scope="row">'.$row["id_atraccio"].'</th>';
@@ -204,42 +212,42 @@ if (!isset($_SESSION['id_rol'])) :?>
                     <div class="form-group row">
                       <label for="example-text-input" class="col-2 col-form-label">Nom</label>
                       <div class="col-10">
-                        <input class="form-control" type="text" value="'.$row["nom_atraccio"].'" id="example-text-input">
+                        <input class="form-control" type="text" value="'.$row["nom_atraccio"].'" id="example-text-input" name="nom_atraccio">
                       </div>
                       </div>
                       <div class="form-group row">
                       <label for="example-search-input" class="col-2 col-form-label">Tipus</label>
                       <div class="col-10">
-                        <input class="form-control" type="text" value="'.$row["tipus_atraccio"].'" id="example-text-input">
+                        <input class="form-control" type="text" value="'.$row["tipus_atraccio"].'" id="example-text-input" name="tipus_atraccio">
                       </div>
                       </div>
                       <div class="form-group row">
                       <label for="example-email-input" class="col-2 col-form-label">Altura min</label>
                       <div class="col-10">
-                        <input class="form-control" type="text" value="'.$row["altura_min"].'" id="example-text-input">
+                        <input class="form-control" type="text" value="'.$row["altura_min"].'" id="example-text-input" name="altura_minima">
                       </div>
                       </div>
                       <div class="form-group row">
                       <label for="example-url-input" class="col-2 col-form-label">Altura max</label>
                       <div class="col-10">
-                        <input class="form-control" type="text" value="'.$row["altura_max"].'" id="example-text-input">
+                        <input class="form-control" type="text" value="'.$row["altura_max"].'" id="example-text-input" name="altura_maxima">
                       </div>
                       </div>
                       <div class="form-group row">
                       <label for="example-tel-input" class="col-2 col-form-label">Accesibilitat</label>
                       <div class="col-10">
-                        <input class="form-control" type="text" value="'.$row["accessibilitat"].'" id="example-text-input">
+                        <input class="form-control" type="text" value="'.$row["accessibilitat"].'" id="example-text-input" name="accessibilitat">
                       </div>
                       </div>
                       <div class="form-group row">
                       <label for="example-password-input" class="col-2 col-form-label">Acces expres</label>
                       <div class="col-10">
-                        <input class="form-control" type="text" value="'.$row["acces_express"].'" id="example-text-input">
+                        <input class="form-control" type="text" value="'.$row["acces_express"].'" id="example-text-input" name="acces_express">
                       </div>
                       </div>
                       <div class="form-group row">
                         <div class="offset-sm-2 col-sm-10">
-                          <button type="submit" class="btn btn-primary">Modificar</button>
+                          <button type="submit" class="btn btn-primary" name="modificar">Modificar</button>
                         </div>
                       </div>
                     </form>
@@ -260,6 +268,30 @@ if (!isset($_SESSION['id_rol'])) :?>
     echo '</table>';
     $conexio->close();
 ?>
+
+<?php
+
+if(isset($_POST['modificar']))
+{
+}
+$conexio->close();
+
+include ("conexio.php");
+$conexio = crearConexio();
+if ($conexio->connect_error)
+{
+    die('Error de conexión: ' . $conexion->connect_error);
+}
+
+$sql_update = "UPDATE ATRACCIO SET nom_atraccio='$nom_atraccio', tipus_atraccio='$tipus_atraccio', altura_min='$altura_min', altura_max='$altura_max', accessibilitat='$accessibilitat', acces_express='$acces_express' WHERE id_atraccio=$id_atraccio";
+$result = $conexio->query($sql);
+if ($conexio->query($sql_update) === TRUE) {
+  echo "actualitzat correctament";
+}else{
+  echo "error actualitzar";
+}
+?>
+
 
 <div class="jumbotron text-center" width="100%" style="margin-bottom:0">
   <div class="row">
