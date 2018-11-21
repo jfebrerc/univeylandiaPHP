@@ -211,9 +211,8 @@ if (!isset($_SESSION['id_rol'])) :?>
                   <div class="container">
                     <form method="post">
                     <div class="form-group row">
-                    <label for="example-search-input" class="col-2 col-form-label">ID</label>
                     <div class="col-10">
-                      <input class="form-control" type="text" value="'.$id_atraccio.'" id="example-text-input" name="id_atraciomod">
+                      <input class="form-control" type="text" value="'.$id_atraccio.'" id="example-text-input" name="id_atraciomod" style="display: none;">
                     </div>
                     </div>
                     <div class="form-group row">
