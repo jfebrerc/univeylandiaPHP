@@ -143,6 +143,7 @@ if (!isset($_SESSION['id_rol'])) :?>
 
 <?php
     include ("conexio.php");
+    include ("classes/classeAtraccio.php");
     $conexio = crearConexio();
     if ($conexio->connect_error)
     {
@@ -259,21 +260,10 @@ if (!isset($_SESSION['id_rol'])) :?>
               </div>
             </div>
           </div>';
-
-            /*if (isset($_POST['modificar'])) {
-              $nom2 = $_POST['nom_atracciomod'];
-              $tipus2 = $_POST['tipus_atracciomod'];
-              $alturamin2 = $_POST['altura_minimamod'];
-              $alturamax2 = $_POST['altura_maximamod'];
-              $accessibilitat2 = $_POST['accessibilitatmod'];
-              $accese2 = $_POST['acces_expressmod'];
-              $sql_update = "UPDATE ATRACCIO SET nom_atraccio='$nom2', tipus_atraccio='$tipus2', altura_min='$alturamin2', altura_max='$alturamax2', accessibilitat='$accessibilitat2', acces_express='$accese2' WHERE id_atraccio=$id_atraccio";
-              if ($conexio->query($sql_update) === TRUE) {
-                  echo "Record updated successfully";
-              } else {
-                  echo "Error updating record: " . $conexio->error;
-              }
-            }*/
+            if (isset($_POST['modificar'])) {
+              modificar_atraccio($id_atraccio, $nom_atraccio, $tipus_atraccio, $altura_min, $altura_max, $accessibilitat, $acces_express);
+              //jjgfdkfdkjlkjhgdahgfdañhoidhfdshoivlnkvlnkvXñlkvnlkvlkvcxljñk vxzcñlj zd
+            }
         }
     } else {
         echo "0 results";
