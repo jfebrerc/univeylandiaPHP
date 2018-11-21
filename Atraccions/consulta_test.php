@@ -207,7 +207,6 @@ if (!isset($_SESSION['id_rol'])) :?>
                   </button>
                 </div>
                 <div class="modal-body">
-                  <p>'.$id_atraccio.'</p>
                   <div class="container">
                     <form method="post">
                     <div class="form-group row">
