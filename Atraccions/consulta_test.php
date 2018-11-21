@@ -215,15 +215,14 @@ if (!isset($_SESSION['id_rol'])) :?>
                         </div>
                       <div class="form-group row">
                         <div class="offset-sm-2 col-sm-10">
-                          <button type="submit" class="btn btn-primary">Sign in</button>
+                          <button type="submit" class="btn btn-primary">Modificar</button>
                         </div>
                       </div>
                     </form>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Tancar</button>
                 </div>
               </div>
             </div>
