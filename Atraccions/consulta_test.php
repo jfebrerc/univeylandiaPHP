@@ -281,8 +281,7 @@ if (!isset($_SESSION['id_rol'])) :?>
           $sql_update = "UPDATE ATRACCIO SET nom_atraccio='$nom_atraccio', tipus_atraccio='$tipus_atraccio', altura_min='$altura_min', altura_max='$altura_max', accessibilitat='$accessibilitat', acces_express='$acces_express' WHERE id_atraccio=$id_atraccio";
             if (mysqli_query($conexio, $sql_update)) {
                 echo "Record updated successfully";
-                echo 'window.location.replace("https://google.es");';
-                window.location.replace("https://google.es");
+                echo "<script>window.location.href='http://google.es';</script>";
             } else {
                 echo "Error updating record: " . mysqli_error($conexio);
             }
