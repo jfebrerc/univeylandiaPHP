@@ -192,7 +192,7 @@ if (!isset($_SESSION['id_rol'])) :?>
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                  <h5 class="modal-title" id="exampleModalLongTitle">Modificar atraccio</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -204,37 +204,37 @@ if (!isset($_SESSION['id_rol'])) :?>
                     <div class="form-group row">
                       <label for="example-text-input" class="col-2 col-form-label">Nom</label>
                       <div class="col-10">
-                        <input class="form-control" type="text" value="tttttttttt" id="example-text-input">
+                        <input class="form-control" type="text" value="'.$row["nom_atraccio"].'" id="example-text-input">
                       </div>
                       </div>
                       <div class="form-group row">
                       <label for="example-search-input" class="col-2 col-form-label">Tipus</label>
                       <div class="col-10">
-                        <input class="form-control" type="text" value="" id="example-search-input">
+                        <input class="form-control" type="text" value="'.$row["tipus_atraccio"].'" id="example-text-input">
                       </div>
                       </div>
                       <div class="form-group row">
                       <label for="example-email-input" class="col-2 col-form-label">Altura min</label>
                       <div class="col-10">
-                        <input class="form-control" type="text" value="" id="example-email-input">
+                        <input class="form-control" type="text" value="'.$row["altura_min"].'" id="example-text-input">
                       </div>
                       </div>
                       <div class="form-group row">
                       <label for="example-url-input" class="col-2 col-form-label">Altura max</label>
                       <div class="col-10">
-                        <input class="form-control" type="text" value="" id="example-url-input">
+                        <input class="form-control" type="text" value="'.$row["altura_max"].'" id="example-text-input">
                       </div>
                       </div>
                       <div class="form-group row">
-                      <label for="example-tel-input" class="col-2 col-form-label">Aceesibilitat</label>
+                      <label for="example-tel-input" class="col-2 col-form-label">Accesibilitat</label>
                       <div class="col-10">
-                        <input class="form-control" type="text" value="" id="example-tel-input">
+                        <input class="form-control" type="text" value="'.$row["accessibilitat"].'" id="example-text-input">
                       </div>
                       </div>
                       <div class="form-group row">
                       <label for="example-password-input" class="col-2 col-form-label">Acces expres</label>
                       <div class="col-10">
-                        <input class="form-control" type="password" value="" id="example-password-input">
+                        <input class="form-control" type="password" value="'.$row["acces_express"].'" id="example-text-input">
                       </div>
                       </div>
                       <div class="form-group row">
