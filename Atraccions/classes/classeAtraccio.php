@@ -124,7 +124,7 @@ class Atraccio{
 
     }
   }
-  public function Eliminar(){
+  /*public function Eliminar(){
     try{
       $connection = crearConnexio();
       $sql ="DELETE FROM ATRACCIO WHERE id"
@@ -134,5 +134,5 @@ class Atraccio{
 
 
 
-}
+}*/
 ?>
