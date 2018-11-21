@@ -288,9 +288,7 @@ if(isset($_POST['modificar']))
   $sql_update = "UPDATE ATRACCIO SET nom_atraccio='$nom2', tipus_atraccio='$tipus2', altura_min='$alturamin2', altura_max='$alturamax2', accessibilitat='$accessibilitat2', acces_express='$accesse2' WHERE id_atraccio=$id_atraccio";
 
   if (mysqli_query($conexio, $sql_update) {
-    echo "actualitzat correctament";
   }else{
-    echo "error actualitzar";
   }
 }
 $conexio->close();
