@@ -181,7 +181,7 @@ if (!isset($_SESSION['id_rol'])) :?>
           echo '      <td>'.$row["accessibilitat"].'</td>';
           echo '      <td>'.$row["acces_express"].'</td>';
           echo '      <td>'.$row["data_creacio_registre"].'</td>';
-          echo '      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter'.$id_atraccio.'">
+          echo '      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter'.$id_atraccio.'"> Modificar
                       </button></td>';
           echo '      <td><a href=#> Eliminar </a></td>';
           echo '    </tr>';
