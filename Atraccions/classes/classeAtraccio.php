@@ -2,7 +2,7 @@
 include_once("connection.php");
 class Atraccio{
   /*Atributs*/ //Faltaran mes Atributs
-  private $idAtraccio
+  private $idAtraccio;
   private $nomAtraccio;
   private $tipusAtraccio;
   private $dataInauguracio;
