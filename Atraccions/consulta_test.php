@@ -211,6 +211,12 @@ if (!isset($_SESSION['id_rol'])) :?>
                   <div class="container">
                     <form method="post">
                     <div class="form-group row">
+                    <label for="example-search-input" class="col-2 col-form-label">Tipus</label>
+                    <div class="col-10">
+                      <input class="form-control" type="text" value="'.$row["id_atraccio"].'" id="example-text-input" name="id_atraciomod">
+                    </div>
+                    </div>
+                    <div class="form-group row">
                       <label for="example-text-input" class="col-2 col-form-label">Nom</label>
                       <div class="col-10">
                         <input class="form-control" type="text" value="'.$row["nom_atraccio"].'" id="example-text-input" name="nom_atracciomod">
@@ -264,6 +270,7 @@ if (!isset($_SESSION['id_rol'])) :?>
           </div>';
         }
         if (isset($_POST['modificar'])) {
+          $id_atraccio = $_POST['id_atraciomod'];
           $nom_atraccio = $_POST['nom_atracciomod'];
           $tipus_atraccio = $_POST['tipus_atracciomod'];
           $altura_min = $_POST['altura_minimamod'];
