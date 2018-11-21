@@ -258,7 +258,7 @@ if (!isset($_SESSION['id_rol'])) :?>
         echo "0 results";
     }
     echo '</table>';
-    $conexio->close();
+    mysqli_close($conexio);
 ?>
 
 <div class="jumbotron text-center" width="100%" style="margin-bottom:0">
