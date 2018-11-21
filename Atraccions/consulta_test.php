@@ -195,7 +195,7 @@ if (!isset($_SESSION['id_rol'])) :?>
           echo '      <td><a href=#> Eliminar </a></td>';
           echo '    </tr>';
           echo '  </tbody>';
-          echo '</table>';
+
           echo '<!-- Modal -->
           <div class="modal fade" id="exampleModalCenter'.$id_atraccio.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -287,6 +287,7 @@ if (!isset($_SESSION['id_rol'])) :?>
     } else {
         echo "0 results";
     }
+    echo '</table>';
     $conexio->close();
 ?>
 
