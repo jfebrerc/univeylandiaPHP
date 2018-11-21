@@ -234,7 +234,7 @@ if (!isset($_SESSION['id_rol'])) :?>
                       <div class="form-group row">
                       <label for="example-password-input" class="col-2 col-form-label">Acces expres</label>
                       <div class="col-10">
-                        <input class="form-control" type="password" value="'.$row["acces_express"].'" id="example-text-input">
+                        <input class="form-control" type="text" value="'.$row["acces_express"].'" id="example-text-input">
                       </div>
                       </div>
                       <div class="form-group row">
