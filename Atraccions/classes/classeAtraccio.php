@@ -1,10 +1,15 @@
 <?php
+include_once("connection.php");
 class Atraccio{
   /*Atributs*/ //Faltaran mes Atributs
-  private $nom;
-  private $tipus;
+  private $idAtraccio
+  private $nomAtraccio;
+  private $tipusAtraccio;
   private $dataInauguracio;
-  private $zona;
+  private $alturaMin;
+  private $alturaMax;
+  private $accessibilitat;
+  private $accesExpress;
 
   /*Constructor*/
   function __construct(){
@@ -16,55 +21,118 @@ class Atraccio{
    }
   }
 
-  function __construct4($nom,$tipus,$dataInauguracio,$zona){
-    $this->nom=$nom;
-    $this->tipus=$tipus;
+  function __construct8($idAtraccio,$nomAtraccio,$tipusAtraccio,$dataInauguracio,$alturaMin,$alturaMax,$accessibilitat,$accesExpress){
+    $this->idAtraccio=$idAtraccio;
+    $this->nomAtraccio=$nomAtraccio;
+    $this->tipusAtraccio=$tipusAtraccio;
     $this->dataInauguracio=$dataInauguracio;
-    $this->zona=$zona;
+    $this->alturaMin=$alturaMin;
+    $this->alturaMax=$alturaMax;
+    $this->accessibilitat=$accessibilitat;
+    $this->accesExpress=$accesExpress;
+
   }
 
   /*Getters*/
-  public function getNom(){
-	return $this->nom;
+  public function getIdAtraccio(){
+  return $this->idAtraccio;
   }
 
-  public function getTipus(){
-	return $this->tipus;
+  public function getNomAtraccio(){
+	return $this->nomAtraccio;
+  }
+
+  public function getTipusAtraccio(){
+	return $this->tipusAtraccio;
   }
 
   public function getDataInauguracio(){
 	return $this->dataInauguracio;
   }
 
-  public function getZona(){
-	return $this->zona;
+  public function getAlturaMin(){
+	return $this->alturaMin;
+  }
+
+  public function getAlturaMax(){
+	return $this->alturaMax;
+  }
+
+  public function getAccessibilitat(){
+	return $this->accessibilitat;
+  }
+
+  public function getAccesExpress(){
+	return $this->accesExpress;
   }
 
   /*Setters*/
-  public function setNom($nom){
-   $this->nom=$nom;
+  public function setIdAtraccio($idAtraccio){
+    $this->idAtraccio=$idAtraccio;
   }
 
-  public function setTipus($tipus){
-    $this->tipus=$tipus;
+  public function setNomAtraccio($nomAtraccio){
+   $this->nomAtraccio=$nomAtraccio;
+  }
+
+  public function setTipusAtraccio($tipusAtraccio){
+    $this->tipusAtraccio=$tipusAtraccio;
   }
 
   public function setDataInauguracio($dataInauguracio){
     $this->dataInauguracio=$dataInauguracio;
   }
 
-  public function setZona($zona){
-    $this->zona=$zona;
+  public function setAlturaMin($alturaMin){
+    $this->alturaMin=$alturaMin;
   }
 
-  /* METODES */
-  public function modificar_atraccio($id_atraccio2, $nom_atraccio2, $tipus_atraccio2, $altura_min2, $altura_max2, $accessibilitat2, $acces_express2){
-    $sql_update = "UPDATE ATRACCIO SET nom_atraccio='$nom_atraccio2', tipus_atraccio='$tipus_atraccio2', altura_min='$altura_min2', altura_max='$altura_max2', accessibilitat='$accessibilitat2', acces_express='$acces_express2' WHERE id_atraccio=$id_atraccio2";
-    if ($conexio->query($sql_update) === TRUE) {
-        echo "Record updated successfully";
-    } else {
-        echo "Error updating record: " . $conexio->error;
+  public function setAlturaMax($alturaMax){
+    $this->alturaMax=$alturaMax;
+  }
+
+  public function setAccessibilitat($accessibilitat){
+    $this->accessibilitat=$accessibilitat;
+  }
+
+  public function setAccesExpress($accesExpress){
+    $this->accesExpress=$accesExpress;
+  }
+
+  public function Registrar(){
+    try{
+      $connection = crearConnexio();
+      $sql = "INSERT INTO ATRACCIO (nom_atraccio,tipus_atraccio,data_inauguracio,altura_min,altura_max,accessibilitat,acces_express) VALUES (?,?,?,?,?,?,?);";
+        $sentencia = $connection->prepare($sql);
+        $sentencia->bind_param("sssiiii",$this->nomAtraccio,$this->tipusAtraccio,$this->dataInauguracio,$this->alturaMin,$this->alturaMax,$this->accessibilitat,$this->accesExpress);
+        if($sentencia->execute()){
+          $connection->close();
+          $sentencia->close();
+          return true;
+        }
+        else{
+          $connection->close();
+          $sentencia->close();
+          return "Error en el registre.";
+        }
+        }
+    catch(Exception $error){
+      echo $error;
+      $connection->close();
+      $sentencia->close();
+      return false;
+
     }
   }
+  public function Eliminar(){
+    try{
+      $connection = crearConnexio();
+      $sql ="DELETE FROM ATRACCIO WHERE id"
+
+
+  }
+
+
+
 }
 ?>
