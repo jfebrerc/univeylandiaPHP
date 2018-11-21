@@ -256,7 +256,7 @@ if (!isset($_SESSION['id_rol'])) :?>
                         <div class="offset-sm-2 col-sm-10">
                           <input type="submit" class="btn btn-primary" name="modificar" value="Modificar">';
                               //$modificar = modificar_atraccio($id_atraccio, $nom_atraccio, $tipus_atraccio, $altura_min, $altura_max, $accessibilitat, $acces_express);
-                          }
+
               echo'          </div>
                       </div>
                     </form>
@@ -283,6 +283,7 @@ if (!isset($_SESSION['id_rol'])) :?>
                 echo "Record updated successfully";
             } else {
                 echo "Error updating record: " . mysqli_error($conexio);
+            }
             }
     } else {
         echo "0 results";
