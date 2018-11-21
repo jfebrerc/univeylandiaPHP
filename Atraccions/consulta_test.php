@@ -261,11 +261,13 @@ if (!isset($_SESSION['id_rol'])) :?>
             </div>
           </div>';
             if (isset($_POST['modificar'])) {
-              try {
-                $modificar = modificar_atraccio($id_atraccio, $nom_atraccio, $tipus_atraccio, $altura_min, $altura_max, $accessibilitat, $acces_express);
-              } catch (\Exception $e) {
-                echo "erroret ".$e;
-              }
+              $sql_update = "UPDATE ATRACCIO SET nom_atraccio='$nom_atraccio2', tipus_atraccio='$tipus_atraccio2', altura_min='$altura_min2', altura_max='$altura_max2', accessibilitat='$accessibilitat2', acces_express='$acces_express2' WHERE id_atraccio=$id_atraccio2";
+                if (mysqli_query($conexio, $sql_update)) {
+                    echo "Record updated successfully";
+                } else {
+                    echo "Error updating record: " . mysqli_error($conexio);
+                }
+                //$modificar = modificar_atraccio($id_atraccio, $nom_atraccio, $tipus_atraccio, $altura_min, $altura_max, $accessibilitat, $acces_express);
             }
         }
     } else {
