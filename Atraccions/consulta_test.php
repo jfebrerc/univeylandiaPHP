@@ -247,34 +247,33 @@ if (!isset($_SESSION['id_rol'])) :?>
                       </div>
                       <div class="form-group row">
                         <div class="offset-sm-2 col-sm-10">
-                          <button type="submit" class="btn btn-primary" name="modificar" onclick="modificar_atraccio()">Modificar</button>
+                          <button type="submit" class="btn btn-primary" name="modificar">Modificar</button>
                         </div>
                       </div>
                     </form>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal" >Tancar</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Tancar</button>
                 </div>
               </div>
             </div>
           </div>';
-          function modificar_atraccio(){
-            if (isset($_POST['modificar'])) {
-              $nom2 = $_POST['nom_atracciomod'];
-              $tipus2 = $_POST['tipus_atracciomod'];
-              $alturamin2 = $_POST['altura_minimamod'];
-              $alturamax2 = $_POST['altura_maximamod'];
-              $accessibilitat2 = $_POST['accessibilitatmod'];
-              $accese2 = $_POST['acces_expressmod'];
-              $sql_update = "UPDATE ATRACCIO SET nom_atraccio='$nom2', tipus_atraccio='$tipus2', altura_min='$alturamin2', altura_max='$alturamax2', accessibilitat='$accessibilitat2', acces_express='$accese2' WHERE id_atraccio=$id_atraccio";
-              if ($conexio->query($sql_update) === TRUE) {
-                  echo "Record updated successfully";
-              } else {
-                  echo "Error updating record: " . $conexio->error;
-              }
+          if (isset($_POST['modificar'])) {
+            $nom2 = $_POST['nom_atracciomod'];
+            $tipus2 = $_POST['tipus_atracciomod'];
+            $alturamin2 = $_POST['altura_minimamod'];
+            $alturamax2 = $_POST['altura_maximamod'];
+            $accessibilitat2 = $_POST['accessibilitatmod'];
+            $accese2 = $_POST['acces_expressmod'];
+            $sql_update = "UPDATE ATRACCIO SET nom_atraccio='$nom2', tipus_atraccio='$tipus2', altura_min='$alturamin2', altura_max='$alturamax2', accessibilitat='$accessibilitat2', acces_express='$accese2' WHERE id_atraccio=$id_atraccio";
+            if ($conexio->query($sql_update) === TRUE) {
+                //echo "Record updated successfully";
+            } else {
+                echo "Error updating record: " . $conexio->error;
             }
           }
+
         }
     } else {
         echo "0 results";
