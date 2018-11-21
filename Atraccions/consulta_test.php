@@ -144,6 +144,8 @@ if (!isset($_SESSION['id_rol'])) :?>
 <?php
     include ("conexio.php");
     include ("classes/classeAtraccio.php");
+    include ("classeAtraccio.php");
+    
     $conexio = crearConexio();
     if ($conexio->connect_error)
     {
@@ -261,8 +263,7 @@ if (!isset($_SESSION['id_rol'])) :?>
             </div>
           </div>';
             if (isset($_POST['modificar'])) {
-              modificar_atraccio($id_atraccio, $nom_atraccio, $tipus_atraccio, $altura_min, $altura_max, $accessibilitat, $acces_express);
-              //jjgfdkfdkjlkjhgdahgfdañhoidhfdshoivlnkvlnkvXñlkvnlkvlkvcxljñk vxzcñlj zd
+              echo modificar_atraccio($id_atraccio, $nom_atraccio, $tipus_atraccio, $altura_min, $altura_max, $accessibilitat, $acces_express);
             }
         }
     } else {
