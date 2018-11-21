@@ -195,7 +195,7 @@ if (!isset($_SESSION['id_rol'])) :?>
           echo '      <td><a href=#> Eliminar </a></td>';
           echo '    </tr>';
           echo '  </tbody>';
-
+          echo '</table>';
           echo '<!-- Modal -->
           <div class="modal fade" id="exampleModalCenter'.$id_atraccio.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -249,20 +249,6 @@ if (!isset($_SESSION['id_rol'])) :?>
                       <div class="form-group row">
                         <div class="offset-sm-2 col-sm-10">
                           <input type="submit" class="btn btn-primary" name="modificar" value="Modificar">';
-                          if (isset($_POST['modificar'])) {
-                            $nom_atraccio = $_POST['nom_atracciomod'];
-                            $tipus_atraccio = $_POST['tipus_atracciomod'];
-                            $altura_min = $_POST['altura_minimamod'];
-                            $altura_max = $_POST['altura_maximamod'];
-                            $accessibilitat = $_POST['accessibilitatmod'];
-                            $acces_express = $_POST['acces_expressmod'];
-
-                            $sql_update = "UPDATE ATRACCIO SET nom_atraccio='$nom_atraccio', tipus_atraccio='$tipus_atraccio', altura_min='$altura_min', altura_max='$altura_max', accessibilitat='$accessibilitat', acces_express='$acces_express' WHERE id_atraccio=$id_atraccio";
-                              if (mysqli_query($conexio, $sql_update)) {
-                                  echo "Record updated successfully";
-                              } else {
-                                  echo "Error updating record: " . mysqli_error($conexio);
-                              }
                               //$modificar = modificar_atraccio($id_atraccio, $nom_atraccio, $tipus_atraccio, $altura_min, $altura_max, $accessibilitat, $acces_express);
                           }
               echo'          </div>
@@ -277,10 +263,23 @@ if (!isset($_SESSION['id_rol'])) :?>
             </div>
           </div>';
         }
+        if (isset($_POST['modificar'])) {
+          $nom_atraccio = $_POST['nom_atracciomod'];
+          $tipus_atraccio = $_POST['tipus_atracciomod'];
+          $altura_min = $_POST['altura_minimamod'];
+          $altura_max = $_POST['altura_maximamod'];
+          $accessibilitat = $_POST['accessibilitatmod'];
+          $acces_express = $_POST['acces_expressmod'];
+
+          $sql_update = "UPDATE ATRACCIO SET nom_atraccio='$nom_atraccio', tipus_atraccio='$tipus_atraccio', altura_min='$altura_min', altura_max='$altura_max', accessibilitat='$accessibilitat', acces_express='$acces_express' WHERE id_atraccio=$id_atraccio";
+            if (mysqli_query($conexio, $sql_update)) {
+                echo "Record updated successfully";
+            } else {
+                echo "Error updating record: " . mysqli_error($conexio);
+            }
     } else {
         echo "0 results";
     }
-    echo '</table>';
     $conexio->close();
 ?>
 
