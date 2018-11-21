@@ -254,7 +254,7 @@ if (!isset($_SESSION['id_rol'])) :?>
                       </div>
                       <div class="form-group row">
                         <div class="offset-sm-2 col-sm-10">
-                          <input type="submit" class="btn btn-primary" name="modificar" value="POSITIVET">';
+                          <input type="submit" class="btn btn-primary" name="modificar" value="POSITIVET" onclick="location.reload();">';
                               //$modificar = modificar_atraccio($id_atraccio, $nom_atraccio, $tipus_atraccio, $altura_min, $altura_max, $accessibilitat, $acces_express);
 
               echo'          </div>
