@@ -248,7 +248,16 @@ if (!isset($_SESSION['id_rol'])) :?>
                       </div>
                       <div class="form-group row">
                         <div class="offset-sm-2 col-sm-10">
-                          <input type="submit" class="btn btn-primary" name="modificar" value="Modificar">
+                          <input type="submit" class="btn btn-primary" name="modificar" value="Modificar">'
+                          if (isset($_POST['modificar'])) {
+                            $sql_update = "UPDATE ATRACCIO SET nom_atraccio='sdf', tipus_atraccio='$tipus_atraccio', altura_min='$altura_min', altura_max='$altura_max', accessibilitat='$accessibilitat', acces_express='$acces_express' WHERE id_atraccio=$id_atraccio";
+                              if (mysqli_query($conexio, $sql_update)) {
+                                  echo "Record updated successfully";
+                              } else {
+                                  echo "Error updating record: " . mysqli_error($conexio);
+                              }
+                              //$modificar = modificar_atraccio($id_atraccio, $nom_atraccio, $tipus_atraccio, $altura_min, $altura_max, $accessibilitat, $acces_express);
+                          }'
                         </div>
                       </div>
                     </form>
@@ -263,15 +272,6 @@ if (!isset($_SESSION['id_rol'])) :?>
         }
     } else {
         echo "0 results";
-    }
-    if (isset($_POST['modificar'])) {
-      $sql_update = "UPDATE ATRACCIO SET nom_atraccio='sdf', tipus_atraccio='$tipus_atraccio', altura_min='$altura_min', altura_max='$altura_max', accessibilitat='$accessibilitat', acces_express='$acces_express' WHERE id_atraccio=$id_atraccio";
-        if (mysqli_query($conexio, $sql_update)) {
-            echo "Record updated successfully";
-        } else {
-            echo "Error updating record: " . mysqli_error($conexio);
-        }
-        //$modificar = modificar_atraccio($id_atraccio, $nom_atraccio, $tipus_atraccio, $altura_min, $altura_max, $accessibilitat, $acces_express);
     }
     echo '</table>';
     $conexio->close();
