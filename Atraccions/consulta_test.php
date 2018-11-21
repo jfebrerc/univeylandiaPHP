@@ -204,7 +204,7 @@ if (!isset($_SESSION['id_rol'])) :?>
                     <div class="form-group row">
                       <label for="example-text-input" class="col-2 col-form-label">Nom</label>
                       <div class="col-10">
-                        <input class="form-control" type="text" value="" id="example-text-input">
+                        <input class="form-control" type="text" value="tttttttttt" id="example-text-input">
                       </div>
                       </div>
                       <div class="form-group row">
