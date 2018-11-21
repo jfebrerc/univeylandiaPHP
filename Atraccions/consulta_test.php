@@ -214,22 +214,12 @@ if (!isset($_SESSION['id_rol'])) :?>
                             </div>
                         </div>
                         <div class="form-group row">
-                          <label for="inputEmail3" class="col-sm-2 col-form-label">Altura minima</label>
+                          <label for="inputEmail3" class="col-sm-2 col-form-label">Altura min</label>
                           <div class="col-sm-10">
                             <input type="text" class="form-control" id="example-text-input">
                         </div>
                         <div class="form-group row">
-                          <label for="inputEmail3" class="col-sm-2 col-form-label">Altura maxima</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" id="example-text-input">
-                        </div>
-                        <div class="form-group row">
-                          <label for="inputEmail3" class="col-sm-2 col-form-label">Acessibilitat</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" id="example-text-input">
-                        </div>
-                        <div class="form-group row">
-                          <label for="inputEmail3" class="col-sm-2 col-form-label">Access express</label>
+                          <label for="inputEmail3" class="col-sm-2 col-form-label">Altura max</label>
                           <div class="col-sm-10">
                             <input type="text" class="form-control" id="example-text-input">
                         </div>
