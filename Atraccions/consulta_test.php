@@ -266,7 +266,7 @@ if (!isset($_SESSION['id_rol'])) :?>
             $alturamax2 = $_POST['altura_maximamod'];
             $accessibilitat2 = $_POST['accessibilitatmod'];
             $accese2 = $_POST['acces_expressmod'];
-            $sql_update = "UPDATE ATRACCIO SET nom_atraccio='PUTOUPDATE' WHERE id_atraccio=1";
+            $sql_update = "UPDATE ATRACCIO SET nom_atraccio='$nom2', tipus_atraccio='$tipus2', altura_min='$alturamin2', altura_max='$alturamax2', accessibilitat='$accessibilitat2', acces_express='$accese2' WHERE id_atraccio=$id_atraccio";
             if ($conexio->query($sql_update) === TRUE) {
                 echo "Record updated successfully";
             } else {
