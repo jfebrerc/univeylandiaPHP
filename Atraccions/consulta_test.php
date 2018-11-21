@@ -202,16 +202,36 @@ if (!isset($_SESSION['id_rol'])) :?>
                   <div class="container">
                     <form>
                       <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-2 col-form-label">Nom</label>
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Nom atraccio</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" id="example-text-input" placeholder="Email">
+                          <input type="text" class="form-control" id="example-text-input">
                       </div>
                       </div>
                         <div class="form-group row">
-                          <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                          <label for="inputPassword3" class="col-sm-2 col-form-label">Tipus atraccio</label>
                             <div class="col-sm-10">
-                              <input type="text" class="form-control" id="example-text-input" placeholder="Password">
+                              <input type="text" class="form-control" id="example-text-input">
                             </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="inputEmail3" class="col-sm-2 col-form-label">Altura minima</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="example-text-input">
+                        </div>
+                        <div class="form-group row">
+                          <label for="inputEmail3" class="col-sm-2 col-form-label">Altura maxima</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="example-text-input">
+                        </div>
+                        <div class="form-group row">
+                          <label for="inputEmail3" class="col-sm-2 col-form-label">Acessibilitat</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="example-text-input">
+                        </div>
+                        <div class="form-group row">
+                          <label for="inputEmail3" class="col-sm-2 col-form-label">Access express</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="example-text-input">
                         </div>
                       <div class="form-group row">
                         <div class="offset-sm-2 col-sm-10">
