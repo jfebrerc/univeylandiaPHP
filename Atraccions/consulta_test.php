@@ -265,7 +265,7 @@ if (!isset($_SESSION['id_rol'])) :?>
         echo "0 results";
     }
     if (isset($_POST['modificar'])) {
-      $sql_update = "UPDATE ATRACCIO SET nom_atraccio='$nom_atraccio', tipus_atraccio='$tipus_atraccio', altura_min='$altura_min', altura_max='$altura_max', accessibilitat='$accessibilitat', acces_express='$acces_express' WHERE id_atraccio=$id_atraccio";
+      $sql_update = "UPDATE ATRACCIO SET nom_atraccio='sdf', tipus_atraccio='$tipus_atraccio', altura_min='$altura_min', altura_max='$altura_max', accessibilitat='$accessibilitat', acces_express='$acces_express' WHERE id_atraccio=$id_atraccio";
         if (mysqli_query($conexio, $sql_update)) {
             echo "Record updated successfully";
         } else {
