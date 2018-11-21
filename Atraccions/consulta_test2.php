@@ -288,11 +288,11 @@ if (!isset($_SESSION['id_rol'])) :?>
         }
         for($i = 1 ; $i <= $num ; $i++)
         {
-         echo "<a href = "samepage.php?pageno = ". $i ." >". $i ."</a>"";
+         //echo "<a href = "samepage.php?pageno = ". $i ." >". $i ."</a>";
         }
         if($num! = 1)
         {
-         echo "<a href = 'samepage.php?pageno = ".($_GET['pageno'] + 1)." '> Next </a>";
+          echo "<a href = 'samepage.php?pageno = ".($_GET['pageno'] + 1)." '> Next </a>";
         }
 
         if (isset($_POST['modificar'])) {
