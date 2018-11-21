@@ -269,29 +269,6 @@ if (!isset($_SESSION['id_rol'])) :?>
     $conexio->close();
 ?>
 
-<?php
-
-if(isset($_POST['modificar']))
-{
-}
-$conexio->close();
-
-include ("conexio.php");
-$conexio = crearConexio();
-if ($conexio->connect_error)
-{
-    die('Error de conexión: ' . $conexion->connect_error);
-}
-
-$sql_update = "UPDATE ATRACCIO SET nom_atraccio='$nom_atraccio', tipus_atraccio='$tipus_atraccio', altura_min='$altura_min', altura_max='$altura_max', accessibilitat='$accessibilitat', acces_express='$acces_express' WHERE id_atraccio=$id_atraccio";
-$result = $conexio->query($sql);
-if ($conexio->query($sql_update) === TRUE) {
-  echo "actualitzat correctament";
-}else{
-  echo "error actualitzar";
-}
-?>
-
 
 <div class="jumbotron text-center" width="100%" style="margin-bottom:0">
   <div class="row">
