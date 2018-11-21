@@ -142,8 +142,6 @@ if (!isset($_SESSION['id_rol'])) :?>
 <?php endif ?>
 
 <?php
-    header('Cache-Control: no-cache');
-    header('Pragma: no-cache');
     include ("conexio.php");
     include ("classes/classeAtraccio.php");
     $conexio = crearConexio();
@@ -282,6 +280,7 @@ if (!isset($_SESSION['id_rol'])) :?>
 
           $sql_update = "UPDATE ATRACCIO SET nom_atraccio='$nom_atraccio', tipus_atraccio='$tipus_atraccio', altura_min='$altura_min', altura_max='$altura_max', accessibilitat='$accessibilitat', acces_express='$acces_express' WHERE id_atraccio=$id_atraccio";
             if (mysqli_query($conexio, $sql_update)) {
+                header('Location: http://82.213.253.249/Atraccions/consulta_test.php');
                 echo "Record updated successfully";
             } else {
                 echo "Error updating record: " . mysqli_error($conexio);
