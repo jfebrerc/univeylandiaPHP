@@ -280,8 +280,6 @@ if(isset($_POST['modificar']))
   $accessibilitat2 = $_POST['accessibilitatmod'];
   $accesse2 = $_POST['acces_expressmod'];
 
-  include ("conexio.php");
-  $conexio = crearConexio();
   if ($conexio->connect_error)
   {
       die('Error de conexión: ' . $conexion->connect_error);
@@ -295,7 +293,7 @@ if(isset($_POST['modificar']))
     echo "error actualitzar";
   }
 }
-
+$conexio->close();
 ?>
 
 
