@@ -167,8 +167,8 @@ if (!isset($_SESSION['id_rol'])) :?>
     echo '      <th scope="col"></th>';
     echo '    </tr>';
     echo '  </thead>';
-    if (mysqli_num_rows($result) {
-        while($row = mysqli_fetch_assoc($result)) {
+    if ($result) {
+        while($row = $result->fetch_assoc()) {
           $id_atraccio = $row["id_atraccio"];
           echo '  <tbody>';
           echo '    <tr>';
@@ -258,7 +258,7 @@ if (!isset($_SESSION['id_rol'])) :?>
         echo "0 results";
     }
     echo '</table>';
-    mysqli_close($conexio);
+    $conexio->close();
 ?>
 
 <div class="jumbotron text-center" width="100%" style="margin-bottom:0">
