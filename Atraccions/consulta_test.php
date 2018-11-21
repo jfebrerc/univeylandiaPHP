@@ -262,7 +262,7 @@ if (!isset($_SESSION['id_rol'])) :?>
           </div>';
             if (isset($_POST['modificar'])) {
               try {
-                echo modificar_atraccio($id_atraccio, $nom_atraccio, $tipus_atraccio, $altura_min, $altura_max, $accessibilitat, $acces_express);
+                $modificar = modificar_atraccio($id_atraccio, $nom_atraccio, $tipus_atraccio, $altura_min, $altura_max, $accessibilitat, $acces_express);
               } catch (\Exception $e) {
                 echo "erroret ".$e;
               }
