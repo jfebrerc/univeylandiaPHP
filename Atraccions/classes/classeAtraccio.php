@@ -59,12 +59,6 @@ class Atraccio{
 
   /* METODES */
   public function modificar_atraccio($id_atraccio2, $nom_atraccio2, $tipus_atraccio2, $altura_min2, $altura_max2, $accessibilitat2, $acces_express2){
-    include ("conexio.php");
-    $conexio = crearConexio();
-    if ($conexio->connect_error)
-    {
-        die('Error de conexión: ' . $conexion->connect_error);
-    }
     $sql_update = "UPDATE ATRACCIO SET nom_atraccio='$nom_atraccio2', tipus_atraccio='$tipus_atraccio2', altura_min='$altura_min2', altura_max='$altura_max2', accessibilitat='$accessibilitat2', acces_express='$acces_express2' WHERE id_atraccio=$id_atraccio2";
     if ($conexio->query($sql_update) === TRUE) {
         echo "Record updated successfully";
