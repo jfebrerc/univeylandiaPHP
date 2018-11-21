@@ -208,11 +208,11 @@ if (!isset($_SESSION['id_rol'])) :?>
                 <div class="modal-body">
                   <p>'.$id_atraccio.'</p>
                   <div class="container">
-                    <form>
+                    <form method="post">
                     <div class="form-group row">
                       <label for="example-text-input" class="col-2 col-form-label">Nom</label>
                       <div class="col-10">
-                        <input class="form-control" type="text" value="'.$nom_atraccio.'" id="example-text-input" name="nom_atracciomod">
+                        <input class="form-control" type="text" value="'.$row["nom_atraccio"].'" id="example-text-input" name="nom_atracciomod">
                       </div>
                       </div>
                       <div class="form-group row">
@@ -273,6 +273,13 @@ if (!isset($_SESSION['id_rol'])) :?>
 
 if(isset($_POST['modificar']))
 {
+  $nom2 = $_POST['nom_atracciomod'];
+  $tipus2 = $_POST['tipus_atracciomod'];
+  $alturamin2 = $_POST['altura_minimamod'];
+  $alturamax2 = $_POST['altura_maximamod'];
+  $accessibilitat2 = $_POST['accessibilitatmod'];
+  $accesse2 = $_POST['acces_expressmod'];
+
   include ("conexio.php");
   $conexio = crearConexio();
   if ($conexio->connect_error)
@@ -280,7 +287,7 @@ if(isset($_POST['modificar']))
       die('Error de conexión: ' . $conexion->connect_error);
   }
 
-  $sql_update = "UPDATE ATRACCIO SET nom_atraccio='$nom_atraccio', tipus_atraccio='$tipus_atraccio', altura_min='$altura_min', altura_max='$altura_max', accessibilitat='$accessibilitat', acces_express='$acces_express' WHERE id_atraccio=$id_atraccio";
+  $sql_update = "UPDATE ATRACCIO SET nom_atraccio='$nom2', tipus_atraccio='$tipus2', altura_min='$alturamin2', altura_max='$alturamax2', accessibilitat='$accessibilitat2', acces_express='$accesse2' WHERE id_atraccio=$id_atraccio";
   $result = $conexio->query($sql);
   if ($conexio->query($sql_update) === TRUE) {
     echo "actualitzat correctament";
