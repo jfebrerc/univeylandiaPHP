@@ -260,7 +260,7 @@ if (!isset($_SESSION['id_rol'])) :?>
             </div>
           </div>';
 
-            if (isset($_POST['modificar'])) {
+            /*if (isset($_POST['modificar'])) {
               $nom2 = $_POST['nom_atracciomod'];
               $tipus2 = $_POST['tipus_atracciomod'];
               $alturamin2 = $_POST['altura_minimamod'];
@@ -273,7 +273,7 @@ if (!isset($_SESSION['id_rol'])) :?>
               } else {
                   echo "Error updating record: " . $conexio->error;
               }
-            }
+            }*/
         }
     } else {
         echo "0 results";
