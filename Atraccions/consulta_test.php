@@ -202,39 +202,39 @@ if (!isset($_SESSION['id_rol'])) :?>
                   <div class="container">
                     <form>
                     <div class="form-group row">
-                      <label for="example-text-input" class="col-2 col-form-label">Text</label>
+                      <label for="example-text-input" class="col-2 col-form-label">Nom</label>
                       <div class="col-10">
-                        <input class="form-control" type="text" value="Artisanal kale" id="example-text-input">
+                        <input class="form-control" type="text" value="" id="example-text-input">
                       </div>
                       </div>
                       <div class="form-group row">
-                      <label for="example-search-input" class="col-2 col-form-label">Search</label>
+                      <label for="example-search-input" class="col-2 col-form-label">Tipus</label>
                       <div class="col-10">
-                        <input class="form-control" type="search" value="How do I shoot web" id="example-search-input">
+                        <input class="form-control" type="text" value="" id="example-search-input">
                       </div>
                       </div>
                       <div class="form-group row">
-                      <label for="example-email-input" class="col-2 col-form-label">Email</label>
+                      <label for="example-email-input" class="col-2 col-form-label">Altura min</label>
                       <div class="col-10">
-                        <input class="form-control" type="email" value="bootstrap@example.com" id="example-email-input">
+                        <input class="form-control" type="text" value="" id="example-email-input">
                       </div>
                       </div>
                       <div class="form-group row">
-                      <label for="example-url-input" class="col-2 col-form-label">URL</label>
+                      <label for="example-url-input" class="col-2 col-form-label">Altura max</label>
                       <div class="col-10">
-                        <input class="form-control" type="url" value="https://getbootstrap.com" id="example-url-input">
+                        <input class="form-control" type="text" value="" id="example-url-input">
                       </div>
                       </div>
                       <div class="form-group row">
-                      <label for="example-tel-input" class="col-2 col-form-label">Telephone</label>
+                      <label for="example-tel-input" class="col-2 col-form-label">Aceesibilitat</label>
                       <div class="col-10">
-                        <input class="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input">
+                        <input class="form-control" type="text" value="" id="example-tel-input">
                       </div>
                       </div>
                       <div class="form-group row">
-                      <label for="example-password-input" class="col-2 col-form-label">Password</label>
+                      <label for="example-password-input" class="col-2 col-form-label">Acces expres</label>
                       <div class="col-10">
-                        <input class="form-control" type="password" value="hunter2" id="example-password-input">
+                        <input class="form-control" type="password" value="" id="example-password-input">
                       </div>
                       </div>
                       <div class="form-group row">
