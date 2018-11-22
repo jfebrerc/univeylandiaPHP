@@ -132,7 +132,7 @@ class Atraccio{
   }*/
 
   public function gestionarEmpleats(){
-    $conexio = crearConexio();
+    $conexio = crearConexio2();
     if ($conexio->connect_error)
     {
         die('Error de conexión: ' . $conexion->connect_error);

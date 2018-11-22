@@ -1,5 +1,5 @@
 <?php
-    function crearConexio(){
+    function crearConexio2(){
         $servidor   = "localhost";
         $nombreBD   = "univeylandia";
         $usuario    = "admin_web";
