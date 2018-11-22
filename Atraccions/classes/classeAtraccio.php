@@ -412,7 +412,7 @@ class Atraccio{
     $conexio = crearConexio();
     $id_atraccio = $_POST['id_atraciomod'];
     $nom_atraccio = $_POST['nom_atracciomod'];
-    $tipus_atraccio = $_POST['tipus_atracciomod'];
+    $tipus_atraccio = $_POST['tipus_atracciomod'];  //Extrema, mitjana, familiar, aquatica
     $altura_min = $_POST['altura_minimamod'];
     $altura_max = $_POST['altura_maximamod'];
     $accessibilitat = $_POST['accessibilitatmod'];
@@ -421,7 +421,7 @@ class Atraccio{
     $sql_update = "UPDATE ATRACCIO SET nom_atraccio='$nom_atraccio', tipus_atraccio='$tipus_atraccio', altura_min='$altura_min', altura_max='$altura_max', accessibilitat='$accessibilitat', acces_express='$acces_express' WHERE id_atraccio=$id_atraccio";
       if (mysqli_query($conexio, $sql_update)) {
           echo '<script>window.location.href = window.location.href + "?positivet";</script>';
-          echo "oket";
+          echo "<p> oket </p>";
       } else {
           echo "Error updating record: " . mysqli_error($conexio);
       }
