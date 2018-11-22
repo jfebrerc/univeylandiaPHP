@@ -314,10 +314,10 @@ class Atraccio{
         $acces_express = $row["acces_express"];
         $data_creacio_registre = $row["data_creacio_registre"];
 
-        if ($accessibilitat = 1) {
+        if ($accessibilitat == 1) {
           $mostrarAccessibilitat = "Si";
         }
-        if ($accessibilitat = 0) {
+        if ($accessibilitat == 0) {
           $mostrarAccessibilitat = "No";
         }
 
