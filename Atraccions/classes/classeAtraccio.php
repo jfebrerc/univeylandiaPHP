@@ -278,12 +278,11 @@ class Atraccio{
   public static function llistarEmpleats(){
 
   include ("conexio.php");
-  //include ("classes/classeAtraccio.php");
-  $conexio = crearConexio();
-  if ($conexio->connect_error)
-  {
-      die('Error de conexión: ' . $conexion->connect_error);
-  }
+  //$conexio = crearConexio();
+  //if ($conexio->connect_error)
+  //{
+  //    die('Error de conexión: ' . $conexion->connect_error);
+  //}
 
   $sql = "SELECT * FROM ATRACCIO";
   $result = $conexio->query($sql);
