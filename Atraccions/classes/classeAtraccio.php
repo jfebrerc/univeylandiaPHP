@@ -400,23 +400,7 @@ class Atraccio{
           </div>
         </div>';
       }
-      if (isset($_POST['modificar'])) {
-        $id_atraccio = $_POST['id_atraciomod'];
-        $nom_atraccio = $_POST['nom_atracciomod'];
-        $tipus_atraccio = $_POST['tipus_atracciomod'];
-        $altura_min = $_POST['altura_minimamod'];
-        $altura_max = $_POST['altura_maximamod'];
-        $accessibilitat = $_POST['accessibilitatmod'];
-        $acces_express = $_POST['acces_expressmod'];
 
-        $sql_update = "UPDATE ATRACCIO SET nom_atraccio='$nom_atraccio', tipus_atraccio='$tipus_atraccio', altura_min='$altura_min', altura_max='$altura_max', accessibilitat='$accessibilitat', acces_express='$acces_express' WHERE id_atraccio=$id_atraccio";
-          if (mysqli_query($conexio, $sql_update)) {
-              echo "<script>window.location.href='consulta_test2.php';</script>";
-              echo "oket";
-          } else {
-              echo "Error updating record: " . mysqli_error($conexio);
-          }
-          }
   } else {
       //echo "0 results";
   }
