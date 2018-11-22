@@ -365,23 +365,14 @@ class Atraccio{
                     <div class="form-group row">
                     <label for="example-search-input" class="col-2 col-form-label">Tipus</label>
                     <div class="col-10">
-                      <select class="custom-select" name="tipus_atracciomod">'.
+                      <select class="custom-select" name="tipus_atracciomod">';
                       if ($tipus_atraccio == "Extrema") {
-                        '<option selected value="'.$tipus_atraccio.'">'.$tipus_atraccio.'</option>
+                        echo '<option selected value="'.$tipus_atraccio.'">'.$tipus_atraccio.'</option>
                         <option value="Mitjana">Mitjana</option>
                         <option value="Familiar">Familiar</option>
-                        <option value="Aquatica">Aquatica</option>'
+                        <option value="Aquatica">Aquatica</option>';
                       }
-                      if ($tipus_atraccio == "Mitjana") {
-                        // code...
-                      }
-                      if ($tipus_atraccio == "Familiar") {
-                        // code...
-                      }
-                      if ($tipus_atraccio == "Aquatica") {
-                        // code...
-                      }
-                      .'
+                      echo '
                       </select>
                     </div>
                     </div>
