@@ -129,9 +129,9 @@ class Atraccio{
       $sql ="DELETE FROM ATRACCIO WHERE id"
 
 
-  }
+  }*/
 
 
 
-}*/
+}
 ?>
