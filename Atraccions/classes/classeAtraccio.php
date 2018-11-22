@@ -421,7 +421,7 @@ class Atraccio{
     }
     echo '</table>';
     $conexio->close();
-    return echo "fdspilkjfdslkdsj";
+    return "sdgfdgf";
   }
 
 }
