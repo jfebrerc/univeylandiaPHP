@@ -99,7 +99,7 @@ class Atraccio{
     $this->accesExpress=$accesExpress;
   }
 
-  public function Registrar(){
+  /*public function Registrar(){
     try{
       $conexio = crearConexio();
       $sql = "INSERT INTO ATRACCIO (nom_atraccio,tipus_atraccio,data_inauguracio,altura_min,altura_max,accessibilitat,acces_express) VALUES (?,?,?,?,?,?,?);";
@@ -122,7 +122,7 @@ class Atraccio{
           return false;
 
     }
-  }
+  }*/
   /*public function Eliminar(){
     try{
       $connection = crearConnexio();
