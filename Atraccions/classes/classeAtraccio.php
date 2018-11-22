@@ -329,7 +329,7 @@ class Atraccio{
         echo '      <td>'.$row["data_inauguracio"].'</td>';
         echo '      <td>'.$row["altura_min"].'</td>';
         echo '      <td>'.$row["altura_max"].'</td>';
-        echo '      <td>'.$row["accessibilitat"].'</td>';
+        echo '      <td>'.$mostrarAccessibilitat.'</td>';
         echo '      <td>'.$row["acces_express"].'</td>';
         echo '      <td>'.$row["data_creacio_registre"].'</td>';
         echo '      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter'.$id_atraccio.'"> Modificar
