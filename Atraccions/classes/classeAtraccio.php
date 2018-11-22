@@ -399,7 +399,7 @@ class Atraccio{
             </div>
           </div>';
         }
-        /*if (isset($_POST['modificar'])) {
+        if (isset($_POST['modificar'])) {
           $id_atraccio = $_POST['id_atraciomod'];
           $nom_atraccio = $_POST['nom_atracciomod'];
           $tipus_atraccio = $_POST['tipus_atracciomod'];
@@ -418,11 +418,10 @@ class Atraccio{
             }
     } else {
         //echo "0 results";
-    }*/
+    }
     echo '</table>';
     $conexio->close();
   }
-}
 
 }
 ?>
