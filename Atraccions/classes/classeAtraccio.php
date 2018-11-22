@@ -1,5 +1,5 @@
 <?php
-include_once("connection.php");
+//include("connection.php");
 class Atraccio{
   /*Atributs*/ //Faltaran mes Atributs
   private $idAtraccio;
@@ -115,12 +115,11 @@ class Atraccio{
           $sentencia->close();
           return "Error en el registre.";
         }
-        }
-    catch(Exception $error){
-      echo $error;
-      $connection->close();
-      $sentencia->close();
-      return false;
+        }catch(Exception $error){
+          echo $error;
+          $connection->close();
+          $sentencia->close();
+          return false;
 
     }
   }
