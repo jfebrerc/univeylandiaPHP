@@ -419,10 +419,6 @@ class Atraccio{
                         <option value="1">Si</option>';
                       }
                       echo'
-
-                        <option selected value="1">'.$mostrarAccessibilitat.'</option>
-                        <option value="1">Si</option>
-                        <option value="0">No</option>
                       </select>
                     </div>
                     </div>
