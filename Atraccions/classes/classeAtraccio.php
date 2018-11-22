@@ -1,5 +1,5 @@
 <?php
-//include("conexio.php");
+include ("conexio.php");
 class Atraccio{
   /*Atributs*/ //Faltaran mes Atributs
   private $idAtraccio;
@@ -277,8 +277,8 @@ class Atraccio{
 
   public static function llistarEmpleats(){
 
-  include ("conexio.php");
-  //$conexio = crearConexio();
+
+  $conexio = crearConexio();
   //if ($conexio->connect_error)
   //{
   //    die('Error de conexión: ' . $conexion->connect_error);
@@ -409,6 +409,7 @@ class Atraccio{
   }
 
   public static function modificarAtraccio(){
+    $conexio = crearConexio();
     $id_atraccio = $_POST['id_atraciomod'];
     $nom_atraccio = $_POST['nom_atracciomod'];
     $tipus_atraccio = $_POST['tipus_atracciomod'];
@@ -424,6 +425,7 @@ class Atraccio{
       } else {
           echo "Error updating record: " . mysqli_error($conexio);
       }
+      $conexio->close();
   }
 
 }
