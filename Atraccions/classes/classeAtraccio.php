@@ -316,7 +316,8 @@ class Atraccio{
 
         if ($accessibilitat = 1) {
           $mostrarAccessibilitat = "Si";
-        }else {
+        }
+        if ($accessibilitat = 0) {
           $mostrarAccessibilitat = "No";
         }
 
