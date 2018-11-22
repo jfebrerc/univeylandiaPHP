@@ -422,7 +422,7 @@ class Atraccio{
     echo '</table>';
     $conexio->close();
   }
-
+}
 
 }
 ?>
