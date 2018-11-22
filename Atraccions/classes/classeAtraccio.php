@@ -409,7 +409,17 @@ class Atraccio{
                     <div class="form-group row">
                     <label for="example-tel-input" class="col-2 col-form-label">Accesibilitat</label>
                     <div class="col-10">
-                      <select class="custom-select" name="accessibilitatmod">
+                      <select class="custom-select" name="accessibilitatmod">';
+                      if ($accessibilitat == 1) {
+                        echo '<option selected value="1">Si</option>
+                        <option value="0">No</option>';
+                      }
+                      if ($accessibilitat == ) {
+                        echo '<option selected value="0">No</option>
+                        <option value="1">Si</option>';
+                      }
+                      echo'
+
                         <option selected value="1">'.$mostrarAccessibilitat.'</option>
                         <option value="1">Si</option>
                         <option value="0">No</option>
