@@ -372,6 +372,24 @@ class Atraccio{
                         <option value="Familiar">Familiar</option>
                         <option value="Aquatica">Aquatica</option>';
                       }
+                      if ($tipus_atraccio == "Mitjana") {
+                        echo '<option selected value="'.$tipus_atraccio.'">'.$tipus_atraccio.'</option>
+                        <option value="Mitjana">Extrema</option>
+                        <option value="Familiar">Familiar</option>
+                        <option value="Aquatica">Aquatica</option>';
+                      }
+                      if ($tipus_atraccio == "Familiar") {
+                        echo '<option selected value="'.$tipus_atraccio.'">'.$tipus_atraccio.'</option>
+                        <option value="Mitjana">Mitjana</option>
+                        <option value="Familiar">Extrema</option>
+                        <option value="Aquatica">Aquatica</option>';
+                      }
+                      if ($tipus_atraccio == "Aquatica") {
+                        echo '<option selected value="'.$tipus_atraccio.'">'.$tipus_atraccio.'</option>
+                        <option value="Mitjana">Mitjana</option>
+                        <option value="Familiar">Familiar</option>
+                        <option value="Aquatica">Extrema</option>';
+                      }
                       echo '
                       </select>
                     </div>
