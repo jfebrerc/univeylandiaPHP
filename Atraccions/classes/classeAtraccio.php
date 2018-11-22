@@ -313,6 +313,13 @@ class Atraccio{
         $accessibilitat = $row["accessibilitat"];
         $acces_express = $row["acces_express"];
         $data_creacio_registre = $row["data_creacio_registre"];
+
+        if ($accessibilitat = 1) {
+          $mostrarAccessibilitat = "Si";
+        }else {
+          $mostrarAccessibilitat = "No";
+        }
+
         echo '  <tbody>';
         echo '    <tr>';
         echo '      <th scope="row">'.$row["id_atraccio"].'</th>';
@@ -382,7 +389,7 @@ class Atraccio{
                     <label for="example-tel-input" class="col-2 col-form-label">Accesibilitat</label>
                     <div class="col-10">
                       <select class="custom-select" name="accessibilitatmod">
-                        <option selected disabled>'.$accessibilitat.'</option>
+                        <option selected disabled>'.$mostrarAccessibilitat.'</option>
                         <option value="1">Si</option>
                         <option value="0">No</option>
                       </select>
