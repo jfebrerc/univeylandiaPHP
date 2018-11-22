@@ -359,10 +359,11 @@ class Atraccio{
                     <div class="col-10">
                       <input class="form-control" type="text" value="'.$tipus_atraccio.'" id="example-text-input" name="tipus_atracciomod">
                       <select class="custom-select">
-                        <option selected disabled>Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option selected disabled>'.$tipus_atraccio.'</option>
+                        <option value="Extrema">Extrema</option>
+                        <option value="Mitjana">Mitjana</option>
+                        <option value="Familiar">Familiar</option>
+                        <option value="Aquatica">Aquatica</option>
                       </select>
                     </div>
                     </div>
