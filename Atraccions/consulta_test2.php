@@ -142,8 +142,8 @@ if (!isset($_SESSION['id_rol'])) :?>
 <?php endif ?>
 
 <?php
-  include ("classes/classeAtraccio.php");
-  echo llistarEmpleats();
+  //include ("classes/classeAtraccio.php");
+  //echo llistarEmpleats();
 ?>
 
 
