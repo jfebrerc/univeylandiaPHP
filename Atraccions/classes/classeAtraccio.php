@@ -1,5 +1,5 @@
 <?php
-include("conexio.php");
+//include("conexio.php");
 class Atraccio{
   /*Atributs*/ //Faltaran mes Atributs
   private $idAtraccio;
