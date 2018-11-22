@@ -275,7 +275,7 @@ class Atraccio{
     $conexio->close();
   }*/
 
-  public function llistarEmpleats(){
+  public static function llistarEmpleats(){
 
   include ("conexio.php");
   //include ("classes/classeAtraccio.php");

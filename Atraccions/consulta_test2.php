@@ -143,7 +143,8 @@ if (!isset($_SESSION['id_rol'])) :?>
 
 <?php
   include ("classes/classeAtraccio.php");
-  llistarEmpleats();
+  //classeAtraccio = new Atraccio();
+  Atraccio::llistarEmpleats();
 ?>
 
 
