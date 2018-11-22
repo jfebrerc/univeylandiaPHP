@@ -142,7 +142,7 @@ if (!isset($_SESSION['id_rol'])) :?>
 <?php endif ?>
 
 <?php
-    /*include ("conexio.php");
+    include ("conexio.php");
     include ("classes/classeAtraccio.php");
     $conexio = crearConexio();
     if ($conexio->connect_error)
@@ -285,7 +285,7 @@ if (!isset($_SESSION['id_rol'])) :?>
         //echo "0 results";
     }
     echo '</table>';
-    $conexio->close();*/
+    $conexio->close();
 ?>
 
 

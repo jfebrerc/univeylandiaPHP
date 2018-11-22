@@ -130,7 +130,7 @@ class Atraccio{
 
 
   }*/
-  public function gestionarEmpleats(){
+  /*public function gestionarEmpleats(){
     $conexio = crearConexio();
     if ($conexio->connect_error)
     {
@@ -273,7 +273,7 @@ class Atraccio{
     }
     echo '</table>';
     $conexio->close();
-  }
+  }*/
 
 }
 ?>
