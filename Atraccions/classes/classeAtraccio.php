@@ -1,5 +1,5 @@
 <?php
-//include("conexio.php");
+include("conexio.php");
 class Atraccio{
   /*Atributs*/ //Faltaran mes Atributs
   private $idAtraccio;
@@ -131,7 +131,7 @@ class Atraccio{
 
   }*/
 
-  /*public function gestionarEmpleats(){
+  public function gestionarEmpleats(){
     $conexio = crearConexio2();
     if ($conexio->connect_error)
     {
@@ -276,7 +276,7 @@ class Atraccio{
     }
     echo '</table>';
     $conexio->close();
-  }*/
+  }
 
 
 
