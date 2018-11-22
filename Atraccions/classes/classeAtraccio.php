@@ -101,23 +101,23 @@ class Atraccio{
 
   public function Registrar(){
     try{
-      $connection = crearConnexio();
+      $conexio = crearConnexio();
       $sql = "INSERT INTO ATRACCIO (nom_atraccio,tipus_atraccio,data_inauguracio,altura_min,altura_max,accessibilitat,acces_express) VALUES (?,?,?,?,?,?,?);";
-        $sentencia = $connection->prepare($sql);
+        $sentencia = $conexio->prepare($sql);
         $sentencia->bind_param("sssiiii",$this->nomAtraccio,$this->tipusAtraccio,$this->dataInauguracio,$this->alturaMin,$this->alturaMax,$this->accessibilitat,$this->accesExpress);
         if($sentencia->execute()){
-          $connection->close();
+          $conexio->close();
           $sentencia->close();
           return true;
         }
         else{
-          $connection->close();
+          $conexio->close();
           $sentencia->close();
           return "Error en el registre.";
         }
         }catch(Exception $error){
           echo $error;
-          $connection->close();
+          $conexio->close();
           $sentencia->close();
           return false;
 
@@ -132,7 +132,6 @@ class Atraccio{
   }*/
 
   public function gestionarEmpleats(){
-    $conexio = crearConexio2();
     if ($conexio->connect_error)
     {
         die('Error de conexión: ' . $conexion->connect_error);
