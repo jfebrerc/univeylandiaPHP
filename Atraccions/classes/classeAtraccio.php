@@ -357,7 +357,7 @@ class Atraccio{
                     <div class="form-group row">
                     <label for="example-search-input" class="col-2 col-form-label">Tipus</label>
                     <div class="col-10">
-                      <select class="custom-select">
+                      <select class="custom-select" name="tipus_atracciomod">
                         <option selected disabled>'.$tipus_atraccio.'</option>
                         <option value="Extrema">Extrema</option>
                         <option value="Mitjana">Mitjana</option>
