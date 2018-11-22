@@ -390,7 +390,7 @@ class Atraccio{
                     <label for="example-tel-input" class="col-2 col-form-label">Accesibilitat</label>
                     <div class="col-10">
                       <select class="custom-select" name="accessibilitatmod">
-                        <option selected disabled>'.$mostrarAccessibilitat.'</option>
+                        <option selected disabled value="1">'.$mostrarAccessibilitat.'</option>
                         <option value="1">Si</option>
                         <option value="0">No</option>
                       </select>
