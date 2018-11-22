@@ -142,7 +142,7 @@ if (!isset($_SESSION['id_rol'])) :?>
 <?php endif ?>
 
 <?php
-    include ("classes/classeAtraccio.php");
+    //include ("classes/classeAtraccio.php");
     //gestionarEmpleats();
 ?>
 

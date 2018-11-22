@@ -143,7 +143,7 @@ if (!isset($_SESSION['id_rol'])) :?>
 
 <?php
     include ("conexio.php");
-    include ("classes/classeAtraccio.php");
+    //include ("classes/classeAtraccio.php");
     $conexio = crearConexio();
     if ($conexio->connect_error)
     {
