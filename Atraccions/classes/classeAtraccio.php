@@ -414,7 +414,7 @@ class Atraccio{
                         echo '<option selected value="1">Si</option>
                         <option value="0">No</option>';
                       }
-                      if ($accessibilitat == ) {
+                      if ($accessibilitat == 0) {
                         echo '<option selected value="0">No</option>
                         <option value="1">Si</option>';
                       }
