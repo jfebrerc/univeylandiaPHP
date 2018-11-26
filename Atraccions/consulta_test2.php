@@ -156,7 +156,7 @@ if (!isset($_SESSION['id_rol'])) :?>
   </form>';
   //classeAtraccio = new Atraccio();
   if (isset($_POST['buscar_atraccio'])) {
-    Atraccio::llistarEmpleatsBusqueda();
+    Atraccio::llistarEmpleats();
   }else {
     Atraccio::llistarEmpleats();
   }
