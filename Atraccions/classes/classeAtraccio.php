@@ -347,7 +347,7 @@ class Atraccio{
   //    die('Error de conexión: ' . $conexion->connect_error);
   //}
 
-  $sql = "SELECT top 3 * FROM ATRACCIO";
+  $sql = "SELECT * FROM ATRACCIO";
   $result = $conexio->query($sql);
   echo '<table class="table">';
   echo '  <thead>';
