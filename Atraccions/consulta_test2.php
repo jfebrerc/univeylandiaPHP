@@ -155,7 +155,11 @@ if (!isset($_SESSION['id_rol'])) :?>
   <button type="submit" class="btn btn-primary">Buscar</button>
 </form>';
   //classeAtraccio = new Atraccio();
-  Atraccio::llistarEmpleats();
+  if (isset($_POST['modificar'])) {
+    Atraccio::llistarEmpleatsBusqueda();
+  }else {
+    Atraccio::llistarEmpleats();
+  }
   if (isset($_POST['modificar'])) {
       Atraccio::modificarAtraccio();
       }
