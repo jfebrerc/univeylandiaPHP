@@ -23,3 +23,6 @@
 .submenu{
   min-width: 0rem !important;
 }
+#principal_body{
+  margin-left: 50px;
+}

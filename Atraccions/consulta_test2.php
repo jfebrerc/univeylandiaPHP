@@ -140,7 +140,7 @@ if (!isset($_SESSION['id_rol'])) :?>
 </div>
 </nav>
 <?php endif ?>
-
+<div id="principal_body">
 <?php
   include ("classes/classeAtraccio.php");
   echo '<form method="post">
@@ -165,7 +165,7 @@ if (!isset($_SESSION['id_rol'])) :?>
       }
 
 ?>
-
+</div>
 
 <div class="jumbotron text-center" width="100%" style="margin-bottom:0">
   <div class="row">
