@@ -146,7 +146,7 @@ if (!isset($_SESSION['id_rol'])) :?>
   echo '<form method="post">
   <div class="form-group row">
   <div class="col-10">
-    <input class="form-control" type="text" id="example-text-input" name="busqueda_atraccio" placeholder="buscar...">
+    <input class="form-control" type="text" id="example-text-input" name="busqueda_atraccio" placeholder="Buscar...">
   </div>
     <div class="form-group row">
       <div class="offset-sm-2 col-sm-10">
