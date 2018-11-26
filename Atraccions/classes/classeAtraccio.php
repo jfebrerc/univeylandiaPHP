@@ -349,7 +349,7 @@ class Atraccio{
   $busqueda = $_POST['busqueda_atraccio'];
   //$_POST['busqueda_atraccio']
 
-  $sql = "SELECT * FROM ATRACCIO where nom_atraccio like '%$busqueda%'";
+  $sql = "SELECT * FROM ATRACCIO where nom_atraccio like '%$busqueda%' or tipus_atraccio like '%$busqueda%' or data_inauguracio like '%$busqueda%' or altura_min like '%$busqueda%' or altura_max like '%$busqueda%'";
   $result = $conexio->query($sql);
   echo '<table class="table">';
   echo '  <thead>';
