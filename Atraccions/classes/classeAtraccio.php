@@ -346,7 +346,7 @@ class Atraccio{
   //{
   //    die('Error de conexión: ' . $conexion->connect_error);
   //}
-  $busqueda = 'Dragon';
+  $busqueda = $_POST['busqueda_atraccio'];
   //$_POST['busqueda_atraccio']
 
   $sql = "SELECT * FROM ATRACCIO where nom_atraccio like '%$busqueda%'";
