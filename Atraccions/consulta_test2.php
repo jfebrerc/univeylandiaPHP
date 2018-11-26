@@ -143,6 +143,17 @@ if (!isset($_SESSION['id_rol'])) :?>
 
 <?php
   include ("classes/classeAtraccio.php");
+  echo '<form class="form-inline" method="post">
+  <div class="form-group">
+    <label class="sr-only"></label>
+    <p class="form-control-static"></p>
+  </div>
+  <div class="form-group mx-sm-3">
+    <label for="inputPassword2" class="sr-only"></label>
+    <input type="text" class="form-control" id="inputPassword2" placeholder="Buscar..." name="busqueda_form">
+  </div>
+  <button type="submit" class="btn btn-primary">Buscar</button>
+</form>';
   //classeAtraccio = new Atraccio();
   Atraccio::llistarEmpleats();
   if (isset($_POST['modificar'])) {
