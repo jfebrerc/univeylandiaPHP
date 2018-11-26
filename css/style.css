@@ -24,5 +24,6 @@
   min-width: 0rem !important;
 }
 #principal_body{
+  margin-top: 50px;
   margin-left: 50px;
 }
