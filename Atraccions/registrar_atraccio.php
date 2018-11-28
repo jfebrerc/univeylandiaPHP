@@ -4,14 +4,14 @@
 include_once ("classeAtraccio.php");
 include_once $_SERVER['DOCUMENT_ROOT']."/Atraccions/classes/classeAtraccio"
 
-$atraccio = new Atraccio ($_POST['nom'],$_POST['tipusatraccio'],$_POST['datainauguracio'],$_POST['alturamin'],$_POST['alturamax'],$_POST['accessible'],$_POST['accesexpress']);
+$Atraccio = new Atraccio ($_POST['nom'],$_POST['tipusatraccio'],$_POST['datainauguracio'],$_POST['alturamin'],$_POST['alturamax'],$_POST['accessible'],$_POST['accesexpress']);
 
-$atraccio->Registrar();
-
-
+$Atraccio->Registrar();
 
 
-if($atraccio->Registrar() == true){
+
+
+if($Atraccio->Registrar() == true){
   //header('Location: ./registreAtraccions.php');
     header('Location: ./registreAtraccions.php');
 }
