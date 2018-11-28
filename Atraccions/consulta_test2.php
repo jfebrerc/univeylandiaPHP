@@ -163,6 +163,9 @@ if (!isset($_SESSION['id_rol'])) :?>
   if (isset($_POST['modificar'])) {
       Atraccio::modificarAtraccio();
       }
+  if (isset($_POST['Acceptar'])){
+    Atraccio::eliminarAtraccio();
+  }
 
 ?>
 </div>

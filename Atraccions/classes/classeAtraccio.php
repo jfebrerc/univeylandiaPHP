@@ -1,5 +1,5 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT']."/univeylandia/connection.php";
+include_once ("conexio.php");
 class Atraccio{
   /*Atributs*/ //Faltaran mes Atributs
   private $idAtraccio;
@@ -101,35 +101,53 @@ class Atraccio{
 
   public function Registrar(){
 
-      $connection = crearConnexio();
+      $conexio = crearConexio();
       $sql = "INSERT INTO ATRACCIO (nom_atraccio,tipus_atraccio,data_inauguracio,altura_min,altura_max,accessibilitat,acces_express) VALUES (?,?,?,?,?,?,?);";
-        $sentencia = $connection->prepare($sql);
+        $sentencia = $conexio->prepare($sql);
         $sentencia->bind_param("sssiiii",$this->nomAtraccio,$this->tipusAtraccio,$this->dataInauguracio,$this->alturaMin,$this->alturaMax,$this->accessibilitat,$this->accesExpress);
         if($sentencia->execute()){
           $sentencia->close();
-          $connection->close();
+          $conexio->close();
           return true;
         }
         else{
           $sentencia->close();
-          $connection->close();
+          $conexio->close();
           return "Error en el registre.";
           return false;
         }
 
   }
+  public function Registrar(){
 
+      $conexio = crearConexio();
+      $sql = "INSERT INTO ATRACCIO (nom_atraccio,tipus_atraccio,data_inauguracio,altura_min,altura_max,accessibilitat,acces_express) VALUES (?,?,?,?,?,?,?);";
+        $sentencia = $conexio->prepare($sql);
+        $sentencia->bind_param("sssiiii",$this->nomAtraccio,$this->tipusAtraccio,$this->dataInauguracio,$this->alturaMin,$this->alturaMax,$this->accessibilitat,$this->accesExpress);
+        if($sentencia->execute()){
+          $sentencia->close();
+          $conexio->close();
+          return true;
+        }
+        else{
+          $sentencia->close();
+          $conexio->close();
+          return "Error en el registre.";
+          return false;
+        }
+
+  }
   public static function llistarEmpleats(){
 
 
-  $connection = crearConnexio();
+  $conexio = crearConexio();
   //if ($conexio->connect_error)
   //{
   //    die('Error de conexión: ' . $conexion->connect_error);
   //}
 
   $sql = "SELECT * FROM ATRACCIO";
-  $result = $connection->query($sql);
+  $result = $conexio->query($sql);
   echo '<table class="table">';
   echo '  <thead>';
   echo '    <tr>';
@@ -334,12 +352,12 @@ class Atraccio{
       //echo "0 results";
   }
   echo '</table>';
-  $connection->close();
+  $conexio->close();
 
   }
 
   public static function modificarAtraccio(){
-    $connection = crearConnexio();
+    $conexio = crearConexio();
     $id_atraccio = $_POST['id_atraciomod'];
     $nom_atraccio = $_POST['nom_atracciomod'];
     $tipus_atraccio = $_POST['tipus_atracciomod'];  //Extrema, mitjana, familiar, aquatica
@@ -349,22 +367,22 @@ class Atraccio{
     $acces_express = $_POST['acces_expressmod'];
 
     $sql_update = "UPDATE ATRACCIO SET nom_atraccio='$nom_atraccio', tipus_atraccio='$tipus_atraccio', altura_min='$altura_min', altura_max='$altura_max', accessibilitat='$accessibilitat', acces_express='$acces_express' WHERE id_atraccio=$id_atraccio";
-      if (mysqli_query($connection, $sql_update)) {
+      if (mysqli_query($conexio, $sql_update)) {
           echo '<script>window.location.href = window.location.href + "?positivet";</script>';
           echo "<p> oket </p>";
       } else {
-          echo "Error updating record: " . mysqli_error($connection);
+          echo "Error updating record: " . mysqli_error($conexio);
       }
-      $connection->close();
+      $conexio->close();
   }
   public static function eliminarAtraccio(){
-      $connection = crearConnexio();
+      $conexio = crearConexio();
       $id_atraccioE = $_POST['id_atraccioelim'];
       $sql_eliminar ="DELETE FROM ATRACCIO WHERE id_atraccio ='$id_atraccioE'";
-        if (mysqli_query($connection, $sql_eliminar)) {
+        if (mysqli_query($conexio, $sql_eliminar)) {
           echo "Record updated successfully";
         }else {
-          echo "Error updating record: " . mysqli_error($connection);
+          echo "Error updating record: " . mysqli_error($conexio);
       }
         //echo "0 results";
     }
