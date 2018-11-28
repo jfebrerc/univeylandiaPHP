@@ -118,25 +118,6 @@ class Atraccio{
         }
 
   }
-  public function Registrar(){
-
-      $conexio = crearConexio();
-      $sql = "INSERT INTO ATRACCIO (nom_atraccio,tipus_atraccio,data_inauguracio,altura_min,altura_max,accessibilitat,acces_express) VALUES (?,?,?,?,?,?,?);";
-        $sentencia = $conexio->prepare($sql);
-        $sentencia->bind_param("sssiiii",$this->nomAtraccio,$this->tipusAtraccio,$this->dataInauguracio,$this->alturaMin,$this->alturaMax,$this->accessibilitat,$this->accesExpress);
-        if($sentencia->execute()){
-          $sentencia->close();
-          $conexio->close();
-          return true;
-        }
-        else{
-          $sentencia->close();
-          $conexio->close();
-          return "Error en el registre.";
-          return false;
-        }
-
-  }
   public static function llistarEmpleats(){
 
 
