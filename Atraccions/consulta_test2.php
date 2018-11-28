@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
   <style>
   .fakeimg {
       height: 200px;
@@ -140,17 +140,32 @@ if (!isset($_SESSION['id_rol'])) :?>
 </div>
 </nav>
 <?php endif ?>
-
+<div id="principal_body">
 <?php
   include ("classes/classeAtraccio.php");
+  echo '<form method="post">
+  <div class="form-group row">
+  <div class="col-10">
+    <input class="form-control" type="text" id="example-text-input" name="busqueda_atraccio" placeholder="Buscar...">
+  </div>
+    <div class="form-group row">
+      <div class="offset-sm-2 col-sm-10">
+        <input type="submit" class="btn btn-primary" name="buscar_atraccio" value="Buscar"">
+  </div>
+    </div>
+  </form>';
   //classeAtraccio = new Atraccio();
-  Atraccio::llistarEmpleats();
+  if (isset($_POST['buscar_atraccio'])) {
+    Atraccio::llistarEmpleatsBusqueda();
+  }else {
+    Atraccio::llistarEmpleats();
+  }
   if (isset($_POST['modificar'])) {
       Atraccio::modificarAtraccio();
       }
 
 ?>
-
+</div>
 
 <div class="jumbotron text-center" width="100%" style="margin-bottom:0">
   <div class="row">
