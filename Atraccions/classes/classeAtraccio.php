@@ -1,5 +1,5 @@
 <?php
-include_once ("conexio.php");
+include_once $_SERVER['DOCUMENT_ROOT']."/univeylandia/connection.php";
 class Atraccio{
   /*Atributs*/ //Faltaran mes Atributs
   private $idAtraccio;
@@ -21,8 +21,8 @@ class Atraccio{
    }
   }
 
-  function __construct8($idAtraccio,$nomAtraccio,$tipusAtraccio,$dataInauguracio,$alturaMin,$alturaMax,$accessibilitat,$accesExpress){
-    $this->idAtraccio=$idAtraccio;
+  public function __construct7($nomAtraccio,$tipusAtraccio,$dataInauguracio,$alturaMin,$alturaMax,$accessibilitat,$accesExpress){
+    $this->idAtraccio=NULL;
     $this->nomAtraccio=$nomAtraccio;
     $this->tipusAtraccio=$tipusAtraccio;
     $this->dataInauguracio=$dataInauguracio;
@@ -99,42 +99,37 @@ class Atraccio{
     $this->accesExpress=$accesExpress;
   }
 
-  /*public function Registrar(){
-    try{
-      $conexio = crearConexio();
+  public function Registrar(){
+
+      $connection = crearConnexio();
       $sql = "INSERT INTO ATRACCIO (nom_atraccio,tipus_atraccio,data_inauguracio,altura_min,altura_max,accessibilitat,acces_express) VALUES (?,?,?,?,?,?,?);";
-        $sentencia = $conexio->prepare($sql);
+        $sentencia = $connection->prepare($sql);
         $sentencia->bind_param("sssiiii",$this->nomAtraccio,$this->tipusAtraccio,$this->dataInauguracio,$this->alturaMin,$this->alturaMax,$this->accessibilitat,$this->accesExpress);
         if($sentencia->execute()){
-          $conexio->close();
           $sentencia->close();
+          $connection->close();
           return true;
         }
         else{
-          $conexio->close();
           $sentencia->close();
+          $connection->close();
           return "Error en el registre.";
-        }
-        }catch(Exception $error){
-          echo $error;
-          $conexio->close();
-          $sentencia->close();
           return false;
+        }
 
-    }
-  }*/
+  }
 
   public static function llistarEmpleats(){
 
 
-  $conexio = crearConexio();
+  $connection = crearConnexio();
   //if ($conexio->connect_error)
   //{
   //    die('Error de conexión: ' . $conexion->connect_error);
   //}
 
   $sql = "SELECT * FROM ATRACCIO";
-  $result = $conexio->query($sql);
+  $result = $connection->query($sql);
   echo '<table class="table">';
   echo '  <thead>';
   echo '    <tr>';
@@ -190,10 +185,35 @@ class Atraccio{
         echo '      <td>'.$row["data_creacio_registre"].'</td>';
         echo '      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter'.$id_atraccio.'"> Modificar
                     </button></td>';
-        echo '      <td><a href=#> Eliminar </a></td>';
+        echo '      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalEliminar'.$id_atraccio.'"> Eliminar
+                    </button></td>';
         echo '    </tr>';
         echo '  </tbody>';
-
+        echo '<!-- Modal -->
+        <div class="modal fade" id="ModalEliminar'.$id_atraccio.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Atenció!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                <form method="post">
+                <input class="form-control" type="text" value="'.$id_atraccio.'" id="example-text-input" name="id_atraccioelim" style="display: none;">
+                Segur que vols eliminar aquesta atracció?
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <input type="submit" class="btn btn-primary" name="Acceptar" value="Acceptar"">
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>';
         echo '<!-- Modal -->
         <div class="modal fade" id="exampleModalCenter'.$id_atraccio.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -314,12 +334,12 @@ class Atraccio{
       //echo "0 results";
   }
   echo '</table>';
-  $conexio->close();
+  $connection->close();
 
   }
 
   public static function modificarAtraccio(){
-    $conexio = crearConexio();
+    $connection = crearConnexio();
     $id_atraccio = $_POST['id_atraciomod'];
     $nom_atraccio = $_POST['nom_atracciomod'];
     $tipus_atraccio = $_POST['tipus_atracciomod'];  //Extrema, mitjana, familiar, aquatica
@@ -329,14 +349,31 @@ class Atraccio{
     $acces_express = $_POST['acces_expressmod'];
 
     $sql_update = "UPDATE ATRACCIO SET nom_atraccio='$nom_atraccio', tipus_atraccio='$tipus_atraccio', altura_min='$altura_min', altura_max='$altura_max', accessibilitat='$accessibilitat', acces_express='$acces_express' WHERE id_atraccio=$id_atraccio";
-      if (mysqli_query($conexio, $sql_update)) {
+      if (mysqli_query($connection, $sql_update)) {
           echo '<script>window.location.href = window.location.href + "?positivet";</script>';
           echo "<p> oket </p>";
       } else {
-          echo "Error updating record: " . mysqli_error($conexio);
+          echo "Error updating record: " . mysqli_error($connection);
       }
-      $conexio->close();
+      $connection->close();
   }
+  public static function eliminarAtraccio(){
+      $connection = crearConnexio();
+      $id_atraccioE = $_POST['id_atraccioelim'];
+      $sql_eliminar ="DELETE FROM ATRACCIO WHERE id_atraccio ='$id_atraccioE'";
+        if (mysqli_query($connection, $sql_eliminar)) {
+          echo "Record updated successfully";
+        }else {
+          echo "Error updating record: " . mysqli_error($connection);
+      }
+        //echo "0 results";
+    }
+
+
+
+
 
 }
+
+
 ?>
