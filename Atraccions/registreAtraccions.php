@@ -82,15 +82,15 @@
         <div class="col-sm-12">
           <div class="form-group">
             <label>Nom de l'Atraccio</label>
-            <input type="text" class="form-control" name="nom">
+            <input type="text" class="form-control" name="nom" required>
           </div>
           <div class="form-group">
             <label>Altura minima</label>
-            <input type="text" class="form-control" name="alturamin">
+            <input type="text" class="form-control" name="alturamin" required>
           </div>
           <div class="form-group">
             <label>Altura maxima</label>
-            <input type="text" class="form-control" name="alturamax">
+            <input type="text" class="form-control" name="alturamax" required>
           </div>
           <div class="form-group">
             <label>Data d'Innauguracio</label>
@@ -100,7 +100,7 @@
             <div class="col-3">
               <div class="form-group">
                 <label>Tipus d'atracció</label>
-                  <select name="tipusatraccio">
+                  <select name="tipusatraccio" required>
                       <option value="Extrema">Extrema</option>
                       <option value="Mitjana">Mitjana</option>
                       <option value="Familiar">Familiar</option>
@@ -109,9 +109,9 @@
             </div>
 
             <div class="col-3">
-              <div class="form-group">
+              <div class="form-group" >
                 <label>Accessibilitat</label>
-                <select name="accessible">
+                <select name="accessible" required>
                   <option value="1">SI</option>
                   <option value="0">NO</option>
                 </select>
@@ -120,7 +120,7 @@
             <div class="col-3">
               <div class="form-group">
                 <label>Acces Express</label>
-                <select name="accesexpress">
+                <select name="accesexpress" required>
                   <option value="1">SI</option>
                   <option value="0">NO</option>
                 </select>
