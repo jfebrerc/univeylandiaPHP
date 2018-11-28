@@ -202,7 +202,7 @@ class Atraccio{
                 <div class="container">
                 <form method="post">
                 <input class="form-control" type="text" value="'.$id_atraccio.'" id="example-text-input" name="id_atraccioelim" style="display: none;">
-                Segur que vols eliminar aquesta atracció?
+                Segur que vols eliminar la atracció.'$nom_atraccio'.?
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -361,6 +361,7 @@ class Atraccio{
       $id_atraccioE = $_POST['id_atraccioelim'];
       $sql_eliminar ="DELETE FROM ATRACCIO WHERE id_atraccio ='$id_atraccioE'";
         if (mysqli_query($conexio, $sql_eliminar)) {
+          echo '<script>window.location.href = window.location.href + "?positivet";</script>';
           echo "Record updated successfully";
         }else {
           echo "Error updating record: " . mysqli_error($conexio);
