@@ -330,7 +330,7 @@ if($_SESSION['rol'] != 3) {
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
         <?php
 		  include_once $_SERVER['DOCUMENT_ROOT']."/php/classes/classeAtraccio.php";
-		  echo '<form method="post">
+		  echo '<form method="post" style="margin-top=50px;">
 		  <div class="form-group row">
 		  <div class="col-10">
 			<input class="form-control" type="text" id="example-text-input" name="busqueda_atraccio" placeholder="Buscar...">
