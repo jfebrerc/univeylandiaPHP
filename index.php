@@ -1,3 +1,7 @@
+<?php
+session_start();
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +33,7 @@
           <a class="nav-link" href="img/mapa_parc.jpg">Mapa</a>
         </li>
       <li>
-        <a class="nav-link" href="login.php">Login</a>
+        <a class="nav-link" href="login.php">Login <?php echo $_SESSION['username']; ?></a>
       </li>
       </ul>
     </div>
@@ -50,7 +54,7 @@
         </ul>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="Atraccions/index.php">Atraccions</a>
+        <a class="nav-link" href="#">Atraccions</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle "  href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Hotel      </a>
@@ -62,8 +66,8 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle "  href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Entrades      </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <li><a class="dropdown-item" href="Entrades/parc/entrades1.php">Parc</a></li>
-          <li><a class="dropdown-item" href="Entrades/hoteliparc/entrades2.php">Parc+Hotel</a></li>
+          <li><a class="dropdown-item" href="#">Parc</a></li>
+          <li><a class="dropdown-item" href="#">Parc+Hotel</a></li>
         </ul>
       </li>
 
@@ -94,18 +98,6 @@
   </a>
 </div>
 <!-- FI SLIDER -->
-<div class="container" style="margin-top:30px">
-  <div class="row">
-    <div class="col-sm-12">
-      <h1 class="font-weight-bold text-center text-uppercase">top promocions 2018-2019</1>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-12">
-      <img src="img/promocions/promocio1.jpg" class="img-fluid" alt="Responsive image">
-    </div>
-  </div>
-</div>
 
 
 <!-- NOTICIES -->

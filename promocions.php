@@ -36,7 +36,7 @@
   </nav>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark py-4">
-  <a class="navbar-brand" href="index.php">Navbar</a>
+  <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -46,7 +46,7 @@
         <a class="nav-link dropdown-toggle "  href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Parc      </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <li><a class="dropdown-item" href="noticies/noticies_1.php">Noticies</a></li>
-          <li><a class="dropdown-item" href="promocions.php">Promocions</a></li>
+          <li><a class="dropdown-item" href="#">Promocions</a></li>
         </ul>
       </li>
       <li class="nav-item">
@@ -71,7 +71,6 @@
   </div>
 </nav>
 
-
 <!-- PROMOCIONS -->
 <div class="container" style="margin-top:30px">
   <div class="row">
@@ -81,31 +80,7 @@
   </div>
   <div class ="row">
     <div class="col-sm-6">
-      <img src="img/promocions/promocio1.jpg" class="img-fluid" alt="Responsive image">
-    </div>
-    <div class="col-sm-6">
-      <img src="img/promocions/promocio1.jpg" class="img-fluid" alt="Responsive image">
-    </div>
-  </div>
-  <br>
-  <div class ="row">
-    <div class="col-sm-12">
-      <img src="img/promocions/promocio1.jpg" class="img-fluid" alt="Responsive image">
-    </div>
-  </div>
-  <br>
-  <div class ="row">
-    <div class="col-sm-3">
-      <img src="img/promocions/promocio1.jpg" class="img-fluid" alt="Responsive image">
-    </div>
-    <div class="col-sm-3">
-      <img src="img/promocions/promocio1.jpg" class="img-fluid" alt="Responsive image">
-    </div>
-    <div class="col-sm-3">
-      <img src="img/promocions/promocio1.jpg" class="img-fluid" alt="Responsive image">
-    </div>
-    <div class="col-sm-3">
-      <img src="img/promocions/promocio1.jpg" class="img-fluid" alt="Responsive image">
+      <img src="img/promocions/promocio1.jpg">  
     </div>
   </div>
 </div>
