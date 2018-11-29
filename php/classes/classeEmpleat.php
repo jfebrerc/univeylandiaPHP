@@ -177,7 +177,7 @@ class Empleat {
       //$stmt->fetch();
 
       $isValid = password_verify($this->pass, $hash);
-
+		var_dump($isValid);
       if ($isValid)
       {
         echo 'VALID';
