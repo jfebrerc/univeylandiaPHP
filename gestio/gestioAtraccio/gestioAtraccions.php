@@ -63,7 +63,7 @@ if($_SESSION['rol'] != 3) {
             </li>
 
             <li class="nav-item">
-              <a class="nav-link active" data-toggle="collapse" aria-expanded="true" href="#submenu0">
+              <a class="nav-link active" data-toggle="collapse" aria-expanded="flase" href="#submenu0">
                 <span data-feather="users"></span>
                 Gestionar Empleats
                 <span data-feather="chevron-right"></span>
@@ -107,7 +107,7 @@ if($_SESSION['rol'] != 3) {
             </ul>
 
             <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" aria-expanded="false" href="#submenu3">
+              <a class="nav-link" data-toggle="collapse" aria-expanded="true" href="#submenu3">
                 <span data-feather="trending-down"></span>
                 Gestionar Atraccions
                 <span data-feather="chevron-right"></span>
