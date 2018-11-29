@@ -63,15 +63,15 @@ if($_SESSION['rol'] != 3) {
             </li>
 
             <li class="nav-item">
-              <a class="nav-link active" data-toggle="collapse" aria-expanded="flase" href="#submenu0">
+              <a class="nav-link " data-toggle="collapse" aria-expanded="false" href="#submenu0">
                 <span data-feather="users"></span>
                 Gestionar Empleats
                 <span data-feather="chevron-right"></span>
               </a>
             </li>
-            <ul class="nav flex-column collapse show" id="submenu0" data-parent="#sidebar">
+            <ul class="nav flex-column collapse" id="submenu0" data-parent="#sidebar">
               <li class="nav-item">
-                <a class="nav-link nav-interior active" href="../gestioEmpleat/crearEmpleat.php"><span data-feather="user-plus"></span>Crear Empleat</a>
+                <a class="nav-link nav-interior " href="../gestioEmpleat/crearEmpleat.php"><span data-feather="user-plus"></span>Crear Empleat</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link nav-interior" href="#../gestioEmpleat/llistarEmpleat.php"><span data-feather="file-text"></span>Llistar Empleats</a>
@@ -107,13 +107,13 @@ if($_SESSION['rol'] != 3) {
             </ul>
 
             <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" aria-expanded="true" href="#submenu3">
+              <a class="nav-link active" data-toggle="collapse" aria-expanded="true" href="#submenu3">
                 <span data-feather="trending-down"></span>
                 Gestionar Atraccions
                 <span data-feather="chevron-right"></span>
               </a>
             </li>
-            <ul class="nav flex-column collapse" id="submenu3" data-parent="#sidebar">
+            <ul class="nav flex-column collapse show" id="submenu3" data-parent="#sidebar">
               <li class="nav-item">
                 <a class="nav-link nav-interior" href="#../gestioAtraccio/"><span data-feather="plus-square"></span>Crear Atracció</a>
               </li>
