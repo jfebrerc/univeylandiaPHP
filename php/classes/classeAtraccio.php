@@ -361,7 +361,7 @@ class Atraccio{
       $id_atraccioE = $_POST['id_atraccioelim'];
       $sql_eliminar ="DELETE FROM ATRACCIO WHERE id_atraccio ='$id_atraccioE'";
         if (mysqli_query($conexio, $sql_eliminar)) {
-          echo '<script>window.location.href = window.location.href + "?positivet";</script>';
+          echo '<script>window.location.href = window.location.href + "?negativet";</script>';
           echo "Record updated successfully";
         }else {
           echo "Error updating record: " . mysqli_error($conexio);
