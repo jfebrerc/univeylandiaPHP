@@ -1,10 +1,19 @@
+<?php
+session_start();
+if(!isset($_SESSION['username'])) {
+  header("location: login.php");
+}
+if($_SESSION['rol'] != 3) {
+  header('Location: ../../index.php');
+}
+ ?>
 <!doctype html>
 <html lang="es">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="icon" href="../../img/icon.png">
+  <link rel="icon" href="/img/icon.png">
 
   <title>Univeylandia - Gestió</title>
 
@@ -13,12 +22,12 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 
   <!-- Estils custom -->
-  <link href="../../css/styleGestio.css" rel="stylesheet">
+  <link href="/css/styleGestio.css" rel="stylesheet">
 </head>
 
   <body>
     <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow justify-content-between">
-      <a class="navbar-brand col-sm-4 col-md-2 mr-0" href="#">Univeylandia - Gestió</a>
+      <a class="navbar-brand col-sm-4 col-md-2 mr-0" href="../index.php">Univeylandia - Gestió</a>
 
       <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -27,13 +36,13 @@
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
           <a class="nav-link" href="#"><span data-feather="user"></span>
-            admin
+            <?php echo $_SESSION['username']?>
           </a>
         </li>
       </ul>
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-          <a class="nav-link" href="#"><span data-feather="log-out"></span>
+          <a class="nav-link" href="/logout.php"><span data-feather="log-out"></span>
             Tancar sessió
           </a>
         </li>
@@ -46,7 +55,7 @@
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link" href="../index.html">
+                <a class="nav-link" href="../index.php">
                   <span data-feather="home"></span>
                   Inici
                 </a>
@@ -83,16 +92,16 @@
               </li>
               <ul class="nav flex-column collapse show" id="submenu1" data-parent="#sidebar">
                 <li class="nav-item">
-                  <a class="nav-link nav-interior" href="../gestioClient/crearClient.html"><span data-feather="user-plus"></span>Crear Client</a>
+                  <a class="nav-link nav-interior" href="../gestioClient/crearClient.php"><span data-feather="user-plus"></span>Crear Client</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link nav-interior active" href="../gestioClient/llistarClients.html"><span data-feather="file-text"></span>Llistar Clients</a>
+                  <a class="nav-link nav-interior active" href="../gestioClient/llistarClients.php"><span data-feather="file-text"></span>Llistar Clients</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link nav-interior" href="../gestioClient/modificarClient.html"><span data-feather="edit"></span>Modificar Client</a>
+                  <a class="nav-link nav-interior" href="../gestioClient/modificarClient.php"><span data-feather="edit"></span>Modificar Client</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link nav-interior" href="../gestioClient/eliminarClient.html"><span data-feather="user-minus"></span>Eliminar Client</a>
+                  <a class="nav-link nav-interior" href="../gestioClient/eliminarClient.php"><span data-feather="user-minus"></span>Eliminar Client</a>
                 </li>
               </ul>
 
@@ -136,19 +145,19 @@
 
                   <ul class="nav flex-column collapse" id="sub-submenu1" data-parent="#submenu4">
                     <li class="nav-item">
-                      <a class="nav-link nav-interior2" href="../gestioHotel/habitacio/inserirHabitacio.html"><span data-feather="star"></span>Inserir Habitacions</a>
+                      <a class="nav-link nav-interior2" href="../gestioHotel/habitacio/inserirHabitacio.php"><span data-feather="star"></span>Inserir Habitacions</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link nav-interior2"  href="../gestioHotel/habitacio/eliminarHabitacio.html"><span data-feather="star"></span>Eliminar Habitacions</a>
+                      <a class="nav-link nav-interior2"  href="../gestioHotel/habitacio/eliminarHabitacio.php"><span data-feather="star"></span>Eliminar Habitacions</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link nav-interior2"  href="../gestioHotel/habitacio/modificarHabitacio.html"><span data-feather="star"></span>Modificar Habitacions</a>
+                      <a class="nav-link nav-interior2"  href="../gestioHotel/habitacio/modificarHabitacio.php"><span data-feather="star"></span>Modificar Habitacions</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link nav-interior2"  href="../gestioHotel/habitacio/consultarHabitacio.html"><span data-feather="star"></span>Consultar Habitacions</a>
+                      <a class="nav-link nav-interior2"  href="../gestioHotel/habitacio/consultarHabitacio.php"><span data-feather="star"></span>Consultar Habitacions</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link nav-interior2"  href="../gestioHotel/habitacio/llistarHabitacio.html"><span data-feather="star"></span>Llistar Habitacions</a>
+                      <a class="nav-link nav-interior2"  href="../gestioHotel/habitacio/llistarHabitacio.php"><span data-feather="star"></span>Llistar Habitacions</a>
                     </li>
                   </ul>
 
@@ -162,19 +171,19 @@
 
                 <ul class="nav flex-column collapse" id="sub-submenu3" data-parent="#submenu4">
                     <li class="nav-item">
-                      <a class="nav-link nav-interior2"  href="../gestioHotel/reservaHabitacio/inserirReservaHabitacio.html"><span data-feather="star"></span>Inserir Reserva Hab</a>
+                      <a class="nav-link nav-interior2"  href="../gestioHotel/reservaHabitacio/inserirReservaHabitacio.php"><span data-feather="star"></span>Inserir Reserva Hab</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link nav-interior2" href="../gestioHotel/reservaHabitacio/eliminarReservaHabitacio.html"><span data-feather="star"></span>Eliminar Reserva Hab</a>
+                      <a class="nav-link nav-interior2" href="../gestioHotel/reservaHabitacio/eliminarReservaHabitacio.php"><span data-feather="star"></span>Eliminar Reserva Hab</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link nav-interior2" href="../gestioHotel/reservaHabitacio/modificarReservaHabitacio.html"><span data-feather="star"></span>Modificar Reserva Hab</a>
+                      <a class="nav-link nav-interior2" href="../gestioHotel/reservaHabitacio/modificarReservaHabitacio.php"><span data-feather="star"></span>Modificar Reserva Hab</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link nav-interior2" href="../gestioHotel/reservaHabitacio/consultarReservaHabitacio.html"><span data-feather="star"></span>Consultar Reserva Hab</a>
+                      <a class="nav-link nav-interior2" href="../gestioHotel/reservaHabitacio/consultarReservaHabitacio.php"><span data-feather="star"></span>Consultar Reserva Hab</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link nav-interior2" href="../gestioHotel/reservaHabitacio/llistarReservaHabitacio.html"><span data-feather="star"></span>Llistar Reserva Hab</a>
+                      <a class="nav-link nav-interior2" href="../gestioHotel/reservaHabitacio/llistarReservaHabitacio.php"><span data-feather="star"></span>Llistar Reserva Hab</a>
                     </li>
                 </ul>
 
@@ -188,19 +197,19 @@
 
                 <ul class="nav flex-column collapse" id="sub-submenu2" data-parent="#submenu4">
                   <li class="nav-item">
-                    <a class="nav-link nav-interior2" href="../gestioHotel/restaurant/inserirTaula.html"><span data-feather="star"></span>Inserir Taula</a>
+                    <a class="nav-link nav-interior2" href="../gestioHotel/restaurant/inserirTaula.php"><span data-feather="star"></span>Inserir Taula</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link nav-interior2" href="../gestioHotel/restaurant/eliminarTaula.html"><span data-feather="star"></span>Eliminar Taula</a>
+                    <a class="nav-link nav-interior2" href="../gestioHotel/restaurant/eliminarTaula.php"><span data-feather="star"></span>Eliminar Taula</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link nav-interior2" href="../gestioHotel/restaurant/modificarTaula.html"><span data-feather="star"></span>Modificar Taula</a>
+                    <a class="nav-link nav-interior2" href="../gestioHotel/restaurant/modificarTaula.php"><span data-feather="star"></span>Modificar Taula</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link nav-interior2"  href="../gestioHotel/restaurant/consultarTaula.html"><span data-feather="star"></span>Consultar Taula</a>
+                    <a class="nav-link nav-interior2"  href="../gestioHotel/restaurant/consultarTaula.php"><span data-feather="star"></span>Consultar Taula</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link nav-interior2"  href="../gestioHotel/restaurant/llistarTaula.html"><span data-feather="star"></span>Llistar Taula</a>
+                    <a class="nav-link nav-interior2"  href="../gestioHotel/restaurant/llistarTaula.php"><span data-feather="star"></span>Llistar Taula</a>
                   </li>
                 </ul>
 
@@ -214,19 +223,19 @@
 
                 <ul class="nav flex-column collapse" id="sub-submenu4" data-parent="#submenu4">
                     <li class="nav-item">
-                      <a class="nav-link nav-interior2" href="../gestioHotel/reservaRestaurant/inserirReservaTaula.html"><span data-feather="star"></span>Inserir Reserva Taula</a>
+                      <a class="nav-link nav-interior2" href="../gestioHotel/reservaRestaurant/inserirReservaTaula.php"><span data-feather="star"></span>Inserir Reserva Taula</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link nav-interior2" href="../gestioHotel/reservaRestaurant/eliminarReservaTaula.html"><span data-feather="star"></span>Eliminar Reserva Taula</a>
+                      <a class="nav-link nav-interior2" href="../gestioHotel/reservaRestaurant/eliminarReservaTaula.php"><span data-feather="star"></span>Eliminar Reserva Taula</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link nav-interior2" href="../gestioHotel/reservaRestaurant/modificarReservaTaula.html"><span data-feather="star"></span>Modificar Reserva Taula</a>
+                      <a class="nav-link nav-interior2" href="../gestioHotel/reservaRestaurant/modificarReservaTaula.php"><span data-feather="star"></span>Modificar Reserva Taula</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link nav-interior2" href="../gestioHotel/reservaRestaurant/consultarReservaTaula.html"><span data-feather="star"></span>Consultar Reserva Taula</a>
+                      <a class="nav-link nav-interior2" href="../gestioHotel/reservaRestaurant/consultarReservaTaula.php"><span data-feather="star"></span>Consultar Reserva Taula</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link nav-interior2" href="../gestioHotel/reservaRestaurant/llistarReservaTaula.html"><span data-feather="star"></span>Llistar Reserva Taula</a>
+                      <a class="nav-link nav-interior2" href="../gestioHotel/reservaRestaurant/llistarReservaTaula.php"><span data-feather="star"></span>Llistar Reserva Taula</a>
                     </li>
                 </ul>
                 </ul>

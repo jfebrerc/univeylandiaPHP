@@ -4,7 +4,7 @@ if(!isset($_SESSION['username'])) {
   header("location: login.php");
 }
 if($_SESSION['rol'] != 3) {
-  header('Location: ../index.php');
+  header('Location: ../../../index.php');
 }
  ?>
 
@@ -17,7 +17,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/php/classes/classeHabitacio.php";
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="../../../img/icon.png">
+    <link rel="icon" href="/img/icon.png">
 
     <title>Univeylandia - Gestió</title>
 
@@ -26,7 +26,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/php/classes/classeHabitacio.php";
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
 
     <!-- Estils custom -->
-    <link href="../../../css/styleGestio.css" rel="stylesheet">
+    <link href="/css/styleGestio.css" rel="stylesheet">
   </head>
 
   <body>
@@ -46,7 +46,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/php/classes/classeHabitacio.php";
       </ul>
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-          <a class="nav-link" href="../../../logout.php"><span data-feather="log-out"></span>
+          <a class="nav-link" href="/logout.php"><span data-feather="log-out"></span>
             Tancar sessió
           </a>
         </li>
