@@ -1,5 +1,5 @@
 <?php
-include_once ("conexio.php");
+include_once $_SERVER['DOCUMENT_ROOT']."/php/connection.php";
 class Atraccio{
   /*Atributs*/ //Faltaran mes Atributs
   private $idAtraccio;
@@ -101,7 +101,7 @@ class Atraccio{
 
   public function Registrar(){
 
-      $conexio = crearConexio();
+      $conexio = createConnection();
       $sql = "INSERT INTO ATRACCIO (nom_atraccio,tipus_atraccio,data_inauguracio,altura_min,altura_max,accessibilitat,acces_express) VALUES (?,?,?,?,?,?,?);";
         $sentencia = $conexio->prepare($sql);
         $sentencia->bind_param("sssiiii",$this->nomAtraccio,$this->tipusAtraccio,$this->dataInauguracio,$this->alturaMin,$this->alturaMax,$this->accessibilitat,$this->accesExpress);
@@ -121,7 +121,7 @@ class Atraccio{
   public static function llistarEmpleats(){
 
 
-  $conexio = crearConexio();
+  $conexio = createConnection();
   //if ($conexio->connect_error)
   //{
   //    die('Error de conexión: ' . $conexion->connect_error);
@@ -338,7 +338,7 @@ class Atraccio{
   }
 
   public static function modificarAtraccio(){
-    $conexio = crearConexio();
+    $conexio = createConnection();
     $id_atraccio = $_POST['id_atraciomod'];
     $nom_atraccio = $_POST['nom_atracciomod'];
     $tipus_atraccio = $_POST['tipus_atracciomod'];  //Extrema, mitjana, familiar, aquatica
@@ -357,7 +357,7 @@ class Atraccio{
       $conexio->close();
   }
   public static function eliminarAtraccio(){
-      $conexio = crearConexio();
+      $conexio = createConnection();
       $id_atraccioE = $_POST['id_atraccioelim'];
       $sql_eliminar ="DELETE FROM ATRACCIO WHERE id_atraccio ='$id_atraccioE'";
         if (mysqli_query($conexio, $sql_eliminar)) {
@@ -376,7 +376,7 @@ class Atraccio{
   public static function llistarEmpleatsBusqueda(){
 
 
-  $conexio = crearConexio();
+  $conexio = createConnection();
   //if ($conexio->connect_error)
   //{
   //    die('Error de conexión: ' . $conexion->connect_error);
