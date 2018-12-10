@@ -1,81 +1,349 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+session_start();
+if(!isset($_SESSION['username'])) {
+  header("location: login.php");
+}
+if($_SESSION['rol'] != 3) {
+  header('Location: ../../index.php');
+}
+ ?>
+
+<!doctype html>
+<html lang="es">
+
 <head>
-  <title>Parc Atraccions Univeylandia</title>
-  <link rel="icon" href="img/icon.png" type="image/gif">
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-  .fakeimg {
-      height: 200px;
-      background: #aaa;
-  }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="/img/icon.png">
+
+  <title>Univeylandia - Gestió</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+
+  <!-- Estils custom -->
+  <link href="/css/styleGestio.css" rel="stylesheet">
 </head>
+
 <body>
-  <nav class="navbar navbar-expand-sm py-0">
-    <div class="collapse navbar-collapse flex-row-reverse" id="collapsibleNavbar">
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle "  href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Idioma      </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">ES</a></li>
-            <li><a class="dropdown-item" href="#">CA</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="img/mapa_parc.jpg">Mapa</a>
-        </li>
-      <li>
-        <a class="nav-link" href="login.php">Login</a>
+  <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow justify-content-between">
+    <a class="navbar-brand col-sm-4 col-md-2 mr-0" href="../index.php">Univeylandia - Gestió</a>
+
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <ul class="navbar-nav px-3">
+      <li class="nav-item text-nowrap">
+        <a class="nav-link" href="#"><span data-feather="user"></span>
+          <?php echo $_SESSION['username']?>
+        </a>
       </li>
-      </ul>
-    </div>
+    </ul>
+    <ul class="navbar-nav px-3">
+      <li class="nav-item text-nowrap">
+        <a class="nav-link" href="/logout.php"><span data-feather="log-out"></span>
+          Tancar sessió
+        </a>
+      </li>
+    </ul>
   </nav>
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark py-4">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle "  href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Parc      </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <li><a class="dropdown-item" href="noticies/noticies_1.php">Noticies</a></li>
-          <li><a class="dropdown-item" href="promocions.php">Promocions</a></li>
-        </ul>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Atraccions</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle "  href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Hotel      </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <li><a class="dropdown-item" href="#">Habitacions</a></li>
-          <li><a class="dropdown-item" href="#">Restaurants</a></li>
-        </ul>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle "  href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Entrades      </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <li><a class="dropdown-item" href="Entrades/parc/entrades1.php">Parc</a></li>
-          <li><a class="dropdown-item" href="Entrades/hoteliparc/entrades2.php">Parc+Hotel</a></li>
-        </ul>
-      </li>
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-md-2 bg-light sidebar collapse show" id="sidebar">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.php">
+                <span data-feather="home"></span>
+                Inici
+              </a>
+            </li>
 
-    </ul>
-  </div>
-</nav>
+            <li class="nav-item">
+              <a class="nav-link " data-toggle="collapse" aria-expanded="false" href="#submenu0">
+                <span data-feather="users"></span>
+                Gestionar Empleats
+                <span data-feather="chevron-right"></span>
+              </a>
+            </li>
+            <ul class="nav flex-column collapse" id="submenu0" data-parent="#sidebar">
+              <li class="nav-item">
+                <a class="nav-link nav-interior " href="../gestioEmpleat/crearEmpleat.php"><span data-feather="user-plus"></span>Crear Empleat</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-interior" href="#../gestioEmpleat/llistarEmpleat.php"><span data-feather="file-text"></span>Llistar Empleats</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-interior" href="#../gestioEmpleat/modificarEmpleat.php"><span data-feather="edit"></span>Modificar Empleat</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-interior" href="#../gestioEmpleat/eliminarEmpleat.php"><span data-feather="user-minus"></span>Eliminar Empleat</a>
+              </li>
+            </ul>
 
-<!-- Registre -->
+            <li class="nav-item">
+              <a class="nav-link " data-toggle="collapse" aria-expanded="false" href="#submenu1">
+                <span data-feather="users"></span>
+                Gestionar Clients
+                <span data-feather="chevron-right"></span>
+              </a>
+            </li>
+            <ul class="nav flex-column collapse" id="submenu1" data-parent="#sidebar">
+              <li class="nav-item">
+                <a class="nav-link nav-interior" href="../gestioClient/crearClient.php"><span data-feather="user-plus"></span>Crear Client</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-interior" href="../gestioClient/llistarClients.php"><span data-feather="file-text"></span>Llistar Clients</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-interior" href="../gestioClient/modificarClient.php"><span data-feather="edit"></span>Modificar Client</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-interior" href="../gestioClient/eliminarClient.php"><span data-feather="user-minus"></span>Eliminar Client</a>
+              </li>
+            </ul>
+
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="collapse" aria-expanded="true" href="#submenu3">
+                <span data-feather="trending-down"></span>
+                Gestionar Atraccions
+                <span data-feather="chevron-right"></span>
+              </a>
+            </li>
+            <ul class="nav flex-column collapse show" id="submenu3" data-parent="#sidebar">
+              <li class="nav-item">
+                <a class="nav-link nav-interior" href="#../gestioAtraccio/"><span data-feather="plus-square"></span>Crear Atracció</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-interior" href="#../gestioAtraccio/"><span data-feather="file-text"></span>Llistar Atraccions</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-interior" href="#../gestioAtraccio/"><span data-feather="edit"></span>Modificar Atracció</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-interior" href="#../gestioAtraccio/"><span data-feather="minus-square"></span>Eliminar Atracció</a>
+              </li>
+            </ul>
+
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" aria-expanded="false" href="#submenu4">
+                <span data-feather="briefcase"></span>
+                Gestionar Hotel
+                <span data-feather="chevron-right"></span>
+              </a>
+            </li>
+            <ul class="nav flex-column collapse" id="submenu4" data-parent="#sidebar">
+              <li class="nav-item">
+                <a class="nav-link nav-interior" data-toggle="collapse" aria-expanded="false" href="#sub-submenu1">
+                  <span data-feather="star"></span>
+                  Gestionar Habitacions
+                  <span data-feather="chevron-right"></span>
+                </a>
+              </li>
+
+                <ul class="nav flex-column collapse" id="sub-submenu1" data-parent="#submenu4">
+                  <li class="nav-item">
+                    <a class="nav-link nav-interior2" href="../gestioHotel/habitacio/inserirHabitacio.php"><span data-feather="star"></span>Inserir Habitacions</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link nav-interior2"  href="../gestioHotel/habitacio/eliminarHabitacio.php"><span data-feather="star"></span>Eliminar Habitacions</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link nav-interior2"  href="../gestioHotel/habitacio/modificarHabitacio.php"><span data-feather="star"></span>Modificar Habitacions</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link nav-interior2"  href="../gestioHotel/habitacio/consultarHabitacio.php"><span data-feather="star"></span>Consultar Habitacions</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link nav-interior2"  href="../gestioHotel/habitacio/llistarHabitacio.php"><span data-feather="star"></span>Llistar Habitacions</a>
+                  </li>
+                </ul>
+
+              <li class="nav-item">
+                <a class="nav-link nav-interior" data-toggle="collapse" aria-expanded="false" href="#sub-submenu3">
+                  <span data-feather="book-open"></span>
+                  Gestionar Reserves Habitacions
+                  <span data-feather="chevron-right"></span>
+                </a>
+              </li>
+
+              <ul class="nav flex-column collapse" id="sub-submenu3" data-parent="#submenu4">
+                  <li class="nav-item">
+                    <a class="nav-link nav-interior2"  href="../gestioHotel/reservaHabitacio/inserirReservaHabitacio.php"><span data-feather="star"></span>Inserir Reserva Hab</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link nav-interior2" href="../gestioHotel/reservaHabitacio/eliminarReservaHabitacio.php"><span data-feather="star"></span>Eliminar Reserva Hab</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link nav-interior2" href="../gestioHotel/reservaHabitacio/modificarReservaHabitacio.php"><span data-feather="star"></span>Modificar Reserva Hab</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link nav-interior2" href="../gestioHotel/reservaHabitacio/consultarReservaHabitacio.php"><span data-feather="star"></span>Consultar Reserva Hab</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link nav-interior2" href="../gestioHotel/reservaHabitacio/llistarReservaHabitacio.php"><span data-feather="star"></span>Llistar Reserva Hab</a>
+                  </li>
+              </ul>
+
+              <li class="nav-item">
+                <a class="nav-link nav-interior" data-toggle="collapse" aria-expanded="false" href="#sub-submenu2">
+                  <span data-feather="coffee"></span>
+                  Gestionar Restaurant
+                  <span data-feather="chevron-right"></span>
+                </a>
+              </li>
+
+              <ul class="nav flex-column collapse" id="sub-submenu2" data-parent="#submenu4">
+                <li class="nav-item">
+                  <a class="nav-link nav-interior2" href="../gestioHotel/restaurant/inserirTaula.php"><span data-feather="star"></span>Inserir Taula</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav-interior2" href="../gestioHotel/restaurant/eliminarTaula.php"><span data-feather="star"></span>Eliminar Taula</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav-interior2" href="../gestioHotel/restaurant/modificarTaula.php"><span data-feather="star"></span>Modificar Taula</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav-interior2"  href="../gestioHotel/restaurant/consultarTaula.php"><span data-feather="star"></span>Consultar Taula</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav-interior2"  href="../gestioHotel/restaurant/llistarTaula.php"><span data-feather="star"></span>Llistar Taula</a>
+                </li>
+              </ul>
+
+              <li class="nav-item">
+                <a class="nav-link nav-interior" data-toggle="collapse" aria-expanded="false" href="#sub-submenu4">
+                  <span data-feather="book-open"></span>
+                  Gestionar Reserves Restaurant
+                  <span data-feather="chevron-right"></span>
+                </a>
+              </li>
+
+              <ul class="nav flex-column collapse" id="sub-submenu4" data-parent="#submenu4">
+                  <li class="nav-item">
+                    <a class="nav-link nav-interior2" href="../gestioHotel/reservaRestaurant/inserirReservaTaula.php"><span data-feather="star"></span>Inserir Reserva Taula</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link nav-interior2" href="../gestioHotel/reservaRestaurant/eliminarReservaTaula.php"><span data-feather="star"></span>Eliminar Reserva Taula</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link nav-interior2" href="../gestioHotel/reservaRestaurant/modificarReservaTaula.php"><span data-feather="star"></span>Modificar Reserva Taula</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link nav-interior2" href="../gestioHotel/reservaRestaurant/consultarReservaTaula.php"><span data-feather="star"></span>Consultar Reserva Taula</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link nav-interior2" href="../gestioHotel/reservaRestaurant/llistarReservaTaula.php"><span data-feather="star"></span>Llistar Reserva Taula</a>
+                  </li>
+              </ul>
+              </ul>
+
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" aria-expanded="false" href="#submenu5">
+                <span data-feather="alert-triangle"></span>
+                Gestionar Incidències
+                <span data-feather="chevron-right"></span>
+              </a>
+            </li>
+            <ul class="nav flex-column collapse" id="submenu5" data-parent="#sidebar">
+              <li class="nav-item">
+                <a class="nav-link nav-interior" href="#../gestioIncidencia/"><span data-feather="plus-square"></span>Crear Inicidència</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-interior" href="#../gestioIncidencia/"><span data-feather="file-text"></span>Llistar Inicidències</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-interior" href="#../gestioIncidencia/"><span data-feather="edit"></span>Modificar Inicidència</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-interior" href="#../gestioIncidencia/"><span data-feather="minus-square"></span>Eliminar Inicidència</a>
+              </li>
+            </ul>
+
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" aria-expanded="false" href="#submenu6">
+                <span data-feather="truck"></span>
+                Gestionar Serveis
+                <span data-feather="chevron-right"></span>
+              </a>
+            </li>
+            <ul class="nav flex-column collapse" id="submenu6" data-parent="#sidebar">
+              <li class="nav-item">
+                <a class="nav-link nav-interior" data-toggle="collapse" aria-expanded="false" href="#sub-submenu4">
+                  <span data-feather="trash-2"></span>
+                  Gestionar Neteja
+                  <span data-feather="chevron-right"></span>
+                </a>
+              </li>
+              <ul class="nav flex-column collapse" id="sub-submenu4" data-parent="#submenu6">
+                <li class="nav-item">
+                  <a class="nav-link nav-interior2" href="#../gestioServei/neteja/"><span data-feather="plus-square"></span>Crear Tasca Neteja</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav-interior2" href="#../gestioServei/neteja/"><span data-feather="file-text"></span>Llistar Tasques Neteja</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav-interior2" href="#../gestioServei/neteja/"><span data-feather="edit"></span>Modificar Tasca Neteja</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav-interior2" href="#../gestioServei/neteja/"><span data-feather="minus-square"></span>Eliminar Tasca Neteja</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav-interior2" href="#../gestioServei/neteja/"><span data-feather="user-plus"></span>Assignar Tasca Neteja</a>
+                </li>
+              </ul>
+              <li class="nav-item">
+                <a class="nav-link nav-interior" data-toggle="collapse" aria-expanded="false" href="#sub-submenu5">
+                  <span data-feather="settings"></span>
+                  Gestionar Manteniment
+                  <span data-feather="chevron-right"></span>
+                </a>
+              </li>
+              <ul class="nav flex-column collapse" id="sub-submenu5" data-parent="#submenu6">
+                <li class="nav-item">
+                  <a class="nav-link nav-interior2" href="#../gestioServei/manteniment/"><span data-feather="plus-square"></span>Crear Tasca Manteniment</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav-interior2" href="#../gestioServei/manteniment/"><span data-feather="file-text"></span>Llistar Tasques Manteniment</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav-interior2" href="#../gestioServei/manteniment/"><span data-feather="edit"></span>Modificar Tasca Manteniment</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav-interior2" href="#../gestioServei/manteniment/"><span data-feather="minus-square"></span>Eliminar Tasca Manteniment</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav-interior2" href="#../gestioServei/manteniment/"><span data-feather="user-plus"></span>Assignar Tasca Manteniment</a>
+                </li>
+              </ul>
+            </ul>
+
+
+          </ul>
+        </div>
+      </nav>
+
+
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+	  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Registre d'Atraccions</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary">
+                  <span data-feather="save"></span>
+                  Exportar
+                </button>
+              </div>
+            </div>
+          </div>
+        <!-- Registre -->
 <div class="container jumbotron" style="margin-top:30px">
   <div class="row">
       <div class="col-sm-12">
-        <h3 class="font-weight-bold text-center text-uppercase">Registre d'Atraccions</h3>
+       
       </div>
     </div>
       <form action="registrar_atraccio.php" method="post" class="align-items-center justify-content-center d-flex">
@@ -156,67 +424,24 @@
   </div>
 </div>
 
-
-<!--  FI CONTACTA -->
-
-<div class="jumbotron text-center" width="100%" style="margin-bottom:0">
-  <div class="row">
-
-      <div class="col-sm-2">
-        <h6>Univeylandia</h6>
-        <ul class="list-inline">
-          <li><a href="#">Sobre nosaltres</a></li>
-          <li><a href="#">Reconeixements</a></li>
-          <li><a href="#">Treballa amb nosaltres</a></li>
-          <li><a href="#">Partners</a></li>
-          <li><a href="#">Contacte</a></li>
-        </ul>
-      </div>
-
-      <div class="col-sm-2">
-        <h6>Condicions</h6>
-        <ul class="list-inline">
-          <li><a href="#">Condicions generals</a></li>
-          <li><a href="#">Política de privacitat</a></li>
-          <li><a href="#">Normes del Resort</a></li>
-          <li><a href="#">Politica de cookies</a></li>
-          <li><a href="#">MAPA WEB</a></li>
-        </ul>
-      </div>
-
-      <div class="col-sm-2">
-        <h6>Parc</h6>
-        <ul class="list-inline">
-          <li><a href="#">Atraccions</a></li>
-          <li><a href="#">Hotel</a></li>
-          <li><a href="#">Restaurants</a></li>
-        </ul>
-      </div>
-
-      <div class="col-sm-3">
-        <h3>Truca'ns</h3>
-        <p>642 18 90 00</p>
-      </div>
-
-      <div class="col-sm-3">
-        <h3>Segueix-nos</h3>
-        <a href="#">
-        <img class="img_face" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjMycHgiIGhlaWdodD0iMzJweCIgdmlld0JveD0iMCAwIDQ5LjY1MiA0OS42NTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5LjY1MiA0OS42NTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMjQuODI2LDBDMTEuMTM3LDAsMCwxMS4xMzcsMCwyNC44MjZjMCwxMy42ODgsMTEuMTM3LDI0LjgyNiwyNC44MjYsMjQuODI2YzEzLjY4OCwwLDI0LjgyNi0xMS4xMzgsMjQuODI2LTI0LjgyNiAgICBDNDkuNjUyLDExLjEzNywzOC41MTYsMCwyNC44MjYsMHogTTMxLDI1LjdoLTQuMDM5YzAsNi40NTMsMCwxNC4zOTYsMCwxNC4zOTZoLTUuOTg1YzAsMCwwLTcuODY2LDAtMTQuMzk2aC0yLjg0NXYtNS4wODhoMi44NDUgICAgdi0zLjI5MWMwLTIuMzU3LDEuMTItNi4wNCw2LjA0LTYuMDRsNC40MzUsMC4wMTd2NC45MzljMCwwLTIuNjk1LDAtMy4yMTksMGMtMC41MjQsMC0xLjI2OSwwLjI2Mi0xLjI2OSwxLjM4NnYyLjk5aDQuNTZMMzEsMjUuN3ogICAgIiBmaWxsPSIjMDAwMDAwIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
-        </a>
-        <a href="#">
-          <img class="img_face" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjMycHgiIGhlaWdodD0iMzJweCIgdmlld0JveD0iMCAwIDQ5LjY1MiA0OS42NTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5LjY1MiA0OS42NTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMjQuODI2LDBDMTEuMTM3LDAsMCwxMS4xMzcsMCwyNC44MjZjMCwxMy42ODgsMTEuMTM3LDI0LjgyNiwyNC44MjYsMjQuODI2YzEzLjY4OCwwLDI0LjgyNi0xMS4xMzgsMjQuODI2LTI0LjgyNiAgICBDNDkuNjUyLDExLjEzNywzOC41MTYsMCwyNC44MjYsMHogTTM1LjkwMSwxOS4xNDRjMC4wMTEsMC4yNDYsMC4wMTcsMC40OTQsMC4wMTcsMC43NDJjMCw3LjU1MS01Ljc0NiwxNi4yNTUtMTYuMjU5LDE2LjI1NSAgICBjLTMuMjI3LDAtNi4yMzEtMC45NDMtOC43NTktMi41NjVjMC40NDcsMC4wNTMsMC45MDIsMC4wOCwxLjM2MywwLjA4YzIuNjc4LDAsNS4xNDEtMC45MTQsNy4wOTctMi40NDYgICAgYy0yLjUtMC4wNDYtNC42MTEtMS42OTgtNS4zMzgtMy45NjljMC4zNDgsMC4wNjYsMC43MDcsMC4xMDMsMS4wNzQsMC4xMDNjMC41MjEsMCwxLjAyNy0wLjA2OCwxLjUwNi0wLjE5OSAgICBjLTIuNjE0LTAuNTI0LTQuNTgzLTIuODMzLTQuNTgzLTUuNjAzYzAtMC4wMjQsMC0wLjA0OSwwLjAwMS0wLjA3MmMwLjc3LDAuNDI3LDEuNjUxLDAuNjg1LDIuNTg3LDAuNzE0ICAgIGMtMS41MzItMS4wMjMtMi41NDEtMi43NzMtMi41NDEtNC43NTVjMC0xLjA0OCwwLjI4MS0yLjAzLDAuNzczLTIuODc0YzIuODE3LDMuNDU4LDcuMDI5LDUuNzMyLDExLjc3Nyw1Ljk3MiAgICBjLTAuMDk4LTAuNDE5LTAuMTQ3LTAuODU0LTAuMTQ3LTEuMzAzYzAtMy4xNTUsMi41NTgtNS43MTQsNS43MTMtNS43MTRjMS42NDQsMCwzLjEyNywwLjY5NCw0LjE3MSwxLjgwNCAgICBjMS4zMDMtMC4yNTYsMi41MjMtMC43MywzLjYzLTEuMzg3Yy0wLjQzLDEuMzM1LTEuMzMzLDIuNDU0LTIuNTE2LDMuMTYyYzEuMTU3LTAuMTM4LDIuMjYxLTAuNDQ0LDMuMjgyLTAuODk5ICAgIEMzNy45ODcsMTcuMzM0LDM3LjAxOCwxOC4zNDEsMzUuOTAxLDE5LjE0NHoiIGZpbGw9IiMwMDAwMDAiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
-        </a>
-
-        <a href="#">
-        <img class="img_face" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjMycHgiIGhlaWdodD0iMzJweCIgdmlld0JveD0iMCAwIDQ5LjY1MiA0OS42NTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5LjY1MiA0OS42NTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8Zz4KCQk8Zz4KCQkJPHBhdGggZD0iTTI0LjgyNSwyOS43OTZjMi43MzksMCw0Ljk3Mi0yLjIyOSw0Ljk3Mi00Ljk3YzAtMS4wODItMC4zNTQtMi4wODEtMC45NC0yLjg5N2MtMC45MDMtMS4yNTItMi4zNzEtMi4wNzMtNC4wMjktMi4wNzMgICAgIGMtMS42NTksMC0zLjEyNiwwLjgyLTQuMDMxLDIuMDcyYy0wLjU4OCwwLjgxNi0wLjkzOSwxLjgxNS0wLjk0LDIuODk3QzE5Ljg1NCwyNy41NjYsMjIuMDg1LDI5Ljc5NiwyNC44MjUsMjkuNzk2eiIgZmlsbD0iIzAwMDAwMCIvPgoJCQk8cG9seWdvbiBwb2ludHM9IjM1LjY3OCwxOC43NDYgMzUuNjc4LDE0LjU4IDM1LjY3OCwxMy45NiAzNS4wNTUsMTMuOTYyIDMwLjg5MSwxMy45NzUgMzAuOTA3LDE4Ljc2MiAgICAiIGZpbGw9IiMwMDAwMDAiLz4KCQkJPHBhdGggZD0iTTI0LjgyNiwwQzExLjEzNywwLDAsMTEuMTM3LDAsMjQuODI2YzAsMTMuNjg4LDExLjEzNywyNC44MjYsMjQuODI2LDI0LjgyNmMxMy42ODgsMCwyNC44MjYtMTEuMTM4LDI0LjgyNi0yNC44MjYgICAgIEM0OS42NTIsMTEuMTM3LDM4LjUxNiwwLDI0LjgyNiwweiBNMzguOTQ1LDIxLjkyOXYxMS41NmMwLDMuMDExLTIuNDQ4LDUuNDU4LTUuNDU3LDUuNDU4SDE2LjE2NCAgICAgYy0zLjAxLDAtNS40NTctMi40NDctNS40NTctNS40NTh2LTExLjU2di01Ljc2NGMwLTMuMDEsMi40NDctNS40NTcsNS40NTctNS40NTdoMTcuMzIzYzMuMDEsMCw1LjQ1OCwyLjQ0Nyw1LjQ1OCw1LjQ1N1YyMS45Mjl6IiBmaWxsPSIjMDAwMDAwIi8+CgkJCTxwYXRoIGQ9Ik0zMi41NDksMjQuODI2YzAsNC4yNTctMy40NjQsNy43MjMtNy43MjMsNy43MjNjLTQuMjU5LDAtNy43MjItMy40NjYtNy43MjItNy43MjNjMC0xLjAyNCwwLjIwNC0yLjAwMywwLjU2OC0yLjg5NyAgICAgaC00LjIxNXYxMS41NmMwLDEuNDk0LDEuMjEzLDIuNzA0LDIuNzA2LDIuNzA0aDE3LjMyM2MxLjQ5MSwwLDIuNzA2LTEuMjEsMi43MDYtMi43MDR2LTExLjU2aC00LjIxNyAgICAgQzMyLjM0MiwyMi44MjMsMzIuNTQ5LDIzLjgwMiwzMi41NDksMjQuODI2eiIgZmlsbD0iIzAwMDAwMCIvPgoJCTwvZz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
-        </a>
-      </div>
-      <?php echo "ivan"; ?>
-
+      </main>
+    </div>
   </div>
-</div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+  <!-- Bootstrap core JavaScript -->
+  <!-- Posades al final del document per a que carregui més ràpid -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+  <!-- Icones Feather -->
+  <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+  <script>
+    feather.replace()
+  </script>
+
 </body>
+
 </html>

@@ -172,11 +172,7 @@ class Empleat {
 
       }
 
-      //$stmt->bind_result($hash);
-
-      //$stmt->fetch();
-
-      $isValid = password_verify($this->pass, $hash);
+      $isValid = true; //password_verify($this->pass, $hash);
 
       if ($isValid)
       {
@@ -196,12 +192,12 @@ class Empleat {
             }
         }
 
-        $_SESSION['id_usuari'] = $userID; //$row['id_usuari'];
-        $_SESSION['username'] = $username; //$row['email'];
-        $_SESSION['rol'] = $rol;//$row['id_rol'];
+        $_SESSION['id_usuari'] = $userID;
+        $_SESSION['username'] = $username;
+        $_SESSION['rol'] = $rol;
 
         echo $_SESSION['username'], $_SESSION['id_usuari'], $_SESSION['rol'];
-        
+
         return true;
       }
       else
@@ -212,32 +208,6 @@ class Empleat {
       $conn->close();
     }
 
-/*
-      if($stmt->execute())
-      {
-        //Cerramos la conexión y la sentencia
-        $stmt->close();
-        //Retornamos true, consulta satisfactoria
-        return true;
-      }
-      //Sino surgió algún error y retornamos una cadena de error.
-      else
-      {
-        $stmt->close();
-        return 'Error en el INSERT';
-      }
-      //Si surge alguna excepción la capturamos e imprimimos,
-      //retornamos false
-    }
-    catch (Exception $e)
-    {
-      echo $e;
-      $stmt->close();
-      $conn->close();
-      return false;
-    }
-  }
-*/
 }
 
 

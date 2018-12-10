@@ -4,7 +4,7 @@ if(!isset($_SESSION['username'])) {
   header("location: login.php");
 }
 if($_SESSION['rol'] != 3) {
-  header('Location: ../index.php');
+  header('Location: ../../../index.php');
 }
  ?>
 
@@ -13,7 +13,7 @@ if($_SESSION['rol'] != 3) {
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="../../../img/icon.png">
+    <link rel="icon" href="/img/icon.png">
 
     <title>Univeylandia - Gestió</title>
 
@@ -22,7 +22,7 @@ if($_SESSION['rol'] != 3) {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
 
     <!-- Estils custom -->
-    <link href="../../../css/styleGestio.css" rel="stylesheet">
+    <link href="/css/styleGestio.css" rel="stylesheet">
   </head>
 
   <body>
@@ -42,7 +42,7 @@ if($_SESSION['rol'] != 3) {
       </ul>
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-          <a class="nav-link" href="../../../logout.php"><span data-feather="log-out"></span>
+          <a class="nav-link" href="/logout.php"><span data-feather="log-out"></span>
             Tancar sessió
           </a>
         </li>

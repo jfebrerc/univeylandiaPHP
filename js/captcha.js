@@ -11,13 +11,19 @@ function getRandom2() {
 function generarCaptcha(){
   var random1 = getRandom();
   var random2 = getRandom();
-  var random3 = getRandom2();
-  if (random3 === 0) {
+  var operacio = getRandom2();
+
+  while (random1 === random2) {
+    random1 = getRandom();
+    random2 = getRandom();
+  }
+
+  if (operacio === 0) {
     resultat = eval("random1 + random2");
     var captcha = random1 + " + " + random2 + " = ?";
     document.getElementById("mainCaptcha").value = captcha;
   }
-  else if (random3 === 1) {
+  else if (operacio === 1) {
     resultat = eval("random1 - random2");
     var captcha = random1 + " - " + random2 + " = ?";
     document.getElementById("mainCaptcha").value = captcha;
@@ -27,11 +33,15 @@ function generarCaptcha(){
     var captcha = random1 + " * " + random2 + " = ?";
     document.getElementById("mainCaptcha").value = captcha;
   }
+  document.getElementById('txtInput').value = "";
 }
 
 function comprovarCaptcha() {
-  var input = document.getElementById('txtInput').value;
-  if (resultat == input) {
+  var input = parseInt(document.getElementById('txtInput').value);
+  if (isNaN(input)) {
+    document.getElementById('error').innerHTML = "Introdueix un número!";
+    return false;
+  } else if (resultat == input) {
     document.getElementById('success').innerHTML = "Correcte";
     //alert("Form is validated Successfully");
     return true;

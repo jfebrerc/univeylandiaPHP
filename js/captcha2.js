@@ -28,11 +28,9 @@ function generarCaptcha(){
 function comprovarCaptcha() {
   var input = document.getElementById('txtInput').value;
   if (resultat === input) {
-    //document.getElementById('success').innerHTML = "Correcte";
     alert("Correcte!");
     return true;
   } else {
-    //document.getElementById('error').innerHTML = "Error";
     alert("Introdueix un captcha vàlid!");
     return false;
   }
@@ -40,7 +38,7 @@ function comprovarCaptcha() {
 
 function previCaptcha() {
   if (comprovarCaptcha() == true) {
-    location.assign("https://www.w3schools.com");
+    location.assign("http://univeylandia-parc.cat");
   }
   else {
     generarCaptcha();

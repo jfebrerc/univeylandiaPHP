@@ -7,6 +7,7 @@ if($_SESSION['rol'] != 3) {
   header('Location: ../../index.php');
 }
  ?>
+
 <!doctype html>
 <html lang="es">
 
@@ -62,7 +63,7 @@ if($_SESSION['rol'] != 3) {
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" aria-expanded="false" href="#submenu0">
+              <a class="nav-link " data-toggle="collapse" aria-expanded="false" href="#submenu0">
                 <span data-feather="users"></span>
                 Gestionar Empleats
                 <span data-feather="chevron-right"></span>
@@ -70,27 +71,27 @@ if($_SESSION['rol'] != 3) {
             </li>
             <ul class="nav flex-column collapse" id="submenu0" data-parent="#sidebar">
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="#../gestioEmpleat/"><span data-feather="user-plus"></span>Crear Empleat</a>
+                <a class="nav-link nav-interior " href="../gestioEmpleat/crearEmpleat.php"><span data-feather="user-plus"></span>Crear Empleat</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="#../gestioEmpleat/"><span data-feather="file-text"></span>Llistar Empleats</a>
+                <a class="nav-link nav-interior" href="#../gestioEmpleat/llistarEmpleat.php"><span data-feather="file-text"></span>Llistar Empleats</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="#../gestioEmpleat/"><span data-feather="edit"></span>Modificar Empleat</a>
+                <a class="nav-link nav-interior" href="#../gestioEmpleat/modificarEmpleat.php"><span data-feather="edit"></span>Modificar Empleat</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="#../gestioEmpleat/"><span data-feather="user-minus"></span>Eliminar Empleat</a>
+                <a class="nav-link nav-interior" href="#../gestioEmpleat/eliminarEmpleat.php"><span data-feather="user-minus"></span>Eliminar Empleat</a>
               </li>
             </ul>
 
             <li class="nav-item">
-              <a class="nav-link active" data-toggle="collapse" aria-expanded="true" href="#submenu1">
+              <a class="nav-link " data-toggle="collapse" aria-expanded="false" href="#submenu1">
                 <span data-feather="users"></span>
                 Gestionar Clients
                 <span data-feather="chevron-right"></span>
               </a>
             </li>
-            <ul class="nav flex-column collapse show" id="submenu1" data-parent="#sidebar">
+            <ul class="nav flex-column collapse" id="submenu1" data-parent="#sidebar">
               <li class="nav-item">
                 <a class="nav-link nav-interior" href="../gestioClient/crearClient.php"><span data-feather="user-plus"></span>Crear Client</a>
               </li>
@@ -98,7 +99,7 @@ if($_SESSION['rol'] != 3) {
                 <a class="nav-link nav-interior" href="../gestioClient/llistarClients.php"><span data-feather="file-text"></span>Llistar Clients</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-interior active" href="../gestioClient/modificarClient.php"><span data-feather="edit"></span>Modificar Client</a>
+                <a class="nav-link nav-interior" href="../gestioClient/modificarClient.php"><span data-feather="edit"></span>Modificar Client</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link nav-interior" href="../gestioClient/eliminarClient.php"><span data-feather="user-minus"></span>Eliminar Client</a>
@@ -106,13 +107,13 @@ if($_SESSION['rol'] != 3) {
             </ul>
 
             <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" aria-expanded="false" href="#submenu3">
+              <a class="nav-link active" data-toggle="collapse" aria-expanded="true" href="#submenu3">
                 <span data-feather="trending-down"></span>
                 Gestionar Atraccions
                 <span data-feather="chevron-right"></span>
               </a>
             </li>
-            <ul class="nav flex-column collapse" id="submenu3" data-parent="#sidebar">
+            <ul class="nav flex-column collapse show" id="submenu3" data-parent="#sidebar">
               <li class="nav-item">
                 <a class="nav-link nav-interior" href="#../gestioAtraccio/"><span data-feather="plus-square"></span>Crear Atracció</a>
               </li>
@@ -327,93 +328,44 @@ if($_SESSION['rol'] != 3) {
 
 
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">Modificar client</h1>
-        </div>
-
-        <form class="needs-validation" action="#">
-          <div class="form-row">
-            <div class="col-md-3 mb-3">
-              <label for="validationCustom01">Nom *</label>
-              <input type="text" class="form-control form-control-sm" placeholder="Nom" required>
-            </div>
-            <div class="col-md-3 mb-3">
-              <label for="validationCustom02">Cognom 1 *</label>
-              <input type="text" class="form-control form-control-sm" placeholder="Cognom 1" required>
-            </div>
-            <div class="col-md-3 mb-3">
-              <label for="validationCustom02">Cognom 2</label>
-              <input type="text" class="form-control form-control-sm" placeholder="Cognom 2">
-            </div>
-            <div class="col-md-3 mb-3">
-              <label for="validationCustom03">Tipus document</label>
-              <div class="input-group">
-                <select class="form-control form-control-sm">
-                  <option>DNI</option>
-                  <option>NIE</option>
-                  <option>CIF</option>
-                  <option>Altres</option>
-                </select>
+	  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Administrar atraccions</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary">
+                  <span data-feather="save"></span>
+                  Exportar
+                </button>
               </div>
             </div>
           </div>
-          <div class="form-row">
-            <div class="col-md-3 mb-3">
-              <label for="validationCustom04">Nº document *</label>
-              <input type="text" class="form-control form-control-sm" placeholder="Número document" required>
-            </div>
-            <div class="col-md-3 mb-3">
-              <label for="validationCustom05">Data de Naixement *</label>
-              <input type="date" class="form-control form-control-sm" placeholder="Data naixement" required>
-            </div>
-            <div class="col-md-3 mb-3">
-              <label for="validationCustom09">Sexe</label>
-              <select class="form-control form-control-sm">
-                <option>Home</option>
-                <option>Dona</option>
-              </select>
-            </div>
-            <div class="col-md-3 mb-3">
-              <label for="validationCustom07">Telèfon de contacte</label>
-              <input type="text" class="form-control form-control-sm" placeholder="Telèfon de contacte">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col-md-3 mb-3">
-              <label for="validationCustom04">Correu electrònic *</label>
-              <input type="text" class="form-control form-control-sm" placeholder="Email" required>
-            </div>
-            <div class="col-md-3 mb-3">
-              <label for="validationCustom09">Adreça *</label>
-              <input type="text" class="form-control form-control-sm" placeholder="Adreça" required>
-            </div>
-            <div class="col-md-3 mb-3">
-              <label for="validationCustom09">Ciutat *</label>
-              <input type="text" class="form-control form-control-sm" placeholder="Ciutat" required>
-            </div>
-            <div class="col-md-3 mb-3">
-              <label for="validationCustom10">Provincia *</label>
-              <input type="text" class="form-control form-control-sm" placeholder="Provincia" required>
-            </div>
-          </div>
-          <button class="btn btn-primary" type="submit">Modificar</button>
-          <button class="btn btn-primary" type="reset">Cancel·lar</button>
-        </form>
+        <?php
+		  include_once $_SERVER['DOCUMENT_ROOT']."/php/classes/classeAtraccio.php";
+		  echo '<form method="post" style="margin-top=50px;">
+		  <div class="form-group row">
+		  <div class="col-10">
+			<input class="form-control" type="text" id="example-text-input" name="busqueda_atraccio" placeholder="Buscar...">
+		  </div>
+			<div class="form-group row">
+			  <div class="offset-sm-2 col-sm-10">
+				<input type="submit" class="btn btn-primary" name="buscar_atraccio" value="Buscar"">
+		  </div>
+			</div>
+		  </form>';
+		  //classeAtraccio = new Atraccio();
+		  if (isset($_POST['buscar_atraccio'])) {
+			Atraccio::llistarEmpleatsBusqueda();
+		  }else {
+			Atraccio::llistarEmpleats();
+		  }
+		  if (isset($_POST['modificar'])) {
+			  Atraccio::modificarAtraccio();
+			  }
+		  if (isset($_POST['Acceptar'])){
+			Atraccio::eliminarAtraccio();
+		  }
 
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">Modificar clients de forma massiva</h1>
-        </div>
-
-        <form>
-          <div class="form-group">
-            <div class="form-row">
-              <div class="col-md-3 mb-3">
-                <label for="exampleFormControlFile1">Pujar arxiu .CSV amb clients a modificar</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1">
-              </div>
-            </div>
-          </div>
-        </form>
+		?>
 
       </main>
     </div>
