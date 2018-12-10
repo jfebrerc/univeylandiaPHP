@@ -305,7 +305,7 @@ class Assignacio{
 
 
 
-  /*public static function llistarEmpleatsBusqueda(){
+  public static function llistarAssignBusqueda(){
 
 
   $conexio = createConnection();
@@ -313,72 +313,49 @@ class Assignacio{
   //{
   //    die('Error de conexión: ' . $conexion->connect_error);
   //}
-  $busqueda = $_POST['busqueda_atraccio'];
+  $busqueda = $_POST['busqueda_assign'];
   //$_POST['busqueda_atraccio']
 
-  $sql = "SELECT * FROM ATRACCIO where nom_atraccio like '%$busqueda%' or tipus_atraccio like '%$busqueda%' or data_inauguracio like '%$busqueda%' or altura_min like '%$busqueda%' or altura_max like '%$busqueda%'";
+  $sql = "SELECT * FROM ASSIGN_USUARI_ATRACCIO where data_inici_assign like '%$busqueda%'";
   $result = $conexio->query($sql);
   echo '<table class="table">';
   echo '  <thead>';
   echo '    <tr>';
   echo '      <th scope="col">ID</th>';
-  echo '      <th scope="col">Nom</th>';
-  echo '      <th scope="col">Tipus</th>';
-  echo '      <th scope="col">Data inauguracio</th>';
-  echo '      <th scope="col">Altura minima</th>';
-  echo '      <th scope="col">Altura maxima</th>';
-  echo '      <th scope="col">Accessibilitat</th>';
-  echo '      <th scope="col">Acces express</th>';
-  echo '      <th scope="col">Data creacio registre</th>';
+  echo '      <th scope="col">ID Empleat</th>';
+  echo '      <th scope="col">ID Atraccio</th>';
+  echo '      <th scope="col">Data Inici</th>';
+  echo '      <th scope="col">Data fi</th>';
+  echo '      <th scope="col">Data creacio</th>';
   echo '      <th scope="col"></th>';
   echo '      <th scope="col"></th>';
   echo '    </tr>';
   echo '  </thead>';
   if ($result) {
       while($row = $result->fetch_assoc()) {
+        $id_assignacio = $row["id_assignacio"];
         $id_atraccio = $row["id_atraccio"];
-        $nom_atraccio = $row["nom_atraccio"];
-        $tipus_atraccio = $row["tipus_atraccio"];
-        $data_inauguracio = $row["data_inauguracio"];
-        $altura_min = $row["altura_min"];
-        $altura_max = $row["altura_max"];
-        $accessibilitat = $row["accessibilitat"];
-        $acces_express = $row["acces_express"];
+        $id_usuari = $row["id_usuari"];
+        $data_inici_assign = $row["data_inici_assign"];
+        $data_fi_assign = $row["data_fi_assign"];
         $data_creacio_registre = $row["data_creacio_registre"];
-
-        if ($accessibilitat == 1) {
-          $mostrarAccessibilitat = "Si";
-        }
-        if ($accessibilitat == 0) {
-          $mostrarAccessibilitat = "No";
-        }
-
-        if ($acces_express == 1) {
-          $mostrarAcces_express = "Si";
-        }
-        if ($acces_express == 0) {
-          $mostrarAcces_express = "No";
-        }
 
         echo '  <tbody>';
         echo '    <tr>';
-        echo '      <th scope="row">'.$row["id_atraccio"].'</th>';
-        echo '      <td>'.$row["nom_atraccio"].'</td>';
-        echo '      <td>'.$row["tipus_atraccio"].'</td>';
-        echo '      <td>'.$row["data_inauguracio"].'</td>';
-        echo '      <td>'.$row["altura_min"].'</td>';
-        echo '      <td>'.$row["altura_max"].'</td>';
-        echo '      <td>'.$mostrarAccessibilitat.'</td>';
-        echo '      <td>'.$mostrarAcces_express.'</td>';
-        echo '      <td>'.$row["data_creacio_registre"].'</td>';
-        echo '      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter'.$id_atraccio.'"> Modificar
+        echo '      <th scope="row">'.$id_assignacio.'</th>';
+        echo '      <td>'.$id_usuari.'</td>';
+        echo '      <td>'.$id_atraccio.'</td>';
+        echo '      <td>'.$data_inici_assign.'</td>';
+        echo '      <td>'.$data_fi_assign.'</td>';
+        echo '      <td>'.$data_creacio_registre.'</td>';
+        echo '      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter'.$id_assignacio.'"> Modificar
                     </button></td>';
-        echo '      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalEliminar'.$id_atraccio.'"> Eliminar
+        echo '      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalEliminar'.$id_assignacio.'"> Eliminar
                     </button></td>';
         echo '    </tr>';
         echo '  </tbody>';
 
-		echo '<!-- Modal -->
+		/*echo '<!-- Modal -->
         <div class="modal fade" id="ModalEliminar'.$id_atraccio.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -517,7 +494,7 @@ class Assignacio{
               </div>
             </div>
           </div>
-        </div>';
+        </div>';*/
       }
 
   } else {
@@ -526,7 +503,7 @@ class Assignacio{
   echo '</table>';
   $conexio->close();
 
-}*/
+}
 
 }
 
