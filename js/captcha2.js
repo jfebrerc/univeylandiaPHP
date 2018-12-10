@@ -28,11 +28,9 @@ function generarCaptcha(){
 function comprovarCaptcha() {
   var input = document.getElementById('txtInput').value;
   if (resultat === input) {
-    //document.getElementById('success').innerHTML = "Correcte";
     alert("Correcte!");
     return true;
   } else {
-    //document.getElementById('error').innerHTML = "Error";
     alert("Introdueix un captcha vàlid!");
     return false;
   }
