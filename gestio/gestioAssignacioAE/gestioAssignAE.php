@@ -352,7 +352,10 @@ if($_SESSION['rol'] != 3) {
 		  </div>
 			</div>
 		  </form>';
-      $buscar = $_POST['buscar_assign'];
+      if (isset($_POST['buscar_assign'])) {
+        $buscar = $_POST['busqueda_atraccio'];
+      }
+
       //Assignacio::llistarNomAtraccions();
       Assignacio::llistarAssignBusqueda($buscar);
 		  //classeAtraccio = new Atraccio();
