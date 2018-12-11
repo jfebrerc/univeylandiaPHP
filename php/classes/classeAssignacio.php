@@ -332,6 +332,7 @@ class Assignacio{
   echo '      <th scope="col"></th>';
   echo '    </tr>';
   echo '  </thead>';
+  //asdsdfdsf
   if ($result) {
       while($row = $result->fetch_assoc()) {
         $id_assignacio = $row["id_assignacio"];
