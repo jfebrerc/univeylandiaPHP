@@ -308,7 +308,7 @@ class Assignacio{
   public static function llistarAssignBusqueda(){
 
 
-  $conexio = createConnection();
+  $conexio = crearConnexio();
   //if ($conexio->connect_error)
   //{
   //    die('Error de conexión: ' . $conexion->connect_error);
