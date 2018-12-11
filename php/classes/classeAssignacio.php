@@ -313,7 +313,7 @@ class Assignacio{
   //{
   //    die('Error de conexión: ' . $conexion->connect_error);
   //}
-  $busqueda = $_POST['busqueda_assign'];
+  $busqueda = $_POST['buscar_assign'];
   //$_POST['busqueda_atraccio']
 
   $sql = "SELECT * FROM ASSIGN_USUARI_ATRACCIO where data_inici_assign like '%$busqueda%'";
