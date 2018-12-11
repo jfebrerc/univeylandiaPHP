@@ -346,6 +346,7 @@ if($_SESSION['rol'] != 3) {
 		  <div class="col-10">
 			<input class="form-control" type="text" id="example-text-input" name="busqueda_atraccio" placeholder="Buscar...">
 		  </div>
+      '.Assignacio::llistarNomAtraccions().'
 			<div class="form-group row">
 			  <div class="offset-sm-2 col-sm-10">
 				<input type="submit" class="btn btn-primary" name="buscar_assign" value="Buscar"">
