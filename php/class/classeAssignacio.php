@@ -511,7 +511,7 @@ class Assignacio{
 
 }
 function llistarNomAtraccions(){
-        $conexio = createConnection();
+        $conexio = crearConnexio();
         $sql = "SELECT nom_atraccio FROM ATRACCIO";
         $result = $conexio->query($sql);
         echo '<div class="dropdown">
