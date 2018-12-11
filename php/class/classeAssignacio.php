@@ -314,7 +314,7 @@ class Assignacio{
   //    die('Error de conexión: ' . $conexion->connect_error);
   //}
   //$busqueda = $_POST['buscar_assign'];
-  $busqueda = " ";
+  $busqueda = "admin";
   $busqueda = $_POST['buscar_assign'];
   //$_POST['busqueda_atraccio']
 
