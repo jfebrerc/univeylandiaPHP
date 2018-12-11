@@ -1,28 +1,28 @@
 <?php
 session_start();
 if (isset($_SESSION['username'])) {
-    header("location: index.php");
+    header('Location: index.php');
 }
 ?>
 <?php
-include_once $_SERVER['DOCUMENT_ROOT']."/php/classes/classeClient.php";
+include_once $_SERVER['DOCUMENT_ROOT']."/php/class/class_client.php";
 
 if (!empty($_POST)) {
   $client = new Client($_POST['email'],$_POST['password']);
 
   if($client->validarLogin() == false)
   {
-    include_once $_SERVER['DOCUMENT_ROOT']."/php/classes/classeEmpleat.php";
+    include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeEmpleat.php";
     $empleat = new Empleat($_POST['email'],$_POST['password']);
     if($empleat->validarLogin() == false)
     {
-      echo "NO ESTAS REGISTRAT";
+      echo '<script>alert("Usuari o contrasenya incorrectes!");</script>';
     }
     else {
       header('Location: ../gestio/index.php');
     }
   }
-  else {
+  else{
     header('Location: ../index.php');
   }
 }
@@ -46,7 +46,7 @@ if (!empty($_POST)) {
     <!--<form class="form-signin" method="post" action="php/validateLogin.php">-->
     <form class="form-signin" method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>">
       <img class="mb-4" src="img/logo.png" alt="" width="220" height="75">
-      <h1 class="h3 mb-3 font-weight-normal">Noi fica les teves dades</h1>
+      <h1 class="h3 mb-3 font-weight-normal">Iniciar sessió</h1>
       <label for="inputEmail" class="sr-only">Usuari</label>
       <input type="email" id="inputEmail" class="form-control" placeholder="Email" name="email" value="<?php echo $_COOKIE['idu'];?>" required autofocus>
       <label for="inputPassword" class="sr-only">Contrasenya</label>
@@ -59,9 +59,12 @@ if (!empty($_POST)) {
         }
         ?>>
         <label>Recordar usuari</label>
+        <label><a href="#">Has oblidat la contrasenya?</label>
+          <br>
+        <label><a href="registre.php">No tens compte? REGISTRAT</label>
       </div>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar sessio</button>
-      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+      <button class="btn btn-md btn-secondary btn-block" type="reset" onclick="history.back()">Tornar enrere</button>
     </form>
   </body>
 </html>

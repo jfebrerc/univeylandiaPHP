@@ -2,6 +2,7 @@
 session_start();
 if(!isset($_SESSION['username'])) {
   header("location: login.php");
+
 }
 if($_SESSION['rol'] != 3) {
   header('Location: ../../index.php');
@@ -23,7 +24,7 @@ if($_SESSION['rol'] != 3) {
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 
   <!-- Estils custom -->
-  <link href="/css/styleGestio.css" rel="stylesheet">
+  <link href="css/styleGestio.css" rel="stylesheet">
 </head>
 
 <body>
@@ -93,16 +94,16 @@ if($_SESSION['rol'] != 3) {
             </li>
             <ul class="nav flex-column collapse" id="submenu1" data-parent="#sidebar">
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="../gestioClient/crearClient.php"><span data-feather="user-plus"></span>Crear Client</a>
+                <a class="nav-link nav-interior" href="../client/crearClient.php"><span data-feather="user-plus"></span>Crear Client</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="../gestioClient/llistarClients.php"><span data-feather="file-text"></span>Llistar Clients</a>
+                <a class="nav-link nav-interior" href="../client/llistarClients.php"><span data-feather="file-text"></span>Llistar Clients</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="../gestioClient/modificarClient.php"><span data-feather="edit"></span>Modificar Client</a>
+                <a class="nav-link nav-interior" href="#"><span data-feather="edit"></span>Modificar Client</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="../gestioClient/eliminarClient.php"><span data-feather="user-minus"></span>Eliminar Client</a>
+                <a class="nav-link nav-interior" href="#"><span data-feather="user-minus"></span>Eliminar Client</a>
               </li>
             </ul>
 
@@ -262,6 +263,30 @@ if($_SESSION['rol'] != 3) {
                 <a class="nav-link nav-interior" href="#../gestioIncidencia/"><span data-feather="minus-square"></span>Eliminar Inicidència</a>
               </li>
             </ul>
+              
+              
+                            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" aria-expanded="false" href="#submenu9">
+                <span data-feather="alert-triangle"></span>
+                Gestionar Noticies <span class="sr-only"></span>
+                <span data-feather="chevron-right"></span>
+              </a>
+            </li>
+            <ul class="nav flex-column collapse" id="submenu9" data-parent="#sidebar">
+              <li class="nav-item">
+                <a class="nav-link nav-interior" href="../noticies/crearNoticia.html"><span data-feather="user-plus"></span>Crear Noticia</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-interior" href="../noticies/llistarNoticia.php"><span data-feather="file-text"></span>Llistar Noticia</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-interior" href="#"><span data-feather="edit"></span>Modificar Noticia</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-interior" href="#"><span data-feather="user-minus"></span>Eliminar Noticia</a>
+              </li>
+            </ul>
+              
 
             <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" aria-expanded="false" href="#submenu6">
@@ -461,7 +486,7 @@ if($_SESSION['rol'] != 3) {
         </form>
 
         <?php
-        include_once $_SERVER['DOCUMENT_ROOT']."/php/classes/classeEmpleat.php";
+        include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeEmpleat.php";
         if(isset($_POST['nom'])) {
           $empleat = new Empleat ($_POST['nom'],$_POST['cognom1'],$_POST['cognom2'],$_POST['tipus_doc'],$_POST['num_doc'],$_POST['data'],
           $_POST['sexe'],$_POST['tlf'],$_POST['email'],$_POST['adreca'],$_POST['ciutat'],$_POST['provincia'],$_POST['codi_postal'],$_POST['contrasenya'],

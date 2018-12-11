@@ -22,7 +22,7 @@ if($_SESSION['rol'] != 3) {
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 
   <!-- Estils custom -->
-  <link href="/css/styleGestio.css" rel="stylesheet">
+  <link href="css/styleGestio.css" rel="stylesheet">
 </head>
 
 <body>
@@ -92,16 +92,16 @@ if($_SESSION['rol'] != 3) {
             </li>
             <ul class="nav flex-column collapse" id="submenu1" data-parent="#sidebar">
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="../../gestioClient/crearClient.php"><span data-feather="user-plus"></span>Crear Client</a>
+                <a class="nav-link nav-interior" href="../../client/crearClient.php"><span data-feather="user-plus"></span>Crear Client</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="../../gestioClient/llistarClients.php"><span data-feather="file-text"></span>Llistar Clients</a>
+                <a class="nav-link nav-interior" href="../../client/llistarClients.php"><span data-feather="file-text"></span>Llistar Clients</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="../../gestioClient/modificarClient.php"><span data-feather="edit"></span>Modificar Client</a>
+                <a class="nav-link nav-interior" href="#"><span data-feather="edit"></span>Modificar Client</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="../../gestioClient/eliminarClient.php"><span data-feather="user-minus"></span>Eliminar Client</a>
+                <a class="nav-link nav-interior" href="#"><span data-feather="user-minus"></span>Eliminar Client</a>
               </li>
             </ul>
 
@@ -114,16 +114,16 @@ if($_SESSION['rol'] != 3) {
             </li>
             <ul class="nav flex-column collapse" id="submenu3" data-parent="#sidebar">
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="#../../gestioAtraccio/"><span data-feather="plus-square"></span>Crear Atracció</a>
+                <a class="nav-link nav-interior" href="../gestioAtraccio/registreAtraccions.php"><span data-feather="plus-square"></span>Crear Atracció</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="#../../gestioAtraccio/"><span data-feather="file-text"></span>Llistar Atraccions</a>
+                <a class="nav-link nav-interior" href="../gestioAtraccio/gestioAtraccions.php"><span data-feather="file-text"></span>Llistar Atraccions</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="#../../gestioAtraccio/"><span data-feather="edit"></span>Modificar Atracció</a>
+                <a class="nav-link nav-interior" href="#"><span data-feather="edit"></span>Modificar Atracció</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="#../../gestioAtraccio/"><span data-feather="minus-square"></span>Eliminar Atracció</a>
+                <a class="nav-link nav-interior" href="#"><span data-feather="minus-square"></span>Eliminar Atracció</a>
               </li>
             </ul>
 
@@ -331,7 +331,8 @@ if($_SESSION['rol'] != 3) {
           <h1 class="h2">Crear Habitació</h1>
         </div>
 
-        <form method="post" action="../../../php/habitacioPHP/crearHabitacio.php">
+        <!--<form method="post" action="../../../php/habitacioPHP/crearHabitacio.php">-->
+        <form method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>">
           <div class="form-row">
             <div class="col-md-3 mb-3">
               <label>Número d'habitació *</label>
@@ -342,7 +343,7 @@ if($_SESSION['rol'] != 3) {
               <div class="input-group">
                 <select class="form-control form-control-sm" name="tipus_hab" required>
                   <?php
-                    include_once $_SERVER['DOCUMENT_ROOT']."/php/classes/classeHabitacio.php";
+                    include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeHabitacio.php";
                     Habitacio::llistarTipusHabitacio();
                   ?>
                 </select>
@@ -352,6 +353,17 @@ if($_SESSION['rol'] != 3) {
           <button class="btn btn-primary" type="submit">Crear</button>
           <button class="btn btn-secondary" type="reset">Cancel·lar</button>
         </form>
+
+        <?php
+          include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeHabitacio.php";
+          if(isset($_POST['num_hab'])) {
+            $habitacio = new Habitacio($_POST['num_hab'],$_POST['tipus_hab']);
+
+            $habitacio->crearHabitacio();
+          }
+
+         ?>
+
 
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
           <h1 class="h2">Crear habitacions de forma massiva</h1>

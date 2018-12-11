@@ -23,7 +23,7 @@ if($_SESSION['rol'] != 3) {
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 
   <!-- Estils custom -->
-  <link href="/css/styleGestio.css" rel="stylesheet">
+  <link href="/gestio/css/styleGestio.css" rel="stylesheet">
 </head>
 
 <body>
@@ -93,16 +93,16 @@ if($_SESSION['rol'] != 3) {
             </li>
             <ul class="nav flex-column collapse" id="submenu1" data-parent="#sidebar">
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="../gestioClient/crearClient.php"><span data-feather="user-plus"></span>Crear Client</a>
+                <a class="nav-link nav-interior" href="../client/crearClient.php"><span data-feather="user-plus"></span>Crear Client</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="../gestioClient/llistarClients.php"><span data-feather="file-text"></span>Llistar Clients</a>
+                <a class="nav-link nav-interior" href="../client/llistarClients.php"><span data-feather="file-text"></span>Llistar Clients</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="../gestioClient/modificarClient.php"><span data-feather="edit"></span>Modificar Client</a>
+                <a class="nav-link nav-interior" href="#"><span data-feather="edit"></span>Modificar Client</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="../gestioClient/eliminarClient.php"><span data-feather="user-minus"></span>Eliminar Client</a>
+                <a class="nav-link nav-interior" href="#"><span data-feather="user-minus"></span>Eliminar Client</a>
               </li>
             </ul>
 
@@ -115,16 +115,16 @@ if($_SESSION['rol'] != 3) {
             </li>
             <ul class="nav flex-column collapse show" id="submenu3" data-parent="#sidebar">
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="#../gestioAtraccio/"><span data-feather="plus-square"></span>Crear Atracció</a>
+                <a class="nav-link nav-interior" href="../gestioAtraccio/registreAtraccions.php"><span data-feather="plus-square"></span>Crear Atracció</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="#../gestioAtraccio/"><span data-feather="file-text"></span>Llistar Atraccions</a>
+                <a class="nav-link nav-interior" href="../gestioAtraccio/gestioAtraccions.php"><span data-feather="file-text"></span>Llistar Atraccions</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="#../gestioAtraccio/"><span data-feather="edit"></span>Modificar Atracció</a>
+                <a class="nav-link nav-interior" href="#"><span data-feather="edit"></span>Modificar Atracció</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="#../gestioAtraccio/"><span data-feather="minus-square"></span>Eliminar Atracció</a>
+                <a class="nav-link nav-interior" href="#"><span data-feather="minus-square"></span>Eliminar Atracció</a>
               </li>
             </ul>
 
@@ -326,107 +326,80 @@ if($_SESSION['rol'] != 3) {
         </div>
       </nav>
 
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">Registrar Atraccions</h1>
+        </div>
 
-      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-	  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Registre d'Atraccions</h1>
-            <div class="btn-toolbar mb-2 mb-md-0">
-              <div class="btn-group mr-2">
-                <button class="btn btn-sm btn-outline-secondary">
-                  <span data-feather="save"></span>
-                  Exportar
-                </button>
-              </div>
+        <form class="needs-validation" method="post" action="registrar_atraccio.php">
+          <div class="form-row">
+            <div class="col-md-3 mb-3">
+              <label for="nom">Nom de l'Atraccio</label>
+              <input type="text" class="form-control form-control-sm" placeholder="Nom" name="nom" required>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="cognom1">Altura minima</label>
+              <input type="text" class="form-control form-control-sm" name="alturamin" required>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label >Altura maxima</label>
+              <input type="text" class="form-control form-control-sm" name="alturamax">
+            </div>
+            <div class="col-md-3 mb-3">
+              <label>Data d'Innauguracio</label>
+              <input type="date" class="form-control form-control-sm" name="datainauguracio">
             </div>
           </div>
-        <!-- Registre -->
-<div class="container jumbotron" style="margin-top:30px">
-  <div class="row">
-      <div class="col-sm-12">
-       
-      </div>
-    </div>
-      <form action="registrar_atraccio.php" method="post" class="align-items-center justify-content-center d-flex">
-        <div class="col-sm-12">
-          <div class="form-group">
-            <label>Nom de l'Atraccio</label>
-            <input type="text" class="form-control" name="nom" required>
-          </div>
-          <div class="form-group">
-            <label>Altura minima</label>
-            <input type="text" class="form-control" name="alturamin" required>
-          </div>
-          <div class="form-group">
-            <label>Altura maxima</label>
-            <input type="text" class="form-control" name="alturamax" required>
-          </div>
-          <div class="form-group">
-            <label>Data d'Innauguracio</label>
-            <input type="date" class="form-control" name="datainauguracio" required>
-          </div>
-          <div class="row">
-            <div class="col-3">
-              <div class="form-group">
-                <label>Tipus d'atracció</label>
-                  <select name="tipusatraccio" required>
-                      <option value="Extrema">Extrema</option>
-                      <option value="Mitjana">Mitjana</option>
-                      <option value="Familiar">Familiar</option>
+          <div class="form-row">
+            <div class="col-md-3 mb-3">
+              <label for="nom">Tipus d'atraccio</label>
+              <div class="input-group">
+                <select class="form-control form-control-sm" name="tipusatraccio">
+                  <option value="Extrema">Extrema</option>
+                  <option value="Mitjana">Mitjana</option>
+                  <option value="Familiar">Familiar</option>
                 </select>
               </div>
             </div>
-
-            <div class="col-3">
-              <div class="form-group" >
-                <label>Accessibilitat</label>
-                <select name="accessible" required>
+            <div class="col-md-3 mb-3">
+              <label for="cognom1">Accessibilitat</label>
+                <div class="input-group">
+                <select class="form-control form-control-sm" name="accessible">
                   <option value="1">SI</option>
                   <option value="0">NO</option>
                 </select>
               </div>
             </div>
-            <div class="col-3">
-              <div class="form-group">
-                <label>Acces Express</label>
-                <select name="accesexpress" required>
+            <div class="col-md-3 mb-3">
+              <label for="cognom2">Acces Express</label>
+              <div class="input-group">
+                <select class="form-control form-control-sm" name="accesexpress">
                   <option value="1">SI</option>
                   <option value="0">NO</option>
                 </select>
               </div>
             </div>
-
-
-
-          <button type"submit" class="btn btn-primary" data-toggle="modal" data-target="#modalRegistre">Envia</button>
-
-          <!-- Modal -->
-            <div class="modal fade" id="modalRegistre" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Atraccio Registrada</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    Has registrat una nova atraccio.
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Acceptar</button>
-                  </div>
-                </div>
+          </div>
+            <button class="btn btn-primary" type="submit">Crear</button>
+          <button class="btn btn-primary" type="reset">Cancel·lar</button>
+        </form>
+        <br>
+        <form>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-3 mb-3">
+                <label for="exampleFormControlFile1">Pujar arxiu .CSV amb dades de clients</label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1">
               </div>
             </div>
-      </form>
-    </div>
-    </div>
-  </div>
-</div>
+          </div>
+
+        </form>
 
       </main>
     </div>
   </div>
+
 
   <!-- Bootstrap core JavaScript -->
   <!-- Posades al final del document per a que carregui més ràpid -->

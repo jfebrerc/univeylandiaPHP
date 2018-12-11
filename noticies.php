@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
   .fakeimg {
       height: 200px;
@@ -15,9 +17,15 @@
   </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-sm py-0">
+<?php
+session_start();
+var_dump($_SESSION);
+if ($_SESSION['rol']==1 ) :?>
+
+    <nav class="navbar navbar-expand-sm py-0">
     <div class="collapse navbar-collapse flex-row-reverse" id="collapsibleNavbar">
       <ul class="navbar-nav">
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle "  href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Idioma      </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -28,8 +36,17 @@
         <li class="nav-item">
           <a class="nav-link" href="img/mapa_parc.jpg">Mapa</a>
         </li>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle " id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="perfil/perfil_client.php"><?php echo $_SESSION['username']?></a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="perfil/perfil_client.php">Perfil</a></li>
+            <li><a class="dropdown-item" href="logout.php">Tancar Sessio</a></li>
+          </ul>
+        </li>
       <li>
-        <a class="nav-link" href="login.php">Login</a>
+        <button type="button" class="btn btn-default btn-sm" onclick="window.location.href='cistella/clases/carrito.php'">
+          <img src="img/carrito.png">
+        </button>
       </li>
       </ul>
     </div>
@@ -45,8 +62,8 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle "  href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Parc      </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <li><a class="dropdown-item" href="#">Noticies</a></li>
-          <li><a class="dropdown-item" href="#">Promocions</a></li>
+          <li><a class="dropdown-item" href="noticies/noticies_1.php">Noticies</a></li>
+          <li><a class="dropdown-item" href="promocions.php">Promocions</a></li>
         </ul>
       </li>
       <li class="nav-item">
@@ -62,14 +79,157 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle "  href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Entrades      </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <li><a class="dropdown-item" href="#">Parc</a></li>
-          <li><a class="dropdown-item" href="#">Parc+Hotel</a></li>
+          <li><a class="dropdown-item" href="Entrades/parc/entrades1.php">Parc</a></li>
+          <li><a class="dropdown-item" href="Entrades/hoteliparc/entrades2.php">Parc+Hotel</a></li>
         </ul>
       </li>
 
     </ul>
   </div>
 </nav>
+
+<?php endif ?>
+<?php
+if ($_SESSION['rol']==2 ) :?>
+
+    <nav class="navbar navbar-expand-sm py-0">
+    <div class="collapse navbar-collapse flex-row-reverse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle "  href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Idioma      </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">ES</a></li>
+            <li><a class="dropdown-item" href="#">CA</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="img/mapa_parc.jpg">Mapa</a>
+        </li>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle " id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="perfil/perfil_client.php"><?php echo $_SESSION['username']?></a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="perfil/perfil_client.php">Perfil</a></li>
+            <li><a class="dropdown-item" href="gestio/index.php">Gestio</a></li>
+            <li><a class="dropdown-item" href="logout.php">Tancar Sessio</a></li>
+          </ul>
+        </li>
+      <li>
+        <button type="button" class="btn btn-default btn-sm" onclick="window.location.href='cistella/clases/carrito.php'">
+          <img src="img/carrito.png">
+        </button>
+      </li>
+      </ul>
+    </div>
+  </nav>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark py-4">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle "  href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Parc      </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <li><a class="dropdown-item" href="noticies/noticies_1.php">Noticies</a></li>
+          <li><a class="dropdown-item" href="promocions.php">Promocions</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Atraccions</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle "  href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Hotel      </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <li><a class="dropdown-item" href="#">Habitacions</a></li>
+          <li><a class="dropdown-item" href="#">Restaurants</a></li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle "  href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Entrades      </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <li><a class="dropdown-item" href="Entrades/parc/entrades1.php">Parc</a></li>
+          <li><a class="dropdown-item" href="Entrades/hoteliparc/entrades2.php">Parc+Hotel</a></li>
+        </ul>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+<?php endif ?>
+
+<?php
+if ($_SESSION['rol']==3 ) :?>
+
+    <nav class="navbar navbar-expand-sm py-0">
+    <div class="collapse navbar-collapse flex-row-reverse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle "  href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Idioma      </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">ES</a></li>
+            <li><a class="dropdown-item" href="#">CA</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="img/mapa_parc.jpg">Mapa</a>
+        </li>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle " id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="perfil/perfil_client.php"><?php echo $_SESSION['username']?></a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="perfil/perfil_client.php">Perfil</a></li>
+            <li><a class="dropdown-item" href="gestio/index.php">Gestio</a></li>
+            <li><a class="dropdown-item" href="logout.php">Tancar Sessio</a></li>
+          </ul>
+        </li>
+      <li>
+        <button type="button" class="btn btn-default btn-sm" onclick="window.location.href='cistella/clases/carrito.php'">
+          <img src="img/carrito.png">
+        </button>
+      </li>
+      </ul>
+    </div>
+  </nav>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark py-4">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle "  href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Parc      </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <li><a class="dropdown-item" href="noticies/noticies_1.php">Noticies</a></li>
+          <li><a class="dropdown-item" href="promocions.php">Promocions</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Atraccions</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle "  href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Hotel      </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <li><a class="dropdown-item" href="#">Habitacions</a></li>
+          <li><a class="dropdown-item" href="#">Restaurants</a></li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle "  href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Entrades      </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <li><a class="dropdown-item" href="Entrades/parc/entrades1.php">Parc</a></li>
+          <li><a class="dropdown-item" href="Entrades/hoteliparc/entrades2.php">Parc+Hotel</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<?php endif ?>
 
 <!-- SLIDER-->
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">

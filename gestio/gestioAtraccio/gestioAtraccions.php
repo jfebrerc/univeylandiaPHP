@@ -23,7 +23,7 @@ if($_SESSION['rol'] != 3) {
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 
   <!-- Estils custom -->
-  <link href="/css/styleGestio.css" rel="stylesheet">
+  <link href="/gestio/css/styleGestio.css" rel="stylesheet">
 </head>
 
 <body>
@@ -115,16 +115,16 @@ if($_SESSION['rol'] != 3) {
             </li>
             <ul class="nav flex-column collapse show" id="submenu3" data-parent="#sidebar">
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="#../gestioAtraccio/"><span data-feather="plus-square"></span>Crear Atracció</a>
+                <a class="nav-link nav-interior" href="../gestioAtraccio/registreAtraccions.php"><span data-feather="plus-square"></span>Crear Atracció</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="#../gestioAtraccio/"><span data-feather="file-text"></span>Llistar Atraccions</a>
+                <a class="nav-link nav-interior" href="../gestioAtraccio/gestioAtraccions.php"><span data-feather="file-text"></span>Llistar Atraccions</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="#../gestioAtraccio/"><span data-feather="edit"></span>Modificar Atracció</a>
+                <a class="nav-link nav-interior" href="#"><span data-feather="edit"></span>Modificar Atracció</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="#../gestioAtraccio/"><span data-feather="minus-square"></span>Eliminar Atracció</a>
+                <a class="nav-link nav-interior" href="#"><span data-feather="minus-square"></span>Eliminar Atracció</a>
               </li>
             </ul>
 
@@ -340,7 +340,7 @@ if($_SESSION['rol'] != 3) {
             </div>
           </div>
         <?php
-		  include_once $_SERVER['DOCUMENT_ROOT']."/php/classes/classeAtraccio.php";
+		  include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAtraccio.php";
 		  echo '<form method="post" style="margin-top=50px;">
 		  <div class="form-group row">
 		  <div class="col-10">

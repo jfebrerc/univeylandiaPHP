@@ -22,7 +22,7 @@ if($_SESSION['rol'] != 3) {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
 
     <!-- Estils custom -->
-    <link href="/css/styleGestio.css" rel="stylesheet">
+    <link href="css/styleGestio.css" rel="stylesheet">
   </head>
 
   <body>

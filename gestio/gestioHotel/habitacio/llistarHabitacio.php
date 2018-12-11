@@ -8,10 +8,6 @@ if($_SESSION['rol'] != 3) {
 }
  ?>
 
-<?php
-include_once $_SERVER['DOCUMENT_ROOT']."/php/classes/classeHabitacio.php";
-?>
-
 <!doctype html>
 <html lang="es">
   <head>
@@ -26,7 +22,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/php/classes/classeHabitacio.php";
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
 
     <!-- Estils custom -->
-    <link href="/css/styleGestio.css" rel="stylesheet">
+    <link href="css/styleGestio.css" rel="stylesheet">
   </head>
 
   <body>
@@ -331,7 +327,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/php/classes/classeHabitacio.php";
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Llistar Habitacions</h1>
+            <h1 class="h2">Administrar Habitacions</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group mr-2">
                 <button class="btn btn-sm btn-outline-secondary">
@@ -342,13 +338,37 @@ include_once $_SERVER['DOCUMENT_ROOT']."/php/classes/classeHabitacio.php";
             </div>
           </div>
 
-          <div class="table-responsive">
-            <table class="table table-bordered table-sm">
             <?php
-              Habitacio::llistarHabitacio();
+              include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeHabitacio.php";
+
+              echo '<form method="post" style="margin-top=50px;">';
+              echo '  <div class="form-row">';
+              echo '    <div class="col-10">';
+              echo '      <input class="form-control" type="text" name="busqueda_habitacio" placeholder="Filtrar...">';
+              echo '    </div>';
+              echo '    <div class="form-group row">';
+              echo '      <div class="offset-sm-2 col-sm-10">';
+              echo '        <input type="submit" class="btn btn-primary" name="buscar_habitacio" value="Filtrar">';
+              echo '      </div>';
+              echo '    </div>';
+              echo '  </div>';
+              echo '</form>';
+
+              if (isset($_POST['buscar_habitacio'])) {
+                Habitacio::llistarHabitacionsBusqueda();
+              } else {
+                Habitacio::llistarHabitacio();
+              }
+              if (isset($_POST['modificar'])) {
+                Habitacio::modificarHabitacio();
+              }
+              if (isset($_POST['eliminar'])){
+                Habitacio::eliminarHabitacio();
+              }
+
              ?>
-           </table>
-          </div>
+           <!--</table>
+          </div>-->
         </main>
 
 
