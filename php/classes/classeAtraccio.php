@@ -534,7 +534,7 @@ class Atraccio{
                     </button></td>';
         echo '    </tr>';
         echo '  </tbody>';
-		
+
 		echo '<!-- Modal -->
         <div class="modal fade" id="ModalEliminar'.$id_atraccio.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
@@ -683,6 +683,25 @@ class Atraccio{
   echo '</table>';
   $conexio->close();
 
+  }
+  function llistarNomAtraccions(){
+          $conexio = createConnection();
+          $sql = "SELECT nom_atraccio FROM ATRACCIO";
+          $result = $conexio->query($sql);
+          echo '<div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Atraccio
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    ';
+          if ($result) {
+              while($row = $result->fetch_assoc()) {
+                $nom_atraccio = $row["nom_atraccio"];
+                echo '  <a class="dropdown-item" href="#">'.$nom_atraccio.'</a>
+              ';
+          }
+          echo '</div>
+        </div>';
   }
 
 }
