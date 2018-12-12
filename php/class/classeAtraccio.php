@@ -669,7 +669,7 @@ if ($result) {
       echo '  </tbody>';
     }
   }
-}
+
       echo '</table>';
       $conexio->close();
 }
