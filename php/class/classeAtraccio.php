@@ -600,7 +600,7 @@ class Atraccio{
 public static function SelecciollistarEmpleatsBusqueda(){
 
 
-$conexio = createConnection();
+$conexio = crearConnexio();
 //if ($conexio->connect_error)
 //{
 //    die('Error de conexión: ' . $conexion->connect_error);
