@@ -346,14 +346,21 @@ if($_SESSION['rol'] != 3) {
 		  <div class="col-10">
 			<input class="form-control" type="text" id="example-text-input" name="busqueda_atraccio" placeholder="Buscar...">
 		  </div>
+      '.Assignacio::llistarNomAtraccions().'
 			<div class="form-group row">
 			  <div class="offset-sm-2 col-sm-10">
 				<input type="submit" class="btn btn-primary" name="buscar_assign" value="Buscar"">
 		  </div>
 			</div>
 		  </form>';
+      if (isset($_POST['buscar_assign'])) {
+        $buscar = $_POST['busqueda_atraccio'];
+      }else {
+        $buscar = "";
+      }
 
-      Assignacio::llistarAssignBusqueda();
+      //Assignacio::llistarNomAtraccions();
+      Assignacio::llistarAssignBusqueda($buscar);
 		  //classeAtraccio = new Atraccio();
 		 /* if (isset($_POST['buscar_atraccio'])) {
 			Atraccio::llistarEmpleatsBusqueda();

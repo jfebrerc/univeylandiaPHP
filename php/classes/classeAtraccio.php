@@ -534,7 +534,7 @@ class Atraccio{
                     </button></td>';
         echo '    </tr>';
         echo '  </tbody>';
-		
+
 		echo '<!-- Modal -->
         <div class="modal fade" id="ModalEliminar'.$id_atraccio.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
@@ -684,7 +684,6 @@ class Atraccio{
   $conexio->close();
 
   }
-
 }
 
 

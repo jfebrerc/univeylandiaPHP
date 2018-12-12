@@ -313,41 +313,47 @@ class Assignacio{
   //{
   //    die('Error de conexión: ' . $conexion->connect_error);
   //}
-  $busqueda = $_POST['busqueda_assign'];
+  $busqueda = $_POST['buscar_assign'];
   //$_POST['busqueda_atraccio']
 
-  $sql = "SELECT * FROM ASSIGN_USUARI_ATRACCIO where data_inici_assign like '%$busqueda%'";
+  $sql = "SELECT aua.id_assignacio, u.nom, u.cognom1, u.cognom2, u.numero_document, a.nom_atraccio, aua.data_inici_assign, aua.data_fi_assign, aua.data_creacio_registre FROM ASSIGN_USUARI_ATRACCIO aua LEFT JOIN ATRACCIO a ON aua.id_atraccio=a.id_atraccio LEFT JOIN USUARI u ON u.id_usuari=aua.id_usuari where u.nom like '%$busqueda%' or u.cognom1 like '%$busqueda%' or u.cognom2 like '%$busqueda%' or u.numero_document like '%$busqueda%' or a.nom_atraccio like '%$busqueda%' order by data_creacio_registre desc";
   $result = $conexio->query($sql);
   echo '<table class="table">';
   echo '  <thead>';
   echo '    <tr>';
-  echo '      <th scope="col">ID</th>';
-  echo '      <th scope="col">ID Empleat</th>';
-  echo '      <th scope="col">ID Atraccio</th>';
-  echo '      <th scope="col">Data Inici</th>';
+  echo '      <th scope="col">Nom empleat</th>';
+  echo '      <th scope="col">Cognom 1</th>';
+  echo '      <th scope="col">Cognom 2</th>';
+  echo '      <th scope="col">Document</th>';
+  echo '      <th scope="col">Nom atraccio</th>';
+  echo '      <th scope="col">Data inici</th>';
   echo '      <th scope="col">Data fi</th>';
-  echo '      <th scope="col">Data creacio</th>';
   echo '      <th scope="col"></th>';
   echo '      <th scope="col"></th>';
   echo '    </tr>';
   echo '  </thead>';
+  //asdsdfdsf
   if ($result) {
       while($row = $result->fetch_assoc()) {
         $id_assignacio = $row["id_assignacio"];
-        $id_atraccio = $row["id_atraccio"];
-        $id_usuari = $row["id_usuari"];
+        $nom_empleat = $row["nom"];
+        $cognom1_empleat = $row["cognom1"];
+        $cognom2_empleat = $row["cognom2"];
+        $dniEmpleat = $row["numero_document"];
+        $nom_atraccio = $row["nom_atraccio"];
         $data_inici_assign = $row["data_inici_assign"];
         $data_fi_assign = $row["data_fi_assign"];
         $data_creacio_registre = $row["data_creacio_registre"];
 
         echo '  <tbody>';
         echo '    <tr>';
-        echo '      <th scope="row">'.$id_assignacio.'</th>';
-        echo '      <td>'.$id_usuari.'</td>';
-        echo '      <td>'.$id_atraccio.'</td>';
+        echo '      <th scope="row">'.$nom_empleat.'</th>';
+        echo '      <td>'.$cognom1_empleat.'</td>';
+        echo '      <td>'.$cognom2_empleat.'</td>';
+        echo '      <td>'.$dniEmpleat.'</td>';
+        echo '      <td>'.$nom_atraccio.'</td>';
         echo '      <td>'.$data_inici_assign.'</td>';
         echo '      <td>'.$data_fi_assign.'</td>';
-        echo '      <td>'.$data_creacio_registre.'</td>';
         echo '      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter'.$id_assignacio.'"> Modificar
                     </button></td>';
         echo '      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalEliminar'.$id_assignacio.'"> Eliminar

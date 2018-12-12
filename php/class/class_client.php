@@ -18,10 +18,8 @@ class Client {
   private $telefon;
   private $id_rol;
   private $actiu;
-  private $hash;
-
+  private $hash_validacio;
 //constructor
-
   function __construct() {
     $args = func_get_args();
     $num = func_num_args();
@@ -30,20 +28,14 @@ class Client {
       call_user_func_array(array($this,$f),$args);
     }
   }
-
-
   function __construct0()
   {
-
   }
-
   function __construct2($email, $pass)
   {
     $this->email = $email;
     $this->pass = $pass;
   }
-
-
 function __construct14($nom,$cognom1,$cognom2,$email,$contrasenya,$date,$adreca,$ciutat,$provincia,$cp,$tipus_document,$numero_document,$sexe,$telefon){
   $this->nom = $nom;
   $this->cognom1 = $cognom1;
@@ -64,139 +56,115 @@ function __construct14($nom,$cognom1,$cognom2,$email,$contrasenya,$date,$adreca,
   $this->hash = md5(rand(0,1000));
 }
 //rip consturctor
-
   function getNom(){
     return $nom;
   }
   function setNom($nom){
       $this->nom = $nom;
   }
-
   function getCognom1(){
     return $cognom1;
   }
   function setCognom1($cognom1){
       $this->cognom1 = $cognom1;
   }
-
   function getCognom2(){
     return $cognom2;
   }
   function setCognom2($cognom2){
       $this->cognom2 = $cognom2;
   }
-
   function getEmail(){
     return $email;
   }
   function setEmail($email){
       $this->email = $email;
   }
-
   function getContrasenya(){
     return $contrasenya;
   }
   function setContrasenya($contrasenya){
       $this->contrasenya = $contrasenya;
   }
-
   function getDate(){
     return $date;
   }
   function setDate($date){
       $this->date = $date;
   }
-
   function getAdreca(){
     return $adreca;
   }
   function setAdreca($adreca){
      $this->adreca = $adreca;
   }
-
   function getCiutat(){
     return $ciutat;
   }
   function setCiutat($ciutat){
       $this->ciutat = $ciutat;
   }
-
   function getProvincia(){
     return $provincia;
   }
   function setProvincia($provincia){
       $this->provincia = $provincia;
   }
-
   function getCP(){
     return $cp;
   }
   function setCP($cp){
       $this->cp = $cp;
   }
-
   function getTipus_document(){
     return $tipus_document;
   }
   function setTipus_document($tipus_document){
       $this->tipus_document = $tipus_document;
   }
-
   function getNumero_document(){
     return $numero_document;
   }
   function setNumero_document($numero_document){
       $this->numero_document = $numero_document;
   }
-
   function getSexe(){
     return $sexe;
   }
   function setSexe($sexe){
     $this->sexe = $sexe;
   }
-
   function getTelefon(){
     return $telefon;
   }
   function setTelefon($telefon){
     $this->telefon = $telefon;
   }
-
   function getId_rol(){
     return $id_rol;
   }
   function setId_rol($id_rol){
       $this->id_rol = $id_rol;
   }
-
   function getActiu(){
     return $actiu;
   }
   function setActiu($actiu){
       $this->actiu = $actiu;
   }
-
   function getID(){
     return $id;
   }
   function setID($id){
     $this->id = $id;
   }
-
-
   function getHash(){
-    return $hash;
+    return $hash_validacio;
   }
-  function setHash($hash){
-    $this->hash = $hash;
+  function setHash($hash_validacio){
+    $this->hash_validacio = $hash_validacio;
   }
-
-
-
 //fi get i setTelefon
-
-
 //inserir
   public function inserir_client(){
     try {
@@ -204,14 +172,12 @@ function __construct14($nom,$cognom1,$cognom2,$email,$contrasenya,$date,$adreca,
       $sql = "INSERT INTO USUARI (nom, cognom1, cognom2, email, password, data_naixement, adreca, ciutat, provincia,
         codi_postal, tipus_document, numero_document, sexe, telefon, id_rol, actiu, hash) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
       $sentencia = $connection->prepare($sql);
-
       $sentencia->bind_param("sssssssssisssiiis",$this->nom,$this->cognom1,$this->cognom2,$this->email,
       $this->contrasenya,$this->date,$this->adreca,$this->ciutat,$this->provincia,$this->cp,
       $this->tipus_document,$this->numero_document,$this->sexe,$this->telefon,$this->id_rol,$this->actiu,$this->hash);
       //var_dump($this->hash);
       $result = $sentencia->execute();
       var_dump($result);
-
         /*if(){
           echo"funciona";
           $connection->close();
@@ -228,10 +194,8 @@ function __construct14($nom,$cognom1,$cognom2,$email,$contrasenya,$date,$adreca,
           $connection->close();
           $sentencia->close();
           return false;
-
       }
     }
-
     public function validar_client(){
       ini_set( 'display_errors', 1 );
       error_reporting( E_ALL );
@@ -241,9 +205,6 @@ function __construct14($nom,$cognom1,$cognom2,$email,$contrasenya,$date,$adreca,
       $subject = "Validacio de Univeylandia";
       $message = "Validar el compte
       http://www.univeylandia-parc.cat/verificar.php?email=$this->email&hash=$this->hash
-
-
-
       ";
       $header = "From: ". $from;
       $envia = mail($to,$subject,$message,$header);
@@ -253,10 +214,7 @@ function __construct14($nom,$cognom1,$cognom2,$email,$contrasenya,$date,$adreca,
       }else {
         echo "rip";
       }
-
     }
-
-
     public static function llistar_client(){
       try{
         $connection = crearConnexio();
@@ -280,7 +238,6 @@ function __construct14($nom,$cognom1,$cognom2,$email,$contrasenya,$date,$adreca,
         echo '<th scope="col">Telefon</th>';
         echo '</tr>';
         echo '</thead>';
-
         if($resultat){
           while($row = $resultat->fetch_assoc()){
             $id = $row["id_usuari"];
@@ -297,8 +254,6 @@ function __construct14($nom,$cognom1,$cognom2,$email,$contrasenya,$date,$adreca,
             $numero_document = $row["numero_document"];
             $sexe = $row["sexe"];
             $telefon = $row["telefon"];
-
-
             echo '<tbody>';
             echo '<tr>';
             echo '<th scope="row">'.$row["nom"].'</th>';
@@ -337,9 +292,6 @@ function __construct14($nom,$cognom1,$cognom2,$email,$contrasenya,$date,$adreca,
                    </div>
                   </div>
                   </div>
-
-
-
                   <div class="form-group row">
                     <label for="example-text-input" class="col-2 col-form-label">Nom</label>
                     <div class="form-group row">
@@ -348,8 +300,6 @@ function __construct14($nom,$cognom1,$cognom2,$email,$contrasenya,$date,$adreca,
                     </div>
                   </div>
                   </div>
-
-
                 <div class="form-group row">
                     <label for="example-text-input" class="col-2 col-form-label">Cognom1</label>
                     <div class="form-group row">
@@ -358,8 +308,6 @@ function __construct14($nom,$cognom1,$cognom2,$email,$contrasenya,$date,$adreca,
                     </div>
                   </div>
                   </div>
-
-
                 <div class="form-group row">
                     <label for="example-text-input" class="col-2 col-form-label">Cognom2</label>
                     <div class="form-group row">
@@ -368,8 +316,6 @@ function __construct14($nom,$cognom1,$cognom2,$email,$contrasenya,$date,$adreca,
                     </div>
                   </div>
                   </div>
-
-
                   <div class="form-group row">
                     <label for="example-text-input" class="col-2 col-form-label">Correu</label>
                     <div class="form-group row">
@@ -378,7 +324,6 @@ function __construct14($nom,$cognom1,$cognom2,$email,$contrasenya,$date,$adreca,
                     </div>
                   </div>
                   </div>
-
                   <div class="form-group row">
                     <label for="example-text-input" class="col-2 col-form-label">Password</label>
                     <div class="form-group row">
@@ -387,8 +332,6 @@ function __construct14($nom,$cognom1,$cognom2,$email,$contrasenya,$date,$adreca,
                     </div>
                   </div>
                   </div>
-
-
                 <div class="form-group row">
                     <label for="example-text-input" class="col-2 col-form-label">Data </label>
                     <div class="form-group row">
@@ -397,7 +340,6 @@ function __construct14($nom,$cognom1,$cognom2,$email,$contrasenya,$date,$adreca,
                     </div>
                   </div>
                   </div>
-
               <div class="form-group row">
                     <label for="example-text-input" class="col-2 col-form-label">Adreça</label>
                     <div class="form-group row">
@@ -406,7 +348,6 @@ function __construct14($nom,$cognom1,$cognom2,$email,$contrasenya,$date,$adreca,
                     </div>
                   </div>
                   </div>
-
                 <div class="form-group row">
                     <label for="example-text-input" class="col-2 col-form-label">Ciutat</label>
                     <div class="form-group row">
@@ -415,7 +356,6 @@ function __construct14($nom,$cognom1,$cognom2,$email,$contrasenya,$date,$adreca,
                     </div>
                   </div>
                   </div>
-
                 <div class="form-group row">
                     <label for="example-text-input" class="col-2 col-form-label">Provincia</label>
                     <div class="form-group row">
@@ -424,8 +364,6 @@ function __construct14($nom,$cognom1,$cognom2,$email,$contrasenya,$date,$adreca,
                     </div>
                   </div>
                   </div>
-
-
                 <div class="form-group row">
                     <label for="example-text-input" class="col-2 col-form-label">CP</label>
                     <div class="form-group row">
@@ -434,7 +372,6 @@ function __construct14($nom,$cognom1,$cognom2,$email,$contrasenya,$date,$adreca,
                     </div>
                   </div>
                   </div>
-
                 <div class="form-group row">
                     <label for="example-text-input" class="col-2 col-form-label">Tipus document</label>
                     <div class="form-group row">
@@ -443,8 +380,6 @@ function __construct14($nom,$cognom1,$cognom2,$email,$contrasenya,$date,$adreca,
                     </div>
                   </div>
                   </div>
-
-
                 <div class="form-group row">
                     <label for="example-text-input" class="col-2 col-form-label">Numero document</label>
                     <div class="form-group row">
@@ -453,8 +388,6 @@ function __construct14($nom,$cognom1,$cognom2,$email,$contrasenya,$date,$adreca,
                     </div>
                   </div>
                   </div>
-
-
                   <div class="form-group row">
                     <label for="example-text-input" class="col-2 col-form-label">Sexe</label>
                     <div class="form-group row">
@@ -463,8 +396,6 @@ function __construct14($nom,$cognom1,$cognom2,$email,$contrasenya,$date,$adreca,
                     </div>
                   </div>
                   </div>
-
-
                   <div class="form-group row">
                     <label for="example-text-input" class="col-2 col-form-label">Telefon</label>
                     <div class="form-group row">
@@ -473,7 +404,6 @@ function __construct14($nom,$cognom1,$cognom2,$email,$contrasenya,$date,$adreca,
                     </div>
                   </div>
                   </div>
-
                     <div class="form-group row">
                       <div class="offset-sm-2 col-sm-10">
                         <input type="submit" class="btn btn-primary" name="modificar" value="Modificar"">';
@@ -489,7 +419,6 @@ function __construct14($nom,$cognom1,$cognom2,$email,$contrasenya,$date,$adreca,
             </div>
           </div>
         </div>';
-
 //modal de suprimir
 echo '<!-- Modal -->
         <div class="modal fade" id="ModalEliminar'.$id.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -516,17 +445,14 @@ echo '<!-- Modal -->
             </div>
           </div>
         </div>';
-
         //var_dump($_POST['modificar']);
         if(isset($_POST['modificar'])){
          $client = new Client();
          $client->modificar_client();
         }
-
         if(isset($_POST['Acceptar'])){
           Client::eliminar_client();
         }
-
           }
         }
       }catch(Exception $error){
@@ -534,13 +460,11 @@ echo '<!-- Modal -->
               $connection->close();
               $sentencia->close();
               return false;
-
       }
   }
   public function modificar_client()
   {
     $connection = crearConnexio();
-
     $id_mod = $_POST['id'];
     $nom_mod = $_POST['nom_mod'];
     $cognom1_mod = $_POST['cognom1_mod'];
@@ -556,12 +480,10 @@ echo '<!-- Modal -->
     $numero_document_mod = $_POST['numero_document_mod'];
     $sexe_mod = $_POST['sexe_mod'];
     $telefon_mod = $_POST['telefon_mod'];
-
     $sql = "UPDATE USUARI SET nom='$nom_mod',cognom1='$cognom1_mod',cognom2='$cognom2_mod',email='$email_mod',
     password='$contrasenya_mod',data_naixement='$date_mod',adreca='$adreca_mod',ciutat='$ciutat_mod',
     provincia='$provincia_mod',codi_postal='$cp_mod',tipus_document='$tipus_document_mod',
     numero_document='$numero_document_mod',sexe='$sexe_mod',telefon='$telefon_mod' WHERE id_usuari=$id_mod";
-
     if (mysqli_query($connection, $sql)) {
         echo '<script>window.location.href = window.location.href + "?negativet";</script>';
         echo "<p> Okay </p>";
@@ -570,107 +492,77 @@ echo '<!-- Modal -->
     }
     $connection->close();
   }
-
   public static function eliminar_client(){
     $connection = crearConnexio();
     $id_sup = $_POST['id_mod_sup'];
     $sql_sup = "UPDATE USUARI SET actiu='0' WHERE id_usuari='$id_sup'";
-
     if(mysqli_query($connection, $sql_sup)){
       echo 'fet';
     }else{
       echo "Error updating record: " . mysqli_error($connection);
     }
     $connection->close();
-
-
   }
-
-
-    public function validarLogin()
-    {
-      $connection = crearConnexio();
-
-      $sql = "SELECT id_usuari, id_rol, password, email FROM USUARI WHERE email=? AND id_rol=1 AND actiu=1";
-        echo 'sql funcional';
-      //$sql = "SELECT password FROM USUARI WHERE email=? AND id_rol='1' ";
-
-      $stmt = $connection->prepare($sql);
-
-      $stmt->bind_param("s",$this->email);
-
-      $stmt->execute();
-
-      $result = $stmt->get_result();
-
-      /* now you can fetch the results into an array - NICE */
-      while ($row = $result->fetch_assoc()) {
-          // use your $myrow array as you would with any other fetch
-          var_dump($row['id_usuari'], $row['id_rol'], $row['email']);
-          $username = $row['email'];
-          $userID = $row['id_usuari'];
-          $rol = $row['id_rol'];
-          $hash = $row['password'];
-
-      }
-
-      //$stmt->bind_result($hash);
-
-      //$stmt->fetch();
-
-      $isValid = password_verify($this->password, $hash);
-      //$isValid = true;
-      if ($isValid)
-      {
-        echo 'VALID';
-        session_start();
-
-        if (array_key_exists('remember', $_POST)) {
-            // Crear una nova cookie de sessió que expira en 7 dies
-            setcookie('idu', $username, time() + 7 * 24 * 60 * 60);
-            //Reemplaçar el ID de la sessio actual amb una nova i mantenir la informació de la sessio actual
-            session_regenerate_id(true);
-        } elseif (!$_POST['remember']) {
-            //Si hi ha una COOKIE creada, atrassar-la en el temps per a que la elimine
-            if (isset($_COOKIE['idu'])) {
-                $past = time() - 100;
-                setcookie(idu, gone, $past);
-            }
-        }
-
-        $_SESSION['id_usuari'] = $userID; //$row['id_usuari'];
-        $_SESSION['username'] = $username; //$row['email'];
-        $_SESSION['rol'] = $rol;//$row['id_rol'];
-
-        echo $_SESSION['username'], $_SESSION['id_usuari'], $_SESSION['rol'];
-
-        return true;
-      }
-      else
-      {
-        echo 'NO VALID';
-        return false;
-      }
-      $connection->close();
+  public function validarLogin()
+  {
+    $conn = crearConnexio();
+    $sql = "SELECT id_usuari, id_rol, password, email FROM USUARI WHERE email=? AND id_rol=1 AND actiu=1";
+    //$sql = "SELECT password FROM USUARI WHERE email=? AND id_rol='1' ";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s",$this->email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    /* now you can fetch the results into an array - NICE */
+    while ($row = $result->fetch_assoc()) {
+        // use your $myrow array as you would with any other fetch
+        var_dump($row['id_usuari'], $row['id_rol'], $row['email']);
+        $username = $row['email'];
+        $userID = $row['id_usuari'];
+        $rol = $row['id_rol'];
+        $hash = $row['password'];
     }
-
+    $isValid = password_verify($this->pass, $hash);
+    if ($isValid)
+    {
+      echo 'VALID';
+      session_start();
+      if (array_key_exists('remember', $_POST)) {
+          // Crear una nova cookie de sessió que expira en 7 dies
+          setcookie('idu', $username, time() + 7 * 24 * 60 * 60);
+          //Reemplaçar el ID de la sessio actual amb una nova i mantenir la informació de la sessio actual
+          session_regenerate_id(true);
+      } elseif (!$_POST['remember']) {
+          //Si hi ha una COOKIE creada, atrassar-la en el temps per a que la elimine
+          if (isset($_COOKIE['idu'])) {
+              $past = time() - 100;
+              setcookie(idu, gone, $past);
+          }
+      }
+      $_SESSION['id_usuari'] = $userID; //$row['id_usuari'];
+      $_SESSION['username'] = $username; //$row['email'];
+      $_SESSION['rol'] = $rol;//$row['id_rol'];
+      echo $_SESSION['username'], $_SESSION['id_usuari'], $_SESSION['rol'];
+      return true;
+    }
+    else
+    {
+      //echo 'NO VALID';
+      return false;
+    }
+    $conn->close();
+  }
 	  public static function cercarDadesClient($email)
   {
     try {
         $conn = crearConnexio();
-
         if ($conn->connect_error) {
             die("Connexió fallida: " . $conn->connect_error);
         }
-
         $sql = "SELECT nom, cognom1, cognom2, data_naixement, adreca, ciutat FROM USUARI WHERE email='$email'";
-
         $result = $conn->query($sql);
-
         if(!$result) {
           throw new Exception();
         }
-
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $nom = $row['nom'];
@@ -679,13 +571,11 @@ echo '<!-- Modal -->
                 $data_naixement = $row['data_naixement'];
                 $adreca = $row['adreca'];
                 $ciutat = $row['ciutat'];
-
                 echo '<li class="list-group-item"><strong>Nom: </strong>'.$nom.'</li>';
                 echo '<li class="list-group-item"><strong>Cognoms: </strong>'.$cognom1.' '.$cognom2.'</li>';
                 echo '<li class="list-group-item"><strong>Data naixement: </strong>'.$data_naixement.'</li>';
                 echo '<li class="list-group-item"><strong>Adreça: </strong>'.$adreca.'</li>';
                 echo '<li class="list-group-item"><strong>Ciutat: </strong>'.$ciutat.'</li>';
-
             }
         } else {
             echo '';
@@ -695,7 +585,6 @@ echo '<!-- Modal -->
       catch (Exception $e) {
         echo 'Error al realitzar la consulta.';
       }
-
   }
 }
 ?>
