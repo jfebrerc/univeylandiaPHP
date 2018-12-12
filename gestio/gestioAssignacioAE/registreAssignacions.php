@@ -342,6 +342,9 @@ if($_SESSION['rol'] != 3) {
   		        </div>
               <input type="submit" class="btn btn-primary" name="buscar_atraccio" value="Buscar"">
           </div>
+    			<div class="form-group row">
+    			  <div class="offset-sm-2 col-sm-10">
+    		  </div>
   			 </div>
   		  </form>';
   		  //classeAtraccio = new Atraccio();
