@@ -331,7 +331,62 @@ if($_SESSION['rol'] != 3) {
           <h1 class="h2">Registrar Assignacions Atraccio-Empleat</h1>
         </div>
 
-        
+        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalAtraccions"> Sel·leccionar Atraccio
+        </button></td>;
+        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalEmpleats"> Sel·leccionar Empleats
+        </button></td>;
+
+        <!-- Modal Atraccio-->
+        <div class="modal fade" id="ModalAtraccions" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Atenció!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                <form method="post">
+                <input class="form-control" type="text" value="'.$id_atraccio.'" id="example-text-input" name="id_atraccioelim" style="display: none;">
+                Segur que vols eliminar la atracció: '.$nom_atraccio.'?
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <input type="submit" class="btn btn-primary" name="Acceptar" value="Acceptar">
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>;
+
+        <!-- Modal -->
+        <div class="modal fade" id="ModalEmpleats" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Atenció!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                <form method="post">
+                <input class="form-control" type="text" value="'.$id_atraccio.'" id="example-text-input" name="id_atraccioelim" style="display: none;">
+                Segur que vols eliminar la atracció: '.$nom_atraccio.'?
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <input type="submit" class="btn btn-primary" name="Acceptar" value="Acceptar">
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>;
 
       </main>
     </div>
