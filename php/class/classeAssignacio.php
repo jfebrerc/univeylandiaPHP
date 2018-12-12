@@ -523,20 +523,12 @@ function llistarNomAtraccions(){
         $conexio = crearConnexio();
         $sql = "SELECT nom_atraccio FROM ATRACCIO";
         $result = $conexio->query($sql);
-        echo '<div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Atraccio
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  ';
         if ($result) {
             while($row = $result->fetch_assoc()) {
+              echo '<option selected disabled>Atracció</option>';
               $nom_atraccio = $row["nom_atraccio"];
-              echo '  <a class="dropdown-item" href="#">'.$nom_atraccio.'</a>
-            ';
+              echo '    <option value=".'$nom_atraccio'.">.'$nom_atraccio'.</option>';
         }
-        echo '</div>
-      </div>';
 }
 
 }
