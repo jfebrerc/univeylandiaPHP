@@ -331,10 +331,10 @@ if($_SESSION['rol'] != 3) {
           <h1 class="h2">Registrar Assignacions Atraccio-Empleat</h1>
         </div>
 
-        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalAtraccions"> Sel·leccionar Atraccio
-        </button></td>;
-        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalEmpleats"> Sel·leccionar Empleats
-        </button></td>;
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalAtraccions"> Sel·leccionar Atraccio
+        </button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalEmpleats"> Sel·leccionar Empleats
+        </button>
 
         <!-- Modal Atraccio-->
         <div class="modal fade" id="ModalAtraccions" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -360,7 +360,7 @@ if($_SESSION['rol'] != 3) {
               </div>
             </div>
           </div>
-        </div>;
+        </div>
 
         <!-- Modal -->
         <div class="modal fade" id="ModalEmpleats" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -386,7 +386,7 @@ if($_SESSION['rol'] != 3) {
               </div>
             </div>
           </div>
-        </div>;
+        </div>
 
       </main>
     </div>
