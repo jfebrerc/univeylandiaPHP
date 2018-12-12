@@ -335,10 +335,7 @@ if($_SESSION['rol'] != 3) {
         </button>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalEmpleats"> Sel·leccionar Empleats
         </button>
-        <?php
-        include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAtraccio.php";
-        Atraccio::SelecciollistarEmpleatsBusqueda();
-         ?>
+
 
         <!-- Modal Atraccio-->
         <div class="modal fade" id="ModalAtraccions" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -353,7 +350,10 @@ if($_SESSION['rol'] != 3) {
               <div class="modal-body">
                 <div class="container">
                 <form method="post">
-
+                  <?php
+                  include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAtraccio.php";
+                  Atraccio::SelecciollistarEmpleatsBusqueda();
+                   ?>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
