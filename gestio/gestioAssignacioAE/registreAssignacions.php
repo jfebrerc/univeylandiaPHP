@@ -351,7 +351,7 @@ if($_SESSION['rol'] != 3) {
                 <form method="post">
                 <?php
                 include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAtraccio.php";
-                Atraccio::SeleccionarEmpleatsBusqueda();
+                Atraccio::SelecciollistarEmpleatsBusqueda();
                  ?>
               </div>
               <div class="modal-footer">
