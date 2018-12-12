@@ -348,7 +348,7 @@ if($_SESSION['rol'] != 3) {
 		  </div>
       <div class="col-10">
         <select class="custom-select" name="tipus_atracciomod">
-        .'Assignacio::llistarNomAtraccions()'.
+        .'Assignacio::llistarNomAtraccions();'.
         }
         </select>
       </div>
