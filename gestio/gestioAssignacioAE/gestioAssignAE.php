@@ -343,10 +343,10 @@ if($_SESSION['rol'] != 3) {
 		  include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAssignacio.php";
 		  echo '<form method="post" style="margin-top=50px;">
 		  <div class="form-group row">
-		  <div class="col-10">
+		  <div class="col-6">
 			<input class="form-control" type="text" id="example-text-input" name="busqueda_atraccio" placeholder="Buscar...">
 		  </div>
-      <div class="col-10">
+      <div class="col-6">
         <select class="custom-select" name="tipus_atracciomod">';
         Assignacio::llistarNomAtraccions();
       echo '  </select>
