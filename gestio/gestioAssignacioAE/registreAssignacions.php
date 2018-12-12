@@ -359,6 +359,34 @@ if($_SESSION['rol'] != 3) {
         ?>
         </div>
 
+        <div class="col-md-4">
+          <div class="col-md-12 px-4">
+            <h4 class="h5">Selecciona l'atracció a assignar</h4>
+          </div>
+          <?php
+  		  include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAtraccio.php";
+  		  echo '
+        <form method="post" style="margin-top=50px;">
+  		    <div class="form-group row">
+  		        <div class="col-9">
+  			          <input class="form-control" type="text" id="example-text-input" name="busqueda_atraccio" placeholder="Buscar...">
+  		        </div>
+              <input type="submit" class="btn btn-primary" name="buscar_atraccio" value="Buscar"">
+          </div>
+    			<div class="form-group row">
+    			  <div class="offset-sm-2 col-sm-10">
+    		  </div>
+  			 </div>
+  		  </form>';
+  		  //classeAtraccio = new Atraccio();
+        if (isset($_POST['buscar_atraccio'])) {
+  			Atraccio::SelecciollistarEmpleatsBusqueda();
+      } else {
+        Atraccio::SelecciollistarAtraccions();
+      }
+        ?>
+        </div>
+
       </main>
     </div>
   </div>
