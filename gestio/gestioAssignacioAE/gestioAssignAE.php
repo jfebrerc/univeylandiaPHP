@@ -339,7 +339,7 @@ if($_SESSION['rol'] != 3) {
               </div>
             </div>
           </div>
-        <?php
+<?php
 		  include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAssignacio.php";
 		  echo '<form method="post" style="margin-top=50px;">
 		  <div class="form-group row">
@@ -349,7 +349,6 @@ if($_SESSION['rol'] != 3) {
       <div class="col-10">
         <select class="custom-select" name="tipus_atracciomod">
         .'Assignacio::llistarNomAtraccions();'.
-        }
         </select>
       </div>
 			<div class="form-group row">
