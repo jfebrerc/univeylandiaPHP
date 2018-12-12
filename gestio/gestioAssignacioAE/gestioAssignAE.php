@@ -362,7 +362,7 @@ if($_SESSION['rol'] != 3) {
         $buscar_atraccio = $_POST['nom_atraccio'];
       }else {
         $buscar = "";
-        $buscar_atraccio = "";
+        //$buscar_atraccio = "";
       }
 
       /*$buscar = "";
