@@ -361,6 +361,9 @@ if($_SESSION['rol'] != 3) {
         </div>
 
         <div class="col-md-4">
+        </div>
+
+        <div class="col-md-4">
           <div class="col-md-12 px-4">
             <h4 class="h5">Selecciona l'atracció a assignar</h4>
           </div>
