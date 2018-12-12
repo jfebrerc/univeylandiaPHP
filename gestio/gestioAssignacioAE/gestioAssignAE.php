@@ -346,7 +346,7 @@ if($_SESSION['rol'] != 3) {
 		  <div class="col-6">
 			<input class="form-control" type="text" id="example-text-input" name="busqueda_atraccio" placeholder="Buscar...">
 		  </div>
-      <div class="col-6">
+      <div class="col-3">
         <select class="custom-select" name="tipus_atracciomod">';
         Assignacio::llistarNomAtraccions();
       echo '  </select>
