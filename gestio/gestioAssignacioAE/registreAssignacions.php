@@ -365,10 +365,21 @@ if($_SESSION['rol'] != 3) {
                        </form>';
                        if (isset($_POST['buscar_atraccio'])) {
                  			Atraccio::llistarEmpleatsBusqueda();
+                      echo '<form method="post" style="margin-top=50px;">
+                           <div class="form-group row">
+                           <div class="col-10">
+                           <input class="form-control" type="text" id="example-text-input" name="busqueda_atraccio" placeholder="Buscar...">
+                           </div>
+                           <div class="form-group row">
+                             <div class="offset-sm-2 col-sm-10">
+                             <input type="submit" class="btn btn-primary" data-toggle="modal" data-target="#ModalAtraccions" name="buscar_atraccio" value="Buscar"">
+                           </div>
+                           </div>
+                           </form>';
                  		  }else {
                  			Atraccio::llistarEmpleats();
                  		  }
-                      
+
                    ?>
 
               </div>
