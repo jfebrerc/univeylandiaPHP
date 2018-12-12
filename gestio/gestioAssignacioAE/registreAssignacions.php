@@ -363,7 +363,11 @@ if($_SESSION['rol'] != 3) {
                        </div>
                        </div>
                        </form>';
-                  Atraccio::SelecciollistarEmpleatsBusqueda();
+                       if (isset($_POST['buscar_atraccio'])) {
+                 			Atraccio::llistarEmpleatsBusqueda();
+                 		  }else {
+                 			Atraccio::llistarEmpleats();
+                 		  }
                    ?>
               </div>
               <div class="modal-footer">
