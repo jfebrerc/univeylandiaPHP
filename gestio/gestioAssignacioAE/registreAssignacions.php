@@ -365,17 +365,49 @@ if($_SESSION['rol'] != 3) {
                        </form>';
                        if (isset($_POST['buscar_atraccio'])) {
                  			Atraccio::llistarEmpleatsBusqueda();
-                      echo '<form method="post" style="margin-top=50px;">
-                           <div class="form-group row">
-                           <div class="col-10">
-                           <input class="form-control" type="text" id="example-text-input" name="busqueda_atraccio" placeholder="Buscar...">
-                           </div>
-                           <div class="form-group row">
-                             <div class="offset-sm-2 col-sm-10">
-                             <input type="submit" class="btn btn-primary" data-toggle="modal" data-target="#ModalAtraccions" name="buscar_atraccio" value="Buscar"">
-                           </div>
-                           </div>
-                           </form>';
+                      <div class="modal fade" id="ModalAtraccions" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg " style="max-width: 80%" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLongTitle">Atenció!</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="container">
+                              <form method="post">
+                                <?php
+                                include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAtraccio.php";
+                                echo '<form method="post" style="margin-top=50px;">
+                                     <div class="form-group row">
+                                     <div class="col-10">
+                                     <input class="form-control" type="text" id="example-text-input" name="busqueda_atraccio" placeholder="Buscar...">
+                                     </div>
+                                     <div class="form-group row">
+                                       <div class="offset-sm-2 col-sm-10">
+                                       <input type="submit" class="btn btn-primary" data-toggle="modal" data-target="#ModalAtraccions" name="buscar_atraccio" value="Buscar"">
+                                     </div>
+                                     </div>
+                                     </form>';
+                                     if (isset($_POST['buscar_atraccio'])) {
+                               			Atraccio::llistarEmpleatsBusqueda();
+                               		  }else {
+                               			Atraccio::llistarEmpleats();
+                               		  }
+
+                                 ?>
+
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                              <input type="submit" class="btn btn-primary" name="Acceptar" value="Acceptar">
+                              </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                  		  }else {
                  			Atraccio::llistarEmpleats();
                  		  }
