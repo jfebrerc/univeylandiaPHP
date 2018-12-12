@@ -349,11 +349,7 @@ if($_SESSION['rol'] != 3) {
               <div class="modal-body">
                 <div class="container">
                 <form method="post">
-
-                <?php
-                include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAtraccio.php";
-                Atraccio::SelecciollistarEmpleatsBusqueda();
-                 ?>
+              
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
