@@ -349,8 +349,10 @@ if($_SESSION['rol'] != 3) {
               <div class="modal-body">
                 <div class="container">
                 <form method="post">
-                <input class="form-control" type="text" value="'.$id_atraccio.'" id="example-text-input" name="id_atraccioelim" style="display: none;">
-                Segur que vols eliminar la atracció: '.$nom_atraccio.'?
+                <?php
+                include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAtraccio.php";
+                Atraccio::SeleccionarEmpleatsBusqueda();
+                 ?>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
