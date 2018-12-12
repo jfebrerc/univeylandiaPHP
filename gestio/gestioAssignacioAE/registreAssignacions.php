@@ -365,13 +365,10 @@ if($_SESSION['rol'] != 3) {
                        </form>';
                        if (isset($_POST['buscar_atraccio'])) {
                  			Atraccio::llistarEmpleatsBusqueda();
-                      //Atraccio::mostrarModal();
                  		  }else {
                  			Atraccio::llistarEmpleats();
                  		  }
-
                    ?>
-
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
