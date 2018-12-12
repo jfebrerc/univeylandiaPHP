@@ -331,9 +331,9 @@ if($_SESSION['rol'] != 3) {
           <h1 class="h2">Registrar Assignacions Atraccio-Empleat</h1>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4 px-4>
           <div class="col-md-10">
-            <h2 class="h3">Selecciona l'atracció a assignar</h2>
+            <h4 class="h5">Selecciona l'atracció a assignar</h4>
           </div>
           <?php
   		  include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAtraccio.php";
