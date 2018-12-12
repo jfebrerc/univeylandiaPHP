@@ -359,7 +359,7 @@ if($_SESSION['rol'] != 3) {
                        </div>
                        <div class="form-group row">
                          <div class="offset-sm-2 col-sm-10">
-                         <input type="submit" class="btn btn-primary" data-toggle="modal" data-target="#ModalAtraccions" aria-hidden="false" name="buscar_atraccio" value="Buscar"">
+                         <input type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalAtraccions" name="buscar_atraccio" value="Buscar"">
                        </div>
                        </div>
                        </form>';
