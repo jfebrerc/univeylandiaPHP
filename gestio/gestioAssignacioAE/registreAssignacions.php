@@ -368,8 +368,9 @@ if($_SESSION['rol'] != 3) {
                  		  }else {
                  			Atraccio::llistarEmpleats();
                  		  }
-                      $('#ModalAtraccions').on('hidden.bs.modal', function(){this.modal('show')});
+
                    ?>
+                   <script>$('#ModalAtraccions').on('hidden.bs.modal', function(){this.modal('show')});</script>
 
               </div>
               <div class="modal-footer">
