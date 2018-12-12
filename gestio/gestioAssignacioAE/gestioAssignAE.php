@@ -352,9 +352,9 @@ if($_SESSION['rol'] != 3) {
       echo '  </select>
       </div>
 			<div class="form-group row">
-			  <div class="offset-sm-2 col-sm-10">
-				<input type="submit" class="btn btn-primary" name="buscar_assign" value="Buscar"">
-		  </div>
+			    <div class="offset-sm-2 col-sm-10">
+				    <input type="submit" class="btn btn-primary" name="buscar_assign" value="Buscar"">
+		      </div>
 			</div>
 		  </form>';
       if (isset($_POST['buscar_assign'])) {
