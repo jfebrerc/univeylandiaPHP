@@ -674,7 +674,7 @@ if ($result) {
       $conexio->close();
 }
 public static function mostrarModal(){
-  echo'<div class="modal fade" id="ModalAtraccions" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  echo'<div class="modal" id="ModalAtraccions" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
     <div class="modal-dialog modal-dialog-centered modal-lg " style="max-width: 80%" role="document">
       <div class="modal-content">
         <div class="modal-header">
