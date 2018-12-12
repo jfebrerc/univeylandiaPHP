@@ -527,7 +527,7 @@ function llistarNomAtraccions(){
           echo '<option selected disabled>Atracció</option>';
             while($row = $result->fetch_assoc()) {
               $nom_atraccio = $row["nom_atraccio"];
-              echo '    <option value=".'$nom_atraccio'.">.'$nom_atraccio'.</option>';
+              echo '<option value="'.$nom_atraccio.'">'.$nom_atraccio.'</option>';
         }
 }
 
