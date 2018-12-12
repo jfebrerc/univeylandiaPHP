@@ -339,12 +339,11 @@ if($_SESSION['rol'] != 3) {
   		    <div class="form-group row">
   		        <div class="col-3">
   			          <input class="form-control" type="text" id="example-text-input" name="busqueda_atraccio" placeholder="Buscar...">
-                  <input type="submit" class="btn btn-primary" name="buscar_atraccio" value="Buscar"">
   		        </div>
+              <input type="submit" class="btn btn-primary" name="buscar_atraccio" value="Buscar"">
           </div>
     			<div class="form-group row">
     			  <div class="offset-sm-2 col-sm-10">
-
     		  </div>
   			 </div>
   		  </form>';
