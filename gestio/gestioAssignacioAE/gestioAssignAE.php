@@ -357,7 +357,7 @@ if($_SESSION['rol'] != 3) {
 		      </div>
 			</div>
 		  </form>';
-      if (isset($_POST['buscar_assign'])) {
+      if (isset($_POST['buscar_assign']) && isset($_POST['busqueda_atraccio'])) {
         $buscar = $_POST['busqueda_atraccio'];
       }else {
         $buscar = "";
