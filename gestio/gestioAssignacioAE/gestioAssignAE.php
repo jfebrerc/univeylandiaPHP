@@ -339,18 +339,22 @@ if($_SESSION['rol'] != 3) {
               </div>
             </div>
           </div>
-        <?php
+<?php
 		  include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAssignacio.php";
 		  echo '<form method="post" style="margin-top=50px;">
 		  <div class="form-group row">
-		  <div class="col-10">
+		  <div class="col-6">
 			<input class="form-control" type="text" id="example-text-input" name="busqueda_atraccio" placeholder="Buscar...">
 		  </div>
-      '.Assignacio::llistarNomAtraccions().'
+      <div class="col-3">
+        <select class="custom-select" name="tipus_atracciomod">';
+        Assignacio::llistarNomAtraccions();
+      echo '  </select>
+      </div>
 			<div class="form-group row">
-			  <div class="offset-sm-2 col-sm-10">
-				<input type="submit" class="btn btn-primary" name="buscar_assign" value="Buscar"">
-		  </div>
+			    <div class="offset-sm-2 col-sm-10">
+				    <input type="submit" class="btn btn-primary" name="buscar_assign" value="Buscar"">
+		      </div>
 			</div>
 		  </form>';
       if (isset($_POST['buscar_assign'])) {
