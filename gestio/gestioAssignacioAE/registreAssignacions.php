@@ -331,7 +331,7 @@ if($_SESSION['rol'] != 3) {
           <h1 class="h2">Registrar Assignacions Atraccio-Empleat</h1>
         </div>
 
-        <div class="col-md-4 px-4>
+        <div class="col-md-4 px-4">
           <div class="col-md-10">
             <h4 class="h5">Selecciona l'atracció a assignar</h4>
           </div>
