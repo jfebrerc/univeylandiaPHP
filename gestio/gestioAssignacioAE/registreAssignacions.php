@@ -350,6 +350,7 @@ if($_SESSION['rol'] != 3) {
   		  //classeAtraccio = new Atraccio();
   		  if (isset($_POST['buscar_atraccio'])) {
   			Atraccio::llistarEmpleatsBusqueda();
+          }
         ?>
         </div>
 
