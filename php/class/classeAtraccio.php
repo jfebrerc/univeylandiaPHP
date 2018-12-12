@@ -674,5 +674,6 @@ if ($result) {
       $conexio->close();
 }
 
+
 }
 ?>
