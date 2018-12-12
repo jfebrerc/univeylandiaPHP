@@ -332,7 +332,9 @@ if($_SESSION['rol'] != 3) {
         </div>
 
         <div class="col-md-4">
-          <span>Selecciona atracció</span>
+          <div class="col-md-4">
+            <span>Selecciona atracció</span>
+          </div>
           <?php
   		  include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAtraccio.php";
   		  echo '
