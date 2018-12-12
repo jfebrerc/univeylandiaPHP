@@ -524,8 +524,8 @@ function llistarNomAtraccions(){
         $sql = "SELECT nom_atraccio FROM ATRACCIO";
         $result = $conexio->query($sql);
         if ($result) {
+          echo '<option selected disabled>Atracció</option>';
             while($row = $result->fetch_assoc()) {
-              echo '<option selected disabled>Atracció</option>';
               $nom_atraccio = $row["nom_atraccio"];
               echo '    <option value=".'$nom_atraccio'.">.'$nom_atraccio'.</option>';
         }
