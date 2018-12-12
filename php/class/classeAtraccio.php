@@ -596,7 +596,7 @@ class Atraccio{
 
   }
 
-}
+
 public static function SelecciollistarEmpleatsBusqueda(){
 
 
@@ -674,5 +674,5 @@ if ($result) {
       $conexio->close();
 
 
-
+}
 ?>
