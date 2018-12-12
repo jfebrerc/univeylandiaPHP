@@ -672,7 +672,7 @@ if ($result) {
 }
       echo '</table>';
       $conexio->close();
-
+}
 
 }
 ?>
