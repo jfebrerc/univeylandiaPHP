@@ -344,10 +344,10 @@ if($_SESSION['rol'] != 3) {
 		  echo '<form method="post" style="margin-top=50px;">
 		  <div class="form-group row">
 		  <div class="col-6">
-			<input class="form-control" type="text" id="example-text-input" name="busqueda_atraccio" placeholder="Buscar...">
+			<input class="form-control" type="text" id="example-text-input" name="busqueda_assignaciotext" placeholder="Buscar...">
 		  </div>
       <div class="col-3">
-        <select class="custom-select" name="tipus_atracciomod">';
+        <select class="custom-select" name="nom_atraccio">';
         Assignacio::llistarNomAtraccions();
       echo '  </select>
       </div>
@@ -357,14 +357,21 @@ if($_SESSION['rol'] != 3) {
 		      </div>
 			</div>
 		  </form>';
-      if (isset($_POST['buscar_assign']) && isset($_POST['busqueda_atraccio'])) {
+      if (isset($_POST['buscar_assign']) && isset($_POST['busqueda_assignaciotext'])) {
         $buscar = $_POST['busqueda_atraccio'];
-      }else {
+      }elseif ($_POST['buscar_assign']) && isset($_POST['nom_atraccio'])) {
+        $buscar_atraccio = $_POST['nom_atraccio'];
+      }elseif ($_POST['buscar_assign']) && isset($_POST['nom_atraccio']) && isset($_POST['busqueda_assignaciotext'])) {
+        $buscar = $_POST['busqueda_atraccio'];
+        $buscar_atraccio = $_POST['nom_atraccio'];
+      }
+      else {
         $buscar = "";
+        $buscar_atraccio = "";
       }
 
       //Assignacio::llistarNomAtraccions();
-      Assignacio::llistarAssignBusqueda($buscar);
+      Assignacio::llistarAssignBusqueda($buscar, $buscar_atraccio);
 		  //classeAtraccio = new Atraccio();
 		 /* if (isset($_POST['buscar_atraccio'])) {
 			Atraccio::llistarEmpleatsBusqueda();
