@@ -357,7 +357,15 @@ if($_SESSION['rol'] != 3) {
 		      </div>
 			</div>
 		  </form>';
-      $buscar = "";
+      if (isset($_POST['buscar_assign'])) {
+        $buscar = $_POST['busqueda_assignaciotext'];
+        $buscar_atraccio = $_POST['nom_atraccio'];
+      }else {
+        $buscar = "";
+        $buscar_atraccio = "";
+      }
+
+      /*$buscar = "";
       $buscar_atraccio = "";
       if (isset($_POST['buscar_assign']) && isset($_POST['busqueda_assignaciotext'])) {
         $buscar = $_POST['busqueda_assignaciotext'];
@@ -370,7 +378,7 @@ if($_SESSION['rol'] != 3) {
       else {
         $buscar = "";
         $buscar_atraccio = "";
-      }
+      }*/
 
       //Assignacio::llistarNomAtraccions();
       Assignacio::llistarAssignBusqueda($buscar, $buscar_atraccio);
