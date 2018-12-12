@@ -352,14 +352,14 @@ if($_SESSION['rol'] != 3) {
                 <form method="post">
                   <?php
                   include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAtraccio.php";
-                  echo '<form method="post" action="#" style="margin-top=50px;">
+                  echo '<form method="post" style="margin-top=50px;">
                        <div class="form-group row">
                        <div class="col-10">
                        <input class="form-control" type="text" id="example-text-input" name="busqueda_atraccio" placeholder="Buscar...">
                        </div>
                        <div class="form-group row">
                          <div class="offset-sm-2 col-sm-10">
-                         <input type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalAtraccions" name="buscar_atraccio" value="Buscar"">
+                         <input type="submit" class="btn btn-primary" data-toggle="modal" data-target="#ModalAtraccions" name="buscar_atraccio" value="Buscar"">
                        </div>
                        </div>
                        </form>';
@@ -368,9 +368,8 @@ if($_SESSION['rol'] != 3) {
                  		  }else {
                  			Atraccio::llistarEmpleats();
                  		  }
-
+                      
                    ?>
-
 
               </div>
               <div class="modal-footer">
