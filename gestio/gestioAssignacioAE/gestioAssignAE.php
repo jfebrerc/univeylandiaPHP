@@ -363,23 +363,10 @@ if($_SESSION['rol'] != 3) {
         $buscar = $_POST['busqueda_assignaciotext'];
         $buscar_atraccio = $_POST['nom_atraccio'];
       }
-      /*$buscar = "";
-      $buscar_atraccio = "";
-      if (isset($_POST['buscar_assign']) && isset($_POST['busqueda_assignaciotext'])) {
-        $buscar = $_POST['busqueda_assignaciotext'];
-      }elseif (isset($_POST['buscar_assign']) && isset($_POST['nom_atraccio'])) {
-        $buscar_atraccio = $_POST['nom_atraccio'];
-      }elseif (isset($_POST['buscar_assign']) && isset($_POST['nom_atraccio']) && isset($_POST['busqueda_assignaciotext'])) {
-        $buscar = $_POST['busqueda_assignaciotext'];
-        $buscar_atraccio = $_POST['nom_atraccio'];
-      }
-      else {
-        $buscar = "";
-        $buscar_atraccio = "";
-      }*/
-
-      //Assignacio::llistarNomAtraccions();
       Assignacio::llistarAssignBusqueda($buscar, $buscar_atraccio);
+      if (isset($_POST['modificar'])) {
+        Assignacio::modificarAssignacio();
+        }
 		  //classeAtraccio = new Atraccio();
 		 /* if (isset($_POST['buscar_atraccio'])) {
 			Atraccio::llistarEmpleatsBusqueda();

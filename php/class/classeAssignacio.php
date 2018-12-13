@@ -494,6 +494,24 @@ public static function llistarEmpleatMod(){
 
 }
 
+public static function modificarAssignacio(){
+  $conexio = crearConnexio();
+  $id_assignacio = $_POST['id_assignaciomod'];
+  $atraccio = $_POST['atraccio_seleccionada'];
+  $empleat = $_POST['empleat_seleccionat'];  //Extrema, mitjana, familiar, aquatica
+  $data_inici = $_POST['data_inici_assign'];
+  $data_fi = $_POST['data_fi_assign'];
+
+  $sql_update = "UPDATE ASSIGN_USUARI_ATRACCIO SET id_usuari='$empleat', id_atraccio='$atraccio', data_inici_assign='$data_inici', data_fi_assign='$data_fi' WHERE id_assignacio=$id_assignacio";
+    if (mysqli_query($conexio, $sql_update)) {
+        echo '<script>window.location.href = window.location.href + "?positivet";</script>';
+        echo "<p> oket </p>";
+    } else {
+        echo "Error updating record: " . mysqli_error($conexio);
+    }
+    $conexio->close();
+}
+
 }
 
 
