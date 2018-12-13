@@ -367,6 +367,9 @@ if($_SESSION['rol'] != 3) {
       if (isset($_POST['modificar'])) {
         Assignacio::modificarAssignacio();
         }
+      if (isset($_POST['Acceptar'])){
+  			Assignacio::eliminarAssignacio();
+  		  }
 		  //classeAtraccio = new Atraccio();
 		 /* if (isset($_POST['buscar_atraccio'])) {
 			Atraccio::llistarEmpleatsBusqueda();
