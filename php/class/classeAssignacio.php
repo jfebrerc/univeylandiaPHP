@@ -19,6 +19,14 @@ class Assignacio{
    }
   }
 
+    public function __construct5($idUsuari, $idAtraccio,  $dataIniciAssignacio,  $dataFiAssignacio,  $dataCreacioRegistre)
+    $this->idUsuari=$idUsuari;
+    $this->idAtraccio=$idAtraccio;
+    $this->dataIniciAssignacio=$dataIniciAssignacio;
+    $this->dataFiAssignacio=$dataFiAssignacio;
+    $this->dataCreacioRegistre=$dataCreacioRegistre;
+
+
   /*public function __construct7($nomAtraccio,$tipusAtraccio,$dataInauguracio,$alturaMin,$alturaMax,$accessibilitat,$accesExpress){
     $this->idAtraccio=NULL;
     $this->nomAtraccio=$nomAtraccio;
@@ -303,6 +311,25 @@ class Assignacio{
 
 
 
+    public function RegistrarAssignacio(){
+
+        $connection = crearConnexio();
+        $sql = "INSERT INTO ASSIGN_USUARI_ATRACCIO (id_usuari,id_atraccio,data_inici_assign,data_fi_assign) VALUES (?,?,?,?);";
+          $sentencia = $connection->prepare($sql);
+          $sentencia->bind_param("iiiss",$this->id_usuari,$this->id_atraccio,$this->data_inici_assign,$this->data_fi_assign);
+          if($sentencia->execute()){
+            $sentencia->close();
+            $connection->close();
+            return true;
+          }
+          else{
+            $sentencia->close();
+            $connection->close();
+            return "Error en el registre.";
+            return false;
+          }
+
+    }
 
 
   public static function llistarAssignBusqueda($busqueda, $buscar_atraccio){

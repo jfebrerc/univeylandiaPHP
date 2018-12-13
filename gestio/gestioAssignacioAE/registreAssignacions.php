@@ -336,7 +336,7 @@ if($_SESSION['rol'] != 3) {
           <div class="col-md-12 px-4">
             <h4 class="h5">Selecciona l'Atracció a assignar</h4>
           </div>
-          <form  method="post">
+          <form  method="post" action="registrarAssignacions.php">
 
 
           <?php
@@ -360,15 +360,10 @@ if($_SESSION['rol'] != 3) {
 
         ?>
         <br/>
-        <input class="form-control" type="date" name="data_inici" value="">
+        <input class="form-control" type="date" name="data_inici_assign" value="">
         <br/>
-        <input class="form-control" type="date" name="data_inici" value="">
-        <?php
-        include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAtraccio.php";
-        if (isset($_POST["seleccio_atraccio"])) {
-          echo '<p >HAS SELECCIONAT: '.$_POST["Atraccio"].'</p>';
-        }
-         ?>
+        <input class="form-control" type="date" name="data_fi_assign" value="">
+
         </div>
 
         <div class="col-md-1">
@@ -398,12 +393,7 @@ if($_SESSION['rol'] != 3) {
         Empleat::SelecciollistarUsuaris();
 
         ?>
-        <?php
-        include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAtraccio.php";
-        if (isset($_POST["seleccio_empleat"])) {
-          echo '<p >HAS SELECCIONAT: '.$_POST["Empleat"].'</p>';
-        }
-         ?>
+
          </form>
 
 
