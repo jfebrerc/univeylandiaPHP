@@ -19,13 +19,13 @@ class Assignacio{
    }
   }
 
-    public function __construct5($idUsuari, $idAtraccio,  $dataIniciAssignacio,  $dataFiAssignacio,  $dataCreacioRegistre)
+    public function __construct5($idUsuari, $idAtraccio,  $dataIniciAssignacio,  $dataFiAssignacio,  $dataCreacioRegistre){
     $this->idUsuari=$idUsuari;
     $this->idAtraccio=$idAtraccio;
     $this->dataIniciAssignacio=$dataIniciAssignacio;
     $this->dataFiAssignacio=$dataFiAssignacio;
     $this->dataCreacioRegistre=$dataCreacioRegistre;
-
+    }
 
   /*public function __construct7($nomAtraccio,$tipusAtraccio,$dataInauguracio,$alturaMin,$alturaMax,$accessibilitat,$accesExpress){
     $this->idAtraccio=NULL;
