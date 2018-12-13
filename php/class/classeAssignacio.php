@@ -391,7 +391,7 @@ class Assignacio{
                 <div class="container">
                 <form method="post">
                 <input class="form-control" type="text" value="'.$id_assignacio.'" id="example-text-input" name="id_assignacioelim" style="display: none;">
-                Segur que vols eliminar la assignacio: '.$id_assignacio.'?
+                Segur que vols eliminar la assignacio: '.$nom_empleat.'  || '.$dniEmpleat.'  --> '.$nom_atraccio.'?
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
