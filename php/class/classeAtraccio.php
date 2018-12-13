@@ -746,9 +746,9 @@ if ($result) {
     }
     echo '      <td><form method="post">
                     <input type="hidden" name="Atraccio" value="'.$nom_atraccio.'">
-                    <input type="radio" class="form-check-input" name="seleccio_atraccio" value=""">
-                    <input type="radio" class="form-check-input" name="seleccio_atraccio" value=""">
-                    <input type="radio" class="form-check-input" name="seleccio_atraccio" value=""">
+                    <input type="radio" class="form-check-input" name="seleccio_atraccio" value="option1"">
+                    <input type="radio" class="form-check-input" name="seleccio_atraccio" value="option2"">
+                    <input type="radio" class="form-check-input" name="seleccio_atraccio" value="option3"">
                     </form>
                 </td>';
   }
