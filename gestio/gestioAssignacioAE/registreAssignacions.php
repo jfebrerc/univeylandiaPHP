@@ -389,6 +389,7 @@ if($_SESSION['rol'] != 3) {
         include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAtraccio.php";
         if (isset($_POST["seleccio_atraccio"])) {
           echo '<p>HAS SELECCIONAT'.$nomAtraccio.'</p>';
+        }
          ?>
 
         <p>HAS SELECCIONAT L'EMPLEAT</p>
