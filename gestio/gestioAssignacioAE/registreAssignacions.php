@@ -393,7 +393,7 @@ if($_SESSION['rol'] != 3) {
         Empleat::SelecciollistarUsuaris();
 
         ?>
-
+        <button class="btn btn-primary" type="submit">Crear Assignacio</button>
          </form>
 
 
