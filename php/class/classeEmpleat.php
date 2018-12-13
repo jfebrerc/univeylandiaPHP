@@ -320,8 +320,10 @@ class Empleat {
           echo '      <td>'.$mostrarAccessibilitat.'</td>';
           echo '      <td>'.$mostrarAcces_express.'</td>';
           echo '      <td>'.$row["data_creacio_registre"].'</td>';*/
-          echo '      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> Seleccionar Empleats
-                      </button></td>';
+          echo '      <td><form method="post">
+                          <input type="hidden" name="Empleat" value="'.$nom.'">
+                          <input type="submit" class="btn btn-primary" name="seleccio_empleat" value="Seleccionar Empleat"">
+                          </form></td>';
           echo '    </tr>';
           echo '  </tbody>';
         }
