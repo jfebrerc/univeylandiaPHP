@@ -443,7 +443,7 @@ function llistarNomAtraccions(){
 
 }
 
-function llistarAtraccionsMod(){
+function static llistarAtraccionsMod(){
         $conexio = crearConnexio();
         $sql = "SELECT nom_atraccio, id_atraccio FROM ATRACCIO";
         $result = $conexio->query($sql);
