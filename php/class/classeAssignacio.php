@@ -398,7 +398,7 @@ class Assignacio{
                     <div class="col-10">
                     <select class="custom-select" name="atraccio_seleccionada">
                       <option selected value="'.$id_atraccio.'">'.$nom_atraccio.'</option>';
-                      Atraccio::llistarAtraccionsMod();
+                      //Atraccio::llistarAtraccionsMod();
                     echo '</select>
                     </div>
                     </div>
@@ -443,7 +443,7 @@ function llistarNomAtraccions(){
 
 }
 
-function llistarAtraccionsMod(){
+function static llistarAtraccionsMod(){
         $conexio = crearConnexio();
         $sql = "SELECT nom_atraccio, id_atraccio FROM ATRACCIO";
         $result = $conexio->query($sql);
