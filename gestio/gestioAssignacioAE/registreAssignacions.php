@@ -384,9 +384,9 @@ if($_SESSION['rol'] != 3) {
   		  </form>';
   		  //classeAtraccio = new Atraccio();
         if (isset($_POST['buscar_empleat'])) {
-  			Atraccio::SelecciollistarUsuarisBusqueda();
+  			Empleat::SelecciollistarUsuarisBusqueda();
       } else {
-        Atraccio::SelecciollistarUsuaris();
+        Empleat::SelecciollistarUsuaris();
       }
         ?>
         </div>
