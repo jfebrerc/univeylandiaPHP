@@ -408,7 +408,7 @@ class Assignacio{
                       <label for="example-text-input" class="col-2 col-form-label">Empleat: </label>
                       <div class="col-10">
                       <select class="custom-select" name="empleat_seleccionat">
-                        <option selected value="'.$id_usuari.'">'.$nom_empleat.'</option>';
+                        <option selected value="'.$id_usuari.'">'.$nom_empleat.'  '.$dniEmpleat.'</option>';
                         Assignacio::llistarEmpleatMod();
                       echo '</select>
                       </div>
