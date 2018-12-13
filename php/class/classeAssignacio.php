@@ -347,15 +347,15 @@ class Assignacio{
   //asdsdfdsf
   if ($result) {
       while($row = $result->fetch_assoc()) {
-        $id_assignacio = $row["aua.id_assignacio"];
-        $nom_empleat = $row["u.nom"];
-        $cognom1_empleat = $row["u.cognom1"];
-        $cognom2_empleat = $row["u.cognom2"];
-        $dniEmpleat = $row["u.numero_document"];
-        $nom_atraccio = $row["a.nom_atraccio"];
-        $data_inici_assign = $row["aua.data_inici_assign"];
-        $data_fi_assign = $row["aua.data_fi_assign"];
-        $data_creacio_registre = $row["aua.data_creacio_registre"];
+        $id_assignacio = $row["id_assignacio"];
+        $nom_empleat = $row["nom"];
+        $cognom1_empleat = $row["cognom1"];
+        $cognom2_empleat = $row["cognom2"];
+        $dniEmpleat = $row["numero_document"];
+        $nom_atraccio = $row["nom_atraccio"];
+        $data_inici_assign = $row["data_inici_assign"];
+        $data_fi_assign = $row["data_fi_assign"];
+        $data_creacio_registre = $row["data_creacio_registre"];
 
         echo '  <tbody>';
         echo '    <tr>';
