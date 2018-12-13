@@ -177,5 +177,160 @@ class Empleat {
     }
     $connection->close();
   }
+
+  public static function SelecciollistarUsuarisBusqueda(){
+
+
+  $conexio = crearConnexio();
+  //if ($conexio->connect_error)
+  //{
+  //    die('Error de conexión: ' . $conexion->connect_error);
+  //}
+  $busqueda = $_POST['buscar_empleat'];
+  //$_POST['busqueda_atraccio']
+
+  $sql = "SELECT * FROM USUARI where id_rol !=1 && nom like '%$busqueda%' or cognom1 like '%$busqueda%' or cognom2 like '%$busqueda%' or numero_document like '%$busqueda%'";
+  $result = $conexio->query($sql);
+  echo '<table class="table">';
+  echo '  <thead>';
+  echo '    <tr>';
+  echo '      <th scope="col">ID</th>';
+  echo '      <th scope="col">Nom</th>';
+  echo '      <th scope="col">Cognom 1</th>';
+  echo '      <th scope="col">Cognom 2</th>';
+  echo '      <th scope="col">Num Document</th>';
+  /*echo '      <th scope="col">Altura maxima</th>';
+  echo '      <th scope="col">Accessibilitat</th>';
+  echo '      <th scope="col">Acces express</th>';
+  echo '      <th scope="col">Data creacio registre</th>';*/
+  echo '      <th scope="col"></th>';
+  echo '      <th scope="col"></th>';
+  echo '    </tr>';
+  echo '  </thead>';
+  if ($result) {
+      while($row = $result->fetch_assoc()) {
+        $id_empleat = $row["id_usuari"];
+        $nom = $row["nom"];
+        $cognom1 = $row["cognom1"];
+        $cognom2 = $row["cognom2"];
+        $num_doc = $row["numero_document"];
+        /*$altura_max = $row["altura_max"];
+        $accessibilitat = $row["accessibilitat"];
+        $acces_express = $row["acces_express"];
+        $data_creacio_registre = $row["data_creacio_registre"];*/
+
+        /*if ($accessibilitat == 1) {
+          $mostrarAccessibilitat = "Si";
+        }
+        if ($accessibilitat == 0) {
+          $mostrarAccessibilitat = "No";
+        }
+
+        if ($acces_express == 1) {
+          $mostrarAcces_express = "Si";
+        }
+        if ($acces_express == 0) {
+          $mostrarAcces_express = "No";
+        }*/
+
+        echo '  <tbody>';
+        echo '    <tr>';
+        echo '      <th scope="row">'.$row["id_usuari"].'</th>';
+        echo '      <td>'.$row["nom"].'</td>';
+        echo '      <td>'.$row["cognom1"].'</td>';
+        echo '      <td>'.$row["cognom2"].'</td>';
+        echo '      <td>'.$row["numero_document"].'</td>';
+        /*echo '      <td>'.$row["altura_max"].'</td>';
+        echo '      <td>'.$mostrarAccessibilitat.'</td>';
+        echo '      <td>'.$mostrarAcces_express.'</td>';
+        echo '      <td>'.$row["data_creacio_registre"].'</td>';*/
+        echo '      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> Seleccionar Empleats
+                    </button></td>';
+        echo '    </tr>';
+        echo '  </tbody>';
+      }
+    }
+
+        echo '</table>';
+        $conexio->close();
+  }
+
+
+  public static function SelecciollistarUsuaris(){
+    $conexio = crearConnexio();
+    //if ($conexio->connect_error)
+    //{
+    //    die('Error de conexión: ' . $conexion->connect_error);
+    //}
+    //$busqueda = $_POST['busqueda_atraccio'];
+    //$_POST['busqueda_atraccio']
+
+    $sql = "SELECT * FROM USUARI WHERE id_rol != 1";
+    $result = $conexio->query($sql);
+    echo '<table class="table">';
+    echo '  <thead>';
+    echo '    <tr>';
+    echo '      <th scope="col">ID</th>';
+    echo '      <th scope="col">Nom</th>';
+    echo '      <th scope="col">Cognom 1</th>';
+    echo '      <th scope="col">Cognom 2</th>';
+    echo '      <th scope="col">Num Document</th>';
+    /*echo '      <th scope="col">Altura maxima</th>';
+    echo '      <th scope="col">Accessibilitat</th>';
+    echo '      <th scope="col">Acces express</th>';
+    echo '      <th scope="col">Data creacio registre</th>';*/
+    echo '      <th scope="col"></th>';
+    echo '      <th scope="col"></th>';
+    echo '    </tr>';
+    echo '  </thead>';
+    if ($result) {
+        while($row = $result->fetch_assoc()) {
+          $id_empleat = $row["id_usuari"];
+          $nom = $row["nom"];
+          $cognom1 = $row["cognom1"];
+          $cognom2 = $row["cognom2"];
+          $num_doc = $row["numero_document"];
+          /*$altura_max = $row["altura_max"];
+          $accessibilitat = $row["accessibilitat"];
+          $acces_express = $row["acces_express"];
+          $data_creacio_registre = $row["data_creacio_registre"];*/
+
+          /*if ($accessibilitat == 1) {
+            $mostrarAccessibilitat = "Si";
+          }
+          if ($accessibilitat == 0) {
+            $mostrarAccessibilitat = "No";
+          }
+
+          if ($acces_express == 1) {
+            $mostrarAcces_express = "Si";
+          }
+          if ($acces_express == 0) {
+            $mostrarAcces_express = "No";
+          }*/
+
+          echo '  <tbody>';
+          echo '    <tr>';
+          echo '      <th scope="row">'.$row["id_usuari"].'</th>';
+          echo '      <td>'.$row["nom"].'</td>';
+          echo '      <td>'.$row["cognom1"].'</td>';
+          echo '      <td>'.$row["cognom2"].'</td>';
+          echo '      <td>'.$row["numero_document"].'</td>';
+          /*echo '      <td>'.$row["altura_max"].'</td>';
+          echo '      <td>'.$mostrarAccessibilitat.'</td>';
+          echo '      <td>'.$mostrarAcces_express.'</td>';
+          echo '      <td>'.$row["data_creacio_registre"].'</td>';*/
+          echo '      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> Seleccionar Empleats
+                      </button></td>';
+          echo '    </tr>';
+          echo '  </tbody>';
+        }
+      }
+
+          echo '</table>';
+          $conexio->close();
+
+
+  }
 }
  ?>
