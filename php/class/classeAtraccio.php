@@ -739,15 +739,16 @@ if ($result) {
       echo '      <td>'.$mostrarAccessibilitat.'</td>';
       echo '      <td>'.$mostrarAcces_express.'</td>';
       echo '      <td>'.$row["data_creacio_registre"].'</td>';*/
-      echo '      <td><form method="post">
-                      <input type="hidden" name="Atraccio" value="'.$nom_atraccio.'">
-                      <input type="radio" class="form-check-input" name="seleccio_atraccio" value=""">
-                      </form>
-                  </td>';
+
       echo '    </tr>';
       echo '  </tbody>';
 
     }
+    echo '      <td><form method="post">
+                    <input type="hidden" name="Atraccio" value="'.$nom_atraccio.'">
+                    <input type="radio" class="form-check-input" name="seleccio_atraccio" value=""">
+                    </form>
+                </td>';
   }
 
       echo '</table>';
