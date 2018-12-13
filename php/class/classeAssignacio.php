@@ -317,10 +317,12 @@ class Assignacio{
   //$busqueda = "admin";
 
   //$_POST['busqueda_atraccio']
-  if (isset($buscar_atraccio)) {
+  if (isset($buscar_atraccio) != -1) {
     //$busqueda = $_POST['buscar_assign'];
     $sql = "SELECT aua.id_assignacio, u.nom, u.cognom1, u.cognom2, u.numero_document, a.nom_atraccio, aua.data_inici_assign, aua.data_fi_assign, aua.data_creacio_registre FROM ASSIGN_USUARI_ATRACCIO aua LEFT JOIN ATRACCIO a ON aua.id_atraccio=a.id_atraccio LEFT JOIN USUARI u ON u.id_usuari=aua.id_usuari where aua.id_atraccio=$buscar_atraccio and u.nom like '%$busqueda%'";
     //$sql = "SELECT aua.id_assignacio, u.nom, u.cognom1, u.cognom2, u.numero_document, a.nom_atraccio, aua.data_inici_assign, aua.data_fi_assign, aua.data_creacio_registre FROM ASSIGN_USUARI_ATRACCIO aua LEFT JOIN ATRACCIO a ON aua.id_atraccio=a.id_atraccio LEFT JOIN USUARI u ON u.id_usuari=aua.id_usuari where u.nom like '%$busqueda%' or u.cognom1 like '%$busqueda%' or u.cognom2 like '%$busqueda%' or u.numero_document like '%$busqueda%' or a.nom_atraccio like '%$busqueda%' AND aua.id_atraccio=$buscar_atraccio order by data_creacio_registre desc";
+  }elseif (isset($buscar_atraccio) == -1) {
+    $sql = "SELECT aua.id_assignacio, u.nom, u.cognom1, u.cognom2, u.numero_document, a.nom_atraccio, aua.data_inici_assign, aua.data_fi_assign, aua.data_creacio_registre FROM ASSIGN_USUARI_ATRACCIO aua LEFT JOIN ATRACCIO a ON aua.id_atraccio=a.id_atraccio LEFT JOIN USUARI u ON u.id_usuari=aua.id_usuari where u.nom like '%$busqueda%' or u.cognom1 like '%$busqueda%' or u.cognom2 like '%$busqueda%' or u.numero_document like '%$busqueda%' or a.nom_atraccio like '%$busqueda%' order by data_creacio_registre desc";
   } /*else {
     $sql = "SELECT aua.id_assignacio, u.nom, u.cognom1, u.cognom2, u.numero_document, a.nom_atraccio, aua.data_inici_assign, aua.data_fi_assign, aua.data_creacio_registre FROM ASSIGN_USUARI_ATRACCIO aua LEFT JOIN ATRACCIO a ON aua.id_atraccio=a.id_atraccio LEFT JOIN USUARI u ON u.id_usuari=aua.id_usuari";
 
@@ -384,7 +386,7 @@ function llistarNomAtraccions(){
         $sql = "SELECT nom_atraccio, id_atraccio FROM ATRACCIO";
         $result = $conexio->query($sql);
         if ($result) {
-          //echo '<option selected disabled>Atracció</option>';
+          echo '<option selected value="-1">Atracció</option>';
             while($row = $result->fetch_assoc()) {
               $nom_atraccio = $row["nom_atraccio"];
               $id_atraccio = $row["id_atraccio"];
