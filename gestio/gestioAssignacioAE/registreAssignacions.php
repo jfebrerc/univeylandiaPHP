@@ -385,6 +385,14 @@ if($_SESSION['rol'] != 3) {
         Empleat::SelecciollistarUsuaris();
 
         ?>
+        <?php
+        include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAtraccio.php";
+        if (isset($_POST["seleccio_atraccio"])) {
+          echo '<p>HAS SELECCIONAT'.$row["nom_atraccio"].'</p>';
+        }
+         ?>
+
+
         </div>
       </div>
       </main>
