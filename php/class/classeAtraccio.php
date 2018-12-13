@@ -740,7 +740,7 @@ if ($result) {
       echo '      <td>'.$mostrarAccessibilitat.'</td>';
       echo '      <td>'.$mostrarAcces_express.'</td>';
       echo '      <td>'.$row["data_creacio_registre"].'</td>';*/
-      echo '    <td><input type="radio" class="form-check-input" name="seleccio_atraccio" value="'.$id_atraccio.'"></td>'
+      echo '    <td><input type="radio" class="form-check-input" name="seleccio_atraccio" value="'.$id_atraccio.'"></td>';
       echo '    </tr>';
       echo '  </tbody>';
 
