@@ -387,28 +387,7 @@ class Assignacio{
             </div>
             <div class="modal-body">
               <div class="container">
-                <form method="post">
-                <div class="form-group row">
-                <div class="col-10">
-                  <input class="form-control" type="text" value="'.$id_assignacio.'" id="example-text-input" name="id_assignaciomod" style="display: none;">
-                </div>
-                </div>
-                <div class="form-group row">
-                  <label for="example-text-input" class="col-2 col-form-label">Nom</label>
-                  <div class="col-10">
-                  <input class="form-control" list="atraccions" name="atraccions">
-                    <datalist id="atraccions">
-                      <option selected value="'.$id_atraccio.'">'.$nom_atraccio.'</option>';
-                      Assignacio::llistarAtraccionsMod();
-                    echo'</datalist>
-                  </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="offset-sm-2 col-sm-10">
-                      <input type="submit" class="btn btn-primary" name="modificar" value="Modificar"">';
-          echo'          </div>
-                  </div>
-                </form>
+                <p> AAAAAAAAAAAAAAAAAAAAH </p>
               </div>
             </div>
             <div class="modal-footer">
