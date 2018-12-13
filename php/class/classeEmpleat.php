@@ -189,10 +189,10 @@ class Empleat {
   $busqueda = $_POST['buscar_empleat'];
   //$_POST['busqueda_atraccio']
 
-  $sql = "SELECT * FROM USUARI WHERE id_rol !=1 && nom LIKE '%$busqueda%' or cognom1 LIKE '%$busqueda%' or cognom2 LIKE '%$busqueda%' or numero_document LIKE '%$busqueda%'";
+  $sql = "SELECT * FROM USUARI WHERE id_rol !=1 && nom LIKE '%$busqueda%' or cognom1 LIKE '%$busqueda%' or cognom2 like '%$busqueda%' or numero_document like '%$busqueda%'";
   $result = $conexio->query($sql);
   echo '<table class="table">';
-  echo '  <thead>';LIKE
+  echo '  <thead>';
   echo '    <tr>';
   echo '      <th scope="col">ID</th>';
   echo '      <th scope="col">Nom</th>';
