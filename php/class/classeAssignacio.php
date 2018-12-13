@@ -398,11 +398,9 @@ class Assignacio{
                     <div class="col-10">
                     <input class="form-control" list="atraccions" name="atraccions">
                       <datalist id="atraccions">
-                      <select name"Test">
-                        <option selected value="'.$id_atraccio.'">'.$nom_atraccio.'</option>';
+                        <option value="'.$id_atraccio.'" label="Proves">'.$nom_atraccio.'</option>';
                         Assignacio::llistarAtraccionsMod();
-                      echo'</select>
-                      </datalist>
+                      echo'</datalist>
                     </div>
                     </div>
                     <div class="form-group row">
