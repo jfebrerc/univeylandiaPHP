@@ -319,9 +319,9 @@ class Assignacio{
   //$_POST['busqueda_atraccio']
   if ($buscar_atraccio != -1) {
     //$busqueda = $_POST['buscar_assign'];
-    $sql = "SELECT aua.id_assignacio, u.nom, u.cognom1, u.cognom2, u.numero_document, a.nom_atraccio, a.id_atraccio, aua.data_inici_assign, aua.data_fi_assign, aua.data_creacio_registre FROM ASSIGN_USUARI_ATRACCIO aua LEFT JOIN ATRACCIO a ON aua.id_atraccio=a.id_atraccio LEFT JOIN USUARI u ON u.id_usuari=aua.id_usuari where aua.id_atraccio=$buscar_atraccio and (u.nom like '%$busqueda%' or u.cognom1 like '%$busqueda%' or u.cognom2 like '%$busqueda%' or u.numero_document like '%$busqueda%' or a.nom_atraccio like '%$busqueda%') order by data_creacio_registre desc";
+    $sql = "SELECT aua.id_assignacio, u.id_usuari, u.nom, u.cognom1, u.cognom2, u.numero_document, a.nom_atraccio, a.id_atraccio, aua.data_inici_assign, aua.data_fi_assign, aua.data_creacio_registre FROM ASSIGN_USUARI_ATRACCIO aua LEFT JOIN ATRACCIO a ON aua.id_atraccio=a.id_atraccio LEFT JOIN USUARI u ON u.id_usuari=aua.id_usuari where aua.id_atraccio=$buscar_atraccio and (u.nom like '%$busqueda%' or u.cognom1 like '%$busqueda%' or u.cognom2 like '%$busqueda%' or u.numero_document like '%$busqueda%' or a.nom_atraccio like '%$busqueda%') order by data_creacio_registre desc";
   }elseif ($buscar_atraccio == -1) {
-    $sql = "SELECT aua.id_assignacio, u.nom, u.cognom1, u.cognom2, u.numero_document, a.nom_atraccio, a.id_atraccio, aua.data_inici_assign, aua.data_fi_assign, aua.data_creacio_registre FROM ASSIGN_USUARI_ATRACCIO aua LEFT JOIN ATRACCIO a ON aua.id_atraccio=a.id_atraccio LEFT JOIN USUARI u ON u.id_usuari=aua.id_usuari where u.nom like '%$busqueda%' or u.cognom1 like '%$busqueda%' or u.cognom2 like '%$busqueda%' or u.numero_document like '%$busqueda%' or a.nom_atraccio like '%$busqueda%' order by data_creacio_registre desc";
+    $sql = "SELECT aua.id_assignacio, u.id_usuari, u.nom, u.cognom1, u.cognom2, u.numero_document, a.nom_atraccio, a.id_atraccio, aua.data_inici_assign, aua.data_fi_assign, aua.data_creacio_registre FROM ASSIGN_USUARI_ATRACCIO aua LEFT JOIN ATRACCIO a ON aua.id_atraccio=a.id_atraccio LEFT JOIN USUARI u ON u.id_usuari=aua.id_usuari where u.nom like '%$busqueda%' or u.cognom1 like '%$busqueda%' or u.cognom2 like '%$busqueda%' or u.numero_document like '%$busqueda%' or a.nom_atraccio like '%$busqueda%' order by data_creacio_registre desc";
   }
   /*else {
     $sql = "SELECT aua.id_assignacio, u.nom, u.cognom1, u.cognom2, u.numero_document, a.nom_atraccio, aua.data_inici_assign, aua.data_fi_assign, aua.data_creacio_registre FROM ASSIGN_USUARI_ATRACCIO aua LEFT JOIN ATRACCIO a ON aua.id_atraccio=a.id_atraccio LEFT JOIN USUARI u ON u.id_usuari=aua.id_usuari";
@@ -357,6 +357,7 @@ class Assignacio{
         $data_fi_assign = $row["data_fi_assign"];
         $data_creacio_registre = $row["data_creacio_registre"];
         $id_atraccio = $row["id_atraccio"];
+        $id_usuari = $row["id_usuari"];
 
         echo '  <tbody>';
         echo '    <tr>';
@@ -394,14 +395,23 @@ class Assignacio{
                   </div>
                   </div>
                   <div class="form-group row">
-                    <label for="example-text-input" class="col-2 col-form-label">Nom</label>
+                    <label for="example-text-input" class="col-2 col-form-label">Atracció: </label>
                     <div class="col-10">
                     <select class="custom-select" name="atraccio_seleccionada">
                       <option selected value="'.$id_atraccio.'">'.$nom_atraccio.'</option>';
-                      //Atraccio::llistarAtraccionsMod();
+                      Assignacio::llistarAtraccionsMod();
                     echo '</select>
                     </div>
                     </div>
+                    <div class="form-group row">
+                      <label for="example-text-input" class="col-2 col-form-label">Empleat: </label>
+                      <div class="col-10">
+                      <select class="custom-select" name="empleat_seleccionat">
+                        <option selected value="'.$id_usuari.'">'.$nom_empleat.'  '.$dniEmpleat.'</option>';
+                        Assignacio::llistarEmpleatMod();
+                      echo '</select>
+                      </div>
+                      </div>
                     <div class="form-group row">
                       <div class="offset-sm-2 col-sm-10">
                         <input type="submit" class="btn btn-primary" name="modificar" value="Modificar"">';
@@ -443,7 +453,7 @@ function llistarNomAtraccions(){
 
 }
 
-function static llistarAtraccionsMod(){
+public static function llistarAtraccionsMod(){
         $conexio = crearConnexio();
         $sql = "SELECT nom_atraccio, id_atraccio FROM ATRACCIO";
         $result = $conexio->query($sql);
@@ -452,6 +462,20 @@ function static llistarAtraccionsMod(){
               $nom_atraccio = $row["nom_atraccio"];
               $id_atraccio = $row["id_atraccio"];
               echo '<option value="'.$id_atraccio.'">'.$nom_atraccio.'</option>';
+        }
+}
+
+}
+
+public static function llistarEmpleatMod(){
+        $conexio = crearConnexio();
+        $sql = "SELECT nom, id_usuari FROM USUARI";
+        $result = $conexio->query($sql);
+        if ($result) {
+            while($row = $result->fetch_assoc()) {
+              $nom = $row["nom"];
+              $id_empleat = $row["id_usuari"];
+              echo '<option value="'.$id_empleat.'">'.$nom.'</option>';
         }
 }
 
