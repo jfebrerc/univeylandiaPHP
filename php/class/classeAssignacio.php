@@ -417,7 +417,13 @@ class Assignacio{
                         <div class="col-10">
                         <input type="date" value="'.$data_inici_assign.'" class="form-control form-control-sm" name="data_inici_assign">
                         </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="example-text-input" class="col-2 col-form-label">Data fi: </label>
+                        <div class="col-10">
+                        <input type="date" value="'.$data_fi_assign.'" class="form-control form-control-sm" name="data_fi_assign">
                         </div>
+                      </div>
                     <div class="form-group row">
                       <div class="offset-sm-2 col-sm-10">
                         <input type="submit" class="btn btn-primary" name="modificar" value="Modificar"">';
