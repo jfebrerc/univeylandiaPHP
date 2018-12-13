@@ -322,7 +322,7 @@ class Empleat {
           echo '      <td>'.$row["data_creacio_registre"].'</td>';*/
           echo '      <td><form method="post">
                           <input type="hidden" name="Empleat" value="'.$nom.'">
-                          <input type="checkbox" class="form-check-input" name="seleccio_empleat" value="Seleccionar Empleat"">
+                          <input type="checkbox" class="form-check-input" name="seleccio_empleat" value=""">
                           </form></td>';
           echo '    </tr>';
           echo '  </tbody>';

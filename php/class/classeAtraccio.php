@@ -741,7 +741,7 @@ if ($result) {
       echo '      <td>'.$row["data_creacio_registre"].'</td>';*/
       echo '      <td><form method="post">
                       <input type="hidden" name="Atraccio" value="'.$nom_atraccio.'">
-                      <input type="submit" class="btn btn-primary" name="seleccio_atraccio" value="Sesleccionar Atracció"">
+                      <input type="radio" class="form-check-input" name="seleccio_atraccio" value=""">
                       </form>
                   </td>';
       echo '    </tr>';
