@@ -544,7 +544,7 @@ public static function modificarAssignacio(){
 public static function eliminarAssignacio(){
     $conexio = crearConnexio();
     $id_assignacioE = $_POST['id_assignacioelim'];
-    $sql_eliminar ="DELETE FROM ASSIGN_USUARI_ATRACCIO WHERE id_assignacio=$id_assignacio";
+    $sql_eliminar ="DELETE FROM ASSIGN_USUARI_ATRACCIO WHERE id_assignacio=$id_assignacioE";
       if (mysqli_query($conexio, $sql_eliminar)) {
         echo '<script>window.location.href = window.location.href + "?negativet";</script>';
         echo "Record updated successfully";
