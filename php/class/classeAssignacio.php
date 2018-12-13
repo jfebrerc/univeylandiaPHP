@@ -373,29 +373,54 @@ class Assignacio{
                     </button></td>';
         echo '    </tr>';
         echo '  </tbody>';
-      }
 
-      echo '<!-- Modal -->
-      <div class="modal fade" id="exampleModalCenter'.$id_assignacio.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Modificar atraccio</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="container">
-                <p> AAAAAAAAAAAAAAAAAAAAH </p>
+
+        echo '<!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter'.$id_assignacio.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modificar atraccio</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <form method="post">
+                  <div class="form-group row">
+                  <div class="col-10">
+                    <input class="form-control" type="text" value="'.$id_assignacio.'" id="example-text-input" name="id_assignaciomod" style="display: none;">
+                  </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="example-text-input" class="col-2 col-form-label">Nom</label>
+                    <div class="col-10">
+                    <input class="form-control" list="atraccions" name="atraccions">
+                      <datalist id="atraccions">
+                        <option selected value="'.$id_atraccio.'">'.$nom_atraccio.'</option>';
+                        Assignacio::llistarAtraccionsMod();
+                      echo'</datalist>
+                    </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="offset-sm-2 col-sm-10">
+                        <input type="submit" class="btn btn-primary" name="modificar" value="Modificar"">';
+            echo'          </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tancar</button>
               </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Tancar</button>
-            </div>
           </div>
-        </div>
-      </div>';
+        </div>';
+
+      }
+
+
 
   } else {
       //echo "0 results";
