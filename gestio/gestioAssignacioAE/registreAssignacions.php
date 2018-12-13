@@ -368,14 +368,14 @@ if($_SESSION['rol'] != 3) {
             <h4 class="h5">Selecciona l'atracció a assignar</h4>
           </div>
           <?php
-  		  include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAtraccio.php";
+  		  include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeEmpleat.php";
   		  echo '
         <form method="post" style="margin-top=50px;">
   		    <div class="form-group row">
   		        <div class="col-9">
   			          <input class="form-control" type="text" id="example-text-input" name="busqueda_atraccio" placeholder="Buscar...">
   		        </div>
-              <input type="submit" class="btn btn-primary" name="buscar_atraccio" value="Buscar"">
+              <input type="submit" class="btn btn-primary" name="buscar_empleat" value="Buscar"">
           </div>
     			<div class="form-group row">
     			  <div class="offset-sm-2 col-sm-10">
@@ -383,10 +383,10 @@ if($_SESSION['rol'] != 3) {
   			 </div>
   		  </form>';
   		  //classeAtraccio = new Atraccio();
-        if (isset($_POST['buscar_atraccio'])) {
-  			Atraccio::SelecciollistarEmpleatsBusqueda();
+        if (isset($_POST['buscar_empleat'])) {
+  			Atraccio::SelecciollistarUsuarisBusqueda();
       } else {
-        Atraccio::SelecciollistarAtraccions();
+        Atraccio::SelecciollistarUsuaris();
       }
         ?>
         </div>
