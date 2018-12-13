@@ -703,7 +703,7 @@ echo '      <th scope="col"></th>';
 echo '    </tr>';
 echo '  </thead>';
 if ($result) {
-  echo '<form method="post">';
+  //echo '<form method="post">';
     while($row = $result->fetch_assoc()) {
       $id_atraccio = $row["id_atraccio"];
       $nom_atraccio = $row["nom_atraccio"];
@@ -746,7 +746,7 @@ if ($result) {
 
     }
 
-                    echo '</form>';
+                //    echo '</form>';
   }
 
       echo '</table>';

@@ -284,7 +284,7 @@ class Empleat {
     echo '    </tr>';
     echo '  </thead>';
     if ($result) {
-      echo ' <form method="post">';
+      //echo ' <form method="post">';
         while($row = $result->fetch_assoc()) {
           $id_empleat = $row["id_usuari"];
           $nom = $row["nom"];
@@ -327,7 +327,7 @@ class Empleat {
           echo '    </tr>';
           echo '  </tbody>';
         }
-        echo'</form>';
+      //  echo'</form>';
       }
 
           echo '</table>';

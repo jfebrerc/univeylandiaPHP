@@ -336,6 +336,9 @@ if($_SESSION['rol'] != 3) {
           <div class="col-md-12 px-4">
             <h4 class="h5">Selecciona l'Atracció a assignar</h4>
           </div>
+          <form  method="post">
+
+
           <?php
   		  include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAtraccio.php";
   		  /*echo '
@@ -397,6 +400,7 @@ if($_SESSION['rol'] != 3) {
           echo '<p >HAS SELECCIONAT: '.$_POST["Empleat"].'</p>';
         }
          ?>
+         </form>
 
 
         </div>
