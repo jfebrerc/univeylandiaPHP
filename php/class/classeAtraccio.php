@@ -740,12 +740,12 @@ if ($result) {
       echo '      <td>'.$mostrarAcces_express.'</td>';
       echo '      <td>'.$row["data_creacio_registre"].'</td>';*/
       echo '      <td><form method="post">
-                      <input type="submit" class="btn btn-primary" name="seleccio_atraccio" value="Buscar"">
+                      <input type="submit" class="btn btn-primary" name="seleccio_atraccio" value="Sesleccionar Atracció"">
                       </form>
                   </td>';
       echo '    </tr>';
       echo '  </tbody>';
-      
+
     }
   }
 

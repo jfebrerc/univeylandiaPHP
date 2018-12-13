@@ -392,7 +392,7 @@ if($_SESSION['rol'] != 3) {
         }
          ?>
 
-        <p>HAS SELECCIONAT L'EMPLEAT</p>
+        
         </div>
       </div>
       </main>
