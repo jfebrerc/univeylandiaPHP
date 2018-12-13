@@ -739,10 +739,13 @@ if ($result) {
       echo '      <td>'.$mostrarAccessibilitat.'</td>';
       echo '      <td>'.$mostrarAcces_express.'</td>';
       echo '      <td>'.$row["data_creacio_registre"].'</td>';*/
-      echo '      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter'.$id_atraccio.'"> Seleccionar Atraccio
-                  </button></td>';
+      echo '      <td><form method="post">
+                      <input type="submit" class="btn btn-primary" name="seleccio_atraccio" value="Buscar"">
+                      </form>
+                  </td>';
       echo '    </tr>';
       echo '  </tbody>';
+      
     }
   }
 
