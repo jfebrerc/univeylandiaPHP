@@ -274,7 +274,7 @@ class Empleat {
     echo '      <th scope="col">Nom</th>';
     echo '      <th scope="col">Cog 1</th>';
     echo '      <th scope="col">Cog 2</th>';
-    echo '      <th scope="col">Num Doc</th>';
+    echo '      <th scope="col">DNI</th>';
     /*echo '      <th scope="col">Altura maxima</th>';
     echo '      <th scope="col">Accessibilitat</th>';
     echo '      <th scope="col">Acces express</th>';
