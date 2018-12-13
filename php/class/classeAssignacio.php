@@ -398,7 +398,7 @@ class Assignacio{
                     <div class="col-10">
                     <select class="custom-select" name="atraccio_seleccionada">
                       <option selected value="'.$id_atraccio.'">'.$nom_atraccio.'</option>';
-                      Atraccio::llistarAtraccionsMod();
+                      Assignacio::llistarAtraccionsMod();
                     echo '</select>
                     </div>
                     </div>
