@@ -334,11 +334,11 @@ if($_SESSION['rol'] != 3) {
         <div class="row">
         <div class="col-md-4">
           <div class="col-md-12 px-4">
-            <h4 class="h5">Selecciona l'atracció a assignar</h4>
+            <h4 class="h5">Selecciona l'Atracció a assignar</h4>
           </div>
           <?php
   		  include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAtraccio.php";
-  		  echo '
+  		  /*echo '
         <form method="post" style="margin-top=50px;">
   		    <div class="form-group row">
   		        <div class="col-9">
@@ -350,13 +350,11 @@ if($_SESSION['rol'] != 3) {
     			  <div class="offset-sm-2 col-sm-10">
     		  </div>
   			 </div>
-  		  </form>';
+  		  </form>';*/
   		  //classeAtraccio = new Atraccio();
-        if (isset($_POST['buscar_atraccio'])) {
-  			Atraccio::SelecciollistarEmpleatsBusqueda();
-      } else {
+
         Atraccio::SelecciollistarAtraccions();
-      }
+
         ?>
         </div>
 
@@ -365,11 +363,11 @@ if($_SESSION['rol'] != 3) {
 
         <div class="col-md-4">
           <div class="col-md-12 px-4">
-            <h4 class="h5">Selecciona l'atracció a assignar</h4>
+            <h4 class="h5">Selecciona l'Empleat a assignar</h4>
           </div>
           <?php
   		  include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeEmpleat.php";
-  		  echo '
+  		  /*echo '
         <form method="post" style="margin-top=50px;">
   		    <div class="form-group row">
   		        <div class="col-9">
@@ -381,13 +379,11 @@ if($_SESSION['rol'] != 3) {
     			  <div class="offset-sm-2 col-sm-10">
     		  </div>
   			 </div>
-  		  </form>';
+  		  </form>';*/
   		  //classeAtraccio = new Atraccio();
-        if (isset($_POST['buscar_empleat'])) {
-  			Empleat::SelecciollistarUsuarisBusqueda();
-      } else {
+
         Empleat::SelecciollistarUsuaris();
-      }
+
         ?>
         </div>
       </div>
