@@ -469,7 +469,7 @@ public static function llistarAtraccionsMod(){
 
 public static function llistarEmpleatMod(){
         $conexio = crearConnexio();
-        $sql = "SELECT nom, id_usuari, numero_document FROM USUARI";
+        $sql = "SELECT nom, id_usuari, numero_document FROM USUARI WHERE id_usuari != 1";
         $result = $conexio->query($sql);
         if ($result) {
             while($row = $result->fetch_assoc()) {
