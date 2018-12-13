@@ -356,6 +356,12 @@ if($_SESSION['rol'] != 3) {
         Atraccio::SelecciollistarAtraccions();
 
         ?>
+        <?php
+        include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAtraccio.php";
+        if (isset($_POST["seleccio_atraccio"])) {
+          echo '<p >HAS SELECCIONAT: '.$_POST["Atraccio"].'</p>';
+        }
+         ?>
         </div>
 
         <div class="col-md-1">
@@ -388,7 +394,7 @@ if($_SESSION['rol'] != 3) {
         <?php
         include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAtraccio.php";
         if (isset($_POST["seleccio_atraccio"])) {
-          echo '<p>HAS SELECCIONAT'.$_POST["Atraccio"].'</p>';
+          echo '<p >HAS SELECCIONAT: '.$_POST["Atraccio"].'</p>';
         }
          ?>
 
