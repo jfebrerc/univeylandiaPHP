@@ -359,8 +359,9 @@ if($_SESSION['rol'] != 3) {
         Atraccio::SelecciollistarAtraccions();
 
         ?>
-        <input type="date" name="data_inici" value="">
-        <input type="date" name="data_inici" value="">
+        <input class="form-control" type="date" name="data_inici" value="">
+        <br/>
+        <input class="form-control" type="date" name="data_inici" value="">
         <?php
         include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAtraccio.php";
         if (isset($_POST["seleccio_atraccio"])) {
