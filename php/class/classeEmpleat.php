@@ -186,7 +186,7 @@ class Empleat {
   //{
   //    die('Error de conexión: ' . $conexion->connect_error);
   //}
-  $busqueda = $_POST['busqueda_empleat'];
+  $busqueda = $_POST['buscar_empleat'];
   //$_POST['busqueda_atraccio']
 
   $sql = "SELECT * FROM USUARI where id_rol !=1 && nom like '%$busqueda%' or cognom1 like '%$busqueda%' or cognom2 like '%$busqueda%' or numero_document like '%$busqueda%'";
@@ -244,7 +244,7 @@ class Empleat {
         echo '      <td>'.$mostrarAccessibilitat.'</td>';
         echo '      <td>'.$mostrarAcces_express.'</td>';
         echo '      <td>'.$row["data_creacio_registre"].'</td>';*/
-        echo '      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter'.$id_usuari.'"> Seleccionar Empleats
+        echo '      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> Seleccionar Empleats
                     </button></td>';
         echo '    </tr>';
         echo '  </tbody>';
