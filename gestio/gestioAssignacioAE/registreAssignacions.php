@@ -359,6 +359,7 @@ if($_SESSION['rol'] != 3) {
         Atraccio::SelecciollistarAtraccions();
 
         ?>
+        <br/>
         <input class="form-control" type="date" name="data_inici" value="">
         <br/>
         <input class="form-control" type="date" name="data_inici" value="">
