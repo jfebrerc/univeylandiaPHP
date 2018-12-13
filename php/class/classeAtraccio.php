@@ -703,6 +703,7 @@ echo '      <th scope="col"></th>';
 echo '    </tr>';
 echo '  </thead>';
 if ($result) {
+  echo '<form method="post">';
     while($row = $result->fetch_assoc()) {
       $id_atraccio = $row["id_atraccio"];
       $nom_atraccio = $row["nom_atraccio"];
@@ -739,18 +740,13 @@ if ($result) {
       echo '      <td>'.$mostrarAccessibilitat.'</td>';
       echo '      <td>'.$mostrarAcces_express.'</td>';
       echo '      <td>'.$row["data_creacio_registre"].'</td>';*/
-
+      echo '    <td><input type="radio" class="form-check-input" name="seleccio_atraccio" value="'.$id_atraccio.'""></td>'
       echo '    </tr>';
       echo '  </tbody>';
 
     }
-    echo '      <td><form method="post">
-                    <input type="hidden" name="Atraccio" value="'.$nom_atraccio.'">
-                    <input type="radio" class="form-check-input" name="seleccio_atraccio" value="option1"">
-                    <input type="radio" class="form-check-input" name="seleccio_atraccio" value="option2"">
-                    <input type="radio" class="form-check-input" name="seleccio_atraccio" value="option3"">
-                    </form>
-                </td>';
+
+                    echo '</form>';
   }
 
       echo '</table>';
