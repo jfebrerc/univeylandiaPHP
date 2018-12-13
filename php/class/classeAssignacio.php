@@ -403,7 +403,7 @@ class Assignacio{
                     echo '</select>
                     </div>
                     </div>
-                    /div>
+                    </div>
                     <div class="form-group row">
                       <label for="example-text-input" class="col-2 col-form-label">Empleat: </label>
                       <div class="col-10">
