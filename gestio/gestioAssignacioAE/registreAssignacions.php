@@ -338,7 +338,7 @@ if($_SESSION['rol'] != 3) {
           </div>
           <?php
   		  include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAtraccio.php";
-  		  echo '
+  		  /*echo '
         <form method="post" style="margin-top=50px;">
   		    <div class="form-group row">
   		        <div class="col-9">
@@ -350,7 +350,7 @@ if($_SESSION['rol'] != 3) {
     			  <div class="offset-sm-2 col-sm-10">
     		  </div>
   			 </div>
-  		  </form>';
+  		  </form>';*/
   		  //classeAtraccio = new Atraccio();
 
         Atraccio::SelecciollistarAtraccions();
@@ -367,7 +367,7 @@ if($_SESSION['rol'] != 3) {
           </div>
           <?php
   		  include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeEmpleat.php";
-  		  echo '
+  		  /*echo '
         <form method="post" style="margin-top=50px;">
   		    <div class="form-group row">
   		        <div class="col-9">
@@ -379,11 +379,11 @@ if($_SESSION['rol'] != 3) {
     			  <div class="offset-sm-2 col-sm-10">
     		  </div>
   			 </div>
-  		  </form>';
+  		  </form>';*/
   		  //classeAtraccio = new Atraccio();
 
         Empleat::SelecciollistarUsuaris();
-      
+
         ?>
         </div>
       </div>
