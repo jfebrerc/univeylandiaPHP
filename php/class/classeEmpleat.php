@@ -284,6 +284,7 @@ class Empleat {
     echo '    </tr>';
     echo '  </thead>';
     if ($result) {
+      echo ' <form method="post">';
         while($row = $result->fetch_assoc()) {
           $id_empleat = $row["id_usuari"];
           $nom = $row["nom"];
@@ -320,13 +321,13 @@ class Empleat {
           echo '      <td>'.$mostrarAccessibilitat.'</td>';
           echo '      <td>'.$mostrarAcces_express.'</td>';
           echo '      <td>'.$row["data_creacio_registre"].'</td>';*/
-          echo '      <td><form method="post">
-                          <input type="hidden" name="Empleat" value="'.$nom.'">
-                          <input type="checkbox" class="form-check-input" name="seleccio_empleat" value=""">
-                          </form></td>';
+
+          echo'     <td><input type="checkbox" class="form-check-input" name="seleccio_empleat" value="'.$id_empleat.'">
+                          </td>';
           echo '    </tr>';
           echo '  </tbody>';
         }
+        echo'</form>';
       }
 
           echo '</table>';
