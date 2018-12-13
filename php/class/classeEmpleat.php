@@ -320,7 +320,7 @@ class Empleat {
           echo '      <td>'.$mostrarAccessibilitat.'</td>';
           echo '      <td>'.$mostrarAcces_express.'</td>';
           echo '      <td>'.$row["data_creacio_registre"].'</td>';*/
-          echo '      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter'"> Seleccionar Empleats
+          echo '      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> Seleccionar Empleats
                       </button></td>';
           echo '    </tr>';
           echo '  </tbody>';
