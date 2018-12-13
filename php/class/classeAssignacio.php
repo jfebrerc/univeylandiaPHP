@@ -347,15 +347,15 @@ class Assignacio{
   //asdsdfdsf
   if ($result) {
       while($row = $result->fetch_assoc()) {
-        $id_assignacio = $row["id_assignacio"];
-        $nom_empleat = $row["nom"];
-        $cognom1_empleat = $row["cognom1"];
-        $cognom2_empleat = $row["cognom2"];
-        $dniEmpleat = $row["numero_document"];
-        $nom_atraccio = $row["nom_atraccio"];
-        $data_inici_assign = $row["data_inici_assign"];
-        $data_fi_assign = $row["data_fi_assign"];
-        $data_creacio_registre = $row["data_creacio_registre"];
+        $id_assignacio = $row["aua.id_assignacio"];
+        $nom_empleat = $row["u.nom"];
+        $cognom1_empleat = $row["u.cognom1"];
+        $cognom2_empleat = $row["u.cognom2"];
+        $dniEmpleat = $row["u.numero_document"];
+        $nom_atraccio = $row["a.nom_atraccio"];
+        $data_inici_assign = $row["aua.data_inici_assign"];
+        $data_fi_assign = $row["aua.data_fi_assign"];
+        $data_creacio_registre = $row["aua.data_creacio_registre"];
 
         echo '  <tbody>';
         echo '    <tr>';
@@ -389,89 +389,17 @@ class Assignacio{
                 <form method="post">
                 <div class="form-group row">
                 <div class="col-10">
-                  <input class="form-control" type="text" value="'.$id_atraccio.'" id="example-text-input" name="id_atraciomod" style="display: none;">
+                  <input class="form-control" type="text" value="'.$id_assignacio.'" id="example-text-input" name="id_assignaciomod" style="display: none;">
                 </div>
                 </div>
                 <div class="form-group row">
                   <label for="example-text-input" class="col-2 col-form-label">Nom</label>
                   <div class="col-10">
-                    <input class="form-control" type="text" value="'.$nom_atraccio.'" id="example-text-input" name="nom_atracciomod">
-                  </div>
-                  </div>
-                  <div class="form-group row">
-                  <label for="example-search-input" class="col-2 col-form-label">Tipus</label>
-                  <div class="col-10">
-                    <select class="custom-select" name="tipus_atracciomod">';
-                    if ($tipus_atraccio == "Extrema") {
-                      echo '<option selected value="'.$tipus_atraccio.'">'.$tipus_atraccio.'</option>
-                      <option value="Mitjana">Mitjana</option>
-                      <option value="Familiar">Familiar</option>
-                      <option value="Aquatica">Aquatica</option>';
-                    }
-                    if ($tipus_atraccio == "Mitjana") {
-                      echo '<option selected value="'.$tipus_atraccio.'">'.$tipus_atraccio.'</option>
-                      <option value="Mitjana">Extrema</option>
-                      <option value="Familiar">Familiar</option>
-                      <option value="Aquatica">Aquatica</option>';
-                    }
-                    if ($tipus_atraccio == "Familiar") {
-                      echo '<option selected value="'.$tipus_atraccio.'">'.$tipus_atraccio.'</option>
-                      <option value="Mitjana">Mitjana</option>
-                      <option value="Familiar">Extrema</option>
-                      <option value="Aquatica">Aquatica</option>';
-                    }
-                    if ($tipus_atraccio == "Aquatica") {
-                      echo '<option selected value="'.$tipus_atraccio.'">'.$tipus_atraccio.'</option>
-                      <option value="Mitjana">Mitjana</option>
-                      <option value="Familiar">Familiar</option>
-                      <option value="Aquatica">Extrema</option>';
-                    }
-                    echo '
-                    </select>
-                  </div>
-                  </div>
-                  <div class="form-group row">
-                  <label for="example-email-input" class="col-2 col-form-label">Altura min</label>
-                  <div class="col-10">
-                    <input class="form-control" type="text" value="'.$altura_min.'" id="example-text-input" name="altura_minimamod">
-                  </div>
-                  </div>
-                  <div class="form-group row">
-                  <label for="example-url-input" class="col-2 col-form-label">Altura max</label>
-                  <div class="col-10">
-                    <input class="form-control" type="text" value="'.$altura_max.'" id="example-text-input" name="altura_maximamod">
-                  </div>
-                  </div>
-                  <div class="form-group row">
-                  <label for="example-tel-input" class="col-2 col-form-label">Accesibilitat</label>
-                  <div class="col-10">
-                    <select class="custom-select" name="accessibilitatmod">';
-                    if ($accessibilitat == 1) {
-                      echo '<option selected value="1">Si</option>
-                      <option value="0">No</option>';
-                    }
-                    if ($accessibilitat == 0) {
-                      echo '<option selected value="0">No</option>
-                      <option value="1">Si</option>';
-                    }
-                    echo'
-                    </select>
-                  </div>
-                  </div>
-                  <div class="form-group row">
-                  <label for="example-password-input" class="col-2 col-form-label">Acces expres</label>
-                  <div class="col-10">
-                  <select class="custom-select" name="acces_expressmod">';
-                  if ($acces_express == 1) {
-                    echo '<option selected value="1">Si</option>
-                    <option value="0">No</option>';
-                  }
-                  if ($acces_express == 0) {
-                    echo '<option selected value="0">No</option>
-                    <option value="1">Si</option>';
-                  }
-                  echo'
-                  </select>
+                  <input class="form-control" list="atraccions" name="atraccions">
+                    <datalist id="atraccions">
+                      <option selected value="'.$id_atraccio.'">'.$nom_atraccio.'</option>';
+                      Assignacio::llistarAtraccionsMod();
+                    echo'</datalist>
                   </div>
                   </div>
                   <div class="form-group row">
@@ -502,6 +430,20 @@ function llistarNomAtraccions(){
         $result = $conexio->query($sql);
         if ($result) {
           echo '<option selected value="-1">Selecciona una atracció</option>';
+            while($row = $result->fetch_assoc()) {
+              $nom_atraccio = $row["nom_atraccio"];
+              $id_atraccio = $row["id_atraccio"];
+              echo '<option value="'.$id_atraccio.'">'.$nom_atraccio.'</option>';
+        }
+}
+
+}
+
+function llistarAtraccionsMod(){
+        $conexio = crearConnexio();
+        $sql = "SELECT nom_atraccio, id_atraccio FROM ATRACCIO";
+        $result = $conexio->query($sql);
+        if ($result) {
             while($row = $result->fetch_assoc()) {
               $nom_atraccio = $row["nom_atraccio"];
               $id_atraccio = $row["id_atraccio"];
