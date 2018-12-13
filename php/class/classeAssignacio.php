@@ -396,7 +396,7 @@ class Assignacio{
                   <div class="form-group row">
                     <label for="example-text-input" class="col-2 col-form-label">Nom</label>
                     <div class="col-10">
-                    <input class="form-control" list="atraccions" name="atraccions" value="'.$id_atraccio.'" label="test">
+                    <input class="form-control" list="atraccions" name="atraccions" value="'.$id_atraccio.'">
                       <datalist id="atraccions">
                         <option value="'.$id_atraccio.'">'.$nom_atraccio.'</option>';
                         Assignacio::llistarAtraccionsMod();
