@@ -476,7 +476,7 @@ public static function llistarEmpleatMod(){
               $nom = $row["nom"];
               $id_empleat = $row["id_usuari"];
               $numero_document = $row["numero_document"];
-              echo '<option value="'.$nom.'   ||   '.$numero_document.'</option>';
+              echo '<option value="'.$id_empleat.'">'.$nom_empleat.'   ||   '.$dniEmpleat.'</option>';
         }
 }
 
