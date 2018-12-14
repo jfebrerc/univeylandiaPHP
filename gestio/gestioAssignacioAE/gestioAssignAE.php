@@ -336,7 +336,7 @@ if($_SESSION['rol'] != 3) {
                   <span data-feather="save"></span>
                   Exportar
                 </button>
-                <input type="submit" value="Exportar" class="btn btn-sm btn-outline-secondary"/>
+                <input type="submit" value="Exportar" class="btn btn-sm btn-outline-secondary" <span data-feather="save"></span>/>
               </div>
             </div>
           </div>
