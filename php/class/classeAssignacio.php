@@ -464,7 +464,7 @@ class Assignacio{
                       <div class="col-10">
                       <select class="custom-select" name="empleat_seleccionat">
                         <option selected value="'.$id_usuari.'">'.$nom_empleat.'   ||   '.$dniEmpleat.'</option>';
-                        Assignacio::llistarEmpleatMod();
+                        Assignacio::llistarEmpleatMod($id_usuari);
                       echo '</select>
                       </div>
                       </div>
@@ -535,9 +535,9 @@ public static function llistarAtraccionsMod($id_atraccioSelect){
 
 }
 
-public static function llistarEmpleatMod(){
+public static function llistarEmpleatMod($id_usuariSelect){
         $conexio = crearConnexio();
-        $sql = "SELECT nom, id_usuari, numero_document FROM USUARI WHERE id_usuari != 1";
+        $sql = "SELECT nom, id_usuari, numero_document FROM USUARI WHERE id_usuari != 1 and id_usuari!=$id_usuariSelect";
         $result = $conexio->query($sql);
         if ($result) {
             while($row = $result->fetch_assoc()) {
