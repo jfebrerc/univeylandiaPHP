@@ -581,6 +581,10 @@ public static function eliminarAssignacio(){
       //echo "0 results";
   }
 
+  public static function exportarAssignacions(){
+    
+  }
+
 }
 
 
