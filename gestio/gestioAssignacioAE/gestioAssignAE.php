@@ -336,6 +336,7 @@ if($_SESSION['rol'] != 3) {
                   <span data-feather="save"></span>
                   Exportar
                 </button>
+                <p> test </p>
               </div>
             </div>
           </div>
