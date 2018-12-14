@@ -333,10 +333,7 @@ if($_SESSION['rol'] != 3) {
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group mr-2">
                 <button class="btn btn-sm btn-outline-secondary">
-                  <span data-feather="save"></span>
-                  Exportar
-                </button>
-                <input type="submit" value="Exportar" class="btn btn-sm btn-outline-secondary" <span data-feather="save"></span>/>
+                <input type="submit" value="Exportar" class="btn btn-sm btn-outline-secondary"/>
               </div>
             </div>
           </div>
