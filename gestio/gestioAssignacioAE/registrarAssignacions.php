@@ -13,6 +13,7 @@ $Assignacio->RegistrarAssignacio();
 
 if($Assignacio->RegistrarAssignacio() == true){
   echo "inserit correctament";
+  var_dump($Assignacio);
   //header('Location: ./registreAtraccions.php');
     //header('Location: ./registreAssignacions.php');
 }
