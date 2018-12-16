@@ -12,8 +12,9 @@ $Assignacio->RegistrarAssignacio();
 
 
 if($Assignacio->RegistrarAssignacio() == true){
+  echo "inserit correctament";
   //header('Location: ./registreAtraccions.php');
-    header('Location: ./registreAssignacions.php');
+    //header('Location: ./registreAssignacions.php');
 }
 
 
