@@ -375,21 +375,6 @@ if($_SESSION['rol'] != 3) {
           </div>
           <?php
   		  include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeEmpleat.php";
-  		  /*echo '
-        <form method="post" style="margin-top=50px;">
-  		    <div class="form-group row">
-  		        <div class="col-9">
-  			          <input class="form-control" type="text" id="example-text-input" name="buscar_empleat" placeholder="Buscar...">
-  		        </div>
-              <input type="submit" class="btn btn-primary" name="buscar_empleat" value="Buscar"">
-          </div>
-    			<div class="form-group row">
-    			  <div class="offset-sm-2 col-sm-10">
-    		  </div>
-  			 </div>
-  		  </form>';*/
-  		  //classeAtraccio = new Atraccio();
-
         Empleat::SelecciollistarUsuaris();
 
         ?>
