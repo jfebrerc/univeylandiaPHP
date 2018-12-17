@@ -333,7 +333,7 @@ if($_SESSION['rol'] != 3) {
                     <div class="btn-group mr-2">
                       <!--<form method="post" action="<?php //echo htmlentities($_SERVER['PHP_SELF']); ?>">-->
                       <form method="post">
-                        <button class="btn btn-sm btn-outline-secondary" name="Exportar">
+                        <button class="btn btn-sm btn-outline-secondary" name="Exportar" type="submit">
                           <span data-feather="save"></span>
                           Exportar
                         </button>
