@@ -650,12 +650,12 @@ public static function eliminarAssignacio(){
   $pdf->SetX(60);
   $pdf->Cell(30,6,'COGNOM2',1,0,'L',1);
   $pdf->SetX(90);
-  $pdf->Cell(20,6,'DOCUMENT',1,0,'L',1);
-  $pdf->SetX(110);
-  $pdf->Cell(20,6,'NOM ATRACCIO',1,0,'L',1);
-  $pdf->SetX(130);
+  $pdf->Cell(40,6,'DOCUMENT',1,0,'L',1);
+  $pdf->SetX(120);
+  $pdf->Cell(40,6,'NOM ATRACCIO',1,0,'L',1);
+  $pdf->SetX(160);
   $pdf->Cell(50,6,'DATA INICI',1,0,'L',1);
-  $pdf->SetX(180);
+  $pdf->SetX(210);
   $pdf->Cell(50,6,'DATA FI',1,0,'L',1);
   $pdf->Ln();
 
