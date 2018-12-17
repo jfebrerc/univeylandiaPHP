@@ -583,7 +583,7 @@ public static function eliminarAssignacio(){
       //echo "0 results";
   }
 
-  public static function exportarAssignacions(){
+/*  public static function exportarAssignacions(){
     //include_once $_SERVER['DOCUMENT_ROOT']."/php/fpdf/fpdf.php";
     require $_SERVER['DOCUMENT_ROOT']."/php/fpdf/fpdf.php";
     $pdf = new FPDF('P','mm','A4');
@@ -591,7 +591,110 @@ public static function eliminarAssignacio(){
     $pdf->SetFont('Arial','B',16);
     $pdf->Cell(20,10,'Title',1,1,'C');
     $pdf->Output();
+  }*/
+  public static function llistatAssignacionsPDF() {
+  require_once $_SERVER['DOCUMENT_ROOT']."/php/fpdf/fpdf.php";
+  $conn = crearConnexio();
+  if ($conn->connect_error) {
+      die('Error en la connexió : '.$conn->connect_errno.'-'.$conn->connect_error);
   }
+  $sql = "SELECT aua.id_assignacio, u.id_usuari, u.nom, u.cognom1, u.cognom2, u.numero_document, a.nom_atraccio, a.id_atraccio, aua.data_inici_assign, aua.data_fi_assign, aua.data_creacio_registre FROM ASSIGN_USUARI_ATRACCIO aua LEFT JOIN ATRACCIO a ON aua.id_atraccio=a.id_atraccio LEFT JOIN USUARI u ON u.id_usuari=aua.id_usuari order by data_creacio_registre desc";
+  $result = $conn->query($sql);
+  $numero_de_assignacions = $result->num_rows;
+  $columna_nom = "";
+  $columna_cognom1 = "";
+  $columna_cognom2 = "";
+  $columna_numero_document = "";
+  $columna_nom_atraccio = "";
+  $columna_data_inici_assign = "";
+  $columna_data_fi_assign = "";
+  if ($result->num_rows > 0) {
+      while ($row = $result->fetch_assoc()) {
+        $nom = $row['nom'];
+        $cognom1 = $row['cognom1'];
+        $cognom2 = $row['cognom2'];
+        $numero_document = $row['numero_document'];
+        $nom_atraccio = $row['nom_atraccio'];
+        $data_inici_assign = $row['data_inici_assign'];
+        $data_fi_assign = $row['data_fi_assign'];
+
+        $columna_nom = $columna_nom.$nom."\n";
+        $columna_cognom1 = $columna_cognom1.$cognom1."\n";
+        $columna_cognom2 = $columna_cognom2.$cognom2."\n";
+        $columna_numero_document = $columna_numero_document.$numero_document."\n";
+        $columna_nom_atraccio = $columna_nom_atraccio.$nom_atraccio."\n";
+        $columna_data_inici_assign = $columna_data_inici_assign.$data_inici_assign."\n";
+        $columna_data_fi_assign = $columna_data_fi_assign.$data_fi_assign."\n";
+      }
+  } else {
+      echo "Error: 0 resultats";
+  }
+  $conn->close();
+  /* GENERAR PDF */
+  $pdf = new FPDF();
+  $pdf->AddPage(L);
+  //Fields Name position
+  $Y_Fields_Name_position = 20;
+  //Table position, under Fields Name
+  $Y_Table_Position = 26;
+  //First create each Field Name
+  //Gray color filling each Field Name box
+  $pdf->SetFillColor(232,232,232);
+  //Bold Font for Field Name
+  $pdf->SetFont('Arial','B',12);
+  $pdf->SetY($Y_Fields_Name_position);
+  $pdf->SetX(45);
+  $pdf->Cell(20,6,'NOM',1,0,'L',1);
+  $pdf->SetX(65);
+  $pdf->Cell(100,6,'COGNOM1',1,0,'L',1);
+  $pdf->SetX(135);
+  $pdf->Cell(30,6,'COGNOM2',1,0,'R',1);
+  $pdf->SetX(155);
+  $pdf->Cell(30,6,'DOCUMENT',1,0,'R',1);
+  $pdf->SetX(175);
+  $pdf->Cell(30,6,'NOM ATRACCIO',1,0,'R',1);
+  $pdf->SetX(195);
+  $pdf->Cell(30,6,'DATA INICI',1,0,'R',1);
+  $pdf->SetX(215);
+  $pdf->Cell(30,6,'DATA FI',1,0,'R',1);
+  $pdf->Ln();
+  //Now show the 3 columns
+  $pdf->SetFont('Arial','',12);
+  $pdf->SetY($Y_Table_Position);
+  $pdf->SetX(45);
+  $pdf->MultiCell(20,6,$columna_nom,1);
+  $pdf->SetY($Y_Table_Position);
+  $pdf->SetX(65);
+  $pdf->MultiCell(100,6,$columna_cognom1,1);
+  $pdf->SetY($Y_Table_Position);
+  $pdf->SetX(135);
+  $pdf->MultiCell(30,6,$columna_cognom2,1,'R');
+  $pdf->SetY($Y_Table_Position);
+  $pdf->SetX(155);
+  $pdf->MultiCell(30,6,$columna_numero_document,1,'R');
+  $pdf->SetY($Y_Table_Position);
+  $pdf->SetX(175);
+  $pdf->MultiCell(30,6,$columna_nom_atraccio,1,'R');
+  $pdf->SetY($Y_Table_Position);
+  $pdf->SetX(195);
+  $pdf->MultiCell(30,6,$columna_data_inici_assign,1,'R');
+  $pdf->SetY($Y_Table_Position);
+  $pdf->SetX(215);
+  $pdf->MultiCell(30,6,$columna_data_fi_assign,1,'R');
+
+  //Create lines (boxes) for each ROW (Product)
+  //If you don't use the following code, you don't create the lines separating each row
+  $i = 0;
+  $pdf->SetY($Y_Table_Position);
+  while ($i < $numero_de_assignacions)
+  {
+      $pdf->SetX(45);
+      $pdf->MultiCell(120,6,'',1);
+      $i = $i +1;
+  }
+  //Donem nom al document PDF i l'enviem per descarregar
+  $pdf->Output('llistatAssignacions.pdf','D');
+}
 
 }
 
