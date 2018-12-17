@@ -27,6 +27,26 @@ class Assignacio{
 
     }
 
+    public function RegistrarAssignacio(){
+
+        $connection = crearConnexio();
+        $sql = "INSERT INTO ASSIGN_USUARI_ATRACCIO (id_usuari,id_atraccio,data_inici_assign,data_fi_assign) VALUES (?,?,?,?);";
+          $sentencia = $connection->prepare($sql);
+          $sentencia->bind_param("iiss",$this->id_Usuari,$this->id_Atraccio,$this->dataIniciAssignacio,$this->dataFiAssignaciossign);
+          if($sentencia->execute()){
+            $sentencia->close();
+            $connection->close();
+            return true;
+          }
+          else{
+            $sentencia->close();
+            $connection->close();
+            return "Error en el registre.";
+            return false;
+          }
+
+    }
+
   /*public function __construct7($nomAtraccio,$tipusAtraccio,$dataInauguracio,$alturaMin,$alturaMax,$accessibilitat,$accesExpress){
     $this->idAtraccio=NULL;
     $this->nomAtraccio=$nomAtraccio;
@@ -311,25 +331,7 @@ class Assignacio{
 
 
 
-    public function RegistrarAssignacio(){
 
-        $connection = crearConnexio();
-        $sql = "INSERT INTO ASSIGN_USUARI_ATRACCIO (id_usuari,id_atraccio,data_inici_assign,data_fi_assign) VALUES (?,?,?,?);";
-          $sentencia = $connection->prepare($sql);
-          $sentencia->bind_param("iiss",$this->id_usuari,$this->id_atraccio,$this->data_inici_assign,$this->data_fi_assign);
-          if($sentencia->execute()){
-            $sentencia->close();
-            $connection->close();
-            return true;
-          }
-          else{
-            $sentencia->close();
-            $connection->close();
-            return "Error en el registre.";
-            return false;
-          }
-
-    }
 
 
   public static function llistarAssignBusqueda($busqueda, $buscar_atraccio){
