@@ -14,7 +14,7 @@ $Assignacio->RegistrarAssignacio();
 if($Assignacio->RegistrarAssignacio() == true){
 
   //header('Location: ./registreAtraccions.php');
-  header('Location: ./registreAssignacions.php');
+  //header('Location: ./registreAssignacions.php');
 }
 
 
