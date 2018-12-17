@@ -330,7 +330,9 @@ if($_SESSION['rol'] != 3) {
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
           <h1 class="h2">Administrar assignacions atraccio-empleat</h1>
         </div>
+        <form method="post">
         <input type="submit" class="button" name="exportar_button" value="Exportar" />
+        </form>
         <?php
 		  include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAssignacio.php";
 		  echo '<form method="post" style="margin-top=50px;">
