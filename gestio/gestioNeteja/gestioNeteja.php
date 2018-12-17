@@ -342,7 +342,7 @@ if($_SESSION['rol'] != 3) {
                   </div>
                 </div>
                 <?php
-              include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAssignacio.php";
+              include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeNeteja.php";
               echo '<form method="post" style="margin-top=50px;">
               <div class="form-group row">
               <div class="col-6">
