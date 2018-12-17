@@ -6,7 +6,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAssignacio.php";
 
 $Assignacio = new Assignacio ($_POST['seleccio_empleat'],$_POST['seleccio_atraccio'],$_POST['data_inici_assign'],$_POST['data_fi_assign']);
 
-$Assignacio->RegistrarAssignacio();
+//$Assignacio->RegistrarAssignacio();
 
 
 
