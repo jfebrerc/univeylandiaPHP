@@ -284,6 +284,7 @@ class Empleat {
     echo '    </tr>';
     echo '  </thead>';
     if ($result) {
+        $arrayEmpleat = array(
       //echo ' <form method="post">';
         while($row = $result->fetch_assoc()) {
           $id_empleat = $row["id_usuari"];
@@ -327,6 +328,7 @@ class Empleat {
           echo '    </tr>';
           echo '  </tbody>';
         }
+      )
       //  echo'</form>';
       }
 
