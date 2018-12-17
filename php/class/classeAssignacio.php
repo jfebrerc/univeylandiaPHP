@@ -652,10 +652,10 @@ public static function eliminarAssignacio(){
   $pdf->SetX(90);
   $pdf->Cell(40,6,'DOCUMENT',1,0,'L',1);
   $pdf->SetX(120);
-  $pdf->Cell(40,6,'NOM ATRACCIO',1,0,'L',1);
-  $pdf->SetX(160);
+  $pdf->Cell(20,6,'NOM ATRACCIO',1,0,'L',1);
+  $pdf->SetX(140);
   $pdf->Cell(50,6,'DATA INICI',1,0,'L',1);
-  $pdf->SetX(210);
+  $pdf->SetX(190);
   $pdf->Cell(50,6,'DATA FI',1,0,'L',1);
   $pdf->Ln();
 
@@ -674,12 +674,12 @@ public static function eliminarAssignacio(){
   $pdf->MultiCell(40,6,$columna_numero_document,1,'R');
   $pdf->SetY($Y_Table_Position);
   $pdf->SetX(120);
-  $pdf->MultiCell(40,6,$columna_nom_atraccio,1,'R');
+  $pdf->MultiCell(20,6,$columna_nom_atraccio,1,'R');
   $pdf->SetY($Y_Table_Position);
-  $pdf->SetX(160);
+  $pdf->SetX(140);
   $pdf->MultiCell(50,6,$columna_data_inici_assign,1,'R');
   $pdf->SetY($Y_Table_Position);
-  $pdf->SetX(210);
+  $pdf->SetX(190);
   $pdf->MultiCell(50,6,$columna_data_fi_assign,1,'R');
 
   //Create lines (boxes) for each ROW (Product)
