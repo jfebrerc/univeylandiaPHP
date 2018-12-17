@@ -636,7 +636,7 @@ public static function eliminarAssignacio(){
   //Fields Name position
   $Y_Fields_Name_position = 20;
   //Table position, under Fields Name
-  $Y_Table_Position = 30;
+  $Y_Table_Position = 26;
   //First create each Field Name
   //Gray color filling each Field Name box
   $pdf->SetFillColor(232,232,232);
@@ -650,7 +650,7 @@ public static function eliminarAssignacio(){
   $pdf->SetX(60);
   $pdf->Cell(30,6,'COGNOM2',1,0,'L',1);
   $pdf->SetX(90);
-  $pdf->Cell(50,6,'DOCUMENT',1,0,'L',1);
+  $pdf->Cell(30,6,'DOCUMENT',1,0,'L',1);
   $pdf->SetX(120);
   $pdf->Cell(40,6,'NOM ATRACCIO',1,0,'L',1);
   $pdf->SetX(160);
@@ -671,7 +671,7 @@ public static function eliminarAssignacio(){
   $pdf->MultiCell(30,6,$columna_cognom2,1,'R');
   $pdf->SetY($Y_Table_Position);
   $pdf->SetX(90);
-  $pdf->MultiCell(50,6,$columna_numero_document,1,'R');
+  $pdf->MultiCell(30,6,$columna_numero_document,1,'R');
   $pdf->SetY($Y_Table_Position);
   $pdf->SetX(120);
   $pdf->MultiCell(40,6,$columna_nom_atraccio,1,'R');
