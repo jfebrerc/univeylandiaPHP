@@ -3,7 +3,8 @@
 include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAssignacio.php";
 //include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAtraccio.php";
 //include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeEmpleat.php";
-
+if (is_array($_POST['seleccio_empleat']) || is_object($_POST['seleccio_empleat']))
+{
 foreach ($_POST['seleccio_empleat'] as $value){
 $Assignacio = new Assignacio ($value,$_POST['seleccio_atraccio'],$_POST['data_inici_assign'],$_POST['data_fi_assign']);
 
@@ -12,6 +13,7 @@ if($comprovacio_registre == true){
 
   //header('Location: ./registreAtraccions.php');
   header('Location: ./registreAssignacions.php');
+}
 }
 }
 
