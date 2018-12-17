@@ -689,7 +689,7 @@ public static function eliminarAssignacio(){
   while ($i < $numero_de_assignacions)
   {
       $pdf->SetX(10);
-      $pdf->MultiCell(260,6,'',1);
+      $pdf->MultiCell(250,6,'',1);
       $i = $i +1;
   }
   //Donem nom al document PDF i l'enviem per descarregar
