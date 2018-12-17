@@ -350,7 +350,7 @@ if($_SESSION['rol'] != 3) {
               </div>
               <div class="col-3">
                 <select class="custom-select" name="nom_atraccio">';
-                Assignacio::llistarNomAtraccions();
+                Neteja::llistarNomAtraccions();
               echo '  </select>
               </div>
               <div class="form-group row">
@@ -365,12 +365,12 @@ if($_SESSION['rol'] != 3) {
                 $buscar = $_POST['busqueda_assignaciotext'];
                 $buscar_atraccio = $_POST['nom_atraccio'];
               }
-              Assignacio::llistarAssignBusqueda($buscar, $buscar_atraccio);
+              Neteja::llistarAssignBusqueda($buscar, $buscar_atraccio);
               if (isset($_POST['modificar'])) {
-                Assignacio::modificarAssignacio();
+                Neteja::modificarAssignacio();
                 }
               if (isset($_POST['Acceptar'])){
-                Assignacio::eliminarAssignacio();
+                Neteja::eliminarAssignacio();
                 }
 
               //classeAtraccio = new Atraccio();
