@@ -681,7 +681,6 @@ public static function eliminarAssignacio(){
   $pdf->SetY($Y_Table_Position);
   $pdf->SetX(210);
   $pdf->MultiCell(50,6,$columna_data_fi_assign,1,'R');
-  $pdf->SetY($Y_Table_Position);
 
   //Create lines (boxes) for each ROW (Product)
   //If you don't use the following code, you don't create the lines separating each row
@@ -690,7 +689,7 @@ public static function eliminarAssignacio(){
   while ($i < $numero_de_assignacions)
   {
       $pdf->SetX(10);
-      $pdf->MultiCell(240,6,'',1);
+      $pdf->MultiCell(260,6,'',1);
       $i = $i +1;
   }
   //Donem nom al document PDF i l'enviem per descarregar
