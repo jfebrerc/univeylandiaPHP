@@ -322,7 +322,7 @@ class Empleat {
           echo '      <td>'.$mostrarAcces_express.'</td>';
           echo '      <td>'.$row["data_creacio_registre"].'</td>';*/
 
-          echo'     <td><input type="checkbox" class="form-check-input" name="seleccio_empleat" value="'.$id_empleat.'">
+          echo'     <td><input type="checkbox" class="form-check-input" name="seleccio_empleat[]" value="'.$id_empleat.'">
                           </td>';
           echo '    </tr>';
           echo '  </tbody>';
