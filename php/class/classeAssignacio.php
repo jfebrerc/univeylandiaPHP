@@ -643,43 +643,43 @@ public static function eliminarAssignacio(){
   //Bold Font for Field Name
   $pdf->SetFont('Arial','B',12);
   $pdf->SetY($Y_Fields_Name_position);
-  $pdf->SetX(25);
+  $pdf->SetX(20);
   $pdf->Cell(20,6,'NOM',1,0,'L',1);
-  $pdf->SetX(45);
+  $pdf->SetX(40);
   $pdf->Cell(30,6,'COGNOM1',1,0,'L',1);
-  $pdf->SetX(75);
+  $pdf->SetX(70);
   $pdf->Cell(30,6,'COGNOM2',1,0,'L',1);
-  $pdf->SetX(105);
+  $pdf->SetX(100);
   $pdf->Cell(30,6,'DOCUMENT',1,0,'L',1);
-  $pdf->SetX(135);
+  $pdf->SetX(130);
   $pdf->Cell(40,6,'NOM ATRACCIO',1,0,'L',1);
-  $pdf->SetX(175);
+  $pdf->SetX(170);
   $pdf->Cell(50,6,'DATA INICI',1,0,'L',1);
-  $pdf->SetX(225);
+  $pdf->SetX(220);
   $pdf->Cell(50,6,'DATA FI',1,0,'L',1);
   $pdf->Ln();
 
   $pdf->SetFont('Arial','',12);
   $pdf->SetY($Y_Table_Position);
-  $pdf->SetX(25);
+  $pdf->SetX(20);
   $pdf->MultiCell(20,6,$columna_nom,1);
   $pdf->SetY($Y_Table_Position);
-  $pdf->SetX(45);
+  $pdf->SetX(40);
   $pdf->MultiCell(30,6,$columna_cognom1,1);
   $pdf->SetY($Y_Table_Position);
-  $pdf->SetX(75);
+  $pdf->SetX(70);
   $pdf->MultiCell(30,6,$columna_cognom2,1,'R');
   $pdf->SetY($Y_Table_Position);
-  $pdf->SetX(105);
+  $pdf->SetX(100);
   $pdf->MultiCell(30,6,$columna_numero_document,1,'R');
   $pdf->SetY($Y_Table_Position);
-  $pdf->SetX(135);
+  $pdf->SetX(130);
   $pdf->MultiCell(40,6,$columna_nom_atraccio,1,'R');
   $pdf->SetY($Y_Table_Position);
-  $pdf->SetX(175);
+  $pdf->SetX(170);
   $pdf->MultiCell(50,6,$columna_data_inici_assign,1,'R');
   $pdf->SetY($Y_Table_Position);
-  $pdf->SetX(225);
+  $pdf->SetX(220);
   $pdf->MultiCell(50,6,$columna_data_fi_assign,1,'R');
 
   //Create lines (boxes) for each ROW (Product)
@@ -688,7 +688,7 @@ public static function eliminarAssignacio(){
   $pdf->SetY($Y_Table_Position);
   while ($i < $numero_de_assignacions)
   {
-      $pdf->SetX(25);
+      $pdf->SetX(20);
       $pdf->MultiCell(250,6,'',1);
       $i = $i +1;
   }
