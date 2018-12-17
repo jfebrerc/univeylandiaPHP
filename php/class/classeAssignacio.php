@@ -632,7 +632,7 @@ public static function eliminarAssignacio(){
   $conn->close();
   /* GENERAR PDF */
   $pdf = new FPDF();
-  $pdf->AddPage();
+  $pdf->AddPage('L', 'A4', 0);
   //Fields Name position
   $Y_Fields_Name_position = 20;
   //Table position, under Fields Name
