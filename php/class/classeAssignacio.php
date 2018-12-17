@@ -664,10 +664,10 @@ public static function eliminarAssignacio(){
   $pdf->SetX(10);
   $pdf->MultiCell(20,6,$columna_nom,1);
   $pdf->SetY($Y_Table_Position);
-  $pdf->SetX(60);
+  $pdf->SetX(30);
   $pdf->MultiCell(30,6,$columna_cognom1,1);
   $pdf->SetY($Y_Table_Position);
-  $pdf->SetX(135);
+  $pdf->SetX(60);
   $pdf->MultiCell(30,6,$columna_cognom2,1,'R');
   $pdf->SetY($Y_Table_Position);
   $pdf->SetX(90);
