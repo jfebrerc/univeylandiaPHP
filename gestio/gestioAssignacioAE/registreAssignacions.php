@@ -360,9 +360,9 @@ if($_SESSION['rol'] != 3) {
 
         ?>
         <br/>
-        <input class="form-control" type="date" name="data_inici_assign" value="">
+        <input class="form-control" type="date" name="data_inici_assign">
         <br/>
-        <input class="form-control" type="date" name="data_fi_assign" value="">
+        <input class="form-control" type="date" name="data_fi_assign">
 
         </div>
 
