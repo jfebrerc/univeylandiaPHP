@@ -43,7 +43,8 @@ class Assignacio{
             return "Error en el registre.";
             return false;
           }
-
+          $sentencia->close();
+          $connection->close();
     }
 
   /*public function __construct7($nomAtraccio,$tipusAtraccio,$dataInauguracio,$alturaMin,$alturaMax,$accessibilitat,$accesExpress){
