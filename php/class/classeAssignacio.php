@@ -681,6 +681,7 @@ public static function eliminarAssignacio(){
   $pdf->SetY($Y_Table_Position);
   $pdf->SetX(210);
   $pdf->MultiCell(50,6,$columna_data_fi_assign,1,'R');
+  $pdf->SetY($Y_Table_Position);
 
   //Create lines (boxes) for each ROW (Product)
   //If you don't use the following code, you don't create the lines separating each row
