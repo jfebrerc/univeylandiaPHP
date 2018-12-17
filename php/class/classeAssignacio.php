@@ -31,7 +31,7 @@ class Assignacio{
         $connection = crearConnexio();
         $sql = "INSERT INTO ASSIGN_USUARI_ATRACCIO (id_usuari,id_atraccio,data_inici_assign,data_fi_assign) VALUES (?,?,?,?);";
           $sentencia = $connection->prepare($sql);
-          $sentencia->bind_param("iiss",$this->idUsuari,$this->idAtraccio,$this->dataIniciAssignacio,$this->dataFiAssignaciossign);
+          $sentencia->bind_param("iiss",$this->idUsuari,$this->idAtraccio,$this->dataIniciAssignacio,$this->dataFiAssignacio);
           if($sentencia->execute()){
             $sentencia->close();
             $connection->close();
