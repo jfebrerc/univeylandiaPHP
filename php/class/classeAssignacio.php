@@ -661,26 +661,26 @@ public static function eliminarAssignacio(){
 
   $pdf->SetFont('Arial','',12);
   $pdf->SetY($Y_Table_Position);
-  $pdf->SetX(45);
+  $pdf->SetX(10);
   $pdf->MultiCell(20,6,$columna_nom,1);
   $pdf->SetY($Y_Table_Position);
-  $pdf->SetX(65);
-  $pdf->MultiCell(100,6,$columna_cognom1,1);
+  $pdf->SetX(60);
+  $pdf->MultiCell(30,6,$columna_cognom1,1);
   $pdf->SetY($Y_Table_Position);
   $pdf->SetX(135);
   $pdf->MultiCell(30,6,$columna_cognom2,1,'R');
   $pdf->SetY($Y_Table_Position);
-  $pdf->SetX(155);
-  $pdf->MultiCell(30,6,$columna_numero_document,1,'R');
+  $pdf->SetX(90);
+  $pdf->MultiCell(40,6,$columna_numero_document,1,'R');
   $pdf->SetY($Y_Table_Position);
-  $pdf->SetX(175);
-  $pdf->MultiCell(30,6,$columna_nom_atraccio,1,'R');
+  $pdf->SetX(120);
+  $pdf->MultiCell(40,6,$columna_nom_atraccio,1,'R');
   $pdf->SetY($Y_Table_Position);
-  $pdf->SetX(195);
-  $pdf->MultiCell(30,6,$columna_data_inici_assign,1,'R');
+  $pdf->SetX(160);
+  $pdf->MultiCell(50,6,$columna_data_inici_assign,1,'R');
   $pdf->SetY($Y_Table_Position);
-  $pdf->SetX(215);
-  $pdf->MultiCell(30,6,$columna_data_fi_assign,1,'R');
+  $pdf->SetX(210);
+  $pdf->MultiCell(50,6,$columna_data_fi_assign,1,'R');
 
   //Create lines (boxes) for each ROW (Product)
   //If you don't use the following code, you don't create the lines separating each row
