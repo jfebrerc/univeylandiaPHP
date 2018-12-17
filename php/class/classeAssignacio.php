@@ -592,7 +592,7 @@ public static function eliminarAssignacio(){
     $pdf->Cell(20,10,'Title',1,1,'C');
     $pdf->Output();
   }*/
-  public static function llistatHabitacionsPDF() {
+  public static function llistatAssignacionsPDF() {
   require_once $_SERVER['DOCUMENT_ROOT']."/php/fpdf/fpdf.php";
   $conn = crearConnexio();
   if ($conn->connect_error) {
