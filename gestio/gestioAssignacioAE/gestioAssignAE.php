@@ -326,61 +326,70 @@ if($_SESSION['rol'] != 3) {
         </div>
       </nav>
 
-<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">Administrar assignacions atraccio-empleat</h1>
-        </div>
-        <form method="post">
-        <input type="submit" class="button" name="exportar_button" value="Exportar" />
-        </form>
-        <?php
-		  include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAssignacio.php";
-		  echo '<form method="post" style="margin-top=50px;">
-		  <div class="form-group row">
-		  <div class="col-6">
-			<input class="form-control" type="text" id="example-text-input" name="busqueda_assignaciotext" placeholder="Buscar...">
-		  </div>
-      <div class="col-3">
-        <select class="custom-select" name="nom_atraccio">';
-        Assignacio::llistarNomAtraccions();
-      echo '  </select>
-      </div>
-			<div class="form-group row">
-			    <div class="offset-sm-2 col-sm-10">
-				    <input type="submit" class="btn btn-primary" name="buscar_assign" value="Buscar"">
-		      </div>
-			</div>
-		  </form>';
-      $buscar = "";
-      $buscar_atraccio = "-1";
-      if (isset($_POST['buscar_assign'])) {
-        $buscar = $_POST['busqueda_assignaciotext'];
-        $buscar_atraccio = $_POST['nom_atraccio'];
-      }
-      Assignacio::llistarAssignBusqueda($buscar, $buscar_atraccio);
-      if (isset($_POST['modificar'])) {
-        Assignacio::modificarAssignacio();
-        }
-      if (isset($_POST['Acceptar'])){
-  			Assignacio::eliminarAssignacio();
-  		  }
-      if (isset($_POST['exportar_button'])) {
-        Assignacio::exportarAssignacions();
-      }
-		  //classeAtraccio = new Atraccio();
-		 /* if (isset($_POST['buscar_atraccio'])) {
-			Atraccio::llistarEmpleatsBusqueda();
-		  }else {
-			Atraccio::llistarEmpleats();
-		  }
-		  if (isset($_POST['modificar'])) {
-			  Atraccio::modificarAtraccio();
-			  }
-		  if (isset($_POST['Acceptar'])){
-			Atraccio::eliminarAtraccio();
-    }*/
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                  <h1 class="h2">Administrar Habitacions</h1>
+                  <div class="btn-toolbar mb-2 mb-md-0">
+                    <div class="btn-group mr-2">
+                      <!--<form method="post" action="<?php //echo htmlentities($_SERVER['PHP_SELF']); ?>">-->
+                      <form method="post" action="/php/habitacioPHP/habitacionsPDF.php">
+                        <button class="btn btn-sm btn-outline-secondary" name="Exportar">
+                          <span data-feather="save"></span>
+                          Exportar
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <?php
+              include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAssignacio.php";
+              echo '<form method="post" style="margin-top=50px;">
+              <div class="form-group row">
+              <div class="col-6">
+              <input class="form-control" type="text" id="example-text-input" name="busqueda_assignaciotext" placeholder="Buscar...">
+              </div>
+              <div class="col-3">
+                <select class="custom-select" name="nom_atraccio">';
+                Assignacio::llistarNomAtraccions();
+              echo '  </select>
+              </div>
+              <div class="form-group row">
+                  <div class="offset-sm-2 col-sm-10">
+                    <input type="submit" class="btn btn-primary" name="buscar_assign" value="Buscar"">
+                  </div>
+              </div>
+              </form>';
+              $buscar = "";
+              $buscar_atraccio = "-1";
+              if (isset($_POST['buscar_assign'])) {
+                $buscar = $_POST['busqueda_assignaciotext'];
+                $buscar_atraccio = $_POST['nom_atraccio'];
+              }
+              Assignacio::llistarAssignBusqueda($buscar, $buscar_atraccio);
+              if (isset($_POST['modificar'])) {
+                Assignacio::modificarAssignacio();
+                }
+              if (isset($_POST['Acceptar'])){
+                Assignacio::eliminarAssignacio();
+                }
+              if (isset($_POST['exportar_button'])) {
+                Assignacio::exportarAssignacions();
+              }
+              //classeAtraccio = new Atraccio();
+             /* if (isset($_POST['buscar_atraccio'])) {
+              Atraccio::llistarEmpleatsBusqueda();
+              }else {
+              Atraccio::llistarEmpleats();
+              }
+              if (isset($_POST['modificar'])) {
+                Atraccio::modificarAtraccio();
+                }
+              if (isset($_POST['Acceptar'])){
+              Atraccio::eliminarAtraccio();
+            }*/
 
-		?>
+            ?>
+
       </main>
     </div>
   </div>
