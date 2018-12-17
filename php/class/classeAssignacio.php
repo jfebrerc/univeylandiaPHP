@@ -688,7 +688,7 @@ public static function eliminarAssignacio(){
   $pdf->SetY($Y_Table_Position);
   while ($i < $numero_de_assignacions)
   {
-      $pdf->SetX(20);
+      $pdf->SetX(10);
       $pdf->MultiCell(260,6,'',1);
       $i = $i +1;
   }
