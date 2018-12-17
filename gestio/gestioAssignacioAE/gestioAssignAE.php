@@ -332,7 +332,7 @@ if($_SESSION['rol'] != 3) {
                   <div class="btn-toolbar mb-2 mb-md-0">
                     <div class="btn-group mr-2">
                       <!--<form method="post" action="<?php //echo htmlentities($_SERVER['PHP_SELF']); ?>">-->
-                      <form method="post">
+                      <form method="post" action="/php/provaxd.php">
                         <button class="btn btn-sm btn-outline-secondary" name="Exportar" type="submit">
                           <span data-feather="save"></span>
                           Exportar
@@ -372,9 +372,7 @@ if($_SESSION['rol'] != 3) {
               if (isset($_POST['Acceptar'])){
                 Assignacio::eliminarAssignacio();
                 }
-              if (isset($_POST['Exportar'])) {
-                Assignacio::llistatAssignacionsPDF();
-              }
+              
               //classeAtraccio = new Atraccio();
              /* if (isset($_POST['buscar_atraccio'])) {
               Atraccio::llistarEmpleatsBusqueda();
