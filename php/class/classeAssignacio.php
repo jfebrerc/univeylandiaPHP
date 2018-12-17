@@ -646,19 +646,19 @@ public static function eliminarAssignacio(){
   $pdf->SetX(45);
   $pdf->Cell(20,6,'NOM',1,0,'L',1);
   $pdf->SetX(65);
-  $pdf->Cell(100,6,'COGNOM1',1,0,'L',1);
-  $pdf->SetX(135);
+  $pdf->Cell(30,6,'COGNOM1',1,0,'L',1);
+  $pdf->SetX(95);
   $pdf->Cell(30,6,'COGNOM2',1,0,'R',1);
-  $pdf->SetX(155);
-  $pdf->Cell(30,6,'DOCUMENT',1,0,'R',1);
-  $pdf->SetX(175);
-  $pdf->Cell(30,6,'NOM ATRACCIO',1,0,'R',1);
-  $pdf->SetX(195);
-  $pdf->Cell(30,6,'DATA INICI',1,0,'R',1);
+  $pdf->SetX(125);
+  $pdf->Cell(20,6,'DOCUMENT',1,0,'R',1);
+  $pdf->SetX(145);
+  $pdf->Cell(20,6,'NOM ATRACCIO',1,0,'R',1);
+  $pdf->SetX(165);
+  $pdf->Cell(50,6,'DATA INICI',1,0,'R',1);
   $pdf->SetX(215);
-  $pdf->Cell(30,6,'DATA FI',1,0,'R',1);
+  $pdf->Cell(50,6,'DATA FI',1,0,'R',1);
   $pdf->Ln();
-  //Now show the 3 columns
+
   $pdf->SetFont('Arial','',12);
   $pdf->SetY($Y_Table_Position);
   $pdf->SetX(45);
