@@ -636,7 +636,7 @@ public static function eliminarAssignacio(){
   //Fields Name position
   $Y_Fields_Name_position = 20;
   //Table position, under Fields Name
-  $Y_Table_Position = 26;
+  $Y_Table_Position = 30;
   //First create each Field Name
   //Gray color filling each Field Name box
   $pdf->SetFillColor(232,232,232);
