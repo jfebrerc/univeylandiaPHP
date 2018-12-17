@@ -583,7 +583,12 @@ public static function eliminarAssignacio(){
   }
 
   public static function exportarAssignacions(){
-
+    require $_SERVER['DOCUMENT_ROOT']."/php/fdpf/fpdf.php";
+    $pdf = new FPDF('P','mm','A4');
+    $pdf->AddPage();
+    $pdf->SetFont('Arial','B',16);
+    $pdf->Cell(20,10,'Title',1,1,'C');
+    $pdf->Output();
   }
 
 }
