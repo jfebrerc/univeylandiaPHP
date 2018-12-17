@@ -5,7 +5,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAtraccio.php";
 include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeEmpleat.php";
 
 $Assignacio = new Assignacio ($_POST['seleccio_empleat'],$_POST['seleccio_atraccio'],$_POST['data_inici_assign'],$_POST['data_fi_assign']);
-
+var_dump($Assignacio);
 $Assignacio->RegistrarAssignacio();
 
 
@@ -13,7 +13,7 @@ $Assignacio->RegistrarAssignacio();
 
 if($Assignacio->RegistrarAssignacio() == true){
   echo "inserit correctament";
-  var_dump($Assignacio);
+
   //header('Location: ./registreAtraccions.php');
     //header('Location: ./registreAssignacions.php');
 }
