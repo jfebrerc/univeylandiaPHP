@@ -2,12 +2,11 @@
 include_once $_SERVER['DOCUMENT_ROOT']."/php/connection.php";
 class Assignacio{
   /*Atributs*/
-  private $idAssignacio;
   private $idUsuari;
   private $idAtraccio;
   private $dataIniciAssignacio;
   private $dataFiAssignacio;
-  private $dataCreacioRegistre;
+
 
   /*Constructor*/
   function __construct(){
@@ -32,7 +31,7 @@ class Assignacio{
         $connection = crearConnexio();
         $sql = "INSERT INTO ASSIGN_USUARI_ATRACCIO (id_usuari,id_atraccio,data_inici_assign,data_fi_assign) VALUES (?,?,?,?);";
           $sentencia = $connection->prepare($sql);
-          $sentencia->bind_param("iiss",$this->id_Usuari,$this->id_Atraccio,$this->dataIniciAssignacio,$this->dataFiAssignaciossign);
+          $sentencia->bind_param("iiss",$this->idUsuari,$this->idAtraccio,$this->dataIniciAssignacio,$this->dataFiAssignaciossign);
           if($sentencia->execute()){
             $sentencia->close();
             $connection->close();
