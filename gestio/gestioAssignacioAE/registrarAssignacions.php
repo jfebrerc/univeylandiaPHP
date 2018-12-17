@@ -3,8 +3,8 @@
 include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAssignacio.php";
 //include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAtraccio.php";
 //include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeEmpleat.php";
-$_POST['seleccio_empleat'] = objectToArray($seleccio_empleat);
-foreach ($seleccio_empleat as $value){
+
+foreach ( $_POST['seleccio_atraccio'] as $value){
 $Assignacio = new Assignacio ($value,$_POST['seleccio_atraccio'],$_POST['data_inici_assign'],$_POST['data_fi_assign']);
 
 $comprovacio_registre = $Assignacio->RegistrarAssignacio();
