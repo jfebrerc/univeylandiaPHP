@@ -14,7 +14,7 @@ if($comprovacio_registre == true){
   header('Location: ./registreAssignacions.php');
 }
 }
-}
+
 
 
 
