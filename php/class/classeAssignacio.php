@@ -643,20 +643,20 @@ public static function eliminarAssignacio(){
   //Bold Font for Field Name
   $pdf->SetFont('Arial','B',12);
   $pdf->SetY($Y_Fields_Name_position);
-  $pdf->SetX(45);
+  $pdf->SetX(10);
   $pdf->Cell(20,6,'NOM',1,0,'L',1);
-  $pdf->SetX(65);
+  $pdf->SetX(30);
   $pdf->Cell(30,6,'COGNOM1',1,0,'L',1);
-  $pdf->SetX(95);
-  $pdf->Cell(30,6,'COGNOM2',1,0,'R',1);
-  $pdf->SetX(125);
-  $pdf->Cell(20,6,'DOCUMENT',1,0,'R',1);
-  $pdf->SetX(145);
-  $pdf->Cell(20,6,'NOM ATRACCIO',1,0,'R',1);
-  $pdf->SetX(165);
-  $pdf->Cell(50,6,'DATA INICI',1,0,'R',1);
-  $pdf->SetX(215);
-  $pdf->Cell(50,6,'DATA FI',1,0,'R',1);
+  $pdf->SetX(60);
+  $pdf->Cell(30,6,'COGNOM2',1,0,'L',1);
+  $pdf->SetX(90);
+  $pdf->Cell(20,6,'DOCUMENT',1,0,'L',1);
+  $pdf->SetX(110);
+  $pdf->Cell(20,6,'NOM ATRACCIO',1,0,'L',1);
+  $pdf->SetX(130);
+  $pdf->Cell(50,6,'DATA INICI',1,0,'L',1);
+  $pdf->SetX(180);
+  $pdf->Cell(50,6,'DATA FI',1,0,'L',1);
   $pdf->Ln();
 
   $pdf->SetFont('Arial','',12);
