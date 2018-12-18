@@ -64,7 +64,7 @@ class Servei{
   //$_POST['busqueda_atraccio']
   if ($buscar_atraccio != -1) {
     //$busqueda = $_POST['buscar_assign'];
-    $sql = "SELECT aua.id_servei_atraccio,aua.id_servei, u.id_usuari, u.nom, u.cognom1, u.cognom2, u.numero_document, a.nom_atraccio, a.id_atraccio, aua.data_inici_servei, aua.data_fi_servei, aua.data_creacio_registre FROM SERVEI_ATRACCIO aua LEFT JOIN ATRACCIO a ON aua.id_atraccio=a.id_atraccio LEFT JOIN USUARI u ON u.id_usuari=aua.id_usuari where aua.id_atraccio=$buscar_atraccio and (u.nom like '%$busqueda%' or u.cognom1 like '%$busqueda%' or u.cognom2 like '%$busqueda%' or u.numero_document like '%$busqueda%' or a.nom_atraccio like '%$busqueda%') order by data_creacio_registre desc";
+    $sql = "SELECT aua.id_servei_atraccio,aua.id_servei,s.nom_servei, u.id_usuari, u.nom, u.cognom1, u.cognom2, u.numero_document, a.nom_atraccio, a.id_atraccio, aua.data_inici_servei, aua.data_fi_servei, aua.data_creacio_registre FROM SERVEI_ATRACCIO aua LEFT JOIN ATRACCIO a ON aua.id_atraccio=a.id_atraccio LEFT JOIN SERVEI s ON aua.id_servei=s.id_servei LEFT JOIN USUARI u ON u.id_usuari=aua.id_usuari where aua.id_atraccio=$buscar_atraccio and (u.nom like '%$busqueda%' or u.cognom1 like '%$busqueda%' or u.cognom2 like '%$busqueda%' or u.numero_document like '%$busqueda%' or a.nom_atraccio like '%$busqueda%') order by data_creacio_registre desc";
   }elseif ($buscar_atraccio == -1) {
     $sql = "SELECT aua.id_servei_atraccio,aua.id_servei, u.id_usuari, u.nom, u.cognom1, u.cognom2, u.numero_document, a.nom_atraccio, a.id_atraccio, aua.data_inici_servei, aua.data_fi_servei, aua.data_creacio_registre FROM SERVEI_ATRACCIO aua LEFT JOIN ATRACCIO a ON aua.id_atraccio=a.id_atraccio LEFT JOIN USUARI u ON u.id_usuari=aua.id_usuari where u.nom like '%$busqueda%' or u.cognom1 like '%$busqueda%' or u.cognom2 like '%$busqueda%' or u.numero_document like '%$busqueda%' or a.nom_atraccio like '%$busqueda%' order by data_creacio_registre desc";
   }
@@ -103,6 +103,7 @@ class Servei{
         $data_creacio_registre = $row["data_creacio_registre"];
         $id_atraccio = $row["id_atraccio"];
         $id_usuari = $row["id_usuari"];
+        $nom_servei
 
 
         echo '  <tbody>';
@@ -112,6 +113,7 @@ class Servei{
         echo '      <td>'.$cognom2_empleat.'</td>';
         echo '      <td>'.$dniEmpleat.'</td>';
         echo '      <td>'.$nom_atraccio.'</td>';
+        echo '      <td>'.$nom_servei.'</td>';
         echo '      <td>'.$data_inici_servei.'</td>';
         echo '      <td>'.$data_fi_servei.'</td>';
         echo '      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter'.$id_servei_atraccio.'"> Modificar
