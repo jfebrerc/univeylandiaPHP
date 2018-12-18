@@ -646,7 +646,7 @@ public static function eliminarAssignacio(){
   $pdf->SetFont('Arial','B',12);
   $pdf->Cell(80);
   $pdf->Cell(30,10,'PATATA',1,0,'C');
-  $pdf->Ln(20);
+  $pdf->Ln(60);
 
   $pdf->SetY($Y_Fields_Name_position);
   $pdf->SetX(20);
