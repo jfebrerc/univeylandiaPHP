@@ -50,6 +50,48 @@ class Servei{
     }
 
 
+
+    public static function SeleccioNomServei()
+    {
+    $conexio = crearConnexio();
+    //if ($conexio->connect_error)
+    //{
+    //    die('Error de conexión: ' . $conexion->connect_error);
+    //}
+    //$busqueda = $_POST['busqueda_atraccio'];
+    //$_POST['busqueda_atraccio']
+
+    $sql = "SELECT * FROM SERVEI";
+    $result = $conexio->query($sql);
+    echo '<table class="table">';
+    echo '  <thead>';
+    echo '    <tr>';
+    echo '      <th scope="col">Nom Servei</th>';
+    echo '      <th scope="col"></th>';
+    echo '      <th scope="col"></th>';
+    echo '    </tr>';
+    echo '  </thead>';
+    if ($result) {
+        while($row = $result->fetch_assoc()) {
+          $id_servei = $row["id_servei"]
+          $nom_servei = $row["nom_servei"];
+          echo '  <tbody>';
+          echo '    <tr>';
+          echo '      <th scope="row">'.$row["nom_servei"].'</th>';
+          echo '    <td><input type="radio" class="form-check-input" name="'.$nom_servei.'" value="'.$id_servei.'"></td>';
+          echo '    </tr>';
+          echo '  </tbody>';
+
+        }
+
+                    //    echo '</form>';
+      }
+
+          echo '</table>';
+          $conexio->close();
+    }
+
+
   public static function llistarAssignBusqueda($busqueda, $buscar_atraccio){
 
 
