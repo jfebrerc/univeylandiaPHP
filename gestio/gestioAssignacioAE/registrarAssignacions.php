@@ -11,7 +11,7 @@ $comprovacio_registre = $Assignacio->RegistrarAssignacio();
 if($comprovacio_registre == true){
 
   //header('Location: ./registreAtraccions.php');
-  header('Location: ./registreAssignacions.php');
+  //header('Location: ./registreAssignacions.php');
 }
 }
 
