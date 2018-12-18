@@ -107,7 +107,7 @@ if($_SESSION['rol'] != 3) {
             </ul>
 
             <li class="nav-item">
-              <a class="nav-link active" data-toggle="collapse" aria-expanded="true" href="#submenu3">
+              <a class="nav-link active" data-toggle="collapse" aria-expanded="false" href="#submenu3">
                 <span data-feather="trending-down"></span>
                 Gestionar Atraccions
                 <span data-feather="chevron-right"></span>
@@ -118,14 +118,24 @@ if($_SESSION['rol'] != 3) {
                 <a class="nav-link nav-interior" href="../gestioAtraccio/registreAtraccions.php"><span data-feather="plus-square"></span>Crear Atracció</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="../gestioAtraccio/gestioAtraccions.php"><span data-feather="file-text"></span>Llistar Atraccions</a>
+                <a class="nav-link nav-interior" href="../gestioAtraccio/gestioAtraccions.php"><span data-feather="file-text"></span>Gestionar Atraccions</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="#"><span data-feather="edit"></span>Modificar Atracció</a>
+                <a class="nav-link nav-interior" data-toggle="collapse" aria-expanded="false" href="#sub-submenu1">
+                  <span data-feather="star"></span>
+                  Gestionar Assignacions E-A
+                  <span data-feather="chevron-right"></span>
+                </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link nav-interior" href="#"><span data-feather="minus-square"></span>Eliminar Atracció</a>
-              </li>
+
+                <ul class="nav flex-column collapse show" id="sub-submenu1" data-parent="#submenu3">
+                  <li class="nav-item">
+                    <a class="nav-link nav-interior2" href="registreAssignacions.php"><span data-feather="plus-square"></span>Registrar Assignació</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link nav-interior2"  href="gestioAssignAE.php"><span data-feather="file-text"></span>Gestionar Assignacions</a>
+                  </li>
+                </ul>
             </ul>
 
             <li class="nav-item">
