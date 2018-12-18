@@ -122,26 +122,17 @@ if($_SESSION['rol'] != 3) {
                 <li class="nav-item">
                   <a class="nav-link nav-interior" data-toggle="collapse" aria-expanded="false" href="#sub-submenu1">
                     <span data-feather="star"></span>
-                    Gestionar Habitacions
+                    Gestionar Assignacions E-A
                     <span data-feather="chevron-right"></span>
                   </a>
                 </li>
 
                   <ul class="nav flex-column collapse" id="sub-submenu1" data-parent="#submenu3">
                     <li class="nav-item">
-                      <a class="nav-link nav-interior2" href="gestioHotel/habitacio/inserirHabitacio.php"><span data-feather="star"></span>Inserir Habitacions</a>
+                      <a class="nav-link nav-interior2" href="gestioHotel/habitacio/inserirHabitacio.php"><span data-feather="star"></span>Registrar Assignació</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link nav-interior2"  href="gestioHotel/habitacio/eliminarHabitacio.php"><span data-feather="star"></span>Eliminar Habitacions</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link nav-interior2"  href="gestioHotel/habitacio/modificarHabitacio.php"><span data-feather="star"></span>Modificar Habitacions</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link nav-interior2"  href="gestioHotel/habitacio/consultarHabitacio.php"><span data-feather="star"></span>Consultar Habitacions</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link nav-interior2"  href="gestioHotel/habitacio/llistarHabitacio.php"><span data-feather="star"></span>Llistar Habitacions</a>
+                      <a class="nav-link nav-interior2"  href="gestioHotel/habitacio/eliminarHabitacio.php"><span data-feather="star"></span>Gestionar Assignacions</a>
                     </li>
                   </ul>
               </ul>
