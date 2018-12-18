@@ -112,7 +112,6 @@ class Servei{
         echo '      <td>'.$cognom2_empleat.'</td>';
         echo '      <td>'.$dniEmpleat.'</td>';
         echo '      <td>'.$nom_atraccio.'</td>';
-        echo '      <td>'.$nom_atraccio.'</td>';
         echo '      <td>'.$data_inici_servei.'</td>';
         echo '      <td>'.$data_fi_servei.'</td>';
         echo '      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter'.$id_servei_atraccio.'"> Modificar
