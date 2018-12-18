@@ -83,6 +83,7 @@ class Servei{
   echo '      <th scope="col">Cognom 2</th>';
   echo '      <th scope="col">Document</th>';
   echo '      <th scope="col">Nom atraccio</th>';
+  echo '      <th scope="col">Nom servei</th>';
   echo '      <th scope="col">Data inici</th>';
   echo '      <th scope="col">Data fi</th>';
   echo '      <th scope="col"></th>';
