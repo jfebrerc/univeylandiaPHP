@@ -113,7 +113,7 @@ if($_SESSION['rol'] != 3) {
                 <span data-feather="chevron-right"></span>
               </a>
             </li>
-            <ul class="nav flex-column collapse" id="submenu3" data-parent="#sidebar">
+            <ul class="nav flex-column collapse show" id="submenu3" data-parent="#sidebar">
               <li class="nav-item">
                 <a class="nav-link nav-interior" href="gestioAtraccio/registreAtraccions.php"><span data-feather="plus-square"></span>Crear Atracció</a>
               </li>
