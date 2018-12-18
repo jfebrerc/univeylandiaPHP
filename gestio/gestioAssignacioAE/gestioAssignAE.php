@@ -115,10 +115,10 @@ if($_SESSION['rol'] != 3) {
             </li>
             <ul class="nav flex-column collapse show" id="submenu3" data-parent="#sidebar">
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="gestioAtraccio/registreAtraccions.php"><span data-feather="plus-square"></span>Crear Atracció</a>
+                <a class="nav-link nav-interior" href="registreAtraccions.php"><span data-feather="plus-square"></span>Crear Atracció</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-interior" href="gestioAtraccio/gestioAtraccions.php"><span data-feather="file-text"></span>Gestionar Atraccions</a>
+                <a class="nav-link nav-interior" href="gestioAtraccions.php"><span data-feather="file-text"></span>Gestionar Atraccions</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link nav-interior" data-toggle="collapse" aria-expanded="false" href="#sub-submenu1">
