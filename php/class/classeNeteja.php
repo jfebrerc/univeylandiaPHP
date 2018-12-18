@@ -457,7 +457,7 @@ class Neteja{
                     <div class="col-10">
                     <select class="custom-select" name="atraccio_seleccionada">
                       <option selected value="'.$id_atraccio.'">'.$nom_atraccio.'</option>';
-                      Assignacio::llistarAtraccionsMod($id_atraccio);
+                      Neteja::llistarAtraccionsMod($id_atraccio);
                     echo '</select>
                     </div>
                     </div>
@@ -466,7 +466,7 @@ class Neteja{
                       <div class="col-10">
                       <select class="custom-select" name="empleat_seleccionat">
                         <option selected value="'.$id_usuari.'">'.$nom_empleat.'   ||   '.$dniEmpleat.'</option>';
-                        Assignacio::llistarEmpleatMod($id_usuari);
+                        Neteja::llistarEmpleatMod($id_usuari);
                       echo '</select>
                       </div>
                       </div>
