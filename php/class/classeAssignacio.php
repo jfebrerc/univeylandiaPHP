@@ -583,15 +583,6 @@ public static function eliminarAssignacio(){
       //echo "0 results";
   }
 
-/*  public static function exportarAssignacions(){
-    //include_once $_SERVER['DOCUMENT_ROOT']."/php/fpdf/fpdf.php";
-    require $_SERVER['DOCUMENT_ROOT']."/php/fpdf/fpdf.php";
-    $pdf = new FPDF('P','mm','A4');
-    $pdf->AddPage();
-    $pdf->SetFont('Arial','B',16);
-    $pdf->Cell(20,10,'Title',1,1,'C');
-    $pdf->Output();
-  }*/
   public static function llistatAssignacionsPDF() {
   require_once $_SERVER['DOCUMENT_ROOT']."/php/fpdf/fpdf.php";
   $conn = crearConnexio();
@@ -635,17 +626,16 @@ public static function eliminarAssignacio(){
   $pdf->AddPage('L', 'A4', 0);
 
 
-  //Fields Name position
+
   $Y_Fields_Name_position = 20;
-  //Table position, under Fields Name
+
   $Y_Table_Position = 26;
-  //First create each Field Name
-  //Gray color filling each Field Name box
+
   $pdf->SetFillColor(232,232,232);
-  //Bold Font for Field Name
+
   $pdf->SetFont('Arial','B',12);
   $pdf->Cell(10);
-  $pdf->Cell(110,10,'ASSIGNACIONS EMPLEATS-ATRACCIONS',1,0,'C');
+  $pdf->Cell(250,10,'ASSIGNACIONS EMPLEATS-ATRACCIONS',1,0,'C');
   $pdf->Ln(60);
 
   $pdf->SetY($Y_Fields_Name_position);
@@ -688,8 +678,6 @@ public static function eliminarAssignacio(){
   $pdf->SetX(220);
   $pdf->MultiCell(50,6,$columna_data_fi_assign,1,'L');
 
-  //Create lines (boxes) for each ROW (Product)
-  //If you don't use the following code, you don't create the lines separating each row
   $i = 0;
   $pdf->SetY($Y_Table_Position);
   while ($i < $numero_de_assignacions)
@@ -698,7 +686,7 @@ public static function eliminarAssignacio(){
       $pdf->MultiCell(250,6,'',1);
       $i = $i +1;
   }
-  //Donem nom al document PDF i l'enviem per descarregar
+
   $pdf->Output('llistatAssignacions.pdf','D');
 }
 
