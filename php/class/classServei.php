@@ -103,7 +103,7 @@ class Servei{
         $data_creacio_registre = $row["data_creacio_registre"];
         $id_atraccio = $row["id_atraccio"];
         $id_usuari = $row["id_usuari"];
-        $nom_servei
+        $nom_servei =$row["nom_servei"]
 
 
         echo '  <tbody>';
