@@ -644,7 +644,6 @@ public static function eliminarAssignacio(){
   $pdf->SetFillColor(232,232,232);
   //Bold Font for Field Name
   $pdf->SetFont('Arial','B',12);
-  $pdf->Cell(80);
   $pdf->Cell(30,10,'PATATA',1,0,'C');
   $pdf->Ln(60);
 
