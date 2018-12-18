@@ -129,10 +129,10 @@ if($_SESSION['rol'] != 3) {
 
                   <ul class="nav flex-column collapse" id="sub-submenu1" data-parent="#submenu3">
                     <li class="nav-item">
-                      <a class="nav-link nav-interior2" href="gestioAssignacioAE/registreAssignacions.php"><span data-feather="star"></span>Registrar Assignació</a>
+                      <a class="nav-link nav-interior2" href="gestioAssignacioAE/registreAssignacions.php"><span data-feather="plus-square"></span>Registrar Assignació</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link nav-interior2"  href="gestioAssignacioAE/gestioAssignAE.php"><span data-feather="star"></span>Gestionar Assignacions</a>
+                      <a class="nav-link nav-interior2"  href="gestioAssignacioAE/gestioAssignAE.php"><span data-feather="file-text"></span>Gestionar Assignacions</a>
                     </li>
                   </ul>
               </ul>
