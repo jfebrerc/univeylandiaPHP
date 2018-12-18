@@ -634,11 +634,7 @@ public static function eliminarAssignacio(){
   $pdf = new FPDF();
   $pdf->AddPage('L', 'A4', 0);
 
-  $pdf->Cell(80);
-
-  // Title
-  $pdf->Cell(30,10,'EQUISDE',1,0,'C');
-  $pdf->Ln(20)
+  
   //Fields Name position
   $Y_Fields_Name_position = 20;
   //Table position, under Fields Name
