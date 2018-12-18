@@ -589,7 +589,7 @@ public static function eliminarAssignacio(){
   if ($conn->connect_error) {
       die('Error en la connexió : '.$conn->connect_errno.'-'.$conn->connect_error);
   }
-  $sql = "SELECT aua.id_assignacio, u.id_usuari, u.nom, u.cognom1, u.cognom2, u.numero_document, a.nom_atraccio, a.id_atraccio, aua.data_inici_assign, aua.data_fi_assign, aua.data_creacio_registre FROM ASSIGN_USUARI_ATRACCIO aua LEFT JOIN ATRACCIO a ON aua.id_atraccio=a.id_atraccio LEFT JOIN USUARI u ON u.id_usuari=aua.id_usuari order by data_creacio_registre desc";
+  $sql = "SELECT top 10 aua.id_assignacio, u.id_usuari, u.nom, u.cognom1, u.cognom2, u.numero_document, a.nom_atraccio, a.id_atraccio, aua.data_inici_assign, aua.data_fi_assign, aua.data_creacio_registre FROM ASSIGN_USUARI_ATRACCIO aua LEFT JOIN ATRACCIO a ON aua.id_atraccio=a.id_atraccio LEFT JOIN USUARI u ON u.id_usuari=aua.id_usuari order by data_creacio_registre desc";
   $result = $conn->query($sql);
   $numero_de_assignacions = $result->num_rows;
   $columna_nom = "";
