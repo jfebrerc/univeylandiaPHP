@@ -342,7 +342,7 @@ if($_SESSION['rol'] != 3) {
                   </div>
                 </div>
                 <?php
-              include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeNeteja.php";
+              include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classServei.php";
               echo '<form method="post" style="margin-top=50px;">
               <div class="form-group row">
               <div class="col-6">
@@ -350,7 +350,7 @@ if($_SESSION['rol'] != 3) {
               </div>
               <div class="col-3">
                 <select class="custom-select" name="nom_atraccio">';
-                Neteja::llistarNomAtraccions();
+                Servei::llistarNomAtraccions();
               echo '  </select>
               </div>
               <div class="form-group row">
@@ -365,12 +365,12 @@ if($_SESSION['rol'] != 3) {
                 $buscar = $_POST['busqueda_assignaciotext'];
                 $buscar_atraccio = $_POST['nom_atraccio'];
               }
-              Neteja::llistarAssignBusqueda($buscar, $buscar_atraccio);
+              Servei::llistarAssignBusqueda($buscar, $buscar_atraccio);
               if (isset($_POST['modificar'])) {
-                Neteja::modificarAssignacio();
+                Servei::modificarAssignacio();
                 }
               if (isset($_POST['Acceptar'])){
-                Neteja::eliminarAssignacio();
+                Servei::eliminarAssignacio();
                 }
 
               //classeAtraccio = new Atraccio();
