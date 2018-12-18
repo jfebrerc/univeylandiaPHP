@@ -645,7 +645,7 @@ public static function eliminarAssignacio(){
   //Bold Font for Field Name
   $pdf->SetFont('Arial','B',12);
   $pdf->Cell(10);
-  $pdf->Cell(30,10,'PATATA',1,0,'C');
+  $pdf->Cell(50,10,'ASSIGNACIONS EMPLEATS-ATRACCIONS',1,0,'C');
   $pdf->Ln(60);
 
   $pdf->SetY($Y_Fields_Name_position);
