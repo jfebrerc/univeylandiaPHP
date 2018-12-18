@@ -634,7 +634,7 @@ public static function eliminarAssignacio(){
   $pdf = new FPDF();
   $pdf->AddPage('L', 'A4', 0);
 
-  
+
   //Fields Name position
   $Y_Fields_Name_position = 20;
   //Table position, under Fields Name
@@ -644,6 +644,10 @@ public static function eliminarAssignacio(){
   $pdf->SetFillColor(232,232,232);
   //Bold Font for Field Name
   $pdf->SetFont('Arial','B',12);
+  $pdf->Cell(80);
+  $pdf->Cell(30,10,'PATATA',1,0,'C');
+  $pdf->Ln(20);
+
   $pdf->SetY($Y_Fields_Name_position);
   $pdf->SetX(20);
   $pdf->Cell(20,6,'NOM',1,0,'L',1);
