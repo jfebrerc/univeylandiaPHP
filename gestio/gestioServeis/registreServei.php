@@ -346,7 +346,7 @@ if($_SESSION['rol'] != 3) {
           <div class="col-md-12 px-4">
             <h4 class="h5">Selecciona l'Atracció a assignar</h4>
           </div>
-          <form class="needs-validation" method="post" action="registrarAssignacions.php">
+          <form class="needs-validation" method="post" action="registrarServei.php">
 
 
           <?php
@@ -359,8 +359,12 @@ if($_SESSION['rol'] != 3) {
         <br/>
         <input class="form-control" type="date" name="data_fi_assign">
         <br/>
+        <?php
+      include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classServei.php";
+      Servei::SeleccioNomServei();
 
-        
+      ?>
+
         </div>
 
         <div class="col-md-1">

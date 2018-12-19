@@ -78,7 +78,7 @@ class Servei{
           echo '  <tbody>';
           echo '    <tr>';
           echo '      <th scope="row">'.$row["nom_servei"].'</th>';
-          echo '    <td><input type="radio" class="form-check-input" name="'.$nom_servei.'" value="'.$id_servei.'"></td>';
+          echo '    <td><input type="radio" class="form-check-input" name="nom_servei" value="'.$id_servei.'"></td>';
           echo '    </tr>';
           echo '  </tbody>';
 
