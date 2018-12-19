@@ -346,7 +346,8 @@ if($_SESSION['rol'] != 3) {
           <div class="col-md-12 px-4">
             <h4 class="h5">Selecciona l'Atracció a assignar</h4>
           </div>
-          <form class="needs-validation" method="post" action="registrarServei.php">
+          <!--<form class="needs-validation" method="post" action="registrarServei.php">-->
+            <form class="needs-validation" method="post" action="<?php htmlentities($_SERVER['PHP_SELF']);?>">
 
 
           <?php
@@ -362,6 +363,20 @@ if($_SESSION['rol'] != 3) {
         <?php
       include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classServei.php";
       Servei::SeleccioNomServei();
+
+      ?>
+
+      <?php
+
+      include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAssignacio.php";
+      //include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAtraccio.php";
+      //include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeEmpleat.php";
+
+      foreach ( $_POST['seleccio_empleat'] as $value){
+
+      $Assignacio = new Assignacio ($value,$_POST['seleccio_atraccio'],$_POST['data_inici_assign'],$_POST['data_fi_assign']);
+
+      $comprovacio_registre = $Assignacio->RegistrarAssignacio();
 
       ?>
 
