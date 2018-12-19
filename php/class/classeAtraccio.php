@@ -1,7 +1,17 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT']."/php/connection.php";
 class Atraccio{
-  /*Atributs*/ //Faltaran mes Atributs
+  /**
+   * [Atributs de la clase]
+   * @var [type Int.Guardem l'ID de la atraccio.]
+   * @var [type String. Guardem el nom de l'atraccio.]
+   * @var [type String. Guardem el tipus de l'atraccio.]
+   * @var [type Date. Guardem la data inaugural de l'atraccio.]
+   * @var [type Int. Guardem l'altura minima que permet l'atraccio.]
+   * @var [type Int. Guardem l'altura maxima que permet l'atraccio.]
+   * @var [type Boolean. Guardem si l'atraccio es accessible per als minusvalids.]
+   * @var [type Boolean. Guardem si l'atraccio permet l'acces expres.]
+   */
   private $idAtraccio;
   private $nomAtraccio;
   private $tipusAtraccio;
@@ -20,7 +30,16 @@ class Atraccio{
      call_user_func_array(array($this,$f),$args);
    }
   }
-
+  /**
+ * [__construct7 a aquest constructor li passem 7 parametres els quals introduirem al formulari i passarem amb _$POST ]
+ * @param  [String] $nomAtraccio     [Guardem el nom de l'atraccio introduït al formulari.]
+ * @param  [String] $tipusAtraccio   [Guardem el tipus de l'atraccio introduït al formulari.]
+ * @param  [Date] $dataInauguracio [Guardem la data inaugural de l'atraccio introduïda al formulari.]
+ * @param  [Int] $alturaMin       [Guardem l'altura minima que permet l'atraccio introduïda al formulari.]
+ * @param  [Int] $alturaMax       [Guardem l'altura maxima que permet l'atraccio introduïda al formulari.]
+ * @param  [Boolean] $accessibilitat  [Guardem si l'atraccio es accessible (introduït al formulari).]
+ * @param  [Boolean] $accesExpress    [Guardem si l'atraccio permet l'acces expres (introduït al formulari).]
+ */
   public function __construct7($nomAtraccio,$tipusAtraccio,$dataInauguracio,$alturaMin,$alturaMax,$accessibilitat,$accesExpress){
     $this->idAtraccio=NULL;
     $this->nomAtraccio=$nomAtraccio;
@@ -34,70 +53,125 @@ class Atraccio{
   }
 
   /*Getters*/
-  public function getIdAtraccio(){
-  return $this->idAtraccio;
-  }
+/**
+ * [getIdAtraccio Aquest metode ens permet agafar des de qualsevol classe el valor de la ID de la atracció.]
+ * @return [Int] [ID de la atracció]
+ */
+public function getIdAtraccio(){
+return $this->idAtraccio;
+}
+/**
+ * [getNomAtraccio Aquest metode ens permet agafar des de qualsevol classe el valor del nom de la atracció.]
+ * @return [String] [Nom de l'atracció]
+ */
+public function getNomAtraccio(){
+return $this->nomAtraccio;
+}
+/**
+ * [getTipusAtraccio Aquest metode ens permet agafar des de qualsevol classe el valor del tipus d'atracció.]
+ * @return [String] [Tipus de l'atracció]
+ */
+public function getTipusAtraccio(){
+return $this->tipusAtraccio;
+}
+/**
+ * [getDataInauguracio Aquest metode ens permet agafar des de qualsevol classe el valor de la data inaugural de l'atracció.]
+ * @return [Date] [Data de l'atracció]
+ */
+public function getDataInauguracio(){
+return $this->dataInauguracio;
+}
+/**
+ * [getAlturaMin Aquest metode ens permet agafar des de qualsevol classe el valor de l'altura minima que permet l'atracció.]
+ * @return [Int] [Altura minima que permet l'atracció]
+ */
+public function getAlturaMin(){
+return $this->alturaMin;
+}
+/**
+ * [getAlturaMax Aquest metode ens permet agafar des de qualsevol classe el valor de l'altura màxima que permet l'atracció.]
+ * @return [Int] [Altura màxima que permet l'atracció]
+ */
+public function getAlturaMax(){
+return $this->alturaMax;
+}
+/**
+ * [getAccessibilitat Aquest metode ens permet agafar des de qualsevol classe el valor de si l'atracció es accessible.]
+ * @return [Boolean] [Accesibilitat de l'atracció]
+ */
+public function getAccessibilitat(){
+return $this->accessibilitat;
+}
+/**
+ * [getAccesExpress Aquest metode ens permet agafar des de qualsevol classe el valor de si l'atracció admet acces Express.]
+ * @return [Boolean] [Acces Express de l'atracció]
+ */
+public function getAccesExpress(){
+return $this->accesExpress;
+}
 
-  public function getNomAtraccio(){
-	return $this->nomAtraccio;
-  }
-
-  public function getTipusAtraccio(){
-	return $this->tipusAtraccio;
-  }
-
-  public function getDataInauguracio(){
-	return $this->dataInauguracio;
-  }
-
-  public function getAlturaMin(){
-	return $this->alturaMin;
-  }
-
-  public function getAlturaMax(){
-	return $this->alturaMax;
-  }
-
-  public function getAccessibilitat(){
-	return $this->accessibilitat;
-  }
-
-  public function getAccesExpress(){
-	return $this->accesExpress;
-  }
-
-  /*Setters*/
-  public function setIdAtraccio($idAtraccio){
-    $this->idAtraccio=$idAtraccio;
-  }
-
-  public function setNomAtraccio($nomAtraccio){
-   $this->nomAtraccio=$nomAtraccio;
-  }
-
-  public function setTipusAtraccio($tipusAtraccio){
-    $this->tipusAtraccio=$tipusAtraccio;
-  }
-
-  public function setDataInauguracio($dataInauguracio){
-    $this->dataInauguracio=$dataInauguracio;
-  }
-
-  public function setAlturaMin($alturaMin){
-    $this->alturaMin=$alturaMin;
-  }
-
-  public function setAlturaMax($alturaMax){
-    $this->alturaMax=$alturaMax;
-  }
-
-  public function setAccessibilitat($accessibilitat){
-    $this->accessibilitat=$accessibilitat;
-  }
-
-  public function setAccesExpress($accesExpress){
-    $this->accesExpress=$accesExpress;
-  }
+/*Setters*/
+/**
+ * [setIdAtraccio description]
+ * @param [Int] $idAtraccio
+ */
+public function setIdAtraccio($idAtraccio){
+  $this->idAtraccio=$idAtraccio;
+}
+/**
+ * [setNomAtraccio Aquest metode ens permet canviar les dades del nom des de qualsevol classe.]
+ * @param [String] $nomAtraccio
+ */
+public function setNomAtraccio($nomAtraccio){
+ $this->nomAtraccio=$nomAtraccio;
+}
+/**
+ * [setTipusAtraccio Aquest metode ens permet canviar les dades del tipus d'atraccio des de qualsevol classe.]
+ * @param [String] $tipusAtraccio
+ */
+public function setTipusAtraccio($tipusAtraccio){
+  $this->tipusAtraccio=$tipusAtraccio;
+}
+/**
+ * [setDataInauguracio Aquest metode ens permet canviar les dades de la data inaugural de l'atracció des de qualsevol classe.]
+ * @param [Date] $dataInauguracio
+ */
+public function setDataInauguracio($dataInauguracio){
+  $this->dataInauguracio=$dataInauguracio;
+}
+/**
+ * [setAlturaMin Aquest metode ens permet canviar les dades de l'altura minima que permet l'atracció des de qualsevol classe.]
+ * @param [Int] $alturaMin
+ */
+public function setAlturaMin($alturaMin){
+  $this->alturaMin=$alturaMin;
+}
+/**
+ * [setAlturaMax Aquest metode ens permet canviar les dades de l'altura màxima des de qualsevol classe.]
+ * @param [Int] $alturaMax
+ */
+public function setAlturaMax($alturaMax){
+  $this->alturaMax=$alturaMax;
+}
+/**
+ * [setAccessibilitat Aquest metode ens permet canviar si l'atracció es accessible de des de qualsevol classe.]
+ * @param [Boolean] $accessibilitat
+ */
+public function setAccessibilitat($accessibilitat){
+  $this->accessibilitat=$accessibilitat;
+}
+/**
+ * [setAccesExpress Aquest metode ens permet canviar si l'atracció admet acces Express des de qualsevol classe.]
+ * @param [Boolean] $accesExpress
+ */
+public function setAccesExpress($accesExpress){
+  $this->accesExpress=$accesExpress;
+}
+/**
+ * [Registrar: Aquesta funcio inserta atraccions amb totes les seues dades dins de la base de dades.
+ * Passem tots els atributs de l'objecte mitjançant un INSERT per la sentecia preparada de manerea que coincidisquen amb els de la base de dades per
+ * tal de que s'insereixen de manera correcta.]
+ */
 
   public function Registrar(){
 
@@ -356,6 +430,11 @@ class Atraccio{
       }
       $connection->close();
   }
+
+/**
+ * [eliminarAtraccio Fem una sentecia DELETE FROM i mitjançant la ID de la atraccio la identifica i la elimina.]
+ *
+ */
   public static function eliminarAtraccio(){
       $connection = crearConnexio();
       $id_atraccioE = $_POST['id_atraccioelim'];

@@ -17,7 +17,14 @@ class Assignacio{
      call_user_func_array(array($this,$f),$args);
    }
   }
-
+    /**
+     * [__construct4 description]
+     * @param  [type] $idUsuari            [description]
+     * @param  [type] $idAtraccio          [description]
+     * @param  [type] $dataIniciAssignacio [description]
+     * @param  [type] $dataFiAssignacio    [description]
+     * @return [type]                      [description]
+     */
     public function __construct4($idUsuari, $idAtraccio,  $dataIniciAssignacio,  $dataFiAssignacio){
     $this->idUsuari=$idUsuari;
     $this->idAtraccio=$idAtraccio;
