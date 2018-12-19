@@ -73,7 +73,7 @@ class Servei{
     echo '  </thead>';
     if ($result) {
         while($row = $result->fetch_assoc()) {
-          $id_servei = $row["id_servei"]
+          $id_servei = $row["id_servei"];
           $nom_servei = $row["nom_servei"];
           echo '  <tbody>';
           echo '    <tr>';
