@@ -139,7 +139,7 @@ if($_SESSION['rol'] != 3) {
                     <a class="nav-link nav-interior3" href="gestioServeis/registreServei.php"><span data-feather="plus-square"></span>Registrar Servei</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link nav-interior3"  href="gestioAssignacioAE/gestioServei.php"><span data-feather="file-text"></span>Gestionar Servei</a>
+                    <a class="nav-link nav-interior3"  href="gestioServeis/gestioServei.php"><span data-feather="file-text"></span>Gestionar Servei</a>
                   </li>
                 </ul>
             </ul>
