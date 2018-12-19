@@ -52,15 +52,7 @@ class Servei{
               die("Secured2: Error al introduir el registre.");
           }
 
-          $resultEx = $stmt->execute();
-
-          if ($resultEx==false) {
-              //var_dump($stmt);
-              //die("Secured3: Error al introduir el registre.");
-              throw new Exception();
-          }
-          echo '<script>alert("Registre introduit.");</script>';
-
+          if($sentencia->execute()){
             $sentencia->close();
             $connection->close();
             return true;
@@ -69,8 +61,8 @@ class Servei{
             $sentencia->close();
             $connection->close();
             return false;
-            echo '<script>alert("ERROR.");</script>';
           }
+
     }
 
 
