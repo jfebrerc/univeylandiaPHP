@@ -31,10 +31,36 @@ class Servei{
     public function RegistrarAssignacio(){
 
         $connection = crearConnexio();
+
+        if ($conn->connect_error) {
+            die("Connexió fallida: " . $conn->connect_error);
+        }
+
         $sql = "INSERT INTO SERVEI_ATRACCIO (id_servei,id_atraccio,id_usuari,data_inici_servei,data_fi_servei) VALUES (?,?,?,?,?);";
+
           $sentencia = $connection->prepare($sql);
-          $sentencia->bind_param("iiiss",$this->idServei=$idServei,$this->idAtraccio,$this->idUsuari,$this->data_inici_servei,$this->data_fi_servei);
-          if($sentencia->execute()){
+
+          if ($sentencia==false) {
+              //var_dump($stmt);
+              die("Secured1: Error al introduir el registre.");
+          }
+
+          $result = $sentencia->bind_param("iiiss",$this->idServei=$idServei,$this->idAtraccio,$this->idUsuari,$this->data_inici_servei,$this->data_fi_servei);
+
+          if ($result==false) {
+              //var_dump($stmt);
+              die("Secured2: Error al introduir el registre.");
+          }
+
+          $resultEx = $stmt->execute();
+
+          if ($resultEx==false) {
+              //var_dump($stmt);
+              //die("Secured3: Error al introduir el registre.");
+              throw new Exception();
+          }
+          echo '<script>alert("Registre introduit.");</script>';
+
             $sentencia->close();
             $connection->close();
             return true;
@@ -42,11 +68,9 @@ class Servei{
           else{
             $sentencia->close();
             $connection->close();
-            return "Error en el registre.";
             return false;
+            echo '<script>alert("ERROR.");</script>';
           }
-          $sentencia->close();
-          $connection->close();
     }
 
 
