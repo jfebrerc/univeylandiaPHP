@@ -136,6 +136,22 @@ if($_SESSION['rol'] != 3) {
                     <a class="nav-link nav-interior2"  href="gestioAssignAE.php"><span data-feather="file-text"></span>Gestionar Assignacions</a>
                   </li>
                 </ul>
+                <li class="nav-item">
+                  <a class="nav-link nav-interior" data-toggle="collapse" aria-expanded="false" href="#sub-submenu1">
+                    <span data-feather="star"></span>
+                    Gestionar Serveis d'Atraccions
+                    <span data-feather="chevron-right"></span>
+                  </a>
+                </li>
+
+                  <ul class="nav flex-column collapse show" id="sub-submenu1" data-parent="#submenu3">
+                    <li class="nav-item">
+                      <a class="nav-link nav-interior2" href="registreServei.php"><span data-feather="plus-square"></span>Registrar Servei</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link nav-interior2"  href="gestioServei.php"><span data-feather="file-text"></span>Gestionar Servei</a>
+                    </li>
+                  </ul>
             </ul>
 
             <li class="nav-item">
@@ -346,8 +362,7 @@ if($_SESSION['rol'] != 3) {
           <div class="col-md-12 px-4">
             <h4 class="h5">Selecciona l'Atracció a assignar</h4>
           </div>
-          <!--<form class="needs-validation" method="post" action="registrarServei.php">-->
-            <form class="needs-validation" method="post" action="<?php htmlentities($_SERVER['PHP_SELF']);?>">
+         <form class="needs-validation" method="post" action="registrarServei.php">
 
 
           <?php
@@ -363,20 +378,6 @@ if($_SESSION['rol'] != 3) {
         <?php
       include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classServei.php";
       Servei::SeleccioNomServei();
-
-      ?>
-
-      <?php
-
-      include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAssignacio.php";
-      //include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeAtraccio.php";
-      //include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeEmpleat.php";
-
-      foreach ( $_POST['seleccio_empleat'] as $value){
-
-      $Assignacio = new Assignacio ($value,$_POST['seleccio_atraccio'],$_POST['data_inici_assign'],$_POST['data_fi_assign']);
-
-      $comprovacio_registre = $Assignacio->RegistrarAssignacio();
 
       ?>
 
