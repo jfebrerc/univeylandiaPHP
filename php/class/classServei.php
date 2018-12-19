@@ -32,8 +32,8 @@ class Servei{
 
         $connection = crearConnexio();
 
-        if ($conn->connect_error) {
-            die("Connexió fallida: " . $conn->connect_error);
+        if ($connection->connect_error) {
+            die("Connexió fallida: " . $connection->connect_error);
         }
 
         $sql = "INSERT INTO SERVEI_ATRACCIO (id_servei,id_atraccio,id_usuari,data_inici_servei,data_fi_servei) VALUES (?,?,?,?,?);";
@@ -45,7 +45,7 @@ class Servei{
               die("Secured1: Error al introduir el registre.");
           }
 
-          $result = $sentencia->bind_param("iiiss",$this->idServei=$idServei,$this->idAtraccio,$this->idUsuari,$this->data_inici_servei,$this->data_fi_servei);
+          $result = $sentencia->bind_param("iiiss",$this->idServei,$this->idAtraccio,$this->idUsuari,$this->data_inici_servei,$this->data_fi_servei);
 
           if ($result==false) {
               //var_dump($stmt);
