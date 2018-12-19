@@ -346,7 +346,7 @@ if($_SESSION['rol'] != 3) {
           <div class="col-md-12 px-4">
             <h4 class="h5">Selecciona l'Atracció a assignar</h4>
           </div>
-          <form class="needs-validation" method="post" action="registrarAssignacions.php">
+          <form class="needs-validation" method="post" action="registrarServei.php">
 
 
           <?php
