@@ -136,6 +136,22 @@ if($_SESSION['rol'] != 3) {
                     <a class="nav-link nav-interior2"  href="gestioAssignAE.php"><span data-feather="file-text"></span>Gestionar Assignacions</a>
                   </li>
                 </ul>
+                <li class="nav-item">
+                  <a class="nav-link nav-interior" data-toggle="collapse" aria-expanded="false" href="#sub-submenu2">
+                    <span data-feather="star"></span>
+                    Gestionar Serveis E-A
+                    <span data-feather="chevron-right"></span>
+                  </a>
+                </li>
+
+                  <ul class="nav flex-column collapse" id="sub-submenu2" data-parent="#submenu3">
+                    <li class="nav-item">
+                      <a class="nav-link nav-interior3" href="gestioServeis/registreServei.php"><span data-feather="plus-square"></span>Registrar Servei</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link nav-interior3"  href="gestioAssignacioAE/gestioServei.php"><span data-feather="file-text"></span>Gestionar Servei</a>
+                    </li>
+                  </ul>
             </ul>
 
             <li class="nav-item">
