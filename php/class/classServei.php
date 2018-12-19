@@ -41,28 +41,27 @@ class Servei{
           $sentencia = $connection->prepare($sql);
 
           if ($sentencia==false) {
-              //var_dump($stmt);
               die("Secured1: Error al introduir el registre.");
           }
 
           $result = $sentencia->bind_param("iiiss",$this->idServei,$this->idAtraccio,$this->idUsuari,$this->data_inici_servei,$this->data_fi_servei);
 
           if ($result==false) {
-              //var_dump($stmt);
               die("Secured2: Error al introduir el registre.");
           }
 
           if($sentencia->execute()){
+            echo '<script>alert("Registre introduit.");</script>';
             $sentencia->close();
             $connection->close();
             return true;
-              echo '<script>alert("Registre introduit.");</script>';
           }
           else{
+            echo '<script>alert("ERROR.");</script>';
             $sentencia->close();
             $connection->close();
             return false;
-              echo '<script>alert("ERROR.");</script>';
+
           }
 
     }
