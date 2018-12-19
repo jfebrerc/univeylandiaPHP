@@ -31,9 +31,9 @@ class Servei{
     public function RegistrarAssignacio(){
 
         $connection = crearConnexio();
-        $sql = "INSERT INTO SERVEI_ATRACCIO (id_servei,id_atraccio,id_usuari,data_inici_servei,data_fi_servei) VALUES (?,?,?,?);";
+        $sql = "INSERT INTO SERVEI_ATRACCIO (id_servei,id_atraccio,id_usuari,data_inici_servei,data_fi_servei) VALUES (?,?,?,?,?);";
           $sentencia = $connection->prepare($sql);
-          $sentencia->bind_param("iiss",$this->idServei=$idServei,$this->idAtraccio,$this->idUsuari,$this->data_inici_servei,$this->data_fi_servei);
+          $sentencia->bind_param("iiiss",$this->idServei=$idServei,$this->idAtraccio,$this->idUsuari,$this->data_inici_servei,$this->data_fi_servei);
           if($sentencia->execute()){
             $sentencia->close();
             $connection->close();
