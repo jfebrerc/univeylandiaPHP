@@ -19,7 +19,7 @@ class Servei{
    }
   }
 
-    public function __construct4($idServei,$idAtraccio,$idUsuari,$data_inici_servei,  $data_fi_servei){
+    public function __construct5($idServei,$idAtraccio,$idUsuari,$data_inici_servei,  $data_fi_servei){
     $this->idServei=$idServei;
     $this->idUsuari=$idUsuari;
     $this->idAtraccio=$idAtraccio;
