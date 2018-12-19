@@ -359,8 +359,12 @@ if($_SESSION['rol'] != 3) {
         <br/>
         <input class="form-control" type="date" name="data_fi_assign">
         <br/>
+        <?php
+      include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classServei.php";
+      Servei::SeleccioNomServei();
 
-        
+      ?>
+
         </div>
 
         <div class="col-md-1">
