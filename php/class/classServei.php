@@ -56,11 +56,13 @@ class Servei{
             $sentencia->close();
             $connection->close();
             return true;
+              echo '<script>alert("Registre introduit.");</script>';
           }
           else{
             $sentencia->close();
             $connection->close();
             return false;
+              echo '<script>alert("ERROR.");</script>';
           }
 
     }
