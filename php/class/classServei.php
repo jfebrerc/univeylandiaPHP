@@ -19,7 +19,7 @@ class Servei{
    }
   }
 
-    public function __construct4($idServei,$idAtraccio,$idUsuari,$data_inici_servei,  $data_fi_servei){
+    public function __construct5($idServei,$idAtraccio,$idUsuari,$data_inici_servei,  $data_fi_servei){
     $this->idServei=$idServei;
     $this->idUsuari=$idUsuari;
     $this->idAtraccio=$idAtraccio;
@@ -31,22 +31,39 @@ class Servei{
     public function RegistrarAssignacio(){
 
         $connection = crearConnexio();
+
+        if ($connection->connect_error) {
+            die("Connexió fallida: " . $connection->connect_error);
+        }
+
         $sql = "INSERT INTO SERVEI_ATRACCIO (id_servei,id_atraccio,id_usuari,data_inici_servei,data_fi_servei) VALUES (?,?,?,?,?);";
+
           $sentencia = $connection->prepare($sql);
-          $sentencia->bind_param("iiiss",$this->idServei=$idServei,$this->idAtraccio,$this->idUsuari,$this->data_inici_servei,$this->data_fi_servei);
+
+          if ($sentencia==false) {
+              die("Secured1: Error al introduir el registre.");
+          }
+
+          $result = $sentencia->bind_param("iiiss",$this->idServei,$this->idAtraccio,$this->idUsuari,$this->data_inici_servei,$this->data_fi_servei);
+
+          if ($result==false) {
+              die("Secured2: Error al introduir el registre.");
+          }
+
           if($sentencia->execute()){
+            echo '<script>alert("Registre introduit.");</script>';
             $sentencia->close();
             $connection->close();
             return true;
           }
           else{
+            echo '<script>alert("ERROR.");</script>';
             $sentencia->close();
             $connection->close();
-            return "Error en el registre.";
             return false;
+
           }
-          $sentencia->close();
-          $connection->close();
+
     }
 
 
