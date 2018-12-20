@@ -28,7 +28,7 @@ class Foto{
     if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
     && $imageFileType != "gif" ) {
         echo "Error, domes es permeten els formats:JPG, JPEG, PNG & GIF.";
-        $uploadOk = 0;
+        $uploadOk = 1;
     }
     if ($uploadOk == 0) {
         echo "Error: la imatge no s'ha muntat.";
