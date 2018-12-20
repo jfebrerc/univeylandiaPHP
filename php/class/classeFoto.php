@@ -4,7 +4,7 @@ class Foto{
 
   public static function muntarFoto(){
     $target_dir = "../../fotos_atraccio/";
-    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+    $target_file = $target_dir . basename($_FILES"marcaAigua".["fileToUpload"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     if(isset($_POST["submit"])) {
@@ -28,7 +28,7 @@ class Foto{
     if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
     && $imageFileType != "gif" ) {
         echo "Error, domes es permeten els formats:JPG, JPEG, PNG & GIF.";
-        $uploadOk = 0;
+        $uploadOk = 1;
     }
     if ($uploadOk == 0) {
         echo "Error: la imatge no s'ha muntat.";
