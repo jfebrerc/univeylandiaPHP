@@ -43,7 +43,7 @@ class Foto{
       }else {
         $marca_aigua = "../../fotos_atraccio/marcaAigua.png";
         $dest = imagecreatefrompng($arxiu2);
-        $src = imagecreatefromjpeg($marca_aigua);
+        $src = imagecreatefrompng($marca_aigua);
 
         imagealphablending($dest, false);
         imagesavealpha($dest, true);
