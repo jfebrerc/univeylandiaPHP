@@ -44,8 +44,8 @@ class Foto{
         $aigua = "../../fotos_atraccio/marcaAigua.png";
         list($srcWidth, $srcHeight) = getimagesize($arxiu2);
 
-        $dest = imagecreatefrompng($aigua);
-        $src = imagecreatefrompng($arxiu2);
+        $src = imagecreatefrompng($aigua);
+        $dest = imagecreatefrompng($arxiu2);
         $src_xPosition = 10; //10 pixels from the left
         $src_yPosition = 10; //10 pixels from the top
 
