@@ -26,7 +26,7 @@ class Foto{
         echo "Imatge massa gran.";
         $uploadOk = 1;
     }
-    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+    if($imageFileType != "png") {
         echo "Error, domes es permeten els formats:JPG, JPEG, PNG & GIF.";
         $uploadOk = 1;
     }
