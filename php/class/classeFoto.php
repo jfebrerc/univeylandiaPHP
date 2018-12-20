@@ -2,7 +2,7 @@
 include_once $_SERVER['DOCUMENT_ROOT']."/php/connection.php";
 class Foto{
 
-  public static function muntarFoto($muntar){
+  public static function muntarFoto(){
     $target_dir = "../../fotos_atraccio/";
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     $uploadOk = 1;
