@@ -26,8 +26,7 @@ class Foto{
         echo "Imatge massa gran.";
         $uploadOk = 0;
     }
-    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-    && $imageFileType != "gif" ) {
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
         echo "Error, domes es permeten els formats:JPG, JPEG, PNG & GIF.";
         $uploadOk = 1;
     }
@@ -37,7 +36,7 @@ class Foto{
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file) && move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file2)) {
             echo "La imatge ". basename( $_FILES["fileToUpload"]["name"]). " s'ha muntat correctament.";
         } else {
-            echo "Error: la imatge no s'ha muntat.";
+            echo "Error: la imatge no s'ha muntat. Error al muntar-la";
         }
     }
   }
