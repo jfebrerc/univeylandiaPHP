@@ -32,7 +32,9 @@ class Assignacio{
     $this->dataFiAssignacio=$dataFiAssignacio;
 
     }
-
+    /**
+     * [RegistrarAssignacio Aquest metode s'encarrega de registrar una assignacio. Agafa els valors del formulari de registre i fa un insert]
+     */
     public function RegistrarAssignacio(){
 
         $connection = crearConnexio();
@@ -54,7 +56,9 @@ class Assignacio{
           $connection->close();
     }
 
-
+    /**
+     * [llistarAssignBusqueda Aquest metode s'encarrega de llistar totes les assignacions amb els atributs: "Nom empleat", "Cognom 1", "Cognom 2", "Document", "Nom atraccio", "Data inici", "Data fi". Depenent dels apartats utilitzats per a filtrar la llista, s'utilitza una querry o un altra. Aquest metode també s'encarrega de generar els modals de modificació i eliminació d'assignacions.]
+     */
   public static function llistarAssignBusqueda($busqueda, $buscar_atraccio){
 
 
@@ -214,6 +218,10 @@ class Assignacio{
   $conexio->close();
 
 }
+
+/**
+ * [llistarNomAtraccions Aquest metode s'encarrega de carregar les atraccions per a filtrar per elles.]
+ */
 function llistarNomAtraccions(){
         $conexio = crearConnexio();
         $sql = "SELECT nom_atraccio, id_atraccio FROM ATRACCIO";
@@ -229,6 +237,9 @@ function llistarNomAtraccions(){
 
 }
 
+/**
+ * [llistarAtraccionsMod Aquest metode s'encarrega de carregar les atraccions per a la seleccio a modificar. Se li passa paràmetre la atracció seleccionada per a que no carregue aquesta.]
+ */
 public static function llistarAtraccionsMod($id_atraccioSelect){
         $conexio = crearConnexio();
         $sql = "SELECT nom_atraccio, id_atraccio FROM ATRACCIO where id_atraccio!=$id_atraccioSelect";
@@ -243,6 +254,9 @@ public static function llistarAtraccionsMod($id_atraccioSelect){
 
 }
 
+/**
+ * [llistarEmpleatMod Aquest metode s'encarrega de carregar els diferents empleats per a la seleccio a modificar. Se li passa paràmetre el empleat seleccionat per a que no el carregue.]
+ */
 public static function llistarEmpleatMod($id_usuariSelect){
         $conexio = crearConnexio();
         $sql = "SELECT nom, id_usuari, numero_document FROM USUARI WHERE id_usuari != 1 and id_usuari!=$id_usuariSelect";
@@ -258,11 +272,14 @@ public static function llistarEmpleatMod($id_usuariSelect){
 
 }
 
+/**
+ * [modificarAssignacio Aquest metode es crida quan s'envía el formulari de modificació. S'encarrega de realitzar la modificació de una assignació.]
+ */
 public static function modificarAssignacio(){
   $conexio = crearConnexio();
   $id_assignacio = $_POST['id_assignaciomod'];
   $atraccio = $_POST['atraccio_seleccionada'];
-  $empleat = $_POST['empleat_seleccionat'];  
+  $empleat = $_POST['empleat_seleccionat'];
   $data_inici = $_POST['data_inici_assign'];
   $data_fi = $_POST['data_fi_assign'];
 
@@ -276,6 +293,9 @@ public static function modificarAssignacio(){
     $conexio->close();
 }
 
+/**
+ * [eliminarAssignacio Aquest metode s'encarrega de eliminar la assignació seleccionada des del menú de la llista.]
+ */
 public static function eliminarAssignacio(){
     $conexio = crearConnexio();
     $id_assignacioE = $_POST['id_assignacioelim'];
@@ -289,6 +309,10 @@ public static function eliminarAssignacio(){
       //echo "0 results";
   }
 
+  /**
+   * [llistatAssignacionsPDF Aquest metode s'encarrega de exportar en un document PDF que es descarrega al moment els últims 20 registres. Aquest metode necessita ser modificat per a que es descarregue tot el que es mostri per pantall (filtrat o no) i es generen de forma correcta les diferents pàgines necessaries.]
+   * drunk, fix later
+   */
   public static function llistatAssignacionsPDF() {
   require_once $_SERVER['DOCUMENT_ROOT']."/php/fpdf/fpdf.php";
   $conn = crearConnexio();
