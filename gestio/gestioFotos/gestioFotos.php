@@ -371,9 +371,9 @@ if($_SESSION['rol'] != 3) {
                 <?php
               include_once $_SERVER['DOCUMENT_ROOT']."/php/class/classeFoto.php";
               echo '<form method="post" enctype="multipart/form-data">
-                  Select image to upload:
+                  Selecciona imatge:
                   <input type="file" name="fileToUpload" id="fileToUpload">
-                  <input type="submit" value="Upload" name="submit">
+                  <input type="submit" value="Enviar" name="submit">
               </form>';
               if (isset($_POST['submit'])) {
                 Foto::muntarFoto();
