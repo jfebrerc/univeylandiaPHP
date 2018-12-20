@@ -40,23 +40,31 @@ class Foto{
         }
         if (!copy($target_file, $arxiu2)) {
           echo "failed to copy";
-      }/*else {
-        $marca_aigua = "../../fotos_atraccio/marcaAigua.png";
-        $dest = imagecreatefrompng($arxiu2);
-        $src = imagecreatefrompng($marca_aigua);
+      }else {
+        $aigua = "../../fotos_atraccio/marcaAigua.png";
+        list($srcWidth, $srcHeight) = getimagesize($arxiu2);
 
-        imagealphablending($dest, false);
-        imagesavealpha($dest, true);
+        $dest = imagecreatefrompng($aigua);
+        $src = imagecreatefrompng($arxiu2);
+        $src_xPosition = 10; //10 pixels from the left
+        $src_yPosition = 10; //10 pixels from the top
 
-        imagecopymerge($dest, $src, 10, 9, 0, 0, 181, 180, 100); //have to play with these numbers for it to work for you, etc.
+        //set the x and y positions of the source image to be copied to the destination image
+        $src_cropXposition = 0; //do not crop on the side
+        $src_cropYposition = 0; //do not crop at the top
 
-        header('Content-Type: image/png');
-        imagepng($dest);
+        /*imagealphablending($dest, false);
+        imagesavealpha($dest, true);*/
+        imagecopy($dest,$src,$src_xPosition,$src_yPosition,$src_cropXposition,$src_cropYposition,$srcWidth,$srcHeight);
+        //imagecopymerge($dest, $src, 10, 9, 0, 0, 181, 180, 100); //have to play with these numbers for it to work for you, etc.
+        imagepng($dest,'../../fotos_atraccio/test.png');
+
+      /*  header('Content-Type: image/png');
+        imagepng($dest);*/
 
         imagedestroy($dest);
         imagedestroy($src);
-        echo "Pot ser que correctet";
-      }*/
+      }
     }
   }
 
