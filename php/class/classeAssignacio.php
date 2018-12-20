@@ -17,11 +17,11 @@ class Assignacio{
   }
     /**
      * [__construct4 description]
-     * @param  [type] $idUsuari            [description]
-     * @param  [type] $idAtraccio          [description]
-     * @param  [type] $dataIniciAssignacio [description]
-     * @param  [type] $dataFiAssignacio    [description]
-     * @return [type]                      [description]
+     * @param  [int] $idUsuari            [id de l'usuari]
+     * @param  [int] $idAtraccio          [id de l'atracció]
+     * @param  [date] $dataIniciAssignacio [data de inici de l'assignació]
+     * @param  [date] $dataFiAssignacio    [data de fi de l'assignació  ]
+     *
      */
     public function __construct4($idUsuari, $idAtraccio,  $dataIniciAssignacio,  $dataFiAssignacio){
     $this->idUsuari=$idUsuari;

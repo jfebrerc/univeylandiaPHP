@@ -18,7 +18,14 @@ class Servei{
      call_user_func_array(array($this,$f),$args);
    }
   }
-
+  /**
+   * [__construct5 description]
+   * @param  [int] $idServei          [id del servei]
+   * @param  [int] $idAtraccio        [id de l'atracció]
+   * @param  [int] $idUsuari          [id de l'usuari]
+   * @param  [date] $data_inici_servei [data d'inici de l'assignació del servei]
+   * @param  [date] $data_fi_servei    [data del fi de l'assignació del servei]
+   */
     public function __construct5($idServei,$idAtraccio,$idUsuari,$data_inici_servei,  $data_fi_servei){
     $this->idServei=$idServei;
     $this->idUsuari=$idUsuari;
@@ -27,7 +34,9 @@ class Servei{
     $this->data_fi_servei=$data_fi_servei;
 
     }
-
+    /**
+     * [RegistrarAssignacio Aquest metode s'encarrega de registrar una assignacio de servei. Agafa els valors del formulari de registre i fa un insert a la base de dades.]
+     */
     public function RegistrarAssignacio(){
 
         $connection = crearConnexio();
@@ -67,17 +76,12 @@ class Servei{
     }
 
 
-
+    /**
+     * [SeleccioNomServei Aquest mètode ens servira per generar llistat dels noms dels diferents serveis per tal d'escollir mitjançant un radio input]
+     */
     public static function SeleccioNomServei()
     {
     $conexio = crearConnexio();
-    //if ($conexio->connect_error)
-    //{
-    //    die('Error de conexión: ' . $conexion->connect_error);
-    //}
-    //$busqueda = $_POST['busqueda_atraccio'];
-    //$_POST['busqueda_atraccio']
-
     $sql = "SELECT * FROM SERVEI";
     $result = $conexio->query($sql);
     echo '<table class="table">';
@@ -101,38 +105,26 @@ class Servei{
 
         }
 
-                    //    echo '</form>';
+
       }
 
           echo '</table>';
           $conexio->close();
     }
 
-
+/**
+ * [llistarAssignServBusqueda Aquest metode s'encarrega de llistar totes les assignacions amb els atributs: "Nom empleat", "Cognom 1", "Cognom 2", "Document", "Nom atraccio", "Data inici", "Data fi". Depenent dels apartats utilitzats per a filtrar la llista, s'utilitza una querry o un altra. Aquest metode també s'encarrega de generar els modals de modificació i eliminació d'assignacions de serveis.]
+ *
+ */
   public static function llistarAssignBusqueda($busqueda, $buscar_atraccio){
 
-
   $conexio = crearConnexio();
-  //if ($conexio->connect_error)
-  //{
-  //    die('Error de conexión: ' . $conexion->connect_error);
-  //}
-  //$busqueda = $_POST['buscar_assign'];
-  //$busqueda = "admin";
-
-  //$_POST['busqueda_atraccio']
   if ($buscar_atraccio != -1) {
-    //$busqueda = $_POST['buscar_assign'];
     $sql = "SELECT aua.id_servei_atraccio,aua.id_servei,s.nom_servei, u.id_usuari, u.nom, u.cognom1, u.cognom2, u.numero_document, a.nom_atraccio, a.id_atraccio, aua.data_inici_servei, aua.data_fi_servei, aua.data_creacio_registre FROM SERVEI_ATRACCIO aua LEFT JOIN ATRACCIO a ON aua.id_atraccio=a.id_atraccio LEFT JOIN SERVEI s ON aua.id_servei=s.id_servei LEFT JOIN USUARI u ON u.id_usuari=aua.id_usuari where aua.id_atraccio=$buscar_atraccio and (u.nom like '%$busqueda%' or u.cognom1 like '%$busqueda%' or u.cognom2 like '%$busqueda%' or u.numero_document like '%$busqueda%' or a.nom_atraccio like '%$busqueda%') order by data_creacio_registre desc";
   }elseif ($buscar_atraccio == -1) {
     $sql = "SELECT aua.id_servei_atraccio,aua.id_servei,s.nom_servei, u.id_usuari, u.nom, u.cognom1, u.cognom2, u.numero_document, a.nom_atraccio, a.id_atraccio, aua.data_inici_servei, aua.data_fi_servei, aua.data_creacio_registre FROM SERVEI_ATRACCIO aua LEFT JOIN ATRACCIO a ON aua.id_atraccio=a.id_atraccio LEFT JOIN SERVEI s ON aua.id_servei=s.id_servei LEFT JOIN USUARI u ON u.id_usuari=aua.id_usuari where u.nom like '%$busqueda%' or u.cognom1 like '%$busqueda%' or u.cognom2 like '%$busqueda%' or u.numero_document like '%$busqueda%' or a.nom_atraccio like '%$busqueda%' order by data_creacio_registre desc";
   }
-  /*else {
-    $sql = "SELECT aua.id_neteja_atraccio, u.nom, u.cognom1, u.cognom2, u.numero_document, a.nom_atraccio, aua.data_inici_neteja, aua.data_fi_neteja, aua.data_creacio_registre FROM NETEJA_ATRACCIO aua LEFT JOIN ATRACCIO a ON aua.id_atraccio=a.id_atraccio LEFT JOIN USUARI u ON u.id_usuari=aua.id_usuari";
 
-  }*/
-
-  //$sql = "SELECT aua.id_neteja_atraccio, u.nom, u.cognom1, u.cognom2, u.numero_document, a.nom_atraccio, aua.data_inici_neteja, aua.data_fi_neteja, aua.data_creacio_registre FROM NETEJA_ATRACCIO aua LEFT JOIN ATRACCIO a ON aua.id_atraccio=a.id_atraccio LEFT JOIN USUARI u ON u.id_usuari=aua.id_usuari where u.nom like '%$busqueda%' or u.cognom1 like '%$busqueda%' or u.cognom2 like '%$busqueda%' or u.numero_document like '%$busqueda%' or a.nom_atraccio like '%$busqueda%' order by data_creacio_registre desc";
   $result = $conexio->query($sql);
   echo '<table class="table">';
   echo '  <thead>';
@@ -149,7 +141,7 @@ class Servei{
   echo '      <th scope="col"></th>';
   echo '    </tr>';
   echo '  </thead>';
-  //asdsdfdsf
+
   if ($result) {
       while($row = $result->fetch_assoc()) {
         $id_servei_atraccio = $row["id_servei_atraccio"];
@@ -287,6 +279,10 @@ class Servei{
   $conexio->close();
 
 }
+/**
+ * [llistarNomAtraccions Aquest metode s'encarrega de carregar les atraccions per a filtrar per elles.]
+ *
+ */
 function llistarNomAtraccions(){
         $conexio = crearConnexio();
         $sql = "SELECT nom_atraccio, id_atraccio FROM ATRACCIO";
@@ -301,7 +297,10 @@ function llistarNomAtraccions(){
 }
 
 }
-
+/**
+ * [llistarAtraccionsMod Aquest metode s'encarrega de carregar les atraccions per a la seleccio a modificar. Se li passa paràmetre la atracció seleccionada per a que no carregue aquesta.]
+ *
+ */
 public static function llistarAtraccionsMod($id_atraccioSelect){
         $conexio = crearConnexio();
         $sql = "SELECT nom_atraccio, id_atraccio FROM ATRACCIO where id_atraccio!=$id_atraccioSelect";
@@ -315,7 +314,10 @@ public static function llistarAtraccionsMod($id_atraccioSelect){
 }
 
 }
-
+/**
+ * [llistarEmpleatMod Aquest metode s'encarrega de carregar els diferents empleats per a la seleccio a modificar. Se li passa paràmetre el empleat seleccionat per a que no el carregue.]
+ *
+ */
 public static function llistarEmpleatMod($id_usuariSelect){
         $conexio = crearConnexio();
         $sql = "SELECT nom, id_usuari, numero_document,  FROM USUARI WHERE id_usuari != 1 and id_usuari!=$id_usuariSelect";
@@ -330,7 +332,10 @@ public static function llistarEmpleatMod($id_usuariSelect){
 }
 
 }
-
+/**
+ * [modificarAssignacioServei Aquest metode es crida quan s'envía el formulari de modificació. S'encarrega de realitzar la modificació de una assignació de servei.]
+ *
+ */
 public static function modificarAssignacio(){
   $conexio = crearConnexio();
   $id_servei_atraccio = $_POST['id_servei_atracciomod'];
@@ -349,6 +354,11 @@ public static function modificarAssignacio(){
     $conexio->close();
 }
 
+/**
+ * [eliminarAssignacioServei Aquest metode s'encarrega de eliminar la assignació de servei seleccionada des del menú de la llista.]
+ *
+ */
+
 public static function eliminarAssignacio(){
     $conexio = crearConnexio();
     $id_servei_atraccioE = $_POST['id_servei_atraccioelim'];
@@ -362,15 +372,7 @@ public static function eliminarAssignacio(){
       //echo "0 results";
   }
 
-/*  public static function exportarAssignacions(){
-    //include_once $_SERVER['DOCUMENT_ROOT']."/php/fpdf/fpdf.php";
-    require $_SERVER['DOCUMENT_ROOT']."/php/fpdf/fpdf.php";
-    $pdf = new FPDF('P','mm','A4');
-    $pdf->AddPage();
-    $pdf->SetFont('Arial','B',16);
-    $pdf->Cell(20,10,'Title',1,1,'C');
-    $pdf->Output();
-  }*/
+
 
 
   public static function llistatAssignacionsPDF() {
