@@ -38,33 +38,34 @@ class Foto{
         } else {
             echo "Error: la imatge no s'ha muntat. Error al muntar-la";
         }
-        if (!copy($target_file, $arxiu2)) {
-          echo "failed to copy";
-      }else {
-        $aigua = "../../fotos_atraccio/marcaAigua.png";
-        list($srcWidth, $srcHeight) = getimagesize($arxiu2);
+        if ($uploadOk == 1) {
+          $aigua = "../../fotos_atraccio/marcaAigua.png";
+          list($srcWidth, $srcHeight) = getimagesize($target_file);
 
-        $src = imagecreatefrompng($aigua);
-        $dest = imagecreatefrompng($arxiu2);
-        $src_xPosition = 10; //10 pixels from the left
-        $src_yPosition = 10; //10 pixels from the top
+          $src = imagecreatefrompng($aigua);
+          $dest = imagecreatefrompng($target_file);
+          $src_xPosition = 10; //10 pixels from the left
+          $src_yPosition = 10; //10 pixels from the top
 
-        //set the x and y positions of the source image to be copied to the destination image
-        $src_cropXposition = 0; //do not crop on the side
-        $src_cropYposition = 0; //do not crop at the top
+          //set the x and y positions of the source image to be copied to the destination image
+          $src_cropXposition = 0; //do not crop on the side
+          $src_cropYposition = 0; //do not crop at the top
 
-        /*imagealphablending($dest, false);
-        imagesavealpha($dest, true);*/
-        imagecopy($dest,$src,$src_xPosition,$src_yPosition,$src_cropXposition,$src_cropYposition,$srcWidth,$srcHeight);
-        //imagecopymerge($dest, $src, 10, 9, 0, 0, 181, 180, 100); //have to play with these numbers for it to work for you, etc.
-        imagepng($dest,'../../fotos_atraccio/test.png');
+          /*imagealphablending($dest, false);
+          imagesavealpha($dest, true);*/
+          imagecopy($dest,$src,$src_xPosition,$src_yPosition,$src_cropXposition,$src_cropYposition,$srcWidth,$srcHeight);
+          //imagecopymerge($dest, $src, 10, 9, 0, 0, 181, 180, 100); //have to play with these numbers for it to work for you, etc.
+          imagepng($dest,$arxiu2);
 
-      /*  header('Content-Type: image/png');
-        imagepng($dest);*/
+        /*  header('Content-Type: image/png');
+          imagepng($dest);*/
 
-        imagedestroy($dest);
-        imagedestroy($src);
+          imagedestroy($dest);
+          imagedestroy($src);
+          echo "Marca aigua generada";
       }
+
+
     }
   }
 
