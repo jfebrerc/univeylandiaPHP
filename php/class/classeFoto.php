@@ -4,7 +4,7 @@ class Foto{
 
   public static function muntarFoto(){
     $target_dir = "../../fotos_atraccio/";
-    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]."equisde");
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     if(isset($_POST["submit"])) {
