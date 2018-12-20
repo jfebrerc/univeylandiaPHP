@@ -39,7 +39,7 @@ class Foto{
         } else {
             echo "Error: la imatge no s'ha muntat. Error al muntar-la";
         }
-        if (!copy($target_file, $newfile)) {
+        if (!copy($target_file, $arxiu2)) {
           echo "failed to copy";
       }
     }
