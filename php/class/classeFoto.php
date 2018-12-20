@@ -40,7 +40,7 @@ class Foto{
         }
         if (!copy($target_file, $arxiu2)) {
           echo "failed to copy";
-      }else {
+      }/*else {
         $marca_aigua = "../../fotos_atraccio/marcaAigua.png";
         $dest = imagecreatefrompng($arxiu2);
         $src = imagecreatefrompng($marca_aigua);
@@ -56,7 +56,7 @@ class Foto{
         imagedestroy($dest);
         imagedestroy($src);
         echo "Pot ser que correctet";
-      }
+      }*/
     }
   }
 
