@@ -127,7 +127,7 @@ if($_SESSION['rol'] != 3) {
                   <span data-feather="chevron-right"></span>
                 </a>
               </li>
-
+              
                 <ul class="nav flex-column collapse show" id="sub-submenu1" data-parent="#submenu3">
                   <li class="nav-item">
                     <a class="nav-link nav-interior2" href="registreAssignacions.php"><span data-feather="plus-square"></span>Registrar Assignació</a>
