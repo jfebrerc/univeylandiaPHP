@@ -4,8 +4,8 @@ class Foto{
 
   public static function muntarFoto(){
     $target_dir = "../../fotos_atraccio/";
+    $arxiu2 = "../../fotos_atraccio/patata.png";
     //$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-    $target_file2 = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     $target_file = $target_dir . "marcaAigua.".basename($_FILES["fileToUpload"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -39,11 +39,9 @@ class Foto{
         } else {
             echo "Error: la imatge no s'ha muntat. Error al muntar-la";
         }
-        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file2)) {
-            echo "La imatge ". basename( $_FILES["fileToUpload"]["name"]). " s'ha muntat correctament.";
-        } else {
-            echo "Error: la imatge no s'ha muntat. Error al muntar-la AIGUA";
-        }
+        if (!copy($target_file, $newfile)) {
+          echo "failed to copy";
+      }
     }
   }
 
