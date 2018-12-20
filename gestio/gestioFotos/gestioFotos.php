@@ -377,6 +377,7 @@ if($_SESSION['rol'] != 3) {
               </form>';
               if (isset($_POST['submit'])) {
                 Foto::muntarFoto();
+                Foto::muntarFotoAigua();
                 }
             ?>
 
