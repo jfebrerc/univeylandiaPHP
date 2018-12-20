@@ -3,7 +3,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/php/connection.php";
 class Foto{
 
   public static function muntarFoto($muntar){
-    $target_dir = ['DOCUMENT_ROOT']."/fotos_atraccio";
+    $target_dir = "../../fotos_atraccio/";
     $target_file = $target_dir . basename($_FILES[$muntar]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
