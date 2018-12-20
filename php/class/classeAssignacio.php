@@ -6,8 +6,6 @@ class Assignacio{
   private $idAtraccio;
   private $dataIniciAssignacio;
   private $dataFiAssignacio;
-
-
   /*Constructor*/
   function __construct(){
    $args = func_get_args();
@@ -30,13 +28,11 @@ class Assignacio{
     $this->idAtraccio=$idAtraccio;
     $this->dataIniciAssignacio=$dataIniciAssignacio;
     $this->dataFiAssignacio=$dataFiAssignacio;
-
     }
     /**
      * [RegistrarAssignacio Aquest metode s'encarrega de registrar una assignacio. Agafa els valors del formulari de registre i fa un insert]
      */
     public function RegistrarAssignacio(){
-
         $connection = crearConnexio();
         $sql = "INSERT INTO ASSIGN_USUARI_ATRACCIO (id_usuari,id_atraccio,data_inici_assign,data_fi_assign) VALUES (?,?,?,?);";
           $sentencia = $connection->prepare($sql);
@@ -55,16 +51,12 @@ class Assignacio{
           $sentencia->close();
           $connection->close();
     }
-
     /**
      * [llistarAssignBusqueda Aquest metode s'encarrega de llistar totes les assignacions amb els atributs: "Nom empleat", "Cognom 1", "Cognom 2", "Document", "Nom atraccio", "Data inici", "Data fi". Depenent dels apartats utilitzats per a filtrar la llista, s'utilitza una querry o un altra. Aquest metode també s'encarrega de generar els modals de modificació i eliminació d'assignacions.]
      */
   public static function llistarAssignBusqueda($busqueda, $buscar_atraccio){
-
-
   $conexio = crearConnexio();
   if ($buscar_atraccio != -1) {
-
     $sql = "SELECT aua.id_assignacio, u.id_usuari, u.nom, u.cognom1, u.cognom2, u.numero_document, a.nom_atraccio, a.id_atraccio, aua.data_inici_assign, aua.data_fi_assign, aua.data_creacio_registre FROM ASSIGN_USUARI_ATRACCIO aua LEFT JOIN ATRACCIO a ON aua.id_atraccio=a.id_atraccio LEFT JOIN USUARI u ON u.id_usuari=aua.id_usuari where aua.id_atraccio=$buscar_atraccio and (u.nom like '%$busqueda%' or u.cognom1 like '%$busqueda%' or u.cognom2 like '%$busqueda%' or u.numero_document like '%$busqueda%' or a.nom_atraccio like '%$busqueda%') order by data_creacio_registre desc";
   }elseif ($buscar_atraccio == -1) {
     $sql = "SELECT aua.id_assignacio, u.id_usuari, u.nom, u.cognom1, u.cognom2, u.numero_document, a.nom_atraccio, a.id_atraccio, aua.data_inici_assign, aua.data_fi_assign, aua.data_creacio_registre FROM ASSIGN_USUARI_ATRACCIO aua LEFT JOIN ATRACCIO a ON aua.id_atraccio=a.id_atraccio LEFT JOIN USUARI u ON u.id_usuari=aua.id_usuari where u.nom like '%$busqueda%' or u.cognom1 like '%$busqueda%' or u.cognom2 like '%$busqueda%' or u.numero_document like '%$busqueda%' or a.nom_atraccio like '%$busqueda%' order by data_creacio_registre desc";
@@ -97,7 +89,6 @@ class Assignacio{
         $data_creacio_registre = $row["data_creacio_registre"];
         $id_atraccio = $row["id_atraccio"];
         $id_usuari = $row["id_usuari"];
-
         echo '  <tbody>';
         echo '    <tr>';
         echo '      <th scope="row">'.$nom_empleat.'</th>';
@@ -113,9 +104,6 @@ class Assignacio{
                     </button></td>';
         echo '    </tr>';
         echo '  </tbody>';
-
-
-
         echo '<!-- ELIMINAR -->
         <div class="modal fade" id="ModalEliminar'.$id_assignacio.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
@@ -141,9 +129,6 @@ class Assignacio{
             </div>
           </div>
         </div>';
-
-
-
         echo '<!-- MODIFICAR -->
         <div class="modal fade" id="exampleModalCenter'.$id_assignacio.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -206,19 +191,13 @@ class Assignacio{
             </div>
           </div>
         </div>';
-
       }
-
-
-
   } else {
       //echo "0 results";
   }
   echo '</table>';
   $conexio->close();
-
 }
-
 /**
  * [llistarNomAtraccions Aquest metode s'encarrega de carregar les atraccions per a filtrar per elles.]
  */
@@ -234,9 +213,7 @@ function llistarNomAtraccions(){
               echo '<option value="'.$id_atraccio.'">'.$nom_atraccio.'</option>';
         }
 }
-
 }
-
 /**
  * [llistarAtraccionsMod Aquest metode s'encarrega de carregar les atraccions per a la seleccio a modificar. Se li passa paràmetre la atracció seleccionada per a que no carregue aquesta.]
  */
@@ -251,9 +228,7 @@ public static function llistarAtraccionsMod($id_atraccioSelect){
               echo '<option value="'.$id_atraccio.'">'.$nom_atraccio.'</option>';
         }
 }
-
 }
-
 /**
  * [llistarEmpleatMod Aquest metode s'encarrega de carregar els diferents empleats per a la seleccio a modificar. Se li passa paràmetre el empleat seleccionat per a que no el carregue.]
  */
@@ -269,9 +244,7 @@ public static function llistarEmpleatMod($id_usuariSelect){
               echo '<option value="'.$id_empleat.'">'.$nom.'   ||   '.$numero_document.'</option>';
         }
 }
-
 }
-
 /**
  * [modificarAssignacio Aquest metode es crida quan s'envía el formulari de modificació. S'encarrega de realitzar la modificació de una assignació.]
  */
@@ -282,7 +255,6 @@ public static function modificarAssignacio(){
   $empleat = $_POST['empleat_seleccionat'];
   $data_inici = $_POST['data_inici_assign'];
   $data_fi = $_POST['data_fi_assign'];
-
   $sql_update = "UPDATE ASSIGN_USUARI_ATRACCIO SET id_usuari='$empleat', id_atraccio='$atraccio', data_inici_assign='$data_inici', data_fi_assign='$data_fi' WHERE id_assignacio=$id_assignacio";
     if (mysqli_query($conexio, $sql_update)) {
         echo '<script>window.location.href = window.location.href + "?positivet";</script>';
@@ -292,7 +264,6 @@ public static function modificarAssignacio(){
     }
     $conexio->close();
 }
-
 /**
  * [eliminarAssignacio Aquest metode s'encarrega de eliminar la assignació seleccionada des del menú de la llista.]
  */
@@ -308,7 +279,6 @@ public static function eliminarAssignacio(){
     }
       //echo "0 results";
   }
-
   /**
    * [llistatAssignacionsPDF Aquest metode s'encarrega de exportar en un document PDF que es descarrega al moment els últims 20 registres. Aquest metode necessita ser modificat per a que es descarregue tot el que es mostri per pantall (filtrat o no) i es generen de forma correcta les diferents pàgines necessaries.]
    * drunk, fix later
@@ -338,7 +308,6 @@ public static function eliminarAssignacio(){
         $nom_atraccio = $row['nom_atraccio'];
         $data_inici_assign = $row['data_inici_assign'];
         $data_fi_assign = $row['data_fi_assign'];
-
         $columna_nom = $columna_nom.$nom."\n";
         $columna_cognom1 = $columna_cognom1.$cognom1."\n";
         $columna_cognom2 = $columna_cognom2.$cognom2."\n";
@@ -354,20 +323,13 @@ public static function eliminarAssignacio(){
   /* GENERAR PDF */
   $pdf = new FPDF();
   $pdf->AddPage('L', 'A4', 0);
-
-
-
   $Y_Fields_Name_position = 20;
-
   $Y_Table_Position = 26;
-
   $pdf->SetFillColor(232,232,232);
-
   $pdf->SetFont('Arial','B',12);
   $pdf->Cell(10);
   $pdf->Cell(250,10,'ASSIGNACIONS EMPLEATS-ATRACCIONS',1,0,'C');
   $pdf->Ln(60);
-
   $pdf->SetY($Y_Fields_Name_position);
   $pdf->SetX(20);
   $pdf->Cell(20,6,'NOM',1,0,'L',1);
@@ -384,7 +346,6 @@ public static function eliminarAssignacio(){
   $pdf->SetX(220);
   $pdf->Cell(50,6,'DATA FI',1,0,'L',1);
   $pdf->Ln();
-
   $pdf->SetFont('Arial','',12);
   $pdf->SetY($Y_Table_Position);
   $pdf->SetX(20);
@@ -407,7 +368,6 @@ public static function eliminarAssignacio(){
   $pdf->SetY($Y_Table_Position);
   $pdf->SetX(220);
   $pdf->MultiCell(50,6,$columna_data_fi_assign,1,'L');
-
   $i = 0;
   $pdf->SetY($Y_Table_Position);
   while ($i < $numero_de_assignacions)
@@ -416,11 +376,7 @@ public static function eliminarAssignacio(){
       $pdf->MultiCell(250,6,'',1);
       $i = $i +1;
   }
-
   $pdf->Output('llistatAssignacions.pdf','D');
 }
-
 }
-
-
 ?>
