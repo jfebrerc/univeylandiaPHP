@@ -376,8 +376,8 @@ if($_SESSION['rol'] != 3) {
                   <input type="submit" value="Upload" name="submit">
               </form>';
               if (isset($_POST['submit'])) {
-                $buscar = $_POST['busqueda_assignaciotext'];
-                Foto::muntarFoto();
+                $muntar = $_POST['fileToUpload'];
+                Foto::muntarFoto($muntar);
                 }
             ?>
 
