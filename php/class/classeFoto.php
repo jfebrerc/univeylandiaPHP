@@ -39,7 +39,7 @@ class Foto{
             echo "Error: la imatge no s'ha muntat. Error al muntar-la";
         }
         if (move_uploaded_file("marcaAigua.".$_FILES["fileToUpload"]["tmp_name"], $target_file2)) {
-            echo "La imatge ". basename( $_FILES["fileToUpload"]["name"]). " s'ha muntat correctament.";
+            //echo "La imatge ". basename( $_FILES["fileToUpload"]["name"]). " s'ha muntat correctament.";
         } else {
             echo "Error: No s'ha creat la segona imatge";
         }
