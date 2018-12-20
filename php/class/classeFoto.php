@@ -4,7 +4,7 @@ class Foto{
 
   public static function muntarFoto(){
     $target_dir = "../../fotos_atraccio/";
-    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+    //$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     $target_file2 = $target_dir . "marcaAigua.".basename($_FILES["fileToUpload"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -33,7 +33,7 @@ class Foto{
     if ($uploadOk == 0) {
         echo "Error: la imatge no s'ha muntat.";
     } else {
-        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file2)) {
             echo "La imatge ". basename( $_FILES["fileToUpload"]["name"]). " s'ha muntat correctament.";
         } else {
             echo "Error: la imatge no s'ha muntat. Error al muntar-la";
