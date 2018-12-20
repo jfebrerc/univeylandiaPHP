@@ -4,9 +4,8 @@ class Foto{
 
   public static function muntarFoto(){
     $target_dir = "../../fotos_atraccio/";
-    $arxiu2 = "../../fotos_atraccio/patata.png";
-    //$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-    $target_file = $target_dir . "marcaAigua.".basename($_FILES["fileToUpload"]["name"]);
+    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+    $arxiu2 = $target_dir . "marcaAigua.".basename($_FILES["fileToUpload"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     if(isset($_POST["submit"])) {
