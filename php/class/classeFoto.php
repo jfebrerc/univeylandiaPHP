@@ -55,6 +55,7 @@ class Foto{
 
         imagedestroy($dest);
         imagedestroy($src);
+        echo "Pot ser que correctet";
       }
     }
   }
