@@ -312,6 +312,10 @@ if ($_SESSION['rol']==3 ) :?>
 <?php endif ?>
 <div style="display: table; margin: 0 auto; margin-top: 50px;">
   <script src="test.js"> </script>
+  <table>
+    <tbody id="algo">
+    </tbody>
+  </table>
 </div>
 
 <div class="jumbotron text-center" width="100%" style="margin-bottom:0">
