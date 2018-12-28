@@ -350,6 +350,7 @@ if ($_SESSION['rol']==3 ) :?>
   			document.getElementById('preu').innerHTML = resultat;
   			document.getElementById('cistella_mida').innerHTML = mida_triada;
         seleccio_figura = 0;
+        generartaula();
       }else {
         alert("Selecciona una figura per a triar la seva mida!.");
       }
@@ -400,29 +401,25 @@ if ($_SESSION['rol']==3 ) :?>
 
 
 
-
-    document.write('<table class="table">');
-    document.write('<thead>');
-    document.write('<tr>');
-    document.write('<th scope="col">Figura</th>');
-    document.write('<th scope="col">Mida</th>');
-    document.write('</tr>');
-    document.write('</thead>');
-    document.write('<tbody>');
-    document.write('<tr>');
-    for (z = 0; z < figura_triada.length; z++) {
-      document.write('<td>patata</td>');
+    function generartaula() {
+      document.write('<table class="table">');
+      document.write('<thead>');
+      document.write('<tr>');
+      document.write('<th scope="col">Figura</th>');
+      document.write('<th scope="col">Mida</th>');
+      document.write('</tr>');
+      document.write('</thead>');
+      document.write('<tbody>');
+      document.write('<tr>');
+      for (z = 0; z < figura_triada.length; z++) {
+        document.write('<td>patata</td>');
+      }
+      document.write('<td>Mark</td>');
+      document.write('<td>Mark2</td>');
+      document.write('</tr>');
+      document.write('</tbody>');
+      document.write('</table>');
     }
-    document.write('<td>Mark</td>');
-    document.write('<td>Mark2</td>');
-    document.write('</tr>');
-    document.write('</tbody>');
-    document.write('</table>');
-
-    for (z = 0; z < 2; z++) {
-      document.write('<p> '+ figura_triada[0][0] +' </p>');
-    }
-
 	</script>
 </div>
 
