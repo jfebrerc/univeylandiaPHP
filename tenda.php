@@ -311,65 +311,6 @@ if ($_SESSION['rol']==3 ) :?>
 </nav>
 <?php endif ?>
 <div style="display: table; margin: 0 auto; margin-top: 50px;">
-<script type="text/javascript">
-
-
-/*
-<table id="carrito">
-
-</table>
-
-        var updateTable = function () {
-          var table = document.getElementById('carrito')
-          table.
-        }
-*//*
-        document.write('<table class="table">');
-        document.write('<thead>');
-        document.write('<tr>');
-        document.write('<th scope="col">Figura</th>');
-        document.write('<th scope="col">Mida</th>');
-        document.write('</tr>');
-        document.write('</thead>');
-        document.write('<tbody>');
-        document.write('<tr>');
-        if (mida_triada.length>0) {
-          document.write('<td>patata</td>');
-        }
-        document.write('<td>Mark</td>');
-        document.write('<td>Mark2</td>');
-        document.write('</tr>');
-        document.write('</tbody>');
-        document.write('</table>');*/
-        /*function tableCreate(){
-          var body = document.body,
-              tbl  = document.createElement('table');
-          tbl.style.width  = '100px';
-          tbl.style.border = '1px solid black';
-
-          for(var i = 0; i < 3; i++){
-              var tr = tbl.insertRow();
-              for(var j = 0; j < 2; j++){
-                  if(i == 2 && j == 1){
-                      break;
-                  } else {
-                      var td = tr.insertCell();
-                      td.appendChild(document.createTextNode('Cell'));
-                      td.style.border = '1px solid black';
-                      if(i == 1 && j == 1){
-                          td.setAttribute('rowSpan', '2');
-                      }
-                  }
-              }
-          }
-          body.appendChild(tbl);
-      }
-      //tableCreate();*/
-      document.write('<table id="data-table">');
-      document.write('<tbody id="algo">');
-      document.write('</tbody>');
-      document.write('</table>');
-	</script>
   <script src="test.js"> </script>
 </div>
 
