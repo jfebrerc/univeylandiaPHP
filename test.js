@@ -1,10 +1,10 @@
-//var items = ['a','b','c']
+var items = ['a','b','c']
 var properties = [1,2,3]
 var selected = []
 var table= [[]]
 
-for (var i = 0; i < mida_triada.length; i++) {
-table.push([mida_triada[i],properties[i]])
+for (var i = 0; i < items.length; i++) {
+table.push([items[i],properties[i]])
 }
 
 var renderTable = function() {
