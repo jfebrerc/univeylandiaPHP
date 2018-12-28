@@ -399,27 +399,28 @@ if ($_SESSION['rol']==3 ) :?>
 		document.write('<p>Carrito: <text id="cistella"> </text></p>');
     document.write('<p>Carrito mida: <text id="cistella_mida"> </text></p>');
 
-
-
     function generartaula() {
-      document.write('<table class="table">');
-      document.write('<thead>');
-      document.write('<tr>');
-      document.write('<th scope="col">Figura</th>');
-      document.write('<th scope="col">Mida</th>');
-      document.write('</tr>');
-      document.write('</thead>');
-      document.write('<tbody>');
-      document.write('<tr>');
-      for (z = 0; z < figura_triada.length; z++) {
-        document.write('<td>patata</td>');
+      if (figura_triada.lenght>0) {
+        document.write('<table class="table">');
+        document.write('<thead>');
+        document.write('<tr>');
+        document.write('<th scope="col">Figura</th>');
+        document.write('<th scope="col">Mida</th>');
+        document.write('</tr>');
+        document.write('</thead>');
+        document.write('<tbody>');
+        document.write('<tr>');
+        for (z = 0; z < figura_triada.length; z++) {
+          document.write('<td>patata</td>');
+        }
+        document.write('<td>Mark</td>');
+        document.write('<td>Mark2</td>');
+        document.write('</tr>');
+        document.write('</tbody>');
+        document.write('</table>');
       }
-      document.write('<td>Mark</td>');
-      document.write('<td>Mark2</td>');
-      document.write('</tr>');
-      document.write('</tbody>');
-      document.write('</table>');
     }
+
 	</script>
 </div>
 
