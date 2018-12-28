@@ -427,11 +427,11 @@ if ($_SESSION['rol']==3 ) :?>
         document.write('</tr>');
         document.write('</tbody>');
         document.write('</table>');*/
-        function tableCreate(){
+        /*function tableCreate(){
           var body = document.body,
               tbl  = document.createElement('table');
-          /*tbl.style.width  = '100px';
-          tbl.style.border = '1px solid black';*/
+          tbl.style.width  = '100px';
+          tbl.style.border = '1px solid black';
 
           for(var i = 0; i < 3; i++){
               var tr = tbl.insertRow();
@@ -450,7 +450,7 @@ if ($_SESSION['rol']==3 ) :?>
           }
           body.appendChild(tbl);
       }
-      //tableCreate();
+      //tableCreate();*/
       var items = ['a','b','c'];
       var properties = [1,2,3];
       var selected = [];
