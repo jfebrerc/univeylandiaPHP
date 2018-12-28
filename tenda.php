@@ -344,10 +344,10 @@ if ($_SESSION['rol']==3 ) :?>
 		function calcular_preu(total, i, j, pedido) {
       if (seleccio_figura == 1) {
         resultat = resultat + total[i][j];
-  			figura_triada.push(pedido[i][j]);
+  			figura_triada.push(pedido[i][j]) + '|';
   			ultims_preus.push(total[i][j]);
   			document.getElementById('preu').innerHTML = resultat;
-  			document.getElementById('cistella').innerHTML = figura_triada + '|';
+  			document.getElementById('cistella').innerHTML = figura_triada;
         seleccio_figura = 0;
       }else {
         alert("Selecciona una figura per a triar la seva mida!.");
