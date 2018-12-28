@@ -354,10 +354,6 @@ if ($_SESSION['rol']==3 ) :?>
 				document.write('<button class="btn btn-secondary btn-lg" onclick="calcular_preu(total,' + i + ',' + j + ',pedido)">' +pedido[i][j]+ '</button>');
 				document.write('&nbsp; &nbsp;');
 			}
-      for (j = 0; j < pedido[j].length; j++) {
-				document.write('<button class="btn btn-secondary btn-lg" onclick="calcular_preu(total,' + i + ',' + j + ',pedido)">' +pedido[j]+ '</button>');
-				document.write('&nbsp; &nbsp;');
-			}
 			document.write('<br> <br>');
 		}
     document.write('<br>');
