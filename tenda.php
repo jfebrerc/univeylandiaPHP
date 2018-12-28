@@ -420,7 +420,7 @@ if ($_SESSION['rol']==3 ) :?>
     document.write('</table>');
 
     for (z = 0; z < 2; z++) {
-      document.write('<p> '+ figura_triada[0] +' </p>');
+      document.write('<p> '+ figura_triada[0][0] +' </p>');
     }
 
 	</script>
