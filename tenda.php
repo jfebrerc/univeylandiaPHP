@@ -360,9 +360,11 @@ if ($_SESSION['rol']==3 ) :?>
       for (j = 0; j < pedido[0].length; j++) {
         //document.write('<p>' + pedido[0][j] + '</p>');
         document.write('<button class="btn btn-secondary btn-lg" onclick="calcular_preu(total,' + 0 + ',' + j + ',pedido)">' +pedido[0][j]+ '</button>');
+        document.write('&nbsp; &nbsp;');
       }
       for (k = 0; k < pedido[1].length; k++) {
-        //document.write('<p>' + pedido[1][k] + '</p>');
+        document.write('<button class="btn btn-secondary btn-lg" onclick="calcular_preu(total,' + 0 + ',' + k + ',pedido)">' +pedido[1][k]+ '</button>');
+        document.write('&nbsp; &nbsp;');
       }
     document.write('<br>');
 		document.write('<button class="btn btn-primary btn-lg" onclick="eliminar_ultim()">Eliminar</button>');
