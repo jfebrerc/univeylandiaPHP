@@ -348,7 +348,7 @@ if ($_SESSION['rol']==3 ) :?>
 			document.getElementById('preu').innerHTML = resultat;
 			document.getElementById('cistella').innerHTML = figura_triada;
 		}
-		document.write('<h2> Tenda figures </h2>');
+		document.write('<h3> Tenda figures </h3>');
 		/*for (i = 0; i < pedido.length; i++) {
 			for (j = 0; j < pedido[i].length; j++) {
 				document.write('<button class="btn btn-secondary btn-lg" onclick="calcular_preu(total,' + i + ',' + j + ',pedido)">' +pedido[i][j]+ '</button>');
@@ -357,10 +357,9 @@ if ($_SESSION['rol']==3 ) :?>
 			document.write('<br> <br>');
 		}*/
     document.write('<p> Patata </p>');
-    for (var i = 0; i < figura.length; i++) {
-      document.write('<p> Patata </p>');
-      document.write('<button class="btn btn-secondary btn-lg">' +figura[i] + '</button>');
-    }
+    for (i = 0; i < figura.length; i++) {
+			document.write('<p> Patata2 </p>');
+		}
     document.write('<br>');
 		document.write('<button class="btn btn-primary btn-lg" onclick="eliminar_ultim()">Eliminar</button>');
     document.write('&nbsp; &nbsp;');
