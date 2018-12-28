@@ -358,10 +358,11 @@ if ($_SESSION['rol']==3 ) :?>
 		}*/
     document.write('<p> Patata </p>');
       for (j = 0; j < pedido[0].length; j++) {
-        document.write('<p>' + pedido[0][j] + '</p>');
+        //document.write('<p>' + pedido[0][j] + '</p>');
+        document.write('<button class="btn btn-secondary btn-lg" onclick="calcular_preu(total,' + 0 + ',' + j + ',pedido)">' +pedido[0][j]+ '</button>');
       }
       for (k = 0; k < pedido[1].length; k++) {
-        document.write('<p>' + pedido[1][k] + '</p>');
+        //document.write('<p>' + pedido[1][k] + '</p>');
       }
     document.write('<br>');
 		document.write('<button class="btn btn-primary btn-lg" onclick="eliminar_ultim()">Eliminar</button>');
