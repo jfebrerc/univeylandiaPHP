@@ -350,7 +350,7 @@ if ($_SESSION['rol']==3 ) :?>
   			document.getElementById('preu').innerHTML = resultat;
   			document.getElementById('cistella_mida').innerHTML = mida_triada;
         seleccio_figura = 0;
-        document.getElementById('taula_cesta').innerHTML = tableCreate();
+        document.getElementById('taula_cesta') = tableCreate();
       }else {
         alert("Selecciona una figura per a triar la seva mida!.");
       }
