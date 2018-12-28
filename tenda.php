@@ -310,7 +310,7 @@ if ($_SESSION['rol']==3 ) :?>
   </div>
 </nav>
 <?php endif ?>
-
+<div style="display: table; margin: 0 auto;">
 <script type="text/javascript">
 		var figura = new Array('Figura univeylandia', 'Figura dragon can', 'Figura mascota ', 'Figura tremor');
 		var mida = new Array('Menuda', 'Mitjana', 'Gran');
@@ -364,7 +364,7 @@ if ($_SESSION['rol']==3 ) :?>
 		document.write('<p>Carrito: <text id="cistella"> </text></p>');
 		//document.write('<p id="cistella"></p>');
 	</script>
-
+</div>
 
 <div class="jumbotron text-center" width="100%" style="margin-bottom:0">
   <div class="row">
