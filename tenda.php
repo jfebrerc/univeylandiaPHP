@@ -357,7 +357,7 @@ if ($_SESSION['rol']==3 ) :?>
 			document.write('<br> <br>');
 		}*/
     for (var i = 0; i < figura.length; i++) {
-      figura[i]
+      document.write('<button class="btn btn-secondary btn-lg">' +figura[i] + '</button>');
     }
     document.write('<br>');
 		document.write('<button class="btn btn-primary btn-lg" onclick="eliminar_ultim()">Eliminar</button>');
