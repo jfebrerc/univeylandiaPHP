@@ -351,13 +351,14 @@ if ($_SESSION['rol']==3 ) :?>
 		document.write('<h2> Tenda figures </h2>');
 		for (i = 0; i < pedido.length; i++) {
 			for (j = 0; j < pedido[i].length; j++) {
-				document.write('<button class="btn btn-secondary btn-sm" onclick="calcular_preu(tot_preu,' + i + ',' + j + ',pedido)">' +pedido[i][j]+ '</button>');
+				document.write('<button class="btn btn-secondary btn-lg" onclick="calcular_preu(tot_preu,' + i + ',' + j + ',pedido)">' +pedido[i][j]+ '</button>');
 				document.write('&nbsp; &nbsp;');
 			}
 			document.write('<br> <br> <br>');
 		}
-		document.write('<button onclick="eliminar_ultim()">Eliminar</button>');
-		document.write('<button onclick="buidar_cistella()">Buidar articles</button>');
+		document.write('<button btn btn-primary btn-lg onclick="eliminar_ultim()">Eliminar</button>');
+		document.write('<button btn btn-primary btn-lg onclick="buidar_cistella()">Buidar articles</button>');
+    document.write('<br> <br>');
 		document.write('<p>TOTAL (€)</p>');
 		document.write('<p id="preu">0</p>');
 		document.write('<p>ARTICLES SELECCIONATS</p>');
