@@ -400,7 +400,6 @@ if ($_SESSION['rol']==3 ) :?>
     document.write('<p>Carrito mida: <text id="cistella_mida"> </text></p>');
 
     function generartaula() {
-      if (figura_triada.lenght>0) {
         document.write('<table class="table">');
         document.write('<thead>');
         document.write('<tr>');
@@ -418,7 +417,6 @@ if ($_SESSION['rol']==3 ) :?>
         document.write('</tr>');
         document.write('</tbody>');
         document.write('</table>');
-      }
     }
 
 	</script>
