@@ -398,8 +398,16 @@ if ($_SESSION['rol']==3 ) :?>
 		document.write('<p>Preu: <text id="preu"> 0 </text></p>');
 		document.write('<p>Carrito: <text id="cistella"> </text></p>');
     document.write('<p>Carrito mida: <text id="cistella_mida"> </text></p>');
+/*
+<table id="carrito">
 
+</table>
 
+        var updateTable = function () {
+          var table = document.getElementById('carrito')
+          table.
+        }
+*//*
         document.write('<table class="table">');
         document.write('<thead>');
         document.write('<tr>');
@@ -416,7 +424,31 @@ if ($_SESSION['rol']==3 ) :?>
         document.write('<td>Mark2</td>');
         document.write('</tr>');
         document.write('</tbody>');
-        document.write('</table>');
+        document.write('</table>');*/
+        function tableCreate(){
+          var body = document.body,
+              tbl  = document.createElement('table');
+          /*tbl.style.width  = '100px';
+          tbl.style.border = '1px solid black';*/
+
+          for(var i = 0; i < 3; i++){
+              var tr = tbl.insertRow();
+              for(var j = 0; j < 2; j++){
+                  if(i == 2 && j == 1){
+                      break;
+                  } else {
+                      var td = tr.insertCell();
+                      td.appendChild(document.createTextNode('Cell'));
+                      td.style.border = '1px solid black';
+                      if(i == 1 && j == 1){
+                          td.setAttribute('rowSpan', '2');
+                      }
+                  }
+              }
+          }
+          body.appendChild(tbl);
+      }
+      tableCreate();
 
 
 	</script>
