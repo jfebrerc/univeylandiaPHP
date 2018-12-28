@@ -357,7 +357,7 @@ if ($_SESSION['rol']==3 ) :?>
 			document.write('<br> <br>');
 		}*/
     document.write('<p> Patata </p>');
-    for (i = 0; i < figura.length; i++) {
+    for (i = 0; i < pedido.length; i++) {
 			document.write('<p> Patata2 </p>');
 		}
     document.write('<br>');
@@ -367,7 +367,6 @@ if ($_SESSION['rol']==3 ) :?>
     document.write('<br> <br>');
 		document.write('<p>Preu: <text id="preu"> 0 </text></p>');
 		document.write('<p>Carrito: <text id="cistella"> </text></p>');
-		//document.write('<p id="cistella"></p>');
 	</script>
 </div>
 
