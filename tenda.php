@@ -354,12 +354,12 @@ if ($_SESSION['rol']==3 ) :?>
 				document.write('<button class="btn btn-secondary btn-lg" onclick="calcular_preu(total,' + i + ',' + j + ',pedido)">' +pedido[i][j]+ '</button>');
 				document.write('&nbsp; &nbsp;');
 			}
-			document.write('<br>');
+			document.write('<br> <br>');
 		}
 		document.write('<button class="btn btn-primary btn-lg" onclick="eliminar_ultim()">Eliminar</button>');
     document.write('&nbsp; &nbsp;');
 		document.write('<button class="btn btn-primary btn-lg" onclick="buidar_cistella()">Buidar articles</button>');
-    document.write('<br>');
+    document.write('<br> <br>');
 		document.write('<p>Preu: <text id="preu"> 0 </text></p>');
 		document.write('<p>Carrito: <text id="cistella"> </text></p>');
 		//document.write('<p id="cistella"></p>');
