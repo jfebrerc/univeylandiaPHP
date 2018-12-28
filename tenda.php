@@ -323,6 +323,7 @@ if ($_SESSION['rol']==3 ) :?>
 		//Afegir elements en els arrays
 		var roba = roba.push('Figura vikings');
 		var preu_roba = preu_roba.push(10);
+    var roba = roba.push('Figura vikings2');
     /*var roba = roba.push('Figura tornado');
 		var preu_roba = preu_roba.push(10);*/
 		var roba_triat = new Array();
