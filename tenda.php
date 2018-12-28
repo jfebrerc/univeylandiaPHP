@@ -328,6 +328,7 @@ if ($_SESSION['rol']==3 ) :?>
 		var resultat = 0;
 		var ultims_preus = new Array();
     var seleccio_figura = 0;
+    var taula;
     function calcular_preu_figura(total, i, j, pedido) {
       if (seleccio_figura == 0) {
         resultat = resultat + total[i][j];
@@ -350,7 +351,7 @@ if ($_SESSION['rol']==3 ) :?>
   			document.getElementById('preu').innerHTML = resultat;
   			document.getElementById('cistella_mida').innerHTML = mida_triada;
         seleccio_figura = 0;
-        document.getElementById('taula_cesta') = tableCreate();
+        taula = tableCreate();
       }else {
         alert("Selecciona una figura per a triar la seva mida!.");
       }
@@ -402,6 +403,7 @@ if ($_SESSION['rol']==3 ) :?>
 
     document.write('<table id="taula_cesta">');
     document.write('</table>');
+    taula;
 /*
 <table id="carrito">
 
