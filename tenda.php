@@ -481,12 +481,11 @@ if ($_SESSION['rol']==3 ) :?>
       }
       }
       renderTable()
-
+      document.write('<table id="data-table">');
+      document.write('<tbody id="algo">');
+      document.write('</tbody>');
+      document.write('</table>');
 	</script>
-  <table id="data-table">
-<tbody id="algo">
-</tbody>
-  </table>
 </div>
 
 <div class="jumbotron text-center" width="100%" style="margin-bottom:0">
