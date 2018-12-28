@@ -359,7 +359,7 @@ if ($_SESSION['rol']==3 ) :?>
     document.write('<p> Patata </p>');
     for (i = 0; i < pedido.length; i++) {
       for (j = 0; j < pedido[i].length; j++) {
-        document.write('<p>' + pedido[i] + '</p>');
+        document.write('<p>' + pedido[0][j] + '</p>');
       }
 			document.write('<p> Patata2 </p>');
 		}
