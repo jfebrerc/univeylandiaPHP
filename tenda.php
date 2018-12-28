@@ -348,7 +348,7 @@ if ($_SESSION['rol']==3 ) :?>
 			document.getElementById('preu').innerHTML = resultat;
 			document.getElementById('cistella').innerHTML = roba_triat;
 		}
-		document.write('<h1> Tenda figures </h1>');
+		document.write('<h2> Tenda figures </h2>');
 		for (i = 0; i < pedido.length; i++) {
 			for (j = 0; j < pedido[i].length; j++) {
 				document.write('<button onclick="calcular_preu(tot_preu,' + i + ',' + j + ',pedido)">' +pedido[i][j]+ '</button>');
