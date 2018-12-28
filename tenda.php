@@ -312,7 +312,7 @@ if ($_SESSION['rol']==3 ) :?>
 <?php endif ?>
 
 <script type="text/javascript">
-		var roba = new Array('Figura univeylandia', 'Figura dragon can', 'figura ', 'Article 4');
+		var roba = new Array('Figura univeylandia', 'Figura dragon can', 'Figura mascota ', 'Figura tremor');
 		var color = new Array('Atribut 1', 'Atribut 2', 'Atribut 3');
 		var talla = new Array('Tipus 1', 'Tipus 2', 'Tipus 3');
 		var pedido = new Array(roba, color, talla);
@@ -321,7 +321,9 @@ if ($_SESSION['rol']==3 ) :?>
 		var preu_talla = new Array(5, 5, 5, 5);
 		var tot_preu = new Array(preu_roba, preu_color, preu_talla);
 		//Afegir elements en els arrays
-		//var roba = roba.push('Article 5');
+		var roba = roba.push('Figura vikings');
+		var preu_roba = preu_roba.push(10);
+    var roba = roba.push('Figura tornado');
 		var preu_roba = preu_roba.push(10);
 		var roba_triat = new Array();
 		var resultat = 0;
