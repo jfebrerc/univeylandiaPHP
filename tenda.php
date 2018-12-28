@@ -361,9 +361,8 @@ if ($_SESSION['rol']==3 ) :?>
 		document.write('<button class="btn btn-primary btn-lg" onclick="buidar_cistella()">Buidar articles</button>');
     document.write('<br> <br>');
 		document.write('<p>Preu: <text id="preu"> 0 </text></p>');
-		//document.write('<p id="preu">0</p>');
-		document.write('<p>ARTICLES SELECCIONATS</p>');
-		document.write('<p id="cistella"></p>');
+		document.write('<p>Carrito: <text id="cistella"> </text></p>');
+		//document.write('<p id="cistella"></p>');
 	</script>
 
 
