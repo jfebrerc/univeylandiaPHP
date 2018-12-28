@@ -312,43 +312,41 @@ if ($_SESSION['rol']==3 ) :?>
 <?php endif ?>
 
 <script type="text/javascript">
-		var roba = new Array('Figura univeylandia', 'Figura dragon can', 'Figura mascota ', 'Figura tremor');
-		var color = new Array('Menuda', 'Mitjana', 'Gran');
-		//var talla = new Array('Tipus 1', 'Tipus 2', 'Tipus 3');
-		var pedido = new Array(roba, color);
-		var preu_roba = new Array(30, 15, 20, 5);
-		var preu_color = new Array(2, 2, 2);
-		//var preu_talla = new Array(5, 5, 5, 5);
-		var tot_preu = new Array(preu_roba, preu_color);
-		//Afegir elements en els arrays
-		var roba = roba.push('Figura vikings');
-		var preu_roba = preu_roba.push(10);
-    /*var roba = roba.push('Figura tornado');
-		var preu_roba = preu_roba.push(10);*/
-		var roba_triat = new Array();
+		var figura = new Array('Figura univeylandia', 'Figura dragon can', 'Figura mascota ', 'Figura tremor');
+		var mida = new Array('Menuda', 'Mitjana', 'Gran');
+
+		var pedido = new Array(figura, mida);
+		var preu_figura = new Array(30, 15, 20, 5);
+		var preu_mida = new Array(2, 2, 2);
+
+		var tot_preu = new Array(preu_figura, preu_mida);
+
+		var figura = figura.push('Figura vikings');
+		var preu_figura = preu_figura.push(10);
+		var figura_triat = new Array();
 		var resultat = 0;
 		var ultims_preus = new Array();
 		function calcular_preu(tot_preu, i, j, pedido) {
 			resultat = resultat + tot_preu[i][j];
-			roba_triat.push(pedido[i][j]);
+			figura_triat.push(pedido[i][j]);
 			ultims_preus.push(tot_preu[i][j]);
 			document.getElementById('preu').innerHTML = resultat;
-			document.getElementById('cistella').innerHTML = roba_triat;
+			document.getElementById('cistella').innerHTML = figura_triat;
 		}
 			function eliminar_ultim() {
 			if (resultat > 0) {
-				roba_triat.pop();
+				figura_triat.pop();
 				preu_a_restar = ultims_preus.pop();
 				resultat = resultat - preu_a_restar;
 				document.getElementById('preu').innerHTML = resultat;
-				document.getElementById('cistella').innerHTML = roba_triat;
+				document.getElementById('cistella').innerHTML = figura_triat;
 			}
 		}
 		function buidar_cistella() {
 			resultat = 0;
-			roba_triat = [];
+			figura_triat = [];
 			document.getElementById('preu').innerHTML = resultat;
-			document.getElementById('cistella').innerHTML = roba_triat;
+			document.getElementById('cistella').innerHTML = figura_triat;
 		}
 		document.write('<h2> Tenda figures </h2>');
 		for (i = 0; i < pedido.length; i++) {
