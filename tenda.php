@@ -316,42 +316,42 @@ if ($_SESSION['rol']==3 ) :?>
 		var mida = new Array('Menuda', 'Mitjana', 'Gran');
 
 		var pedido = new Array(figura, mida);
-		var preu_figura = new Array(30, 15, 20, 5);
-		var preu_mida = new Array(2, 2, 2);
+		var preuFigura = new Array(30, 15, 20, 5);
+		var preuMida = new Array(2, 2, 2);
 
-		var tot_preu = new Array(preu_figura, preu_mida);
+		var total = new Array(preuFigura, preuMida);
 
 		var figura = figura.push('Figura vikings');
-		var preu_figura = preu_figura.push(10);
-		var figura_triat = new Array();
+		var preuFigura = preuFigura.push(10);
+		var figura_triada = new Array();
 		var resultat = 0;
 		var ultims_preus = new Array();
-		function calcular_preu(tot_preu, i, j, pedido) {
-			resultat = resultat + tot_preu[i][j];
-			figura_triat.push(pedido[i][j]);
-			ultims_preus.push(tot_preu[i][j]);
+		function calcular_preu(total, i, j, pedido) {
+			resultat = resultat + total[i][j];
+			figura_triada.push(pedido[i][j]);
+			ultims_preus.push(total[i][j]);
 			document.getElementById('preu').innerHTML = resultat;
-			document.getElementById('cistella').innerHTML = figura_triat;
+			document.getElementById('cistella').innerHTML = figura_triada;
 		}
 			function eliminar_ultim() {
 			if (resultat > 0) {
-				figura_triat.pop();
+				figura_triada.pop();
 				preu_a_restar = ultims_preus.pop();
 				resultat = resultat - preu_a_restar;
 				document.getElementById('preu').innerHTML = resultat;
-				document.getElementById('cistella').innerHTML = figura_triat;
+				document.getElementById('cistella').innerHTML = figura_triada;
 			}
 		}
 		function buidar_cistella() {
 			resultat = 0;
-			figura_triat = [];
+			figura_triada = [];
 			document.getElementById('preu').innerHTML = resultat;
-			document.getElementById('cistella').innerHTML = figura_triat;
+			document.getElementById('cistella').innerHTML = figura_triada;
 		}
 		document.write('<h2> Tenda figures </h2>');
 		for (i = 0; i < pedido.length; i++) {
 			for (j = 0; j < pedido[i].length; j++) {
-				document.write('<button class="btn btn-secondary btn-lg" onclick="calcular_preu(tot_preu,' + i + ',' + j + ',pedido)">' +pedido[i][j]+ '</button>');
+				document.write('<button class="btn btn-secondary btn-lg" onclick="calcular_preu(total,' + i + ',' + j + ',pedido)">' +pedido[i][j]+ '</button>');
 				document.write('&nbsp; &nbsp;');
 			}
 			document.write('<br> <br> <br>');
@@ -360,8 +360,8 @@ if ($_SESSION['rol']==3 ) :?>
     document.write('&nbsp; &nbsp;');
 		document.write('<button class="btn btn-primary btn-lg" onclick="buidar_cistella()">Buidar articles</button>');
     document.write('<br> <br>');
-		document.write('<p>TOTAL (€)</p>');
-		document.write('<p id="preu">0</p>');
+		document.write('<p>Preu: <text id="preu"> 0 </text></p>');
+		//document.write('<p id="preu">0</p>');
 		document.write('<p>ARTICLES SELECCIONATS</p>');
 		document.write('<p id="cistella"></p>');
 	</script>
