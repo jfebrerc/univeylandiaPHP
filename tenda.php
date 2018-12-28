@@ -459,9 +459,12 @@ if ($_SESSION['rol']==3 ) :?>
       //tableCreate();
 
 	</script>
-  <table id="data-table"></table>
+  <table id="data-table">
+<tbody id="algo">
+</tbody>
+  </table>
 </div>
-
+<script src="test.js"></script>
 <div class="jumbotron text-center" width="100%" style="margin-bottom:0">
   <div class="row">
 
