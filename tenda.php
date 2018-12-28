@@ -395,6 +395,20 @@ if ($_SESSION['rol']==3 ) :?>
     document.write('<br> <br>');
 		document.write('<p>Preu: <text id="preu"> 0 </text></p>');
 		document.write('<p>Carrito: <text id="cistella"> </text></p>');
+    document.write('<table class="table">');
+    document.write('<thead>');
+    document.write('<tr>');
+    document.write('<th scope="col">Figura</th>');
+    document.write('<th scope="col">Mida</th>');
+    document.write('</tr>');
+    document.write('</thead>');
+    document.write('<tbody>');
+    document.write('<tr>');
+    document.write('<td>Mark</td>'); 
+    document.write('<td>Mark2</td>');
+    document.write('</tr>');
+    document.write('</tbody>');
+    document.write('</table>');
 	</script>
 </div>
 
