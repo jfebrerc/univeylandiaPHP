@@ -317,7 +317,7 @@ if ($_SESSION['rol']==3 ) :?>
 
 		var pedido = new Array(figura, mida);
 		var preuFigura = new Array(30, 15, 20, 5);
-		var preuMida = new Array(2, 2, 2);
+		var preuMida = new Array(2, 4, 8);
 
 		var total = new Array(preuFigura, preuMida);
 
