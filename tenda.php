@@ -350,7 +350,7 @@ if ($_SESSION['rol']==3 ) :?>
   			document.getElementById('preu').innerHTML = resultat;
   			document.getElementById('cistella_mida').innerHTML = mida_triada;
         seleccio_figura = 0;
-        generartaula();
+        document.getElementById('taula_cesta').innerHTML = tableCreate();
       }else {
         alert("Selecciona una figura per a triar la seva mida!.");
       }
@@ -362,6 +362,7 @@ if ($_SESSION['rol']==3 ) :?>
 				resultat = resultat - preu_a_restar;
 				document.getElementById('preu').innerHTML = resultat;
 				document.getElementById('cistella').innerHTML = figura_triada;
+
 			}
 		}
 		function buidar_cistella() {
@@ -398,6 +399,9 @@ if ($_SESSION['rol']==3 ) :?>
 		document.write('<p>Preu: <text id="preu"> 0 </text></p>');
 		document.write('<p>Carrito: <text id="cistella"> </text></p>');
     document.write('<p>Carrito mida: <text id="cistella_mida"> </text></p>');
+
+    document.write('<table id="taula_cesta">');
+    document.write('</table>');
 /*
 <table id="carrito">
 
@@ -449,7 +453,6 @@ if ($_SESSION['rol']==3 ) :?>
           body.appendChild(tbl);
       }
       tableCreate();
-
 
 	</script>
 </div>
