@@ -313,13 +313,13 @@ if ($_SESSION['rol']==3 ) :?>
 
 <script type="text/javascript">
 		var roba = new Array('Figura univeylandia', 'Figura dragon can', 'Figura mascota ', 'Figura tremor');
-		var color = new Array('Atribut 1', 'Atribut 2', 'Atribut 3');
-		var talla = new Array('Tipus 1', 'Tipus 2', 'Tipus 3');
-		var pedido = new Array(roba, color, talla);
+		var color = new Array('Menuda', 'Mitjana', 'Gran');
+		//var talla = new Array('Tipus 1', 'Tipus 2', 'Tipus 3');
+		var pedido = new Array(roba, color);
 		var preu_roba = new Array(30, 15, 20, 5);
 		var preu_color = new Array(2, 2, 2);
-		var preu_talla = new Array(5, 5, 5, 5);
-		var tot_preu = new Array(preu_roba, preu_color, preu_talla);
+		//var preu_talla = new Array(5, 5, 5, 5);
+		var tot_preu = new Array(preu_roba, preu_color);
 		//Afegir elements en els arrays
 		var roba = roba.push('Figura vikings');
 		var preu_roba = preu_roba.push(10);
