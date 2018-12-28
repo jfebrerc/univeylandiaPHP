@@ -358,10 +358,10 @@ if ($_SESSION['rol']==3 ) :?>
 		}*/
     document.write('<p> Patata </p>');
     for (i = 0; i < pedido.length; i++) {
-      for (j = 0; j < pedido[i].length; j++) {
+      for (j = 0; j < pedido[0].length; j++) {
         document.write('<p>' + pedido[0][j] + '</p>');
       }
-      for (k = 0; k < pedido[i].length; k++) {
+      for (k = 0; k < pedido[1].length; k++) {
         document.write('<p>' + pedido[1][k] + '</p>');
       }
 		}
