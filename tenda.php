@@ -451,13 +451,13 @@ if ($_SESSION['rol']==3 ) :?>
           body.appendChild(tbl);
       }
       //tableCreate();
-      var items = ['a','b','c']
-      var properties = [1,2,3]
-      var selected = []
-      var table= [[]]
+      var items = ['a','b','c'];
+      var properties = [1,2,3];
+      var selected = [];
+      var table= [[]];
 
       for (var i = 0; i < items.length; i++) {
-      table.push([items[i],properties[i]])
+      table.push([items[i],properties[i]]);
       }
 
       var renderTable = function() {
@@ -474,13 +474,13 @@ if ($_SESSION['rol']==3 ) :?>
       tdItem.innerText = item;
       tdProp.innerText = prop;
 
-      row.appendChild(tdItem)
-      row.appendChild(tdProp)
+      row.appendChild(tdItem);
+      row.appendChild(tdProp);
 
-      data.appendChild(row)
+      data.appendChild(row);
       }
       }
-      renderTable()
+      renderTable();
       document.write('<table id="data-table">');
       document.write('<tbody id="algo">');
       document.write('</tbody>');
