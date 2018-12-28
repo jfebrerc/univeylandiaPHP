@@ -321,7 +321,7 @@ if ($_SESSION['rol']==3 ) :?>
 		var preu_talla = new Array(5, 5, 5, 5);
 		var tot_preu = new Array(preu_roba, preu_color, preu_talla);
 		//Afegir elements en els arrays
-		var roba = roba.push('Article 5');
+		//var roba = roba.push('Article 5');
 		var preu_roba = preu_roba.push(10);
 		var roba_triat = new Array();
 		var resultat = 0;
