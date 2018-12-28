@@ -324,6 +324,7 @@ if ($_SESSION['rol']==3 ) :?>
 		var figura = figura.push('Figura vikings');
 		var preuFigura = preuFigura.push(10);
 		var figura_triada = new Array();
+    var mida_triada = new Array();
 		var resultat = 0;
 		var ultims_preus = new Array();
     var seleccio_figura = 0;
@@ -344,10 +345,10 @@ if ($_SESSION['rol']==3 ) :?>
 		function calcular_preu(total, i, j, pedido) {
       if (seleccio_figura == 1) {
         resultat = resultat + total[i][j];
-  			figura_triada.push(pedido[i][j]) + '|';
+  			mida_triada.push(pedido[i][j]);
   			ultims_preus.push(total[i][j]);
   			document.getElementById('preu').innerHTML = resultat;
-  			document.getElementById('cistella').innerHTML = figura_triada;
+  			document.getElementById('cistella_mida').innerHTML = mida_triada;
         seleccio_figura = 0;
       }else {
         alert("Selecciona una figura per a triar la seva mida!.");
@@ -395,6 +396,11 @@ if ($_SESSION['rol']==3 ) :?>
     document.write('<br> <br>');
 		document.write('<p>Preu: <text id="preu"> 0 </text></p>');
 		document.write('<p>Carrito: <text id="cistella"> </text></p>');
+    document.write('<p>Carrito mida: <text id="cistella_mida"> </text></p>');
+
+
+
+
     document.write('<table class="table">');
     document.write('<thead>');
     document.write('<tr>');
@@ -404,7 +410,7 @@ if ($_SESSION['rol']==3 ) :?>
     document.write('</thead>');
     document.write('<tbody>');
     document.write('<tr>');
-    document.write('<td>Mark</td>'); 
+    document.write('<td>Mark</td>');
     document.write('<td>Mark2</td>');
     document.write('</tr>');
     document.write('</tbody>');
