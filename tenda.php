@@ -356,8 +356,8 @@ if ($_SESSION['rol']==3 ) :?>
 			}
 			document.write('<br> <br> <br>');
 		}
-		document.write('<button btn btn-primary btn-lg onclick="eliminar_ultim()">Eliminar</button>');
-		document.write('<button btn btn-primary btn-lg onclick="buidar_cistella()">Buidar articles</button>');
+		document.write('<button class="btn btn-primary btn-lg" onclick="eliminar_ultim()">Eliminar</button>');
+		document.write('<button class="btn btn-primary btn-lg" onclick="buidar_cistella()">Buidar articles</button>');
     document.write('<br> <br>');
 		document.write('<p>TOTAL (€)</p>');
 		document.write('<p id="preu">0</p>');
