@@ -355,6 +355,7 @@ if ($_SESSION['rol']==3 ) :?>
                              ['test', '2', '3'], //field names
                              ['header 1', 'header 2', 'header 3'], //set to null for field names to be used as header names instead of custom headers
                              'There are no items to list...'); //default text for no items
+        dt.load(data);
       }else {
         alert("Selecciona una figura per a triar la seva mida!.");
       }
