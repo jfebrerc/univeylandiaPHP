@@ -326,12 +326,32 @@ if ($_SESSION['rol']==3 ) :?>
 		var figura_triada = new Array();
 		var resultat = 0;
 		var ultims_preus = new Array();
+    var seleccio_figura = 0;
+    function calcular_preu_figura(total, i, j, pedido) {
+      if (seleccio_figura == 0) {
+        resultat = resultat + total[i][j];
+  			figura_triada.push(pedido[i][j]);
+  			ultims_preus.push(total[i][j]);
+  			document.getElementById('preu').innerHTML = resultat;
+  			document.getElementById('cistella').innerHTML = figura_triada;
+        seleccio_figura = 1;
+      }
+      else {
+        alert("Ja hi ha una figura seleccionada, tria una mida.");
+      }
+		}
+
 		function calcular_preu(total, i, j, pedido) {
-			resultat = resultat + total[i][j];
-			figura_triada.push(pedido[i][j]);
-			ultims_preus.push(total[i][j]);
-			document.getElementById('preu').innerHTML = resultat;
-			document.getElementById('cistella').innerHTML = figura_triada;
+      if (seleccio_figura == 1) {
+        resultat = resultat + total[i][j];
+  			figura_triada.push(pedido[i][j]);
+  			ultims_preus.push(total[i][j]);
+  			document.getElementById('preu').innerHTML = resultat;
+  			document.getElementById('cistella').innerHTML = figura_triada;
+        seleccio_figura = 0;
+      }else {
+        alert("Selecciona una figura per a triar la seva mida!.");
+      }
 		}
 			function eliminar_ultim() {
 			if (resultat > 0) {
@@ -356,10 +376,10 @@ if ($_SESSION['rol']==3 ) :?>
 			}
 			document.write('<br> <br>');
 		}*/
-    document.write('<p> Patata </p>');
+    //document.write('<p> Patata </p>');
       for (j = 0; j < pedido[0].length; j++) {
         //document.write('<p>' + pedido[0][j] + '</p>');
-        document.write('<button class="btn btn-secondary btn-lg" onclick="calcular_preu(total,' + 0 + ',' + j + ',pedido)">' +pedido[0][j]+ '</button>');
+        document.write('<button class="btn btn-secondary btn-lg" onclick="calcular_preu_figura(total,' + 0 + ',' + j + ',pedido)">' +pedido[0][j]+ '</button>');
         document.write('&nbsp; &nbsp;');
       }
       document.write('<br> <br>');
