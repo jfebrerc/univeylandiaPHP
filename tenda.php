@@ -452,7 +452,7 @@ if ($_SESSION['rol']==3 ) :?>
           }
           body.appendChild(tbl);
       }
-      tableCreate();
+      //tableCreate();
 
 	</script>
 </div>
