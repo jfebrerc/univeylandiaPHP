@@ -351,7 +351,6 @@ if ($_SESSION['rol']==3 ) :?>
   			document.getElementById('preu').innerHTML = resultat;
   			document.getElementById('cistella_mida').innerHTML = mida_triada;
         seleccio_figura = 0;
-        dt.load(data);
       }else {
         alert("Selecciona una figura per a triar la seva mida!.");
       }
@@ -400,15 +399,6 @@ if ($_SESSION['rol']==3 ) :?>
 		document.write('<p>Preu: <text id="preu"> 0 </text></p>');
 		document.write('<p>Carrito: <text id="cistella"> </text></p>');
     document.write('<p>Carrito mida: <text id="cistella_mida"> </text></p>');
-
-
-
-    var dt = dynamicTable.config('data-table', //id of the table
-                         ['test', '2', '3'], //field names
-                         ['header 1', 'header 2', 'header 3'], //set to null for field names to be used as header names instead of custom headers
-                         'There are no items to list...'); //default text for no items
-
-    document.write('<table id="data-table"> </table>');
 
 /*
 <table id="carrito">
