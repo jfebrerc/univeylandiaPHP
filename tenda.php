@@ -357,6 +357,7 @@ if ($_SESSION['rol']==3 ) :?>
 			document.write('<br> <br>');
 		}*/
     for (var i = 0; i < figura.length; i++) {
+      document.write('<p> Patata </p>');
       document.write('<button class="btn btn-secondary btn-lg">' +figura[i] + '</button>');
     }
     document.write('<br>');
