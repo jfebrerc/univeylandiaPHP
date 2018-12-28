@@ -409,11 +409,8 @@ if ($_SESSION['rol']==3 ) :?>
         document.write('</thead>');
         document.write('<tbody>');
         document.write('<tr>');
-        function generartaula() {
-        /*for (z = 0; z < figura_triada.length; z++) {
+        if (mida_triada.length>0) {
           document.write('<td>patata</td>');
-        }*/
-        document.write('<td>patata</td>');
         }
         document.write('<td>Mark</td>');
         document.write('<td>Mark2</td>');
