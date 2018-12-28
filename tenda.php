@@ -356,6 +356,7 @@ if ($_SESSION['rol']==3 ) :?>
 			}
 			document.write('<br> <br>');
 		}
+    document.write('<br>');
 		document.write('<button class="btn btn-primary btn-lg" onclick="eliminar_ultim()">Eliminar</button>');
     document.write('&nbsp; &nbsp;');
 		document.write('<button class="btn btn-primary btn-lg" onclick="buidar_cistella()">Buidar articles</button>');
