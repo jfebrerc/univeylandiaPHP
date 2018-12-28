@@ -15,6 +15,13 @@ var resultat = 0;
 var ultims_preus = new Array();
 var seleccio_figura = 0;
 var taula;
+
+var dt = dynamicTable.config('data-table', //id of the table
+                             ['field2', 'field1', 'field3'], //field names
+                             ['header 1', 'header 2', 'header 3'], //set to null for field names to be used as header names instead of custom headers
+                             'There are no items to list...'); //default text for no items
+
+
 function calcular_preu_figura(total, i, j, pedido) {
   if (seleccio_figura == 0) {
     resultat = resultat + total[i][j];
@@ -37,6 +44,7 @@ function calcular_preu(total, i, j, pedido) {
     document.getElementById('preu').innerHTML = resultat;
     document.getElementById('cistella_mida').innerHTML = mida_triada;
     seleccio_figura = 0;
+    dt.load(data);
   }else {
     alert("Selecciona una figura per a triar la seva mida!.");
   }
@@ -85,38 +93,3 @@ document.write('<br> <br>');
 document.write('<p>Preu: <text id="preu"> 0 </text></p>');
 document.write('<p>Carrito: <text id="cistella"> </text></p>');
 document.write('<p>Carrito mida: <text id="cistella_mida"> </text></p>');
-
-
-
-
-var items = ['a','b','c']
-var properties = [1,2,3]
-var selected = []
-var table= [[]]
-
-for (var i = 0; i < items.length; i++) {
-table.push([items[i],properties[i]])
-}
-
-var renderTable = function() {
-var data = document.getElementById('algo');
-
-for (var i = 0; i < table.length; i++) {
-var item = table[i][0];
-var prop = table[i][1];
-
-var row = document.createElement('tr');
-var tdItem = document.createElement('td');
-var tdProp = document.createElement('td');
-
-tdItem.innerText = item;
-tdProp.innerText = prop;
-
-row.appendChild(tdItem)
-row.appendChild(tdProp)
-
-data.appendChild(row)
-}
-}
-
-renderTable()
