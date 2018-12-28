@@ -357,14 +357,12 @@ if ($_SESSION['rol']==3 ) :?>
 			document.write('<br> <br>');
 		}*/
     document.write('<p> Patata </p>');
-    for (i = 0; i < pedido.length; i++) {
       for (j = 0; j < pedido[0].length; j++) {
         document.write('<p>' + pedido[0][j] + '</p>');
       }
       for (k = 0; k < pedido[1].length; k++) {
         document.write('<p>' + pedido[1][k] + '</p>');
       }
-		}
     document.write('<br>');
 		document.write('<button class="btn btn-primary btn-lg" onclick="eliminar_ultim()">Eliminar</button>');
     document.write('&nbsp; &nbsp;');
