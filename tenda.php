@@ -310,7 +310,7 @@ if ($_SESSION['rol']==3 ) :?>
   </div>
 </nav>
 <?php endif ?>
-<div style="display: table; margin: 0 auto;">
+<div style="display: table; margin: 0 auto; margin-top: 50px;">
 <script type="text/javascript">
 		var figura = new Array('Figura univeylandia', 'Figura dragon can', 'Figura mascota ', 'Figura tremor');
 		var mida = new Array('Menuda', 'Mitjana', 'Gran');
@@ -354,12 +354,12 @@ if ($_SESSION['rol']==3 ) :?>
 				document.write('<button class="btn btn-secondary btn-lg" onclick="calcular_preu(total,' + i + ',' + j + ',pedido)">' +pedido[i][j]+ '</button>');
 				document.write('&nbsp; &nbsp;');
 			}
-			document.write('<br> <br> <br>');
+			document.write('<br>');
 		}
 		document.write('<button class="btn btn-primary btn-lg" onclick="eliminar_ultim()">Eliminar</button>');
     document.write('&nbsp; &nbsp;');
 		document.write('<button class="btn btn-primary btn-lg" onclick="buidar_cistella()">Buidar articles</button>');
-    document.write('<br> <br>');
+    document.write('<br>');
 		document.write('<p>Preu: <text id="preu"> 0 </text></p>');
 		document.write('<p>Carrito: <text id="cistella"> </text></p>');
 		//document.write('<p id="cistella"></p>');
