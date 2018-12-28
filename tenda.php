@@ -410,6 +410,9 @@ if ($_SESSION['rol']==3 ) :?>
     document.write('</thead>');
     document.write('<tbody>');
     document.write('<tr>');
+    for (z = 0; k < figura_triada.length; k++) {
+      document.write('PATATA');
+    }
     document.write('<td>Mark</td>');
     document.write('<td>Mark2</td>');
     document.write('</tr>');
