@@ -410,7 +410,7 @@ if ($_SESSION['rol']==3 ) :?>
     document.write('</thead>');
     document.write('<tbody>');
     document.write('<tr>');
-    for (z = 0; z < figura_triada[0].length; z++) {
+    for (z = 0; z < figura_triada.length; z++) {
       document.write('<td>patata</td>');
     }
     document.write('<td>Mark</td>');
