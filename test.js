@@ -75,11 +75,11 @@ function calcular_preu(total, i, j, pedido) {
     document.getElementById('preu').innerHTML = resultat;
     document.getElementById('cistella_mida').innerHTML = mida_triada;
     seleccio_figura = 0;
-    /*var elem = documenet.getElementById('toc');
-    if (typeof elem != 'elements_taula')
+    var element =  document.getElementById('elementId');
+    if (typeof(element) != 'undefined' && element != null)
     {
-      elem.parentNode.removeChild(elem);
-    }*/
+      document.getElementById('preu').innerHTML = "PATATA";
+    }
     //tableCreate(mida_triada.length, mida_triada[mida_triada.length-1], figura_triada[figura_triada.length-1]);
     }else {
       alert("Selecciona una figura per a triar la seva mida!.");
