@@ -91,12 +91,14 @@ function calcular_preu(total, i, j, pedido) {
     mida_triada.pop();
     if (seleccio_figura = 1) {
       preu_a_restar = ultims_preus.pop();
+      resultat = resultat - preu_a_restar;
     }else {
       for (var i = 0; i < 2; i++) {
         preu_a_restar = ultims_preus.pop();
+        resultat = resultat - preu_a_restar;
       }
     }
-    resultat = resultat - preu_a_restar;
+
     document.getElementById('preu').innerHTML = resultat;
     document.getElementById('cistella').innerHTML = figura_triada;
     document.getElementById('cistella_mida').innerHTML = mida_triada;
