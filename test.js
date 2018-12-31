@@ -21,6 +21,13 @@ function tableCreate(files_num, mida_triada, figura_triada) {
   var tbl = document.getElementById('data-table');
   /*tbl.style.width = '100%';
   tbl.setAttribute('border', '1');*/
+  var thead= document.createElement('thead');
+  var th = document.createElement('th');
+  th.appendChild(document.createTextNode('Test'));
+  var th2 = document.createElement('th');
+  th2.appendChild(document.createTextNode('Test2'));
+  thead.appendChild(th);
+  thead.appendChild(th2);
   var tbdy = document.createElement('tbody');
   //for (var i = 0; i < files_num; i++) {
     var tr = document.createElement('tr');
