@@ -45,10 +45,11 @@ function tableCreate(files_num, mida_triada, figura_triada) {
       td2.setAttribute("class", "elements_taula");
       tr.appendChild(td)
       tr.appendChild(td2)
+      tbdy.appendChild(tr);
     }
     //  }
     //}
-    tbdy.appendChild(tr);
+
   //}
   tbl.appendChild(tbdy);
   body.appendChild(tbl)
