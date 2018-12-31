@@ -41,8 +41,6 @@ function tableCreate(files_num, mida_triada, figura_triada) {
       var td2 = document.createElement('td');
       td2.appendChild(document.createTextNode(mida_triada[f]))
       //i == 1 && j == 1 ? td.setAttribute('rowSpan', '2') : null;
-      f == 1 ? td.setAttribute('rowSpan', '2') : null;
-      f == 1 ? td2.setAttribute('rowSpan', '2') : null;
       td.setAttribute("class", "elements_taula");
       td2.setAttribute("class", "elements_taula");
       tr.appendChild(td)
