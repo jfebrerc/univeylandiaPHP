@@ -182,6 +182,6 @@ document.write('<button class="btn btn-primary btn-lg" onclick="eliminar_ultim()
 document.write('&nbsp; &nbsp;');
 document.write('<button class="btn btn-primary btn-lg" onclick="buidar_cistella()">Buidar carrito</button>');
 document.write('<br> <br>');
-document.write('<p>Preu: <text id="preu"> 0 </text></p>');
-document.write('<p>Carrito: <text id="cistella"> </text></p>');
-document.write('<p>Carrito mida: <text id="cistella_mida"> </text></p>');
+/*document.write('<p>Preu: <text id="preu"> 0 </text></p>');
+document.write('<p>Carrito figura: <text id="cistella"> </text></p>');
+document.write('<p>Carrito mida: <text id="cistella_mida"> </text></p>');*/
