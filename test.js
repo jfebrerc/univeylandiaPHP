@@ -19,38 +19,25 @@ var taula;
 function tableCreate(files_num, mida_triada, figura_triada) {
   var body = document.getElementById('taula_generada')[0];
   var tbl = document.getElementById('data-table');
-  /*tbl.style.width = '100%';
-  tbl.setAttribute('border', '1');*/
-/*  var thead= document.createElement('thead');
-  var th = document.createElement('th');
-  th.appendChild(document.createTextNode('Test'));
-  var th2 = document.createElement('th');
-  th2.appendChild(document.createTextNode('Test2'));
-  thead.appendChild(th);
-  thead.appendChild(th2);*/
+
   var tbdy = document.getElementById('tbody');
-  //for (var i = 0; i < files_num; i++) {
-    var tr = document.createElement('tr');
-    //for (var j = 0; j < 2; j++) {
-    //  if (i == 2 && j == 1) {
-    //    break
-    //  } else {
+
+
+
     for (var f = 0; f < mida_triada.length; f++) {
+      var tr = document.createElement('tr');
       var td = document.createElement('td');
       td.appendChild(document.createTextNode(figura_triada[f]))
       var td2 = document.createElement('td');
       td2.appendChild(document.createTextNode(mida_triada[f]))
-      //i == 1 && j == 1 ? td.setAttribute('rowSpan', '2') : null;
+
       td.setAttribute("class", "elements_taula");
       td2.setAttribute("class", "elements_taula");
       tr.appendChild(td)
       tr.appendChild(td2)
       tbdy.appendChild(tr);
     }
-    //  }
-    //}
 
-  //}
   tbl.appendChild(tbdy);
   body.appendChild(tbl)
 }
