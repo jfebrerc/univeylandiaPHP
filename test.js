@@ -16,13 +16,13 @@ var ultims_preus = new Array();
 var seleccio_figura = 0;
 var taula;
 
-function tableCreate() {
+function tableCreate(files_num) {
   var body = document.getElementsByTagName('body')[0];
   var tbl = document.createElement('table');
   tbl.style.width = '100%';
   tbl.setAttribute('border', '1');
   var tbdy = document.createElement('tbody');
-  for (var i = 0; i < 3; i++) {
+  for (var i = 0; i < files_num; i++) {
     var tr = document.createElement('tr');
     for (var j = 0; j < 2; j++) {
       if (i == 2 && j == 1) {
@@ -63,7 +63,7 @@ function calcular_preu(total, i, j, pedido) {
     document.getElementById('preu').innerHTML = resultat;
     document.getElementById('cistella_mida').innerHTML = mida_triada;
     seleccio_figura = 0;
-    tableCreate();
+    tableCreate(mida_triada.length);
   }else {
     alert("Selecciona una figura per a triar la seva mida!.");
   }
