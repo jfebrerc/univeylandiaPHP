@@ -39,9 +39,9 @@ function tableCreate(files_num, mida_triada, figura_triada) {
     }
     var tr2 = document.createElement('tr');
     var td3 = document.createElement('td');
-    td3.appendChild(document.createTextNode("test")
+    td3.appendChild(document.createTextNode("test"))
     var td4 = document.createElement('td');
-    td4.appendChild(document.createTextNode("test2")
+    td4.appendChild(document.createTextNode("test2"))
 
     td3.setAttribute("class", "elements_taula");
     td4.setAttribute("class", "elements_taula");
