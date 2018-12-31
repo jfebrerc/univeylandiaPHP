@@ -31,7 +31,7 @@ function tableCreate(files_num, mida_triada) {
         var td = document.createElement('td');
         td.appendChild(document.createTextNode(mida_triada))
         //i == 1 && j == 1 ? td.setAttribute('rowSpan', '2') : null;
-        //tr.appendChild(td)
+        tr.appendChild(td)
       }
     }
     tbdy.appendChild(tr);
