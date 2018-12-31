@@ -81,10 +81,12 @@ function calcular_preu(total, i, j, pedido) {
       //element.remove();
       //element.parentNode.removeChild(element);
       //('#data-table > tr > td').remove();
-      document.getElementById('taula_td').innerHTML = 'test';
+
       document.getElementById('taula_td').innerHTML = td_taula;
+    }else {
+      tableCreate(mida_triada.length, mida_triada[mida_triada.length-1], figura_triada[figura_triada.length-1]);
     }
-    tableCreate(mida_triada.length, mida_triada[mida_triada.length-1], figura_triada[figura_triada.length-1]);
+    
     }else {
       alert("Selecciona una figura per a triar la seva mida!.");
     }
