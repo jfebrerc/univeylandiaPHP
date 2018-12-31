@@ -314,7 +314,7 @@ if ($_SESSION['rol']==3 ) :?>
   <script src="test.js"> </script>
   <div id="taula_generada">
     <table id="data-table" class="table table-hover table-striped">
-      <thead class="thead-dark" id="header_taula">
+      <thead id="header_taula">
         <!--<tr>
           <th scope="col" style="text-align: left;">Figura</th>
           <th scope="col" style="text-align: left;">Mida</th>
