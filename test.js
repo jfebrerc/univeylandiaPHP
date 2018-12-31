@@ -89,9 +89,10 @@ function calcular_preu(total, i, j, pedido) {
   if (resultat > 0) {
     figura_triada.pop();
     mida_triada.pop();
-    if (seleccio_figura = 1) {
+    if (seleccio_figura == 1) {
       preu_a_restar = ultims_preus.pop();
       resultat = resultat - preu_a_restar;
+      document.getElementById('preu').innerHTML = resultat;
     }else {
       for (var i = 0; i < 2; i++) {
         preu_a_restar = ultims_preus.pop();
