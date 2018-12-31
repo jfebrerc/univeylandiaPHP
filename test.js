@@ -83,7 +83,8 @@ function calcular_preu(total, i, j, pedido) {
       tableCreate(mida_triada.length, mida_triada[mida_triada.length-1], figura_triada[figura_triada.length-1]);
     }else {
       document.getElementById('taula_td').innerHTML = td_taula;
-      td_taula.remove();
+      $('#data-table > tr > td').remove();
+      //td_taula.remove();
     }
 
     }else {
