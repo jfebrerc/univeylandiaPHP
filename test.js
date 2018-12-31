@@ -31,7 +31,7 @@ function tableCreate(files_num, mida_triada, figura_triada, resultat) {
   tdh2.setAttribute("class", "elements_taula");
   trh.appendChild(tdh1)
   trh.appendChild(tdh2)
-  tbdy.appendChild(trh);
+  th.appendChild(trh);
   tbl.appendChild(th);
 
   var tbdy = document.getElementById('tbody');
