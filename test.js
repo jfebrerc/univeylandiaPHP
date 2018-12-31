@@ -16,7 +16,7 @@ var ultims_preus = new Array();
 var seleccio_figura = 0;
 var taula;
 
-function tableCreate(files_num, mida_triada, figura_triada) {
+function tableCreate(files_num, mida_triada, figura_triada, resultat) {
   var body = document.getElementById('taula_generada')[0];
   var tbl = document.getElementById('data-table');
 
@@ -39,9 +39,9 @@ function tableCreate(files_num, mida_triada, figura_triada) {
     }
     var tr2 = document.createElement('tr');
     var td3 = document.createElement('td');
-    td3.appendChild(document.createTextNode("test"))
+    td3.appendChild(document.createTextNode("Total (€):"))
     var td4 = document.createElement('td');
-    td4.appendChild(document.createTextNode("test2"))
+    td4.appendChild(document.createTextNode(resultat))
 
     tr2.setAttribute("class", "table-dark");
     td3.setAttribute("class", "elements_taula");
@@ -89,7 +89,7 @@ function calcular_preu(total, i, j, pedido) {
       {
          td_taula.item(z).remove();
       }
-      tableCreate(mida_triada.length, mida_triada, figura_triada);
+      tableCreate(mida_triada.length, mida_triada, figura_triada, resultat);
       //$('#data-table > tr > td').remove();
       //td_taula.remove();
     //}
