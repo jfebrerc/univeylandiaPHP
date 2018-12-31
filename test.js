@@ -75,7 +75,7 @@ function calcular_preu(total, i, j, pedido) {
     document.getElementById('preu').innerHTML = resultat;
     document.getElementById('cistella_mida').innerHTML = mida_triada;
     seleccio_figura = 0;
-    var element =  document.getElementById('elementId');
+    var element =  document.getElementById('elements_taula');
     if (typeof(element) != 'undefined' && element != null)
     {
       document.getElementById('preu').innerHTML = "PATATA";
