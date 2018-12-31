@@ -74,7 +74,7 @@ function calcular_preu(total, i, j, pedido) {
       tableCreate(mida_triada.length, mida_triada[mida_triada.length-1], figura_triada[figura_triada.length-1]);
     }else {*/
       //document.getElementById('taula_td').innerHTML = td_taula;
-      for(var z = 0; z < td_taula.length; i++)
+      for(var z = 0; z < td_taula.length; z++)
       {
          td_taula.item(z).remove();
       }
@@ -104,7 +104,7 @@ function calcular_preu(total, i, j, pedido) {
       document.getElementById('preu').innerHTML = resultat;
     }
     var td_taula =  document.getElementsByClassName('elements_taula');
-    for(var z = 0; z < td_taula.length; i++)
+    for(var z = 0; z < td_taula.length; z++)
     {
        td_taula.item(z).remove();
     }
