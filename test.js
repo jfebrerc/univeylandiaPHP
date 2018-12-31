@@ -54,7 +54,7 @@ function tableCreate(files_num, mida_triada, figura_triada, resultat) {
     }
     var tr2 = document.createElement('tr');
     var td3 = document.createElement('td');
-    td3.appendChild(document.createTextNode("Total (€):"))
+    td3.appendChild(document.createTextNode("Total:"))
     var td4 = document.createElement('td');
     td4.appendChild(document.createTextNode(resultat + " €"))
 
