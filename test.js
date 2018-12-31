@@ -60,6 +60,7 @@ function tableCreate(files_num, mida_triada, figura_triada, resultat) {
 
     tr2.setAttribute("class", "table-dark");
     td3.setAttribute("class", "elements_taula");
+    td3.setAttribute("style", "font-weight:bold;");
     td4.setAttribute("class", "elements_taula");
     tr2.appendChild(td3)
     tr2.appendChild(td4)
