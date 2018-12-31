@@ -40,8 +40,8 @@ function tableCreate(files_num, mida_triada, figura_triada) {
         var td2 = document.createElement('td');
         td2.appendChild(document.createTextNode(mida_triada))
         //i == 1 && j == 1 ? td.setAttribute('rowSpan', '2') : null;
-        td.setAttribute("id", "elements_taula");
-        td2.setAttribute("id", "elements_taula");
+        td.setAttribute("class", "elements_taula");
+        td2.setAttribute("class", "elements_taula");
         tr.appendChild(td)
         tr.appendChild(td2)
     //  }
@@ -80,6 +80,7 @@ function calcular_preu(total, i, j, pedido) {
       //element.remove();
       //element.parentNode.removeChild(element);
       //('#data-table > tr > td').remove();
+      document.getElementById('taula_td').innerHTML = td_taula;
       tableCreate(mida_triada.length, mida_triada[mida_triada.length-1], figura_triada[figura_triada.length-1]);
     }else {
       document.getElementById('taula_td').innerHTML = td_taula;
