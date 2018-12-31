@@ -56,7 +56,7 @@ function tableCreate(files_num, mida_triada, figura_triada, resultat) {
     var td3 = document.createElement('td');
     td3.appendChild(document.createTextNode("Total (€):"))
     var td4 = document.createElement('td');
-    td4.appendChild(document.createTextNode(resultat))
+    td4.appendChild(document.createTextNode(resultat + " €"))
 
     tr2.setAttribute("class", "table-dark");
     td3.setAttribute("class", "elements_taula");
