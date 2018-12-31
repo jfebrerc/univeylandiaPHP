@@ -35,15 +35,17 @@ function tableCreate(files_num, mida_triada, figura_triada) {
     //  if (i == 2 && j == 1) {
     //    break
     //  } else {
-        var td = document.createElement('td');
-        td.appendChild(document.createTextNode(figura_triada))
-        var td2 = document.createElement('td');
-        td2.appendChild(document.createTextNode(mida_triada))
-        //i == 1 && j == 1 ? td.setAttribute('rowSpan', '2') : null;
-        td.setAttribute("class", "elements_taula");
-        td2.setAttribute("class", "elements_taula");
-        tr.appendChild(td)
-        tr.appendChild(td2)
+    for (var f = 0; f < mida_triada.length; f++) {
+      var td = document.createElement('td');
+      td.appendChild(document.createTextNode(figura_triada[f]))
+      var td2 = document.createElement('td');
+      td2.appendChild(document.createTextNode(mida_triada[f]))
+      //i == 1 && j == 1 ? td.setAttribute('rowSpan', '2') : null;
+      td.setAttribute("class", "elements_taula");
+      td2.setAttribute("class", "elements_taula");
+      tr.appendChild(td)
+      tr.appendChild(td2)
+    }
     //  }
     //}
     tbdy.appendChild(tr);
@@ -88,7 +90,7 @@ function calcular_preu(total, i, j, pedido) {
       {
          td_taula.item(z).remove();
       }
-      tableCreate(mida_triada.length, mida_triada[mida_triada.length-1], figura_triada[figura_triada.length-1]);
+      tableCreate(mida_triada.length, mida_triada, figura_triada);
       //$('#data-table > tr > td').remove();
       //td_taula.remove();
     //}
