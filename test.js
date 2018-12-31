@@ -20,6 +20,20 @@ function tableCreate(files_num, mida_triada, figura_triada, resultat) {
   var body = document.getElementById('taula_generada')[0];
   var tbl = document.getElementById('data-table');
 
+  var th = document.getElementById('header_taula');
+  var trh = document.createElement('tr');
+  var tdh1 = document.createElement('td');
+  tdh1.appendChild(document.createTextNode("Figura"))
+  var tdh2 = document.createElement('td');
+  tdh2.appendChild(document.createTextNode("Mida"))
+
+  tdh1.setAttribute("class", "elements_taula");
+  tdh2.setAttribute("class", "elements_taula");
+  trh.appendChild(tdh1)
+  trh.appendChild(tdh2)
+  tbdy.appendChild(trh);
+  tbl.appendChild(th);
+
   var tbdy = document.getElementById('tbody');
 
 
