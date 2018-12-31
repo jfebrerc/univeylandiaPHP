@@ -28,7 +28,7 @@ function tableCreate(files_num, mida_triada, figura_triada) {
   th2.appendChild(document.createTextNode('Test2'));
   thead.appendChild(th);
   thead.appendChild(th2);*/
-  var tbdy = document.createElement('tbody');
+  var tbdy = document.getElementById('tbody');
   //for (var i = 0; i < files_num; i++) {
     var tr = document.createElement('tr');
     //for (var j = 0; j < 2; j++) {

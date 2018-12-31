@@ -320,6 +320,8 @@ if ($_SESSION['rol']==3 ) :?>
           <th scope="col" style="text-align: center;">Mida</th>
         </tr>
       </thead>
+      <tbody id="tbody">
+      </tbody>
     </table>
   </div>
 </div>
