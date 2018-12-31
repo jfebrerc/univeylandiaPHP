@@ -79,7 +79,7 @@ function calcular_preu(total, i, j, pedido) {
     if (typeof(element) != 'undefined' && element != null)
     {
       //element.remove();
-      element.parentNode.removeChild(element);
+      //element.parentNode.removeChild(element);
     }
     tableCreate(mida_triada.length, mida_triada[mida_triada.length-1], figura_triada[figura_triada.length-1]);
     }else {
