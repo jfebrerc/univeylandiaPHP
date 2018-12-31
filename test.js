@@ -43,8 +43,9 @@ function tableCreate(files_num, mida_triada, figura_triada) {
     var td4 = document.createElement('td');
     td4.appendChild(document.createTextNode("test2"))
 
-    td3.setAttribute("class", "elements_taula table-dark");
-    td4.setAttribute("class", "elements_taula table-dark");
+    tr2.setAttribute("class", "table-dark");
+    td3.setAttribute("class", "elements_taula");
+    td4.setAttribute("class", "elements_taula");
     tr2.appendChild(td3)
     tr2.appendChild(td4)
     tbdy.appendChild(tr2);
