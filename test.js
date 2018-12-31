@@ -37,7 +37,17 @@ function tableCreate(files_num, mida_triada, figura_triada) {
       tr.appendChild(td2)
       tbdy.appendChild(tr);
     }
+    var tr2 = document.createElement('tr');
+    var td3 = document.createElement('td');
+    td.appendChild(document.createTextNode("test")
+    var td4 = document.createElement('td');
+    td3.appendChild(document.createTextNode("test2")
 
+    td3.setAttribute("class", "elements_taula");
+    td4.setAttribute("class", "elements_taula");
+    tr2.appendChild(td3)
+    tr2.appendChild(td4)
+    tbdy.appendChild(tr2);
   tbl.appendChild(tbdy);
   //body.appendChild(tbl)
 }
@@ -157,4 +167,3 @@ document.write('<br> <br>');
 document.write('<p>Preu: <text id="preu"> 0 </text></p>');
 document.write('<p>Carrito: <text id="cistella"> </text></p>');
 document.write('<p>Carrito mida: <text id="cistella_mida"> </text></p>');
-document.write('<p>Taula:<text id="taula_td"></text></p>');
