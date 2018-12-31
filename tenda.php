@@ -317,7 +317,7 @@ if ($_SESSION['rol']==3 ) :?>
       <thead>
         <tr>
           <th scope="col" style="text-align: center;">Figura</th>
-          <th scope="col">Mida</th>
+          <th scope="col" style="text-align: center;">Mida</th>
         </tr>
       </thead>
     </table>
