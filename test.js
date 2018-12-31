@@ -17,7 +17,7 @@ var seleccio_figura = 0;
 var taula;
 
 function tableCreate(files_num, mida_triada, figura_triada) {
-  var body = document.getElementsByTagName('body')[0];
+  var body = document.getElementById('taula_generada')[0];
   var tbl = document.getElementById('data-table');
   tbl.style.width = '100%';
   tbl.setAttribute('border', '1');
