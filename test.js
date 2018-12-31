@@ -41,8 +41,9 @@ function tableCreate(files_num, mida_triada, figura_triada) {
         td2.appendChild(document.createTextNode(mida_triada))
         //i == 1 && j == 1 ? td.setAttribute('rowSpan', '2') : null;
         td.setAttribute("id", "elements_taula");
+        td2.setAttribute("id", "elements_taula");
         tr.appendChild(td)
-        tr.appendChild(td2)    
+        tr.appendChild(td2)
     //  }
     //}
     tbdy.appendChild(tr);
