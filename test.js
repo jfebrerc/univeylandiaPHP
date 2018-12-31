@@ -24,10 +24,10 @@ function tableCreate(files_num, mida_triada, figura_triada) {
   var tbdy = document.createElement('tbody');
   for (var i = 0; i < files_num; i++) {
     var tr = document.createElement('tr');
-    for (var j = 0; j < 2; j++) {
-      if (i == 2 && j == 1) {
-        break
-      } else {
+    //for (var j = 0; j < 2; j++) {
+    //  if (i == 2 && j == 1) {
+    //    break
+    //  } else {
         var td = document.createElement('td');
         td.appendChild(document.createTextNode(mida_triada))
         var td2 = document.createElement('td');
@@ -35,8 +35,8 @@ function tableCreate(files_num, mida_triada, figura_triada) {
         //i == 1 && j == 1 ? td.setAttribute('rowSpan', '2') : null;
         tr.appendChild(td)
         tr.appendChild(td2)
-      }
-    }
+    //  }
+    //}
     tbdy.appendChild(tr);
   }
   tbl.appendChild(tbdy);
