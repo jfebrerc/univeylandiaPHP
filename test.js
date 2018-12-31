@@ -28,10 +28,10 @@ function tableCreate() {
       if (i == 2 && j == 1) {
         break
       } else {
-        var td = document.createElement('td');
-        td.appendChild(document.createTextNode('\u0020'))
+        //var td = document.createElement('td');
+        //td.appendChild(document.createTextNode('\u0020'))
         //i == 1 && j == 1 ? td.setAttribute('rowSpan', '2') : null;
-        tr.appendChild(td)
+        //tr.appendChild(td)
       }
     }
     tbdy.appendChild(tr);
