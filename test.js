@@ -73,7 +73,7 @@ function calcular_preu(total, i, j, pedido) {
     document.getElementById('preu').innerHTML = resultat;
     document.getElementById('cistella_mida').innerHTML = mida_triada;
     seleccio_figura = 0;
-    var elem = documenet.getElementById('tbody');
+    var elem = document.getElementById('tbody');
     if (typeof elem != 'undefined')
     {
       elem.parentNode.removeChild(elem);
