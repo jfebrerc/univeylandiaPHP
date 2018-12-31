@@ -23,13 +23,13 @@ function tableCreate(files_num, mida_triada, figura_triada, resultat) {
   var th = document.getElementById('header_taula');
   th.setAttribute("class", "thead-dark");
   var trh = document.createElement('tr');
-  var tdh1 = document.createElement('td');
+  var tdh1 = document.createElement('th');
   tdh1.appendChild(document.createTextNode("Figura"))
-  var tdh2 = document.createElement('td');
+  var tdh2 = document.createElement('th');
   tdh2.appendChild(document.createTextNode("Mida"))
 
-  /*tdh1.setAttribute("class", "elements_taula");
-  tdh2.setAttribute("class", "elements_taula");*/
+  tdh1.setAttribute("scope", "col");
+  tdh2.setAttribute("scope", "col");
   trh.appendChild(tdh1)
   trh.appendChild(tdh2)
   th.appendChild(trh);
