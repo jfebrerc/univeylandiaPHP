@@ -93,8 +93,10 @@ function calcular_preu(total, i, j, pedido) {
 function buidar_cistella() {
   resultat = 0;
   figura_triada = [];
+  mida_triada = [];
   document.getElementById('preu').innerHTML = resultat;
   document.getElementById('cistella').innerHTML = figura_triada;
+  document.getElementById('cistella_mida').innerHTML = mida_triada;
 }
 document.write('<h3> Tenda figures </h3>');
 /*for (i = 0; i < pedido.length; i++) {
