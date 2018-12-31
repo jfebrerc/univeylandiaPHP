@@ -18,7 +18,7 @@ var taula;
 
 function tableCreate(files_num, mida_triada, figura_triada) {
   var body = document.getElementsByTagName('body')[0];
-  var tbl = document.createElement('table');
+  var tbl = document.getElementById('data-table');
   tbl.style.width = '100%';
   tbl.setAttribute('border', '1');
   var tbdy = document.createElement('tbody');
@@ -66,10 +66,15 @@ function calcular_preu(total, i, j, pedido) {
     document.getElementById('preu').innerHTML = resultat;
     document.getElementById('cistella_mida').innerHTML = mida_triada;
     seleccio_figura = 0;
-    tableCreate(mida_triada.length, mida_triada[mida_triada.length-1], figura_triada[figura_triada.length-1]);
-  }else {
-    alert("Selecciona una figura per a triar la seva mida!.");
-  }
+    /*var elem = documenet.getElementById('toc');
+    if (typeof elem != 'undefined')
+    {
+      elem.parentNode.removeChild(elem);
+    }*/
+      tableCreate(mida_triada.length, mida_triada[mida_triada.length-1], figura_triada[figura_triada.length-1]);
+    }else {
+      alert("Selecciona una figura per a triar la seva mida!.");
+    }
 }
   function eliminar_ultim() {
   if (resultat > 0) {
