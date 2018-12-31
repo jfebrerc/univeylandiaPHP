@@ -47,12 +47,13 @@ function tableCreate(files_num, mida_triada, figura_triada) {
       tr.appendChild(td2)
       tbdy.appendChild(tr);
       tbl.appendChild(tbdy);
+      body.appendChild(tbl)
     }
     //  }
     //}
 
   //}
-  body.appendChild(tbl)
+
 }
 
 
