@@ -16,10 +16,29 @@ var ultims_preus = new Array();
 var seleccio_figura = 0;
 var taula;
 
-var dt = dynamicTable.config('data-table', //id of the table
-                             ['field2', 'field1', 'field3'], //field names
-                             ['header 1', 'header 2', 'header 3'], //set to null for field names to be used as header names instead of custom headers
-                             'There are no items to list...'); //default text for no items
+function tableCreate() {
+  var body = document.getElementsByTagName('body')[0];
+  var tbl = document.createElement('table');
+  tbl.style.width = '100%';
+  tbl.setAttribute('border', '1');
+  var tbdy = document.createElement('tbody');
+  for (var i = 0; i < 3; i++) {
+    var tr = document.createElement('tr');
+    for (var j = 0; j < 2; j++) {
+      if (i == 2 && j == 1) {
+        break
+      } else {
+        var td = document.createElement('td');
+        td.appendChild(document.createTextNode('\u0020'))
+        i == 1 && j == 1 ? td.setAttribute('rowSpan', '2') : null;
+        tr.appendChild(td)
+      }
+    }
+    tbdy.appendChild(tr);
+  }
+  tbl.appendChild(tbdy);
+  body.appendChild(tbl)
+}
 
 
 function calcular_preu_figura(total, i, j, pedido) {
@@ -44,7 +63,7 @@ function calcular_preu(total, i, j, pedido) {
     document.getElementById('preu').innerHTML = resultat;
     document.getElementById('cistella_mida').innerHTML = mida_triada;
     seleccio_figura = 0;
-    dt.load(data);
+    tableCreate();
   }else {
     alert("Selecciona una figura per a triar la seva mida!.");
   }
