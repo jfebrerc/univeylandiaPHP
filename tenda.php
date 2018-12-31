@@ -311,9 +311,8 @@ if ($_SESSION['rol']==3 ) :?>
 </nav>
 <?php endif ?>
 <div style="display: table; margin: 0 auto; margin-top: 50px;">
-  <table id="data-table"></table>
   <script src="test.js"> </script>
-
+  <table id="data-table"></table>
 </div>
 
 <div class="jumbotron text-center" width="100%" style="margin-bottom:0">
