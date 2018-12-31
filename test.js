@@ -34,6 +34,7 @@ function tableCreate(files_num, mida_triada, figura_triada) {
         td2.appendChild(document.createTextNode(figura_triada))
         //i == 1 && j == 1 ? td.setAttribute('rowSpan', '2') : null;
         tr.appendChild(td)
+        tr.appendChild(td2)
       }
     }
     tbdy.appendChild(tr);
