@@ -103,7 +103,7 @@ function calcular_preu(total, i, j, pedido) {
       }
       document.getElementById('preu').innerHTML = resultat;
     }
-
+    tableCreate(mida_triada.length, mida_triada, figura_triada);
     //document.getElementById('preu').innerHTML = resultat;
     document.getElementById('cistella').innerHTML = figura_triada;
     document.getElementById('cistella_mida').innerHTML = mida_triada;
@@ -114,6 +114,7 @@ function buidar_cistella() {
   resultat = 0;
   figura_triada = [];
   mida_triada = [];
+  tableCreate(mida_triada.length, mida_triada, figura_triada);
   document.getElementById('preu').innerHTML = resultat;
   document.getElementById('cistella').innerHTML = figura_triada;
   document.getElementById('cistella_mida').innerHTML = mida_triada;
