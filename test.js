@@ -76,8 +76,8 @@ function calcular_preu_figura(total, i, j, pedido) {
     resultat = resultat + total[i][j];
     figura_triada.push(pedido[i][j]);
     ultims_preus.push(total[i][j]);
-    document.getElementById('preu').innerHTML = resultat;
-    document.getElementById('cistella').innerHTML = figura_triada;
+  /*  document.getElementById('preu').innerHTML = resultat;
+    document.getElementById('cistella').innerHTML = figura_triada;*/
     seleccio_figura = 1;
   }
   else {
@@ -90,8 +90,8 @@ function calcular_preu(total, i, j, pedido) {
     resultat = resultat + total[i][j];
     mida_triada.push(pedido[i][j]);
     ultims_preus.push(total[i][j]);
-    document.getElementById('preu').innerHTML = resultat;
-    document.getElementById('cistella_mida').innerHTML = mida_triada;
+  /*  document.getElementById('preu').innerHTML = resultat;
+    document.getElementById('cistella_mida').innerHTML = mida_triada;*/
     seleccio_figura = 0;
     var td_taula =  document.getElementsByClassName('elements_taula');
     /*if (td_taula != '[object HTMLCollection]'){
@@ -122,14 +122,14 @@ function calcular_preu(total, i, j, pedido) {
     if (seleccio_figura == 1) {
       preu_a_restar = ultims_preus.pop();
       resultat = resultat - preu_a_restar;
-      document.getElementById('preu').innerHTML = resultat;
+    //  document.getElementById('preu').innerHTML = resultat;
     }else {
       for (var i = 0; i < 2; i++) {
         preu_a_restar = ultims_preus.pop();
         resultat = resultat - preu_a_restar;
-        document.getElementById('preu').innerHTML = resultat;
+    //    document.getElementById('preu').innerHTML = resultat;
       }
-      document.getElementById('preu').innerHTML = resultat;
+    //  document.getElementById('preu').innerHTML = resultat;
     }
     var td_taula =  document.getElementsByClassName('elements_taula');
     for(var z = 0; z < td_taula.length;)
@@ -138,8 +138,8 @@ function calcular_preu(total, i, j, pedido) {
     }
     tableCreate(mida_triada.length, mida_triada, figura_triada, resultat);
     //document.getElementById('preu').innerHTML = resultat;
-    document.getElementById('cistella').innerHTML = figura_triada;
-    document.getElementById('cistella_mida').innerHTML = mida_triada;
+  /*  document.getElementById('cistella').innerHTML = figura_triada;
+    document.getElementById('cistella_mida').innerHTML = mida_triada;*/
     seleccio_figura = 0;
   }
 }
@@ -153,9 +153,9 @@ function buidar_cistella() {
      td_taula.item(z).remove();
   }
   tableCreate(mida_triada.length, mida_triada, figura_triada, resultat);
-  document.getElementById('preu').innerHTML = resultat;
+  /*document.getElementById('preu').innerHTML = resultat;
   document.getElementById('cistella').innerHTML = figura_triada;
-  document.getElementById('cistella_mida').innerHTML = mida_triada;
+  document.getElementById('cistella_mida').innerHTML = mida_triada;*/
 }
 document.write('<h3> Tenda figures </h3>');
 /*for (i = 0; i < pedido.length; i++) {
@@ -182,6 +182,6 @@ document.write('<button class="btn btn-primary btn-lg" onclick="eliminar_ultim()
 document.write('&nbsp; &nbsp;');
 document.write('<button class="btn btn-primary btn-lg" onclick="buidar_cistella()">Buidar carrito</button>');
 document.write('<br> <br>');
-document.write('<p>Preu: <text id="preu"> 0 </text></p>');
+/*document.write('<p>Preu: <text id="preu"> 0 </text></p>');
 document.write('<p>Carrito figura: <text id="cistella"> </text></p>');
-document.write('<p>Carrito mida: <text id="cistella_mida"> </text></p>');
+document.write('<p>Carrito mida: <text id="cistella_mida"> </text></p>');*/
