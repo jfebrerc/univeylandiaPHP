@@ -316,8 +316,8 @@ if ($_SESSION['rol']==3 ) :?>
     <table id="data-table" class="table table-striped">
       <thead class="thead-dark">
         <tr>
-          <th scope="col" style="text-align: center;">Figura</th>
-          <th scope="col" style="text-align: center;">Mida</th>
+          <th scope="col" style="text-align: left;">Figura</th>
+          <th scope="col" style="text-align: left;">Mida</th>
         </tr>
       </thead>
       <tbody id="tbody">
