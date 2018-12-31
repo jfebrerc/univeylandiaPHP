@@ -76,14 +76,14 @@ function calcular_preu(total, i, j, pedido) {
     document.getElementById('cistella_mida').innerHTML = mida_triada;
     seleccio_figura = 0;
     var td_taula =  document.getElementsByClassName('elements_taula');
-    if (td_taula != '[object HTMLCollection]'){
+    /*if (td_taula != '[object HTMLCollection]'){
       //element.remove();
       //element.parentNode.removeChild(element);
       //('#data-table > tr > td').remove();
       document.getElementById('taula_td').innerHTML = td_taula;
       tableCreate(mida_triada.length, mida_triada[mida_triada.length-1], figura_triada[figura_triada.length-1]);
-    }else {
-      document.getElementById('taula_td').innerHTML = td_taula;
+    }else {*/
+      //document.getElementById('taula_td').innerHTML = td_taula;
       for(var z = 0; z < td_taula.length; i++)
       {
          td_taula.item(z).remove();
@@ -91,7 +91,7 @@ function calcular_preu(total, i, j, pedido) {
       tableCreate(mida_triada.length, mida_triada[mida_triada.length-1], figura_triada[figura_triada.length-1]);
       //$('#data-table > tr > td').remove();
       //td_taula.remove();
-    }
+    //}
 
     }else {
       alert("Selecciona una figura per a triar la seva mida!.");
