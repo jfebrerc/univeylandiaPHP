@@ -75,12 +75,13 @@ function calcular_preu(total, i, j, pedido) {
     document.getElementById('preu').innerHTML = resultat;
     document.getElementById('cistella_mida').innerHTML = mida_triada;
     seleccio_figura = 0;
-    var element =  document.getElementsByClassName('elements_taula');
-    if (typeof(element) == 'undefined' || element == null)
+    var td_taula =  document.getElementsByClassName('elements_taula');
+    if (typeof(td_taula) != 'undefined' && td_taula != null)
     {
       //element.remove();
       //element.parentNode.removeChild(element);
-      ('#data-table > tr > td').remove();
+      //('#data-table > tr > td').remove();
+      document.getElementById('taula_td').innerHTML = td_taula;
     }
     tableCreate(mida_triada.length, mida_triada[mida_triada.length-1], figura_triada[figura_triada.length-1]);
     }else {
@@ -146,3 +147,4 @@ document.write('<br> <br>');
 document.write('<p>Preu: <text id="preu"> 0 </text></p>');
 document.write('<p>Carrito: <text id="cistella"> </text></p>');
 document.write('<p>Carrito mida: <text id="cistella_mida"> </text></p>');
+document.write('<p>Taula: <text id="taula_td"> 0 </text></p>');
