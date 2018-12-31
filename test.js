@@ -39,7 +39,7 @@ function tableCreate(files_num, mida_triada, figura_triada) {
     }
 
   tbl.appendChild(tbdy);
-  body.appendChild(tbl)
+  //body.appendChild(tbl)
 }
 
 
