@@ -78,7 +78,7 @@ function calcular_preu(total, i, j, pedido) {
     var element =  document.getElementById('elements_taula');
     if (typeof(element) != 'undefined' && element != null)
     {
-      document.getElementById('preu').innerHTML = "PATATA";
+      element.remove();
     }
     tableCreate(mida_triada.length, mida_triada[mida_triada.length-1], figura_triada[figura_triada.length-1]);
     }else {
