@@ -120,7 +120,7 @@ function buidar_cistella() {
   figura_triada = [];
   mida_triada = [];
   var td_taula =  document.getElementsByClassName('elements_taula');
-  for(var z = 0; z < td_taula.length; i++)
+  for(var z = 0; z < td_taula.length; z++)
   {
      td_taula.item(z).remove();
   }
