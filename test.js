@@ -28,8 +28,8 @@ function tableCreate(files_num, mida_triada, figura_triada, resultat) {
   var tdh2 = document.createElement('th');
   tdh2.appendChild(document.createTextNode("Mida"))
 
-  tdh1.setAttribute("scope", "col");
-  tdh2.setAttribute("scope", "col");
+  /*tdh1.setAttribute("scope", "col");
+  tdh2.setAttribute("scope", "col");*/
   trh.appendChild(tdh1)
   trh.appendChild(tdh2)
   th.appendChild(trh);
