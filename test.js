@@ -92,8 +92,9 @@ function calcular_preu(total, i, j, pedido) {
     if (seleccio_figura = 1) {
       preu_a_restar = ultims_preus.pop();
     }else {
-      preu_a_restar = ultims_preus.pop();
-      preu_a_restar = ultims_preus.pop();
+      for (var i = 0; i < 2; i++) {
+        preu_a_restar = ultims_preus.pop();
+      }
     }
     resultat = resultat - preu_a_restar;
     document.getElementById('preu').innerHTML = resultat;
