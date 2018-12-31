@@ -22,7 +22,7 @@ function tableCreate(files_num, mida_triada, figura_triada) {
   tbl.style.width = '100%';
   tbl.setAttribute('border', '1');
   var tbdy = document.createElement('tbody');
-  for (var i = 0; i < files_num; i++) {
+  //for (var i = 0; i < files_num; i++) {
     var tr = document.createElement('tr');
     //for (var j = 0; j < 2; j++) {
     //  if (i == 2 && j == 1) {
@@ -38,7 +38,7 @@ function tableCreate(files_num, mida_triada, figura_triada) {
     //  }
     //}
     tbdy.appendChild(tr);
-  }
+  //}
   tbl.appendChild(tbdy);
   body.appendChild(tbl)
 }
