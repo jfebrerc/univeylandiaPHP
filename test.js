@@ -104,10 +104,10 @@ function calcular_preu(total, i, j, pedido) {
       document.getElementById('preu').innerHTML = resultat;
     }
     var td_taula =  document.getElementsByClassName('elements_taula');
-    /*for(var z = 0; z < td_taula.length; i++)
+    for(var z = 0; z < td_taula.length; i++)
     {
        td_taula.item(z).remove();
-    }*/
+    }
     tableCreate(mida_triada.length, mida_triada, figura_triada);
     //document.getElementById('preu').innerHTML = resultat;
     document.getElementById('cistella').innerHTML = figura_triada;
