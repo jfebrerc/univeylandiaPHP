@@ -19,8 +19,8 @@ var taula;
 function tableCreate(files_num, mida_triada, figura_triada) {
   var body = document.getElementById('taula_generada')[0];
   var tbl = document.getElementById('data-table');
-  tbl.style.width = '100%';
-  tbl.setAttribute('border', '1');
+  /*tbl.style.width = '100%';
+  tbl.setAttribute('border', '1');*/
   var tbdy = document.createElement('tbody');
   //for (var i = 0; i < files_num; i++) {
     var tr = document.createElement('tr');
