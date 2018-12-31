@@ -147,4 +147,4 @@ document.write('<br> <br>');
 document.write('<p>Preu: <text id="preu"> 0 </text></p>');
 document.write('<p>Carrito: <text id="cistella"> </text></p>');
 document.write('<p>Carrito mida: <text id="cistella_mida"> </text></p>');
-document.write('<p>Taula: <text id="taula_td"> 0 </text></p>');
+document.write('<p>Taula: <text id="taula_td">  </text></p>');
