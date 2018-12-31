@@ -30,7 +30,7 @@ function tableCreate() {
       } else {
         var td = document.createElement('td');
         td.appendChild(document.createTextNode('\u0020'))
-        i == 1 && j == 1 ? td.setAttribute('rowSpan', '2') : null;
+        //i == 1 && j == 1 ? td.setAttribute('rowSpan', '2') : null;
         tr.appendChild(td)
       }
     }
