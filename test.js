@@ -30,6 +30,7 @@ function tableCreate(files_num, mida_triada, figura_triada, resultat) {
 
   tdh1.setAttribute("class", "elements_taula");
   tdh2.setAttribute("class", "elements_taula");
+  trh.setAttribute("class", "elements_taula");
   trh.appendChild(tdh1)
   trh.appendChild(tdh2)
   th.appendChild(trh);
@@ -45,7 +46,8 @@ function tableCreate(files_num, mida_triada, figura_triada, resultat) {
       td.appendChild(document.createTextNode(figura_triada[f]))
       var td2 = document.createElement('td');
       td2.appendChild(document.createTextNode(mida_triada[f]))
-      
+
+
       td.setAttribute("class", "elements_taula");
       td2.setAttribute("class", "elements_taula");
       tr.setAttribute("class", "elements_taula");
