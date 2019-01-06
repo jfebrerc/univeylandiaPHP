@@ -311,6 +311,43 @@ if ($_SESSION['rol']==3 ) :?>
 </nav>
 <?php endif ?>
 <div style="display: table; margin: 0 auto; margin-top: 50px;">
+    <div style="text-align:center">
+    <button onclick="playPause()">Play/Pause</button>
+    <button onclick="makeBig()">Big</button>
+    <button onclick="makeSmall()">Small</button>
+    <button onclick="makeNormal()">Normal</button>
+    <br><br>
+    <video id="video1" width="420">
+      <source src="https://static.videezy.com/system/resources/previews/000/006/307/original/Rollercoaster.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+  </div>
+
+  <script>
+  var myVideo = document.getElementById("video1");
+
+  function playPause() {
+    if (myVideo.paused)
+      myVideo.play();
+    else
+      myVideo.pause();
+  }
+
+  function makeBig() {
+      myVideo.width = 560;
+  }
+
+  function makeSmall() {
+      myVideo.width = 320;
+  }
+
+  function makeNormal() {
+      myVideo.width = 420;
+  }
+  </script>
+
+  <p>Video courtesy of <a href="https://www.bigbuckbunny.org/" target="_blank">Big Buck Bunny</a>.</p>
+
   <video controls>
   <source src="https://static.videezy.com/system/resources/previews/000/006/307/original/Rollercoaster.mp4" type="video/mp4">
   <source src="movie.ogg" type="video/ogg">
