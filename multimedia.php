@@ -315,7 +315,7 @@ if ($_SESSION['rol']==3 ) :?>
     <button onclick="playPause()">Reproduir/Pausar</button>
     <button onclick="makeBig()">Gran</button>
     <button onclick="makeNormal()">Normal</button>
-    <button onclick="makeSmall()">Petit</button>    
+    <button onclick="makeSmall()">Petit</button>
     <br><br>
     <video id="video1" width="420">
       <source src="https://static.videezy.com/system/resources/previews/000/006/307/original/Rollercoaster.mp4" type="video/mp4">
@@ -352,7 +352,7 @@ if ($_SESSION['rol']==3 ) :?>
   Your browser does not support the video tag.
 </video> -->
   <br>
-  <audio controls>
+  <audio controls style="width: 100%;">
   <source src="https://freesound.org/data/previews/324/324967_4700562-lq.mp3" type="audio/mpeg">
   El teu navegador no suporta audios.
   </audio>
