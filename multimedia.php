@@ -312,14 +312,14 @@ if ($_SESSION['rol']==3 ) :?>
 <?php endif ?>
 <div style="display: table; margin: 0 auto; margin-top: 50px;">
     <div style="text-align:center">
-    <button onclick="playPause()">Play/Pause</button>
-    <button onclick="makeBig()">Big</button>
-    <button onclick="makeSmall()">Small</button>
+    <button onclick="playPause()">Reproduir/Pausar</button>
+    <button onclick="makeBig()">Gran</button>
+    <button onclick="makeSmall()">Petit</button>
     <button onclick="makeNormal()">Normal</button>
     <br><br>
     <video id="video1" width="420">
       <source src="https://static.videezy.com/system/resources/previews/000/006/307/original/Rollercoaster.mp4" type="video/mp4">
-      Your browser does not support HTML5 video.
+      El teu navegador no suporta videos.
     </video>
   </div>
 
@@ -354,7 +354,7 @@ if ($_SESSION['rol']==3 ) :?>
   <br>
   <audio controls>
   <source src="https://freesound.org/data/previews/324/324967_4700562-lq.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
+  El teu navegador no suporta audios.
   </audio>
 </div>
 
