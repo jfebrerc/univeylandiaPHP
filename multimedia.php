@@ -346,8 +346,6 @@ if ($_SESSION['rol']==3 ) :?>
   }
   </script>
 
-  <p>Video courtesy of <a href="https://www.bigbuckbunny.org/" target="_blank">Big Buck Bunny</a>.</p>
-
   <video controls>
   <source src="https://static.videezy.com/system/resources/previews/000/006/307/original/Rollercoaster.mp4" type="video/mp4">
   <source src="movie.ogg" type="video/ogg">
