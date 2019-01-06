@@ -317,7 +317,7 @@ if ($_SESSION['rol']==3 ) :?>
     <button onclick="makeNormal()">Normal</button>
     <button onclick="makeSmall()">Petit</button>
     <br><br>
-    <video id="video1" width="420">
+    <video id="video1" width="420" controls>
       <source src="https://static.videezy.com/system/resources/previews/000/006/307/original/Rollercoaster.mp4" type="video/mp4">
       El teu navegador no suporta videos.
     </video>
