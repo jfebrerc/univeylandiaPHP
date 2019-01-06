@@ -314,8 +314,8 @@ if ($_SESSION['rol']==3 ) :?>
     <div style="text-align:center">
     <button onclick="playPause()">Reproduir/Pausar</button>
     <button onclick="makeBig()">Gran</button>
-    <button onclick="makeSmall()">Petit</button>
     <button onclick="makeNormal()">Normal</button>
+    <button onclick="makeSmall()">Petit</button>    
     <br><br>
     <video id="video1" width="420">
       <source src="https://static.videezy.com/system/resources/previews/000/006/307/original/Rollercoaster.mp4" type="video/mp4">
