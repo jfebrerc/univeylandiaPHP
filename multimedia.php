@@ -312,7 +312,7 @@ if ($_SESSION['rol']==3 ) :?>
 <?php endif ?>
 <div style="display: table; margin: 0 auto; margin-top: 50px;">
   <video width="320" height="240" controls>
-  <source src="https://static.videezy.com/system/resources/previews/000/006/307/original/Rollercoaster.mp4" type="video/mp4">
+  <source src="https://static.videezy.com/system/resources/previews/000/006/307/original/Rollercoaster.mp4" type="video/mp4" style="width: 500px; height: 300px;">
   <source src="movie.ogg" type="video/ogg">
   Your browser does not support the video tag.
   </video>
