@@ -311,7 +311,6 @@ if ($_SESSION['rol']==3 ) :?>
 </nav>
 <?php endif ?>
 <div style="display: table; margin: 0 auto; margin-top: 50px;">
-  <script src="test.js"> </script>
   <p> xd </p>
 </div>
 
