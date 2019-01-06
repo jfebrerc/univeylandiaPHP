@@ -351,6 +351,11 @@ if ($_SESSION['rol']==3 ) :?>
   <source src="movie.ogg" type="video/ogg">
   Your browser does not support the video tag.
   </video>
+
+  <audio controls>
+  <source src="https://freesound.org/data/previews/324/324967_4700562-lq.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+  </audio>
 </div>
 
 <div class="jumbotron text-center" width="100%" style="margin-bottom:0">
