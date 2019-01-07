@@ -52,11 +52,11 @@
 
 /* Standard syntax */
 @keyframes example {
-    0%   {background-color:red; left:400px; top:0px;}
-    25%  {background-color:yellow; left:900px; top:0px;}
-    50%  {background-color:blue; left:900px; top:650px;}
-    75%  {background-color:green; left:400px; top:650px;}
-    100% {background-color:red; left:400px; top:0px;}
+    0%   {background-color:red; left:100px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:150px;}
+    75%  {background-color:green; left:100px; top:250px;}
+    100% {background-color:red; left:100px; top:0px;}
 }
   width: 1800px;
   height: 500px;
