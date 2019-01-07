@@ -323,9 +323,10 @@ if ($_SESSION['rol']==3 ) :?>
       </thead>
       <tbody id="tbody">
       </tbody>
-      <div id="dino">
-      </div>
     </table>
+    <div id="dino">
+      <h1> Promoció: fes la compra ara i ahorrat els gastos d'envio! </h1>
+    </div>
 </div>
 </div>
 
