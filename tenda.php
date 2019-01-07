@@ -324,7 +324,7 @@ if ($_SESSION['rol']==3 ) :?>
       </tbody>
     </table>
     <div style="    width: 100px;
-    display: inline-block;
+    display: block;
     height: 150px;
     background-color: red;
     border-radius: 5px;
