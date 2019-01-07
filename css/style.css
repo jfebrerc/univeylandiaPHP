@@ -23,3 +23,35 @@
 .submenu{
   min-width: 0rem !important;
 }
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+    0%   {background-color:red; left:400px; top:0px;}
+    25%  {background-color:yellow; left:900px; top:0px;}
+    50%  {background-color:blue; left:900px; top:750px;}
+    75%  {background-color:green; left:400px; top:750px;}
+    100% {background-color:red; left:400px; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   {background-color:red; left:400px; top:0px;}
+    25%  {background-color:yellow; left:900px; top:0px;}
+    50%  {background-color:blue; left:900px; top:650px;}
+    75%  {background-color:green; left:400px; top:650px;}
+    100% {background-color:red; left:400px; top:0px;}
+}
+  width: 1800px;
+  height: 500px;
+  float: left;
+  background: url(http://univeylandia-hotel.cat/hotel_v2/img/dinosaurio.png);
+  background-color: yellow;
+  background-size: 100%;
+  animation-iteration-count: infinite;
+@keyframes example {
+    0%   {background-color:red; left:400px; top:60px;}
+    25%  {background-color:yellow; left:900px; top:60px;}
+    50%  {background-color:blue; left:900px; top:700px;}
+    75%  {background-color:green; left:400px; top:700px;}
+    100% {background-color:red; left:400px; top:60px;}
+}
