@@ -26,6 +26,7 @@
 #dino{
   width: 100px;
   /*display: block;*/
+  display: none;
   height: 150px;
   background-color: red;
   border-radius: 5px;
