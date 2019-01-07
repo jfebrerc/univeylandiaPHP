@@ -313,7 +313,7 @@ if ($_SESSION['rol']==3 ) :?>
 <div style="display: table; margin: 0 auto; margin-top: 50px;">
   <script src="test.js"> </script>
 
-  <div id="taula_generada">
+  <div id="taula_generada" style="margin-bottom: 200px;">
     <table id="data-table" class="table table-hover table-striped">
       <thead id="header_taula">
         <!--<tr>
