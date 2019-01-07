@@ -72,6 +72,7 @@ function tableCreate(files_num, mida_triada, figura_triada, resultat) {
     tbdy.appendChild(tr2);
   tbl.appendChild(tbdy);
   //body.appendChild(tbl)
+  document.getElementById("dino").style.display = "block";
 }
 
 
