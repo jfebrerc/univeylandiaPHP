@@ -323,6 +323,20 @@ if ($_SESSION['rol']==3 ) :?>
       <tbody id="tbody">
       </tbody>
     </table>
+    <div style="    width: 100px;
+    height: 150px;
+    background-color: red;
+    border-radius: 5px;
+    background: url(../img/dinosaurio.png);
+    background-size: 100px 150px;
+    position: relative;
+    -webkit-animation-name: example;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-iteration-count: infinite;
+    animation-name: example;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;">
+    </div>
   </div>
 </div>
 
