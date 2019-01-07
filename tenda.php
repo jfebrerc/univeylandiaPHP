@@ -327,7 +327,7 @@ if ($_SESSION['rol']==3 ) :?>
     height: 150px;
     background-color: red;
     border-radius: 5px;
-    background: url(../img/dinosaurio.png);
+    background: url(http://univeylandia-hotel.cat/hotel_v2/img/dinosaurio.png);
     background-size: 100px 150px;
     position: relative;
     -webkit-animation-name: example;
