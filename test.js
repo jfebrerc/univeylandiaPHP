@@ -194,7 +194,7 @@ document.write('<div class="card-group">');
     document.write('<div class="card-body">');
     document.write('<h5 class="card-title">'+pedido[1][k].toUpperCase()+'</h5>');
     document.write('<p class="card-text">Seleccio de la mida '+pedido[1][k].toLowerCase()+'</p>');
-    document.write('<button class="btn btn-secondary btn-lg" onclick="calcular_preu(total,' + 1 + ',' + k + ',pedido)">Seleccionar mida</button>');
+    document.write('<button class="btn btn-secondary btn-lg" onclick="calcular_preu(total,' + 1 + ',' + k + ',pedido)">Mida '+pedido[1][k].toLowerCase()+'</button>');
     document.write('<p class="card-text"><small class="text-muted">No se admeten devolucions </small></p>');
     document.write('</div>');
     document.write('</div>');
