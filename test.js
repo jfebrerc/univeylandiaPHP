@@ -179,7 +179,7 @@ document.write('<div class="card-group">');
     document.write('<div class="card-body">');
     document.write('<h5 class="card-title">'+pedido[0][j]+'</h5>');
     document.write('<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>');
-    document.write('<button class="btn btn-secondary btn-lg" onclick="calcular_preu_figura(total,' + 0 + ',' + j + ',pedido)">Compra: ' +pedido[0][j]+ '</button>');
+    document.write('<button class="btn btn-secondary btn-lg" onclick="calcular_preu_figura(total,' + 0 + ',' + j + ',pedido)">Comprar</button>');
     document.write('<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>');
     document.write('</div>');
     document.write('</div>');
