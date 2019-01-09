@@ -190,7 +190,7 @@ document.write('<div class="card-group">');
   document.write('<div class="card-group">');
   for (k = 0; k < pedido[1].length; k++) {
     document.write('<div class="card">')
-    document.write('<img class="card-img-top" src="img/'+j+'.jpg" alt="Card image cap">');
+    document.write('<img class="card-img-top" src="img/'+j+'.png" alt="Card image cap">');
     document.write('<div class="card-body">');
     document.write('<h5 class="card-title">'+pedido[0][j]+'</h5>');
     document.write('<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>');
