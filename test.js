@@ -175,7 +175,7 @@ document.write('<div class="card-group">');
   for (j = 0; j < pedido[0].length; j++) {
     //document.write('<p>' + pedido[0][j] + '</p>');
     document.write('<div class="card">')
-    document.write('<img class="card-img-top" src="..." alt="Card image cap">');
+    document.write('<img class="card-img-top" src="https://i.pinimg.com/736x/68/5e/f8/685ef88ff4fdf91858a00c85fc33704b--hd-widescreen-wallpapers-city-wallpaper.jpg" alt="Card image cap">');
     document.write('<div class="card-body">');
     document.write('<h5 class="card-title">Card title</h5>');
     document.write('<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>');
