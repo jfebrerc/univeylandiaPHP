@@ -187,10 +187,21 @@ document.write('<div class="card-group">');
   }
   document.write('</div>');
   document.write('<br> <br>');
+  document.write('<div class="card-group">');
   for (k = 0; k < pedido[1].length; k++) {
+    document.write('<div class="card">')
+    document.write('<img class="card-img-top" src="img/'+j+'.jpg" alt="Card image cap">');
+    document.write('<div class="card-body">');
+    document.write('<h5 class="card-title">'+pedido[0][j]+'</h5>');
+    document.write('<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>');
     document.write('<button class="btn btn-secondary btn-lg" onclick="calcular_preu(total,' + 1 + ',' + k + ',pedido)">' +pedido[1][k]+ '</button>');
+    document.write('<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>');
+    document.write('</div>');
+    document.write('</div>');
+    document.write('&nbsp; &nbsp;');
     document.write('&nbsp; &nbsp;');
   }
+  document.write('</div>');
   document.write('<br> <br>');
 document.write('<br>');
 document.write('<button class="btn btn-primary btn-lg" onclick="eliminar_ultim()">Eliminar</button>');
