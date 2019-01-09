@@ -177,13 +177,12 @@ document.write('<div class="card-group">');
     document.write('<div class="card">')
     document.write('<img class="card-img-top" src="img/'+j+'.jpg" alt="Card image cap">');
     document.write('<div class="card-body">');
+    document.write('<h5 class="card-title">'+pedido[0][j].toUpperCase()+'</h5>');
     if( pedido[0][j].split(" ")[2] ) {
-      document.write('<p class="card-text">Figura de '+pedido[0][j].split(" ")[1]+pedido[0][j].split(" ")[2]+' de gran qualitat feta a mà</p>');
+      document.write('<p class="card-text">Figura de '+pedido[0][j].split(" ")[1]+' '+pedido[0][j].split(" ")[2]+' de gran qualitat feta a mà</p>');
     }else{
       document.write('<p class="card-text">Figura de '+pedido[0][j].split(" ")[1]+' de gran qualitat feta a mà</p>');
     }
-    document.write('<h5 class="card-title">'+pedido[0][j].toUpperCase()+'</h5>');
-
     document.write('<button class="btn btn-secondary btn-lg" onclick="calcular_preu_figura(total,' + 0 + ',' + j + ',pedido)">Comprar</button>');
     document.write('<p class="card-text"><small class="text-muted">No se admeten devolucions </small></p>');
     document.write('</div>');
