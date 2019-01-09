@@ -162,8 +162,8 @@ function buidar_cistella() {
   document.getElementById('cistella').innerHTML = figura_triada;
   document.getElementById('cistella_mida').innerHTML = mida_triada;*/
 }
-function displayDate(j) {
-  document.getElementById("demo").innerHTML = j;
+function displayDate(pedido[0][j]) {
+  document.getElementById("demo").innerHTML = pedido[0][j];
 }
 document.write('<h3> Tenda figures </h3>');
 /*for (i = 0; i < pedido.length; i++) {
@@ -188,7 +188,7 @@ document.write('<div class="card-group">');
     }
     document.write('<button class="btn btn-secondary btn-lg" onclick="calcular_preu_figura(total,' + 0 + ',' + j + ',pedido)">Comprar</button>');
     document.write('<p class="card-text"><small class="text-muted">No se admeten devolucions </small></p>');
-    document.getElementById('img_atraccio'+j+'').addEventListener("click", displayDate(j));
+    document.getElementById('img_atraccio'+j+'').addEventListener("click", displayDate(pedido[0][j]));
     document.write('</div>');
     document.write('</div>');
     document.write('&nbsp; &nbsp;');
