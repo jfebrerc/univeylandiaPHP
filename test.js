@@ -173,7 +173,14 @@ document.write('<h3> Tenda figures </h3>');
 //document.write('<p> Patata </p>');
   for (j = 0; j < pedido[0].length; j++) {
     //document.write('<p>' + pedido[0][j] + '</p>');
+    document.write('<div class="card" style="width: 18rem;">');
+    document.write('<img class="card-img-top" src="..." alt="Card image cap">');
+    document.write('<div class="card-body">');
+    document.write('<h5 class="card-title">Card title</h5>');
+    document.write('<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>');
     document.write('<button class="btn btn-secondary btn-lg" onclick="calcular_preu_figura(total,' + 0 + ',' + j + ',pedido)">' +pedido[0][j]+ '</button>');
+    document.write('</div>');
+    document.write('</div>');
     document.write('&nbsp; &nbsp;');
   }
   document.write('<br> <br>');
