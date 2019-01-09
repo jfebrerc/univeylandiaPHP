@@ -183,7 +183,7 @@ document.write('<div class="card-group">');
     document.write('<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>');
     document.write('</div>');
     document.write('</div>');
-    //document.write('&nbsp; &nbsp;');
+    document.write('&nbsp; &nbsp;');
   }
   document.write('</div>');
   document.write('<br> <br>');
