@@ -310,7 +310,7 @@ if ($_SESSION['rol']==3 ) :?>
   </div>
 </nav>
 <?php endif ?>
-<div style="display: table; margin: 0 auto; margin-top: 50px;">
+<div style="display: table; margin: 0 auto; margin-top: 50px; width: 80%;">
   <script src="test.js"> </script>
 
   <div id="taula_generada" style="margin-bottom: 50px;">
