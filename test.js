@@ -186,7 +186,7 @@ document.write('<div class="card-group">');
     document.write('&nbsp; &nbsp;');
   }
   document.write('</div>');
-  document.write('<br> <br>');
+  document.write('<br>');
   document.write('<div class="card-group">');
   for (k = 0; k < pedido[1].length; k++) {
     document.write('<div class="card">')
@@ -202,7 +202,7 @@ document.write('<div class="card-group">');
     document.write('&nbsp; &nbsp;');
   }
   document.write('</div>');
-  document.write('<br> <br>');
+  document.write('<br>');
 document.write('<br>');
 document.write('<button class="btn btn-primary btn-lg" onclick="eliminar_ultim()">Eliminar</button>');
 document.write('&nbsp; &nbsp;');
