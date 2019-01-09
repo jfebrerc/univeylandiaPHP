@@ -178,7 +178,7 @@ document.write('<div class="card-group">');
     document.write('<img class="card-img-top" src="img/'+j+'.jpg" alt="Card image cap">');
     document.write('<div class="card-body">');
     document.write('<h5 class="card-title">'+pedido[0][j]+'</h5>');
-    document.write('<p class="card-text">Figura de gran qualitat.</p>');
+    document.write('<p class="card-text">'+pedido[0][j]+' de gran qualitat feta a mà.</p>');
     document.write('<button class="btn btn-secondary btn-lg" onclick="calcular_preu_figura(total,' + 0 + ',' + j + ',pedido)">Comprar</button>');
     document.write('<p class="card-text"><small class="text-muted">No se admeten devolucions </small></p>');
     document.write('</div>');
