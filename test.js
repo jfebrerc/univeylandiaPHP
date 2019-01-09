@@ -188,7 +188,7 @@ document.write('<div class="card-group">');
     }
     document.write('<button class="btn btn-secondary btn-lg" onclick="calcular_preu_figura(total,' + 0 + ',' + j + ',pedido)">Comprar</button>');
     document.write('<p class="card-text"><small class="text-muted">No se admeten devolucions </small></p>');
-    document.getElementById('img_atraccio'+j+'').addEventListener("click", displayDate());
+    document.getElementById('img_atraccio'+j+'').addEventListener("click", displayDate);
     document.write('</div>');
     document.write('</div>');
     document.write('&nbsp; &nbsp;');
