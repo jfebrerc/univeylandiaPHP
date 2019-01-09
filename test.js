@@ -171,18 +171,21 @@ document.write('<h3> Tenda figures </h3>');
   document.write('<br> <br>');
 }*/
 //document.write('<p> Patata </p>');
+document.write('<div class="card-group">');
   for (j = 0; j < pedido[0].length; j++) {
     //document.write('<p>' + pedido[0][j] + '</p>');
-    document.write('<div class="card" style="width: 18rem;">');
-    document.write('<img class="card-img-top" src="https://i.pinimg.com/736x/68/5e/f8/685ef88ff4fdf91858a00c85fc33704b--hd-widescreen-wallpapers-city-wallpaper.jpg" alt="Card image cap">');
+    document.write('<div class="card">')
+    document.write('<img class="card-img-top" src="..." alt="Card image cap">');
     document.write('<div class="card-body">');
     document.write('<h5 class="card-title">Card title</h5>');
-    document.write('<p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>');
+    document.write('<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>');
     document.write('<button class="btn btn-secondary btn-lg" onclick="calcular_preu_figura(total,' + 0 + ',' + j + ',pedido)">' +pedido[0][j]+ '</button>');
+    document.write('<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>');
     document.write('</div>');
     document.write('</div>');
-    document.write('&nbsp; &nbsp;');
+    //document.write('&nbsp; &nbsp;');
   }
+  document.write('</div>');
   document.write('<br> <br>');
   for (k = 0; k < pedido[1].length; k++) {
     document.write('<button class="btn btn-secondary btn-lg" onclick="calcular_preu(total,' + 1 + ',' + k + ',pedido)">' +pedido[1][k]+ '</button>');
