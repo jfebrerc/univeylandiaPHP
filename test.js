@@ -175,7 +175,7 @@ document.write('<div class="card-group">');
   for (j = 0; j < pedido[0].length; j++) {
     //document.write('<p>' + pedido[0][j] + '</p>');
     document.write('<div class="card">')
-    document.write('<img class="card-img-top" src="img/'+j+'.jpg" alt="Card image cap">');
+    document.write('<img class="card-img-top" src="img/'+j+'.jpg" alt="Card image cap" id="img_atraccio'+j+'">');
     document.write('<div class="card-body">');
     document.write('<h5 class="card-title">'+pedido[0][j].toUpperCase()+'</h5>');
     if( pedido[0][j].split(" ")[2] ) {
