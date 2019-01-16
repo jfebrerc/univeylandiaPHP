@@ -15,8 +15,10 @@ var resultat = 0;
 var ultims_preus = new Array();
 var seleccio_figura = 0;
 var taula;
-document.getElementById("dino").ondblclick = alert("dino.");
-
+document.getElementById("dino").ondblclick = function() {myFunction()};
+function myFunction() {
+  alert("xd.");
+}
 function tableCreate(files_num, mida_triada, figura_triada, resultat) {
   var body = document.getElementById('taula_generada')[0];
   var tbl = document.getElementById('data-table');
