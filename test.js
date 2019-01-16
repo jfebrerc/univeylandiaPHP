@@ -187,7 +187,7 @@ document.write('<div class="card-group">');
     }else{
       document.write('<p class="card-text">Figura de '+pedido[0][j].split(" ")[1]+' de gran qualitat feta a mà</p>');
     }
-    document.write('<button class="btn btn-secondary btn-lg" id="compra" onclick="calcular_preu_figura(total,' + 0 + ',' + j + ',pedido)" onmousedown="mouseDown()" onmouseup="mouseUp()" >Comprar</button>');
+    document.write('<button class="btn btn-secondary btn-lg" class="compras" onclick="calcular_preu_figura(total,' + 0 + ',' + j + ',pedido)" onmousedown="mouseDown()" onmouseup="mouseUp()" >Comprar</button>');
     document.write('<p class="card-text"><small class="text-muted">No se admeten devolucions </small></p>');
     document.getElementById('img_atraccio'+j+'').addEventListener("click", displayDate);
     document.write('</div>');
@@ -203,7 +203,7 @@ document.write('<div class="card-group">');
     document.write('<div class="card-body">');
     document.write('<h5 class="card-title">'+pedido[1][k].toUpperCase()+'</h5>');
     document.write('<p class="card-text">Seleccio de la mida '+pedido[1][k].toLowerCase()+'</p>');
-    document.write('<button class="btn btn-secondary btn-lg" id="compra2" onclick="calcular_preu(total,' + 1 + ',' + k + ',pedido)" onmousedown="mouseDown2()" onmouseup="mouseUp2()">Mida '+pedido[1][k].toLowerCase()+'</button>');
+    document.write('<button class="btn btn-secondary btn-lg" class="compras" onclick="calcular_preu(total,' + 1 + ',' + k + ',pedido)" onmousedown="mouseDown()" onmouseup="mouseUp()">Mida '+pedido[1][k].toLowerCase()+'</button>');
     document.write('</div>');
     document.write('</div>');
     document.write('&nbsp; &nbsp;');
@@ -222,20 +222,22 @@ function myFunction() {
   alert("M'has pillatxdxdjajxdxd");
 }
 function mouseDown() {
-  document.getElementById("compra").style.color = "red";
+  var comprabut =  document.getElementsByClassName('compras');
+    for(var z = 0; z < comprabut.length;)
+    {
+       td_taula.item(z)..style.color = "red";
+    }
 }
 
 function mouseUp() {
-  document.getElementById("compra").style.color = "grey";
+  var comprabut =  document.getElementsByClassName('compras');
+    for(var z = 0; z < comprabut.length;)
+    {
+       td_taula.item(z)..style.color = "grey";
+    }
+}
 }
 
-function mouseDown2() {
-  document.getElementById("compra2").style.color = "red";
-}
-
-function mouseUp2() {
-  document.getElementById("compra2").style.color = "grey";
-}
 
 /*document.write('<p>Preu: <text id="preu"> 0 </text></p>');
 document.write('<p>Carrito figura: <text id="cistella"> </text></p>');
