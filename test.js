@@ -73,6 +73,7 @@ function tableCreate(files_num, mida_triada, figura_triada, resultat) {
   tbl.appendChild(tbdy);
   //body.appendChild(tbl)
   document.getElementById("dino").style.display = "block";
+  document.getElementById("dino").ondblclick = function() {myFunction()};
 }
 
 
@@ -216,7 +217,7 @@ document.write('&nbsp; &nbsp;');
 document.write('<button class="btn btn-primary btn-lg" onclick="buidar_cistella()">Buidar carrito</button>');
 document.write('<br> <br>');
 document.write('<p id="demo"> </p>');
-document.getElementById("dino").ondblclick = function() {myFunction()};
+
 function myFunction() {
   alert("xd.");
 }
