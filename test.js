@@ -187,7 +187,7 @@ document.write('<div class="card-group">');
     }else{
       document.write('<p class="card-text">Figura de '+pedido[0][j].split(" ")[1]+' de gran qualitat feta a mà</p>');
     }
-    document.write('<button class="btn btn-secondary btn-lg" class="compras" onclick="calcular_preu_figura(total,' + 0 + ',' + j + ',pedido)" onmousedown="mouseDown()" onmouseup="mouseUp()" >Comprar</button>');
+    document.write('<button class="btn btn-secondary btn-lg" onclick="calcular_preu_figura(total,' + 0 + ',' + j + ',pedido)"  >Comprar</button>');
     document.write('<p class="card-text"><small class="text-muted">No se admeten devolucions </small></p>');
     document.getElementById('img_atraccio'+j+'').addEventListener("click", displayDate);
     document.write('</div>');
@@ -203,7 +203,7 @@ document.write('<div class="card-group">');
     document.write('<div class="card-body">');
     document.write('<h5 class="card-title">'+pedido[1][k].toUpperCase()+'</h5>');
     document.write('<p class="card-text">Seleccio de la mida '+pedido[1][k].toLowerCase()+'</p>');
-    document.write('<button class="btn btn-secondary btn-lg" class="compras" onclick="calcular_preu(total,' + 1 + ',' + k + ',pedido)" onmousedown="mouseDown()" onmouseup="mouseUp()">Mida '+pedido[1][k].toLowerCase()+'</button>');
+    document.write('<button class="btn btn-secondary btn-lg" onclick="calcular_preu(total,' + 1 + ',' + k + ',pedido)">Mida '+pedido[1][k].toLowerCase()+'</button>');
     document.write('</div>');
     document.write('</div>');
     document.write('&nbsp; &nbsp;');
@@ -212,7 +212,7 @@ document.write('<div class="card-group">');
   document.write('</div>');
   document.write('<br>');
 document.write('<br>');
-document.write('<button class="btn btn-primary btn-lg" onclick="eliminar_ultim()">Eliminar</button>');
+document.write('<button id="compra" class="btn btn-primary btn-lg" onclick="eliminar_ultim()" onmousedown="mouseDown()" onmouseup="mouseUp()" >Eliminar</button>');
 document.write('&nbsp; &nbsp;');
 document.write('<button class="btn btn-primary btn-lg" onclick="buidar_cistella()">Buidar carrito</button>');
 document.write('<br> <br>');
@@ -222,22 +222,12 @@ function myFunction() {
   alert("M'has pillatxdxdjajxdxd");
 }
 function mouseDown() {
-  var comprabut =  document.getElementsByClassName('compras');
-    for(var z = 0; z < comprabut.length;)
-    {
-       comprabut.item(z).style.color = "red";
-    }
+  document.getElementById("compra").style.color = "red";
 }
 
 function mouseUp() {
-  var comprabut =  document.getElementsByClassName('compras');
-    for(var z = 0; z < comprabut.length;)
-    {
-       comprabut.item(z).style.color = "grey";
-    }
+  document.getElementById("compra").style.color = "green";
 }
-
-
 
 /*document.write('<p>Preu: <text id="preu"> 0 </text></p>');
 document.write('<p>Carrito figura: <text id="cistella"> </text></p>');
