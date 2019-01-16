@@ -315,9 +315,7 @@ if ($_SESSION['rol']==3 ) :?>
   <script src="test.js"> </script>
 
   <div id="taula_generada" style="margin-bottom: 50px;">
-    <div id="dino">
-      <h1 style="width: 500px; margin-left: 100px;"> Promoció: fes la compra ara i ahorra't els gastos d'enviament! </h1>
-    </div>
+
     <table id="data-table" class="table table-hover table-striped">
       <thead id="header_taula">
         <!--<tr>
@@ -328,7 +326,9 @@ if ($_SESSION['rol']==3 ) :?>
       <tbody id="tbody">
       </tbody>
     </table>
-
+    <div id="dino">
+      <h1 style="width: 500px; margin-left: 100px;"> Promoció: fes la compra ara i ahorra't els gastos d'enviament! </h1>
+    </div>
 </div>
 </div>
 
