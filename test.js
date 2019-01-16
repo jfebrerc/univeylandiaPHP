@@ -15,6 +15,7 @@ var resultat = 0;
 var ultims_preus = new Array();
 var seleccio_figura = 0;
 var taula;
+document.getElementById("dino").ondblclick = alert("dino.");
 
 function tableCreate(files_num, mida_triada, figura_triada, resultat) {
   var body = document.getElementById('taula_generada')[0];
@@ -73,7 +74,6 @@ function tableCreate(files_num, mida_triada, figura_triada, resultat) {
   tbl.appendChild(tbdy);
   //body.appendChild(tbl)
   document.getElementById("dino").style.display = "block";
-  document.getElementById("dino").ondblclick = alert("Ja hi ha una figura seleccionada, tria una mida.");
 }
 
 
