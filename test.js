@@ -219,7 +219,7 @@ document.write('<br> <br>');
 document.write('<p id="demo"> </p>');
 
 function myFunction() {
-  alert("xd.");
+  alert("M'has pillatxdxdjajxdxd");
 }
 /*document.write('<p>Preu: <text id="preu"> 0 </text></p>');
 document.write('<p>Carrito figura: <text id="cistella"> </text></p>');
