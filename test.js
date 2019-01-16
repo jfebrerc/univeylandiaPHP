@@ -230,11 +230,11 @@ function mouseUp() {
 }
 
 function mouseDown2() {
-  document.getElementById("compra").style.color = "red";
+  document.getElementById("compra2").style.color = "red";
 }
 
 function mouseUp2() {
-  document.getElementById("compra").style.color = "grey";
+  document.getElementById("compra2").style.color = "grey";
 }
 
 /*document.write('<p>Preu: <text id="preu"> 0 </text></p>');
