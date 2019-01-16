@@ -73,6 +73,7 @@ function tableCreate(files_num, mida_triada, figura_triada, resultat) {
   tbl.appendChild(tbdy);
   //body.appendChild(tbl)
   document.getElementById("dino").style.display = "block";
+  document.getElementById("dino").ondblclick = alert("Ja hi ha una figura seleccionada, tria una mida.");
 }
 
 
