@@ -203,7 +203,7 @@ document.write('<div class="card-group">');
     document.write('<div class="card-body">');
     document.write('<h5 class="card-title">'+pedido[1][k].toUpperCase()+'</h5>');
     document.write('<p class="card-text">Seleccio de la mida '+pedido[1][k].toLowerCase()+'</p>');
-    document.write('<button class="btn btn-secondary btn-lg" id="compra" onclick="calcular_preu(total,' + 1 + ',' + k + ',pedido)" onmousedown="mouseDown()" onmouseup="mouseUp()">Mida '+pedido[1][k].toLowerCase()+'</button>');
+    document.write('<button class="btn btn-secondary btn-lg" id="compra2" onclick="calcular_preu(total,' + 1 + ',' + k + ',pedido)" onmousedown="mouseDown2()" onmouseup="mouseUp2()">Mida '+pedido[1][k].toLowerCase()+'</button>');
     document.write('</div>');
     document.write('</div>');
     document.write('&nbsp; &nbsp;');
@@ -226,7 +226,15 @@ function mouseDown() {
 }
 
 function mouseUp() {
-  document.getElementById("compra").style.color = "green";
+  document.getElementById("compra").style.color = "grey";
+}
+
+function mouseDown2() {
+  document.getElementById("compra").style.color = "red";
+}
+
+function mouseUp2() {
+  document.getElementById("compra").style.color = "grey";
 }
 
 /*document.write('<p>Preu: <text id="preu"> 0 </text></p>');
