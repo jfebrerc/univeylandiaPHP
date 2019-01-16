@@ -236,7 +236,7 @@ function mouseUp() {
        comprabut.item(z).style.color = "grey";
     }
 }
-}
+
 
 
 /*document.write('<p>Preu: <text id="preu"> 0 </text></p>');
