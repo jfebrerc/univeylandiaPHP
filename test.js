@@ -15,10 +15,7 @@ var resultat = 0;
 var ultims_preus = new Array();
 var seleccio_figura = 0;
 var taula;
-document.getElementById("dino").ondblclick = function() {myFunction()};
-function myFunction() {
-  alert("xd.");
-}
+
 function tableCreate(files_num, mida_triada, figura_triada, resultat) {
   var body = document.getElementById('taula_generada')[0];
   var tbl = document.getElementById('data-table');
@@ -219,6 +216,10 @@ document.write('&nbsp; &nbsp;');
 document.write('<button class="btn btn-primary btn-lg" onclick="buidar_cistella()">Buidar carrito</button>');
 document.write('<br> <br>');
 document.write('<p id="demo"> </p>');
+document.getElementById("dino").ondblclick = function() {myFunction()};
+function myFunction() {
+  alert("xd.");
+}
 /*document.write('<p>Preu: <text id="preu"> 0 </text></p>');
 document.write('<p>Carrito figura: <text id="cistella"> </text></p>');
 document.write('<p>Carrito mida: <text id="cistella_mida"> </text></p>');*/
