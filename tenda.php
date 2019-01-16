@@ -311,9 +311,7 @@ if ($_SESSION['rol']==3 ) :?>
 </nav>
 <?php endif ?>
 <div style="display: table; margin: 0 auto; margin-top: 50px; width: 80%;">
-  <div id="dino">
-    <h1 style="width: 500px; margin-left: 100px;"> Promoció: fes la compra ara i ahorra't els gastos d'enviament! </h1>
-  </div>
+
   <script src="test.js"> </script>
 
   <div id="taula_generada" style="margin-bottom: 50px;">
@@ -327,7 +325,9 @@ if ($_SESSION['rol']==3 ) :?>
       <tbody id="tbody">
       </tbody>
     </table>
-
+    <div id="dino">
+      <h1 style="width: 500px; margin-left: 100px;"> Promoció: fes la compra ara i ahorra't els gastos d'enviament! </h1>
+    </div>
 </div>
 </div>
 
