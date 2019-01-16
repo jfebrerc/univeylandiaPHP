@@ -225,7 +225,7 @@ function mouseDown() {
   var comprabut =  document.getElementsByClassName('compras');
     for(var z = 0; z < comprabut.length;)
     {
-       td_taula.item(z)..style.color = "red";
+       td_taula.item(z).style.color = "red";
     }
 }
 
@@ -233,7 +233,7 @@ function mouseUp() {
   var comprabut =  document.getElementsByClassName('compras');
     for(var z = 0; z < comprabut.length;)
     {
-       td_taula.item(z)..style.color = "grey";
+       td_taula.item(z).style.color = "grey";
     }
 }
 }
