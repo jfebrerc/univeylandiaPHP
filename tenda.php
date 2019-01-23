@@ -314,7 +314,7 @@ if ($_SESSION['rol']==3 ) :?>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <button id="imatges_button">Mostrar/amagar imatges</button>
   <script src="test.js"> </script>
-  <div id="flip" style="  padding: 5px; text-align: center; background-color: #212529; border: solid 1px #c3c3c3; color:white;">Mostrar o amagar la cistella</div>
+  <div id="flip" style="  padding: 5px; text-align: center; background-color: #212529; border: solid 1px #c3c3c3; color:white; font-weight: bold;">Mostrar o amagar la cistella</div>
   <div id="taula_generada" style="margin-bottom: 50px;">
 
     <table id="data-table" class="table table-hover table-striped">
