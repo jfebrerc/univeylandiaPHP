@@ -316,7 +316,7 @@ if ($_SESSION['rol']==3 ) :?>
   <script src="test.js"> </script>
 
   <div id="taula_generada" style="margin-bottom: 50px;">
-
+    <div id="flip">Click to slide the panel down or up</div>
     <table id="data-table" class="table table-hover table-striped">
       <thead id="header_taula">
       </thead>

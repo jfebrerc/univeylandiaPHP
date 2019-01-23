@@ -245,6 +245,12 @@ $(document).ready(function(){
   });
 });
 
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#data-table").slideToggle("slow");
+  });
+});
+
 /*document.write('<p>Preu: <text id="preu"> 0 </text></p>');
 document.write('<p>Carrito figura: <text id="cistella"> </text></p>');
 document.write('<p>Carrito mida: <text id="cistella_mida"> </text></p>');*/
