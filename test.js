@@ -232,7 +232,7 @@ function mouseUp() {
 $(document).ready(function(){
   $("#hide").click(function(){
     $("#dino").hide(1000, function(){
-    alert("The paragraph is now hidden");
+    alert("Dino amagat");
   });
   });
   $("#show").click(function(){
