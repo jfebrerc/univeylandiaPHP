@@ -255,7 +255,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $("#mutar").click(function(){
-    $("#dino").css("background", "url(https://img.memecdn.com/niggers-love-fried-chicken_o_250599.gif)")
+    $("#dino").css("background", "url(http://66.media.tumblr.com/2e8986a1b1c062623cea1b9edaddcc52/tumblr_mup3qzOPsX1rk0k2jo1_500.gif)")
     $("#dino").css("background-size", "100px 150px")
       .slideUp(2000)
       .slideDown(2000, function(){
