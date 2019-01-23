@@ -239,10 +239,9 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  $("button").click(function(){
-    $("#div1").fadeToggle();
-    $("#div2").fadeToggle("slow");
-    $("#div3").fadeToggle(3000);
+  $("#imatges_button").click(function(){
+    $(".card-img-top2").fadeToggle();
+    $(".card-img-top3").fadeToggle("slow");
   });
 });
 

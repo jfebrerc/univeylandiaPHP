@@ -312,6 +312,7 @@ if ($_SESSION['rol']==3 ) :?>
 <?php endif ?>
 <div style="display: table; margin: 0 auto; margin-top: 50px; width: 80%;">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <button id="imatges_button">Mostrar/amagar imatges</button>
   <script src="test.js"> </script>
 
   <div id="taula_generada" style="margin-bottom: 50px;">
