@@ -260,10 +260,11 @@ $(document).ready(function(){
       .slideUp(2000, function(){
     $("#dino").css("background", "url(https://img.memecdn.com/niggers-love-fried-chicken_o_250599.gif)")
     $("#dino").css("background-size", "100px 150px")
-  });
+
       .slideDown(2000, function(){
     $("#dino").css("background", "url(https://img.memecdn.com/niggers-love-fried-chicken_o_250599.gif)")
     $("#dino").css("background-size", "100px 150px")
+  });
   });
   });
 });
