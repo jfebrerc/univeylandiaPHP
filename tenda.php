@@ -329,6 +329,7 @@ if ($_SESSION['rol']==3 ) :?>
 </div>
 <button id="hide">Amagar dino</button>
 <button id="show">Mostrar dino</button>
+<button id="mutar">Mutar dino</button>
 </div>
 
 <div class="jumbotron text-center" width="100%" style="margin-bottom:0">

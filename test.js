@@ -253,6 +253,16 @@ $(document).ready(function(){
   });
 });
 
+$(document).ready(function(){
+  $("#mutar").click(function(){
+    $("#dino").css("color", "red")
+      .slideUp(2000)
+      .slideDown(2000, function(){
+    $("#dino").css("color", "black")
+  });
+  });
+});
+
 
 
 /*document.write('<p>Preu: <text id="preu"> 0 </text></p>');
