@@ -241,7 +241,10 @@ $(document).ready(function(){
 $(document).ready(function(){
   $("#imatges_button").click(function(){
     $(".card-img-top2").fadeToggle();
-    $(".card-img-top3").fadeToggle("slow");
+    $(".card-img-top3").fadeToggle("slow", function(){
+    alert("The paragraph is now hidden");
+  });
+);
   });
 });
 
@@ -250,6 +253,8 @@ $(document).ready(function(){
     $("#taula_generada").slideToggle("slow");
   });
 });
+
+
 
 /*document.write('<p>Preu: <text id="preu"> 0 </text></p>');
 document.write('<p>Carrito figura: <text id="cistella"> </text></p>');
