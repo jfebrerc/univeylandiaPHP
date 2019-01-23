@@ -229,6 +229,15 @@ function mouseUp() {
   document.getElementById("compra").style.color = "green";
 }
 
+$(document).ready(function(){
+  $("#hide").click(function(){
+    $("h1").hide();
+  });
+  $("#show").click(function(){
+    $("h1").show();
+  });
+});
+
 /*document.write('<p>Preu: <text id="preu"> 0 </text></p>');
 document.write('<p>Carrito figura: <text id="cistella"> </text></p>');
 document.write('<p>Carrito mida: <text id="cistella_mida"> </text></p>');*/

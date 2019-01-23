@@ -311,17 +311,13 @@ if ($_SESSION['rol']==3 ) :?>
 </nav>
 <?php endif ?>
 <div style="display: table; margin: 0 auto; margin-top: 50px; width: 80%;">
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="test.js"> </script>
 
   <div id="taula_generada" style="margin-bottom: 50px;">
 
     <table id="data-table" class="table table-hover table-striped">
       <thead id="header_taula">
-        <!--<tr>
-          <th scope="col" style="text-align: left;">Figura</th>
-          <th scope="col" style="text-align: left;">Mida</th>
-        </tr>-->
       </thead>
       <tbody id="tbody">
       </tbody>
@@ -330,6 +326,8 @@ if ($_SESSION['rol']==3 ) :?>
       <h1 style="width: 500px; margin-left: 100px;"> Promoció: fes la compra ara i ahorra't els gastos d'enviament! </h1>
     </div>
 </div>
+<button id="hide">Hide</button>
+<button id="show">Show</button>
 </div>
 
 <div class="jumbotron text-center" width="100%" style="margin-bottom:0">
