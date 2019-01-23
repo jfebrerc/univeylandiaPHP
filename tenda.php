@@ -314,9 +314,9 @@ if ($_SESSION['rol']==3 ) :?>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <button id="imatges_button">Mostrar/amagar imatges</button>
   <script src="test.js"> </script>
-
+  <div id="flip">Click to slide the panel down or up</div>
   <div id="taula_generada" style="margin-bottom: 50px;">
-    <div id="flip">Click to slide the panel down or up</div>
+
     <table id="data-table" class="table table-hover table-striped">
       <thead id="header_taula">
       </thead>

@@ -247,7 +247,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $("#flip").click(function(){
-    $("#data-table").slideToggle("slow");
+    $("#taula_generada").slideToggle("slow");
   });
 });
 
