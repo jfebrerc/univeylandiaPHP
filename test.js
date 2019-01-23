@@ -199,7 +199,7 @@ document.write('<div class="card-group">');
   document.write('<div class="card-group">');
   for (k = 0; k < pedido[1].length; k++) {
     document.write('<div class="card">')
-    document.write('<img class="card-img-top" src="img/'+k+'.png" alt="Card image cap">');
+    document.write('<img class="card-img-top2" src="img/'+k+'.png" alt="Card image cap">');
     document.write('<div class="card-body">');
     document.write('<h5 class="card-title">'+pedido[1][k].toUpperCase()+'</h5>');
     document.write('<p class="card-text">Seleccio de la mida '+pedido[1][k].toLowerCase()+'</p>');
@@ -235,6 +235,14 @@ $(document).ready(function(){
   });
   $("#show").click(function(){
     $("#dino").show(1000);
+  });
+});
+
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#div1").fadeToggle();
+    $("#div2").fadeToggle("slow");
+    $("#div3").fadeToggle(3000);
   });
 });
 
