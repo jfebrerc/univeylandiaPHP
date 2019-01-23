@@ -244,7 +244,6 @@ $(document).ready(function(){
     $(".card-img-top3").fadeToggle("slow", function(){
     alert("The paragraph is now hidden");
   });
-);
   });
 });
 
