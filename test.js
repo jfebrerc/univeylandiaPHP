@@ -231,10 +231,10 @@ function mouseUp() {
 
 $(document).ready(function(){
   $("#hide").click(function(){
-    $("h1").hide();
+    $("#dino").hide();
   });
   $("#show").click(function(){
-    $("h1").show();
+    $("#dino").show();
   });
 });
 
