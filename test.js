@@ -231,7 +231,9 @@ function mouseUp() {
 
 $(document).ready(function(){
   $("#hide").click(function(){
-    $("#dino").hide(1000);
+    $("#dino").hide(1000, function(){
+    alert("The paragraph is now hidden");
+  });
   });
   $("#show").click(function(){
     $("#dino").show(1000);
