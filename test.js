@@ -241,9 +241,7 @@ $(document).ready(function(){
 $(document).ready(function(){
   $("#imatges_button").click(function(){
     $(".card-img-top2").fadeToggle();
-    $(".card-img-top3").fadeToggle("slow", function(){
-    alert("The paragraph is now hidden");
-  });
+    $(".card-img-top3").fadeToggle("slow");
   });
 });
 
