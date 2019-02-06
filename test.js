@@ -275,8 +275,8 @@ $("#btnapp").click(function(){
 
 $("#dimensions").click(function(){
   var txt = "";
-  txt += "Outer width (+margin): " + $("#dino").outerWidth(true) + "</br>";
-  txt += "Outer height (+margin): " + $("#dino").outerHeight(true);
+  txt += "Width: (+margin): " + $("#dino").outerWidth(true) + "</br>";
+  txt += "Height (+margin): " + $("#dino").outerHeight(true);
   $("#dino_dim").html(txt);
 });
 
