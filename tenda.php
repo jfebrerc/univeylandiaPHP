@@ -335,6 +335,7 @@ if ($_SESSION['rol']==3 ) :?>
 <button onclick="location.href = '/compra.html';" class="btn btn-primary" style="margin-left:20px;">Comprar</button>
 <p> text </p>
 <p id="dino_dim">  </p>
+<div id="updown">Press down and release the mouse button over this div element.</div>
 </div>
 
 <div class="jumbotron text-center" width="100%" style="margin-bottom:0">

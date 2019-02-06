@@ -230,6 +230,15 @@ function mouseUp() {
 }
 
 $(document).ready(function(){
+  $("#updown").mouseup(function(){
+    $(this).after("<p style='color:green;'>Mouse button released.</p>");
+  });
+  $("#updown").mousedown(function(){
+    $(this).after("<p style='color:purple;'>Mouse button pressed down.</p>");
+  });
+});
+
+$(document).ready(function(){
   $("#hide").click(function(){
     $("#dino").hide(1000, function(){
     alert("Dino amagat");
