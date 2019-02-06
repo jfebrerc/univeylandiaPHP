@@ -331,7 +331,7 @@ if ($_SESSION['rol']==3 ) :?>
 <button id="show">Mostrar dino</button>
 <button id="mutar">Mutar dino</button>
 </div>
-
+<button onclick="location.href = '/compra.html';" >Comprar</button>
 <div class="jumbotron text-center" width="100%" style="margin-bottom:0">
   <div class="row">
 
