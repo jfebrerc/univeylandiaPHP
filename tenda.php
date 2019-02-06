@@ -13,9 +13,11 @@
   .fakeimg {
       height: 200px;
       background: #aaa;
-  #ok:focus {
-      background-color: green;
-    }
+  }
+  </style>
+  <style>
+  input:focus {
+  background-color: green;
   }
   </style>
 </head>
