@@ -269,6 +269,9 @@ $(document).ready(function(){
   });
 });
 
+$("#btn1").click(function(){
+    $("p").append(" <b>Appended text</b>.");
+  });
 
 
 /*document.write('<p>Preu: <text id="preu"> 0 </text></p>');
