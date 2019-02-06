@@ -108,7 +108,7 @@ include_once("class/class_client.php");
         <div class="row">
             <label>Targeta Credit/Debit</label>
             <input type="text" name="ccNum" class="form-control" id="cardNum" required></input>
-            <small id="targetaHelp" class="form-text text-muted">Acceptem Visa, MasterCard i EuroCard</small>
+            <!-- <small id="targetaHelp" class="form-text text-muted">Acceptem Visa, MasterCard i EuroCard</small> -->
           <br>
           <div class="form-group">
             <div class="row">
@@ -117,15 +117,15 @@ include_once("class/class_client.php");
                 <input type="month" id="targeta_c" name="targeta_caducitat" required></input>
               </div>
               <div class="col-4 ">
-                <label>Codi Secret</label>
+                <label>Codi target</label>
                 <input type="text" id="codi_s" name="targeta_codi_secret" required></input>
               </div>
               <div class="col-4">
                 <select class="form-control" id="opciones" name="opciones">
                   <option value="1">Envio Standard(1-2 semanes)</option>
                   <option value="2">Envio Veloz(72h)</option>
-                  <option value="3">Envio UltraVeloz(48h)</option>
-                  <option value="4">Envio Loliyo(24h)</option>
+                  <!--<option value="3">Envio UltraVeloz(48h)</option>
+                  <option value="4">Envio Loliyo(24h)</option> -->
                 </select>
               </div>
             </div>
