@@ -273,6 +273,12 @@ $("#btnapp").click(function(){
     $("p").append(" <b>PERQUE NO FUNCIONA????????????????????????????????????</b>.");
 });
 
+$("#dimensions").click(function(){
+  var txt = "";
+  txt += "Outer width (+margin): " + $("#dino").outerWidth(true) + "</br>";
+  txt += "Outer height (+margin): " + $("#dino").outerHeight(true);
+  $("#dino_dim").html(txt);
+});
 
 /*document.write('<p>Preu: <text id="preu"> 0 </text></p>');
 document.write('<p>Carrito figura: <text id="cistella"> </text></p>');
