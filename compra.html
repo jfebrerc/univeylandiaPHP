@@ -103,56 +103,40 @@ include_once("class/class_client.php");
             <input type="text" name="name" class="form-control" id="nom" required></input>
             <label>Telefon</label>
             <input type="text" name="name" class="form-control" id="telefon" required></input>
-          <div class="col-4">
             <label> DNI</label>
             <input type="text" name="dni" class="form-control" id="dni" required></input>
-          </div>
         </div>
         <div class="row">
-          <div class="col-sm-12">
             <label>Targeta Credit/Debit</label>
             <input type="text" name="ccNum" class="form-control" id="cardNum" required></input>
             <small id="targetaHelp" class="form-text text-muted">Acceptem Visa, MasterCard i EuroCard</small>
-          </div>
           <br>
           <div class="form-group">
             <div class="row">
-              <div class="col-4">
                 <label>data de caducitat</label>
                 <input type="month" id="targeta_c" name="targeta_caducitat" required></input>
-              </div>
-              <div class="col-4 ">
                 <label>Codi Secret</label>
                 <input type="text" id="codi_s" name="targeta_codi_secret" required></input>
-              </div>
-              <div class="col-4">
                 <select id="opciones" name="opciones">
                   <option value="1">Envio Standard(1-2 semanes)</option>
                   <option value="2">Envio Veloz(72h)</option>
                   <option value="3">Envio UltraVeloz(48h)</option>
                   <option value="4">Envio Loliyo(24h)</option>
                 </select>
-              </div>
             </div>
             <br>
             <div class="row">
-              <div class="col-6 ">
                 <label>Informació extra?</label>
                 <br>
                 <textarea id="mes_info"></textarea>
-              </div>
             </div>
-            <div class="col-6">
               <br>
               <p>Ets client <span>premspam</span>?
                 <input type="radio" value="si" name="pregunta" id="pregunta_si" /> SI
                 <input type="radio" value="no" name="pregunta" id="pregunta_no" /> NO
               </p>
-            </div>
             <div class="row">
-              <div class="col-6">
                 <input type="checkbox" value="condiciones" name="condiciones" id="condiciones" /> He leído y acepto las condiciones
-              </div>
             </div>
           </div>
         </div>
