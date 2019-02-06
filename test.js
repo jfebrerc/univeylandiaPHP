@@ -269,6 +269,12 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
+  $("#ok").blur(function(){
+    alert("focus out.");
+  });
+});
+
+$(document).ready(function(){
   $("#hide").click(function(){
     $("#dino").hide(1000, function(){
     alert("Dino amagat");
