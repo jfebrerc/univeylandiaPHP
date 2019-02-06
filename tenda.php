@@ -330,8 +330,9 @@ if ($_SESSION['rol']==3 ) :?>
 <button id="hide" class="btn btn-primary" >Amagar dino</button>
 <button id="show" class="btn btn-primary" style="margin-left:20px;">Mostrar dino</button>
 <button id="mutar" class="btn btn-primary" style="margin-left:20px;">Mutar dino</button>
-<button id="btn1">Afegir <p> text </p></button>
+<button id="btn1">Afegir</button>
 <button onclick="location.href = '/compra.html';" class="btn btn-primary" style="margin-left:20px;">Comprar</button>
+<p> text </p>
 </div>
 
 <div class="jumbotron text-center" width="100%" style="margin-bottom:0">
