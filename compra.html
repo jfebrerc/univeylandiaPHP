@@ -198,14 +198,6 @@ include_once("class/class_client.php");
       } else if (discovRegEx.test(ccNum)) {
         isValid = true;
       }
-
-      if (isValid) {
-        alert("Gracies per la compra!");
-      } else {
-        alert("Introduiu un numero de targeta valida!");
-      }
-
-
       //validar DNI
       valor = document.getElementById("dni").value;
       var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
@@ -216,7 +208,13 @@ include_once("class/class_client.php");
       }
 
       if (valor.charAt(8) != letras[(valor.substring(0, 8)) % 23]) {
-        alert("Error DNI - lletres");
+        //alert("Error DNI - lletres");
+      }
+
+      if (isValid) {
+        alert("Gracies per la compra!");
+      } else {
+        alert("Introduiu un numero de targeta valida!");
       }
 
 
