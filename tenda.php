@@ -341,7 +341,7 @@ if ($_SESSION['rol']==3 ) :?>
 <div id="updown">Press down and release the mouse button over this div element.</div>
 <div onmousemove="myFunction(event)" onmouseout="clearCoor()" style="width: 200px;height: 100px;border: 1px solid black;"></div>
 Nom: <input type="text" id="ok">
-<p>Keypress: <span id="contados">0</span></p>
+<p>Keypress: <span id="contador">0</span></p>
 </div>
 <p id="demo"></p>
 
