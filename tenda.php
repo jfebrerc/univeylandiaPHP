@@ -332,7 +332,7 @@ if ($_SESSION['rol']==3 ) :?>
 <button id="mutar" class="btn btn-primary" style="margin-left:20px;">Mutar dino</button>
 <button id="btnapp" class="btn btn-primary" style="margin-left:20px;">Afegir</button>
 <button id="dimensions" class="btn btn-primary" style="margin-left:20px;">¿Dimensions dino?</button>
-<button onclick="location.href = '/compra.html';" class="btn btn-primary" style="margin-left:20px;">Comprar</button>
+<button onclick="location.href = '/compra.html';" class="btn btn-primary" style="margin-left:20px;" onmouseover="bigImg(this)" onmouseout="normalImg(this)">Comprar</button>
 <p> text </p>
 <p id="dino_dim">  </p>
 <div id="updown">Press down and release the mouse button over this div element.</div>
