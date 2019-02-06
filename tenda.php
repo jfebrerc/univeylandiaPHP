@@ -327,11 +327,12 @@ if ($_SESSION['rol']==3 ) :?>
       <h1 style="width: 500px; margin-left: 100px;"> Promoció: fes la compra ara i ahorra't els gastos d'enviament! </h1>
     </div>
 </div>
-<button id="hide">Amagar dino</button>
-<button id="show">Mostrar dino</button>
-<button id="mutar">Mutar dino</button>
+<button id="hide" class="btn btn-primary">Amagar dino</button>
+<button id="show" class="btn btn-primary">Mostrar dino</button>
+<button id="mutar" class="btn btn-primary">Mutar dino</button>
+<button onclick="location.href = '/compra.html';" class="btn btn-primary">Comprar</button>
 </div>
-<button onclick="location.href = '/compra.html';" >Comprar</button>
+
 <div class="jumbotron text-center" width="100%" style="margin-bottom:0">
   <div class="row">
 
