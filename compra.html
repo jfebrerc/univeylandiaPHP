@@ -212,11 +212,11 @@ include_once("class/class_client.php");
 
       if (!(/^\d{8}[A-Z]$/.test(valor))) {
 
-        alert("error");
+        alert("Error DNI");
       }
 
       if (valor.charAt(8) != letras[(valor.substring(0, 8)) % 23]) {
-        alert("error");
+        alert("Error DNI - lletres");
       }
 
 
