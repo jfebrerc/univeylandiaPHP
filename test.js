@@ -248,6 +248,17 @@ function normalImg(x) {
   //x.style.width = "32px";
 }
 
+function myFunction(e) {
+  var x = e.clientX;
+  var y = e.clientY;
+  var coor = "Coordinates: (" + x + "," + y + ")";
+  document.getElementById("demo").innerHTML = coor;
+}
+
+function clearCoor() {
+  document.getElementById("demo").innerHTML = "";
+}
+
 $(document).ready(function(){
   $("#hide").click(function(){
     $("#dino").hide(1000, function(){
