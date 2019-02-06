@@ -260,6 +260,15 @@ function clearCoor() {
 }
 
 $(document).ready(function(){
+  $("#ok").keydown(function(){
+    $("#ok").css("background-color", "yellow");
+  });
+  $("#ok").keyup(function(){
+    $("#ok").css("background-color", "pink");
+  });
+});
+
+$(document).ready(function(){
   $("#hide").click(function(){
     $("#dino").hide(1000, function(){
     alert("Dino amagat");
