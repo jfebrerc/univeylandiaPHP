@@ -14,9 +14,7 @@
       height: 200px;
       background: #aaa;
   }
-  </style>
-  <style>
-  input:focus {
+  #ok:focus {
   background-color: green;
   }
   </style>
