@@ -268,6 +268,13 @@ $(document).ready(function(){
   });
 });
 
+i = 0;
+$(document).ready(function(){
+  $("#ok").keypress(function(){
+    $("#contador").text(i += 1);
+  });
+});
+
 $(document).ready(function(){
   $("#ok").blur(function(){
     alert("focus out.");
