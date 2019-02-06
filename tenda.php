@@ -337,8 +337,8 @@ if ($_SESSION['rol']==3 ) :?>
 <p id="dino_dim">  </p>
 <div id="updown">Press down and release the mouse button over this div element.</div>
 <div onmousemove="myFunction(event)" onmouseout="clearCoor()" style="width: 200px;height: 100px;border: 1px solid black;"></div>
-<p id="demo"></p>
 </div>
+<p id="demo"></p>
 
 <div class="jumbotron text-center" width="100%" style="margin-bottom:0">
   <div class="row">
